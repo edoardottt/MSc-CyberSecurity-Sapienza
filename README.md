@@ -1,7 +1,7 @@
 # MSc-CyberSecurity-Sapienza
 
 Master of Science "Cybersecurity", Sapienza University of Rome.
-Notes, examples, tests, code...
+Notes, examples, tests, homework solutions, code...
 
 - Cryptography
 - Network Infrastructures

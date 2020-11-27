@@ -1,0 +1,2 @@
+/etc/init.d/networking restart
+/etc/init.d/quagga restart

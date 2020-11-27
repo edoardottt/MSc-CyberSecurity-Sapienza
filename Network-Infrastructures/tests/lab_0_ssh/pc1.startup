@@ -1,0 +1,5 @@
+/etc/init.d/networking restart
+echo "10.0.1.100	pc2" > /etc/hosts
+echo -e '\n\n\n' | ssh-keygen
+pwd
+cp /root/.ssh/id_rsa.pub /hostlab

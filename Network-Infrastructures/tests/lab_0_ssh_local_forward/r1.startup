@@ -1,0 +1,3 @@
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+ip r add 10.0.2.0/24 via 10.0.3.7

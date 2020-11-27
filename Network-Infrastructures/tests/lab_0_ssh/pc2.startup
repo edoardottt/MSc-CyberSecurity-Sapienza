@@ -1,0 +1,19 @@
+/etc/init.d/networking restart
+/etc/init.d/ssh restart
+mkdir /home/ssh_user
+useradd ssh_user -d /home/ssh_user
+chown ssh_user:ssh_user /home/ssh_user
+echo -e 'ilovessh\nilovessh\n' | passwd ssh_user
+mkdir /home/ssh_user/.ssh
+chown ssh_user:ssh_user /home/ssh_user/.ssh
+chmod 700 /home/ssh_user/.ssh
+touch /home/ssh_user/.ssh/authorized_keys
+chown ssh_user:ssh_user /home/ssh_user/.ssh/authorized_keys
+chmod 600 /home/ssh_user/.ssh/authorized_keys
+if [ -e /hostlab/id_rsa.pub ]
+then
+	cat /hostlab/id_rsa.pub > /home/ssh_user/.ssh/authorized_keys
+	rm /hostlab/id_rsa.pub
+else 
+	sleep 1
+fi

@@ -1,0 +1,15 @@
+auto eth0
+iface eth0 inet static
+	address 1.0.10.7
+	netmask 255.255.255.254
+
+auto eth1
+iface eth1 inet static
+	address 1.0.10.8
+	netmask 255.255.255.254
+
+auto eth2
+iface eth2 inet static
+	address 1.0.10.11
+	netmask 255.255.255.254
+

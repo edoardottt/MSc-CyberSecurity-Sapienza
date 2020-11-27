@@ -1,0 +1,2 @@
+iptables -A FORWARD -p tcp --dport 80 -s 10.0.3.0/24 -j DROP
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE

@@ -1,0 +1,20 @@
+/etc/init.d/networking restart
+/etc/init.d/ssh restart
+
+( while ! ping -c 1 8.8.8.8 &> /dev/null; do printf "%c" "."; sleep 1; done; touch /root/done;ssh -o 'StrictHostKeyChecking no' -NL 9000:192.168.1.100:8080 exam_user@192.168.1.100 ) &
+
+mkdir /home/exam_user
+useradd exam_user -d /home/exam_user
+chown exam_user:exam_user /home/exam_user
+echo -e 'exam\nexam\n' | passwd exam_user
+
+mkdir /root/.ssh
+
+touch /root/.ssh/id_rsa.pub
+touch /root/.ssh/id_rsa
+
+cat /shared/ssh-forward/id_rsa.pub > /root/.ssh/id_rsa.pub
+cat /shared/ssh-forward/id_rsa > /root/.ssh/id_rsa
+
+chmod 600 /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa.pub

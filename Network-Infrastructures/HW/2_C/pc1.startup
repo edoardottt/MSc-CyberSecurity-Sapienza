@@ -1,0 +1,7 @@
+/etc/init.d/networking restart
+
+( while ! ping -c 1 8.8.8.8 &> /dev/null; do printf "%c" "."; sleep 1; done; touch /root/done ) &
+
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun

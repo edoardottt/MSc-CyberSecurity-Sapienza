@@ -1,0 +1,19 @@
+/etc/init.d/networking restart
+/etc/init.d/quagga restart
+/etc/init.d/ssh restart
+
+( while ! ping -c 1 8.8.8.8 &> /dev/null; do printf "%c" "."; sleep 1; done; touch /root/done ) &
+
+mkdir /home/exam_user
+useradd exam_user -d /home/exam_user
+chown exam_user:exam_user /home/exam_user
+echo -e 'exam\nexam\n' | passwd exam_user
+
+mkdir /home/exam_user/.ssh
+chown exam_user:exam_user /home/exam_user/.ssh
+chmod 700 /home/exam_user/.ssh
+touch /home/exam_user/.ssh/authorized_keys
+chown exam_user:exam_user /home/exam_user/.ssh/authorized_keys
+chmod 600 /home/exam_user/.ssh/authorized_keys
+
+cat /shared/ssh-router/id_rsa.pub > /home/exam_user/.ssh/authorized_keys

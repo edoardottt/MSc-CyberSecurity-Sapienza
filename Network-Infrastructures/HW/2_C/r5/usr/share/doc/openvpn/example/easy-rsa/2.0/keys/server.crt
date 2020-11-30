@@ -1,0 +1,99 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, ST=CA, L=SanFrancisco, O=Fort-Funston, OU=MyOrganizationalUnit, CN=Fort-Funston CA/name=EasyRSA/emailAddress=me@myhost.mydomain
+        Validity
+            Not Before: Nov 30 15:26:00 2020 GMT
+            Not After : Nov 28 15:26:00 2030 GMT
+        Subject: C=US, ST=CA, L=SanFrancisco, O=Fort-Funston, OU=MyOrganizationalUnit, CN=server/name=EasyRSA/emailAddress=me@myhost.mydomain
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:be:32:bb:c4:aa:4d:21:c3:6b:28:2f:4d:f8:1e:
+                    f5:71:5a:48:76:5b:05:09:77:d7:51:66:b5:56:89:
+                    13:aa:0d:f3:ba:4e:40:6f:c2:9f:e3:f8:e2:c3:a1:
+                    8e:37:6b:de:41:df:9a:65:be:24:39:14:1f:e6:e1:
+                    7e:bd:7a:2b:9e:ab:4e:97:5b:07:76:9f:dc:26:06:
+                    3c:ec:5d:76:35:69:6f:6e:bd:e4:5c:17:64:65:3b:
+                    e1:ee:72:b4:e5:a8:29:54:b8:7c:c1:bd:56:a8:17:
+                    79:21:cd:9e:c5:2c:d8:f1:b9:4c:2f:68:5c:11:e4:
+                    c3:76:26:ac:96:ea:78:0e:ce:5d:21:99:af:6b:7d:
+                    ec:1d:98:cd:7c:91:79:0f:ab:04:19:4a:4f:db:57:
+                    c3:9e:b2:48:f6:10:ca:12:d9:79:e9:bc:53:86:dd:
+                    bf:81:75:3e:62:43:02:b5:57:45:14:72:1e:d5:80:
+                    9e:fc:79:e8:72:1c:7d:ba:a7:20:13:b0:36:33:43:
+                    49:80:e4:e2:da:ef:37:7e:df:d8:e3:ae:97:2d:80:
+                    fd:c8:e1:88:fd:97:b0:f8:8d:6c:9c:89:a0:44:c4:
+                    6a:4a:41:d8:a4:37:2d:5d:b3:cb:4a:5b:ba:38:f7:
+                    a0:e4:89:61:d5:9e:f1:31:5b:bf:3b:b1:85:63:d9:
+                    20:ef
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Cert Type: 
+                SSL Server
+            Netscape Comment: 
+                Easy-RSA Generated Server Certificate
+            X509v3 Subject Key Identifier: 
+                30:0D:6C:7E:46:B8:83:88:F1:D0:DF:F1:8F:77:72:4C:17:7E:D3:64
+            X509v3 Authority Key Identifier: 
+                keyid:24:CB:34:2C:42:57:B7:85:15:9C:65:F7:92:AC:2A:9D:61:6C:E4:E1
+                DirName:/C=US/ST=CA/L=SanFrancisco/O=Fort-Funston/OU=MyOrganizationalUnit/CN=Fort-Funston CA/name=EasyRSA/emailAddress=me@myhost.mydomain
+                serial:3F:2F:62:D2:40:80:68:85:3B:0B:FD:A3:D9:68:A8:CF:8C:94:02:8A
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+    Signature Algorithm: sha256WithRSAEncryption
+         09:0e:89:4a:a8:7d:6d:37:1e:5d:5c:12:d7:7b:b6:18:41:59:
+         8d:3c:4f:2a:9e:c3:0e:9f:88:2b:12:aa:f7:e2:ba:28:04:3c:
+         17:77:80:e3:7a:f7:2d:3e:0c:ea:7b:2c:b4:05:74:c4:2b:e7:
+         b2:d7:01:16:01:a6:e8:22:87:42:d7:c0:76:e5:b3:98:4b:b6:
+         ae:ed:ab:ee:46:20:a1:fb:d8:2d:f7:73:71:6c:0f:aa:c0:77:
+         5e:d0:71:57:9a:bc:cc:1a:58:3b:6c:cd:c9:0f:c2:02:5b:be:
+         6c:d6:f7:57:06:b0:f0:f2:e8:27:1c:73:9c:8d:3d:6a:da:9d:
+         41:55:21:30:00:02:49:14:f6:cf:ac:8b:3c:0f:24:51:13:20:
+         9c:79:92:d3:d9:52:77:da:67:5f:b8:06:3b:7e:8c:e7:92:61:
+         65:e6:ff:f2:f1:dd:19:4e:00:5e:22:68:89:fd:ef:53:dd:2a:
+         e4:ad:c9:85:69:d4:9d:69:9d:b0:75:ac:4f:7f:9a:5f:0a:b8:
+         52:e3:54:e4:ae:23:39:dd:61:e9:c1:27:f3:70:bd:b9:fb:b6:
+         d6:1d:19:0e:0e:88:38:ea:9a:20:8e:a5:05:26:ea:de:5a:9f:
+         d9:96:ef:b3:ea:ce:66:64:c6:d4:0f:c4:dc:f7:48:9e:19:4c:
+         14:a3:85:80
+-----BEGIN CERTIFICATE-----
+MIIFdDCCBFygAwIBAgIBATANBgkqhkiG9w0BAQsFADCBtjELMAkGA1UEBhMCVVMx
+CzAJBgNVBAgTAkNBMRUwEwYDVQQHEwxTYW5GcmFuY2lzY28xFTATBgNVBAoTDEZv
+cnQtRnVuc3RvbjEdMBsGA1UECxMUTXlPcmdhbml6YXRpb25hbFVuaXQxGDAWBgNV
+BAMTD0ZvcnQtRnVuc3RvbiBDQTEQMA4GA1UEKRMHRWFzeVJTQTEhMB8GCSqGSIb3
+DQEJARYSbWVAbXlob3N0Lm15ZG9tYWluMB4XDTIwMTEzMDE1MjYwMFoXDTMwMTEy
+ODE1MjYwMFowga0xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEVMBMGA1UEBxMM
+U2FuRnJhbmNpc2NvMRUwEwYDVQQKEwxGb3J0LUZ1bnN0b24xHTAbBgNVBAsTFE15
+T3JnYW5pemF0aW9uYWxVbml0MQ8wDQYDVQQDEwZzZXJ2ZXIxEDAOBgNVBCkTB0Vh
+c3lSU0ExITAfBgkqhkiG9w0BCQEWEm1lQG15aG9zdC5teWRvbWFpbjCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAL4yu8SqTSHDaygvTfge9XFaSHZbBQl3
+11FmtVaJE6oN87pOQG/Cn+P44sOhjjdr3kHfmmW+JDkUH+bhfr16K56rTpdbB3af
+3CYGPOxddjVpb2695FwXZGU74e5ytOWoKVS4fMG9VqgXeSHNnsUs2PG5TC9oXBHk
+w3YmrJbqeA7OXSGZr2t97B2YzXyReQ+rBBlKT9tXw56ySPYQyhLZeem8U4bdv4F1
+PmJDArVXRRRyHtWAnvx56HIcfbqnIBOwNjNDSYDk4trvN37f2OOuly2A/cjhiP2X
+sPiNbJyJoETEakpB2KQ3LV2zy0pbujj3oOSJYdWe8TFbvzuxhWPZIO8CAwEAAaOC
+AZIwggGOMAkGA1UdEwQCMAAwEQYJYIZIAYb4QgEBBAQDAgZAMDQGCWCGSAGG+EIB
+DQQnFiVFYXN5LVJTQSBHZW5lcmF0ZWQgU2VydmVyIENlcnRpZmljYXRlMB0GA1Ud
+DgQWBBQwDWx+RriDiPHQ3/GPd3JMF37TZDCB9gYDVR0jBIHuMIHrgBQkyzQsQle3
+hRWcZfeSrCqdYWzk4aGBvKSBuTCBtjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNB
+MRUwEwYDVQQHEwxTYW5GcmFuY2lzY28xFTATBgNVBAoTDEZvcnQtRnVuc3RvbjEd
+MBsGA1UECxMUTXlPcmdhbml6YXRpb25hbFVuaXQxGDAWBgNVBAMTD0ZvcnQtRnVu
+c3RvbiBDQTEQMA4GA1UEKRMHRWFzeVJTQTEhMB8GCSqGSIb3DQEJARYSbWVAbXlo
+b3N0Lm15ZG9tYWlughQ/L2LSQIBohTsL/aPZaKjPjJQCijATBgNVHSUEDDAKBggr
+BgEFBQcDATALBgNVHQ8EBAMCBaAwDQYJKoZIhvcNAQELBQADggEBAAkOiUqofW03
+Hl1cEtd7thhBWY08Tyqeww6fiCsSqvfiuigEPBd3gON69y0+DOp7LLQFdMQr57LX
+ARYBpugih0LXwHbls5hLtq7tq+5GIKH72C33c3FsD6rAd17QcVeavMwaWDtszckP
+wgJbvmzW91cGsPDy6Cccc5yNPWranUFVITAAAkkU9s+sizwPJFETIJx5ktPZUnfa
+Z1+4Bjt+jOeSYWXm//Lx3RlOAF4iaIn971PdKuStyYVp1J1pnbB1rE9/ml8KuFLj
+VOSuIzndYenBJ/Nwvbn7ttYdGQ4OiDjqmiCOpQUm6t5an9mW77PqzmZkxtQPxNz3
+SJ4ZTBSjhYA=
+-----END CERTIFICATE-----

@@ -1,0 +1,7 @@
+ip link set eth0 up
+ip a add 192.168.1.200/24 dev eth0
+ip r add default via 192.168.1.1
+
+/etc/init.d/apache2 start
+
+echo "nameserver 192.168.1.2" > /etc/resolv.conf

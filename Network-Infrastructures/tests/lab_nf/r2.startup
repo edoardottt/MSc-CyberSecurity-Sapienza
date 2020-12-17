@@ -1,0 +1,8 @@
+ip link set eth0 up
+ip addr add 1.0.0.2/24 dev eth0
+ip r add 8.0.0.0/24 via 1.0.0.1
+ip r add 10.0.0.0/24 via 1.0.0.1
+
+iptables -t nat -A POSTROUTING -j MASQUERADE
+
+/etc/init.d/ssh start

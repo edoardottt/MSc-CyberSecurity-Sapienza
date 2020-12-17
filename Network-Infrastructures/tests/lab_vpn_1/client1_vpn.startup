@@ -1,0 +1,10 @@
+ip link set eth0 up
+ip address add 10.0.0.100/24 dev eth0
+ip route add default via 10.0.0.1
+
+apt update
+apt install -y openvpn
+
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun

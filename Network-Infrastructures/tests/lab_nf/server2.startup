@@ -1,0 +1,7 @@
+ip link set eth0 up
+ip addr add 8.0.0.3/24 dev eth0
+
+ip route add default via 8.0.0.1
+
+/etc/init.d/ssh start
+/etc/init.d/apache2 start

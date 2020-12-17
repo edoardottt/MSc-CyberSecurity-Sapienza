@@ -1,2 +1,1 @@
 /etc/init.d/networking restart
-/etc/init.d/apache2 restart

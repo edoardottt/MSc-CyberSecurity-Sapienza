@@ -1,0 +1,17 @@
+ip link set eth0 up
+ip link set eth1 up
+ip link set eth2 up
+
+ip addr add 1.0.0.1/24 dev eth0
+ip addr add 8.0.0.1/24 dev eth1
+ip addr add 10.0.0.1/24 dev eth2
+
+ip r add default via 1.0.0.2
+
+
+/etc/init.d/ssh start
+/etc/init.d/dhcp3-server start
+
+iptables -A INPUT -j LOG
+iptables -A OUTPUT -j LOG
+iptables -A FORWARD -j LOG

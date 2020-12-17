@@ -1,0 +1,16 @@
+$ORIGIN cgrl.edu.
+$TTL 2d
+@ IN SOA ns.cgrl.edu. hostmaster.cgrl.edu. (
+    2012032200 ; serial 
+    28 ; refresh 
+    14 ; retry 
+    3600000 ; expire
+    0 ; negative cache ttl 
+)
+
+@   	   IN      NS      ns
+ns         IN      A       10.0.0.2
+pc1	   IN	   A       10.0.0.100
+pc2	   IN	   A       10.0.0.101
+
+

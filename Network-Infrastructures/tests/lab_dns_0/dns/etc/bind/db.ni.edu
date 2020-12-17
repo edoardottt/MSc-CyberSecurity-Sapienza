@@ -1,0 +1,17 @@
+$TTL 2d
+ni.edu. IN SOA dns.ni.edu. hostmaster.ni.edu. (
+        20171212;
+        28;
+        14;
+        3600000;
+        0;
+)
+
+ni.edu.	IN	NS	dns.ni.edu.
+
+dns.ni.edu.     IN      A       10.0.0.100
+pc1.ni.edu.     IN      A       10.0.1.100
+pc2.ni.edu.     IN      A       10.0.2.100
+pc3.ni.edu.     IN      A       10.0.3.100
+pc4.ni.edu.     IN      A       10.0.4.100
+

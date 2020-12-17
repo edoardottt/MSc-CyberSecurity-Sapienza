@@ -1,0 +1,7 @@
+ip link set eth0 up
+ip link set address 00:00:00:00:00:aa dev eth0
+
+dhclient eth0
+
+/etc/init.d/ssh start
+/etc/init.d/apache2 start

@@ -1,0 +1,5 @@
+ip link set eth0 up
+ip a add 10.0.0.100/24 dev eth0
+ip r add default via 10.0.0.1
+
+echo "nameserver 10.0.0.2" > /etc/resolv.conf

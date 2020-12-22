@@ -1,0 +1,22 @@
+$ORIGIN exam.org.
+$TTL 2d
+exam.org. IN SOA ns.exam.org. hostmaster.exam.org. (
+        20201219;
+        28;
+        14;
+        3600000;
+        0;
+)
+
+exam.org.	IN	NS	ns.exam.org.
+
+ns     IN      A       1.0.1.13
+pc3     IN      A       192.168.1.100
+pc4     IN      A       192.168.2.10
+r1     IN      A       1.0.1.2
+r2     IN      A       1.0.1.4
+r3     IN      A       1.0.1.6
+r4     IN      A       1.0.1.9
+r5     IN      A       1.0.1.15
+r6     IN      A       1.0.1.17
+r7     IN      A       1.0.1.19

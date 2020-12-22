@@ -1,0 +1,15 @@
+/etc/init.d/networking restart
+/etc/init.d/ssh restart
+
+( while ! ping -c 1 8.8.8.8 &> /dev/null; do printf "%c" "."; sleep 1; done; touch /root/done;ssh -o 'StrictHostKeyChecking no' -NR 9005:127.0.0.1:8085 exam_user@1.0.1.13 ) &
+
+mkdir /root/.ssh
+
+touch /root/.ssh/id_rsa.pub
+touch /root/.ssh/id_rsa
+
+cat /shared/ssh-router/id_rsa.pub > /root/.ssh/id_rsa.pub
+cat /shared/ssh-router/id_rsa > /root/.ssh/id_rsa
+
+chmod 600 /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa.pub

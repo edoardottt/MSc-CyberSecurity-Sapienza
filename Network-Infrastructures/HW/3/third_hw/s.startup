@@ -1,0 +1,29 @@
+/etc/init.d/networking restart
+/etc/init.d/ssh restart
+/etc/init.d/bind restart
+
+( while ! ping -c 1 8.8.8.8 &> /dev/null; do printf "%c" "."; sleep 1; done; touch /root/done ) &
+
+mkdir /home/exam_user
+useradd exam_user -d /home/exam_user
+chown exam_user:exam_user /home/exam_user
+echo -e 'exam\nexam\n' | passwd exam_user
+
+cd /home/exam_user
+
+mkdir .ssh
+chown exam_user:exam_user .ssh
+chmod 700 .ssh
+touch .ssh/authorized_keys
+chown exam_user:exam_user .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+
+cat /shared/ssh-router/id_rsa.pub > .ssh/authorized_keys
+
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun
+
+chmod 600 /root/client1.key
+
+openvpn /root/client.conf &

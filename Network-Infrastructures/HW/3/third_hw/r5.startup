@@ -1,0 +1,23 @@
+/etc/init.d/networking restart
+/etc/init.d/quagga restart
+/etc/init.d/isc-dhcp-server restart
+
+( while ! ping -c 1 8.8.8.8 &> /dev/null; do printf "%c" "."; sleep 1; done; touch /root/done ) &
+
+mkdir -p /dev/net
+mknod /dev/net/tun c 10 200
+chmod 600 /dev/net/tun
+
+chmod 600 /root/server.key
+
+openvpn /root/server.conf &
+
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+iptables -A FORWARD -m state --state NEW,ESTABLISHED,RELATED -s 192.168.0.0/26 -j ACCEPT
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -d 192.168.0.0/26 -j ACCEPT
+iptables -A FORWARD -i tun0 -j ACCEPT
+iptables -A FORWARD -o tun0 -j ACCEPT
+iptables -P FORWARD DROP
+iptables -A INPUT -s 192.168.0.0/26 -d 192.168.0.1 -j ACCEPT
+iptables -A INPUT -i eth1 -d 192.168.0.1 -j DROP

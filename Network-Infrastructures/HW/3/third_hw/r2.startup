@@ -1,0 +1,6 @@
+/etc/init.d/networking restart
+/etc/init.d/quagga restart
+
+( while ! ping -c 1 8.8.8.8 &> /dev/null; do printf "%c" "."; sleep 1; done; touch /root/done ) &
+
+iptables -t nat -A POSTROUTING -o eth3 -j MASQUERADE

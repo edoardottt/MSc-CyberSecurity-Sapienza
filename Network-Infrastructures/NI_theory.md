@@ -2,71 +2,53 @@
 
 - DNS and recursive queries
 
-	DNS is an acronym that stands for Domain Name System.
-	
-	The main scope of DNS is to resolve aliases/domains with IP addresses.
-	
-	When I would like to get some resources from Google.com I don't know where Google.com is located on Internet, the thing I can do is query a DNS to give me the IP address of Google.com.
-	
-	DNS is a hierarchical system, so we have dns servers with different 'levels'.
-	
-	The domain name space consists of a tree data structure. Each node or leaf in the tree has a label and zero or more resource records (RR), which hold information associated with the domain name.
-	
-	The root level (top-level) is the most important (.com, .it, .eu) and it delegates to second-level servers the subdomains (google.com, amazon.com) and so on...
-	There are two types of dsn query: an iterative and recursive one. 
-	
-	In the iterative scenario a client wants to get the IP address of maps.google.com. It has to query the top-level domain .com, this one will answer 'IDK, asks to Google.com'; so it has to perform another request to Google.com asking same question, finally Google.com will gives you the resource record.
-
-	In the second one, the recursive, the client will perform just a single request, the top-level domain server then will ask it to Google.com, it will wait the response, and It will send you the response back. This disgregation of data and processes is called 'delegation'.
-	
+	DNS is an acronym that stands for Domain Name System.  
+	The main scope of DNS is to resolve aliases/domains with IP addresses.  
+	When I would like to get some resources from Google.com I don't know where Google.com is located on Internet, the thing I can do is query a DNS to give me the IP address of Google.com.  
+	DNS is a hierarchical system, so we have dns servers with different 'levels'.  
+	The domain name space consists of a tree data structure. Each node or leaf in the tree has a label and zero or more resource records (RR), which hold information associated with the domain name.  
+	The root level (top-level) is the most important (.com, .it, .eu) and it delegates to second-level servers the subdomains (google.com, amazon.com) and so on...  
+	There are two types of dsn query: an iterative and recursive one.  
+	In the iterative scenario a client wants to get the IP address of maps.google.com. It has to query the top-level domain .com, this one will answer 'IDK, asks to Google.com'; so it has to perform another request to Google.com asking same question, finally Google.com will gives you the resource record.  
+	In the second one, the recursive, the client will perform just a single request, the top-level domain server then will ask it to Google.com, it will wait the response, and It will send you the response back. This disgregation of data and processes is called 'delegation'.  
 	The most common types of records stored in the DNS database are for Start of Authority (SOA), IP addresses (A and AAAA), SMTP mail exchangers (MX), name servers (NS), pointers for reverse DNS lookups (PTR), and domain name aliases (CNAME).
 
 - How public key and private key authentication works in ssh? (Make an example)
 
-	SSH is an acronym standing for Secure SHell. It allows you to connect remotely servers with a shell exchanging data on a secure channel.
-	The ssh server has to run a ssh server (daemon), while we must have a ssh client on our machine.
-	We have two ways to authenticate ourselves to the target server:
-
-	 1. Username/password
-	 2. Private Key
-
-	Regarding the first type, simply the client has to connect itself to the server (`ssh user@target_ip`) and it has to enter the password (sent encrypted of course).
-	Because of botnets / malicious users it's good practice to use the second method.
-
-	With the asymmetric authentication we need to deal first with private and public keys. To authenticate with keys I should have a (matching) pair of key, specifically a public key (cryptographically secure) which I can share with anyone; and a private key that I have to guard.
-	My public key has to be inside the `~/.ssh` folder of the server in the file `authorized_keys`. This file contains a list of public keys, one-per-line, that are authorized to log into this account.
-	If I want to connect then, I just have to execute `ssh user@target_ip` and then ssh will use my private key to authorize myself.
+	SSH is an acronym standing for Secure SHell. It allows you to connect remotely servers with a shell exchanging data on a secure channel.  
+	The ssh server has to run a ssh server (daemon), while we must have a ssh client on our machine.  
+	We have two ways to authenticate ourselves to the target server:  
+	
+	 1. Username/password  
+	 2. Private Key  
+	Regarding the first type, simply the client has to connect itself to the server (`ssh user@target_ip`) and it has to enter the password (sent encrypted of course).  
+	Because of botnets / malicious users it's good practice to use the second method.  
+	With the asymmetric authentication we need to deal first with private and public keys. To authenticate with keys I should have a (matching) pair of key, specifically a public key (cryptographically secure) which I can share with anyone; and a private key that I have to guard.  
+	My public key has to be inside the `~/.ssh` folder of the server in the file `authorized_keys`. This file contains a list of public keys, one-per-line, that are authorized to log into this account.  
+	If I want to connect then, I just have to execute `ssh user@target_ip` and then ssh will use my private key to authorize myself.  
 
 - Which are the fields of an IP Routing Table and how these are used to route a packet toward a destination (make an example).
 
-	Example routing table contents:
+	Example routing table contents:  
 	
 	| Network destination | Netmask | Gateway     | Interface     | Metric |
 	|---------------------|---------|-------------|---------------|--------|
 	| 0.0.0.0             | 0.0.0.0 | 192.168.0.1 | 192.168.0.100 | 10     |
 
-	The columns Network destination and Netmask together describe the Network identifier as mentioned earlier. 
-	
-	For example, destination 192.168.0.0 and netmask 255.255.255.0 can be written as 192.168.0.0/24.
-	
-	The Gateway column contains the same information as the Next hop, i.e. it points to the gateway through which the network can be reached.
-	
-	The Interface indicates what locally available interface is responsible for reaching the gateway. In this example, gateway 192.168.0.1 (the internet router) can be reached through the local network card with address 192.168.0.100.
-	
-	Finally, the Metric indicates the associated cost of using the indicated route. 
-	
-	This is useful for determining the efficiency of a certain route from two points in a network. 
-	
-	In this example, it is more efficient to communicate with the computer itself through the use of address 127.0.0.1 (called “localhost”) than it would be through 192.168.0.100 (the IP address of the local network card). 
+	The columns Network destination and Netmask together describe the Network identifier as mentioned earlier.  
+	For example, destination 192.168.0.0 and netmask 255.255.255.0 can be written as 192.168.0.0/24.  
+	The Gateway column contains the same information as the Next hop, i.e. it points to the gateway through which the network can be reached.  
+	The Interface indicates what locally available interface is responsible for reaching the gateway. In this example, gateway 192.168.0.1 (the internet router) can be reached through the local network card with address 192.168.0.100.  
+	Finally, the Metric indicates the associated cost of using the indicated route.  
+	This is useful for determining the efficiency of a certain route from two points in a network.  
+	In this example, it is more efficient to communicate with the computer itself through the use of address 127.0.0.1 (called “localhost”) than it would be through 192.168.0.100 (the IP address of the local network card).  
 
 								(WikiPedia)
 
 - Key features of LTE and LTE-A
 
-	LTE has a number of features that enable the operation of the instant conditions of radio channel with a very high efficient. The result is a significant increase in system capacity by optimizing the required power.
-	
-	In return the simulation of such systems gets more difficult. It requires a different approach to that used in other mobile systems to address the planning of such networks.
-
+	LTE has a number of features that enable the operation of the instant conditions of radio channel with a very high efficient. The result is a significant increase in system capacity by optimizing the required power.  
+	In return the simulation of such systems gets more difficult. It requires a different approach to that used in other mobile systems to address the planning of such networks.  
 	The main characteristics of LTE are:
 
 	- Using of OFDMA (Orthogonal Frequency Division Multiplexing Access) in the downlink. This technology allows multiple access by dividing channel into a set of orthogonal subcarriers that are distributed into groups depending on the needs of each user.
@@ -75,7 +57,8 @@
 	- The use of multiple antennas.
 	- MIMO trasmission
 
-	Ideally, any bandwidth can be used within this band (in steps of 180 kHz, corresponding to the bandwidth of a PRB). LTE defines possible nominal bandwidths of 1.4 MHz, 3 MHz, 5 MHz, 10 MHz, 15 MHz and 20 MHz.
+	Ideally, any bandwidth can be used within this band (in steps of 180 kHz, corresponding to the bandwidth of a PRB).  
+	LTE defines possible nominal bandwidths of 1.4 MHz, 3 MHz, 5 MHz, 10 MHz, 15 MHz and 20 MHz.  
 	LTE is also capable of operating in both bands paired (FDD) and unpaired (TDD).
 
 	The main characteristics of LTE-A are:

@@ -8,7 +8,7 @@ Notes, examples, tests, homework solutions, code...
 - Network Infrastructures
 - Distributed Systems
 - Statistics
-- Computer Systems and Programming
+- Computer Systems and Programming (partially)
 
 
 #### [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)

@@ -79,7 +79,8 @@ We have three differents types of architectures:
 	
 - multiple fiber cables from Central Office to single users (uncomfortable but high speed).  
 - single cable from C.O to the curb and then multiple cables from curb to single users.  
-- single cable splitted with POS to every single user (cheaper, but we have loss of privacy).  
+- single cable splitted with POS to every single user (cheaper, but we have loss of privacy).
+
 Talking about downstream and upstream:
 		
 - Downstream:  

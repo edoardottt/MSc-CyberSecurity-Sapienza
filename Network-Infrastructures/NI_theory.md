@@ -1,5 +1,7 @@
 # Network Infrastructures Q&A
 
+(9/23 completed)
+
 ### DNS and recursive queries
 
 DNS is an acronym that stands for Domain Name System.  

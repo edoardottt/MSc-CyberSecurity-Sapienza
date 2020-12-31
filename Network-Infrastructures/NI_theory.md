@@ -101,7 +101,7 @@ Talking about downstream and upstream:
 Fiber in the loop: Various proposed solutions; they are the results from the trade-off between production cost given to copper substitution (fiber installation) and economic income given to the increment of performance.  
 The name of the solutions is determined by the **EOI**'s location (Electro-Optical Interface).
 
-![fttx]()
+![fttx](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/fttx.png)
 
 #### Differences between direct and indirect routing in mobile IP
 

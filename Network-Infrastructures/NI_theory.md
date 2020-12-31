@@ -52,13 +52,16 @@ In this example, it is more efficient to communicate with the computer itself th
 
 LTE has a number of features that enable the operation of the instant conditions of radio channel with a very high efficient. The result is a significant increase in system capacity by optimizing the required power.  
 In return the simulation of such systems gets more difficult. It requires a different approach to that used in other mobile systems to address the planning of such networks.  
+
 The main characteristics of LTE are:
 
-- Using of OFDMA (Orthogonal Frequency Division Multiplexing Access) in the downlink. This technology allows multiple access by dividing channel into a set of orthogonal subcarriers that are distributed into groups depending on the needs of each user.
-- Using of SC-FDMA (Single-Carrier OFDMA) in the uplink. A disadvantage of OFDMA is the existence of significant variations of power in output signals. It is therefore necessary to use especially linear amplifiers, which have a low efficiency. Since the power consumption is especially important for the uplink, SC-FDMA is used, as a more efficient alternative in terms of power that preserves most of the OFDMA advantages.
-- Spectrum flexibility. One of the key features of LTE. The existence of different regulatory frameworks depending on the geographical area of ​​deployment, together with the co-existence with other operators or other services and systems, make it necessary the flexibility in the bandwidth used within the band of deployment.
-	- The use of multiple antennas.
-	- MIMO trasmission
+- Adaptive Modulation & Coding (AMC)
+- Hybrid ARQ (HARQ)
+- Spectrum flexibility. The existence of different regulatory frameworks depending on the geographical area of deployment, together with the co-existence with other operators or other services and systems, make it necessary the flexibility in the bandwidth used within the band of deployment.
+
+	- Using of OFDMA (Orthogonal Frequency Division Multiplexing Access) in the downlink. This technology allows multiple access by dividing channel into a set of orthogonal subcarriers that are distributed into groups depending on the needs of each user.
+	- Using of SC-FDMA (Single-Carrier OFDMA) in the uplink. A disadvantage of OFDMA is the existence of significant variations of power in output signals. It is therefore necessary to use especially linear amplifiers, which have a low efficiency. Since the power consumption is especially important for the uplink, SC-FDMA is used, as a more efficient alternative in terms of power that preserves most of the OFDMA advantages.  
+- MIMO trasmission
 
 Ideally, any bandwidth can be used within this band (in steps of 180 kHz, corresponding to the bandwidth of a PRB).  
 LTE defines possible nominal bandwidths of 1.4 MHz, 3 MHz, 5 MHz, 10 MHz, 15 MHz and 20 MHz.  
@@ -68,7 +71,10 @@ The main characteristics of LTE-A are:
 
 - Carrier aggregation
 - Enhanced MIMO for LTE-A
-- ?
+- Coordinated MIMO & CoMP
+- Relays
+- Machine to Machine (M2M) Communication
+- Heterogenous Network
 
 ### Traffic engineering in PON for downstream and upstream
 		

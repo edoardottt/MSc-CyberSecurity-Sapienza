@@ -107,12 +107,14 @@ The name of the solutions is determined by the **EOI**'s location (Electro-Optic
 
 - Indirected routing: 
 	The communication from the corrispondent to the mobile device goes through the home agent e then  forwarded to the visited network where the device is.
+	
+![](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/ind-routing.png)
 
 - Direct routing: 
 	The correspondent obtains the care-of-address of the mobile device, e
 	directly establishes communication with it.
 	
-# TO BE FINISHED
+![](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/dir-routing.png)
 
 #### Describe how it works and give an example of use of the Local Port Forwarding.
 

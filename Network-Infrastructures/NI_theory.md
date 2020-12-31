@@ -67,18 +67,55 @@
 	- Enhanced MIMO for LTE-A
 	- ?
 
-
 - Traffic engineering in PON for downstream and upstream
-- MIMO in LTE e 5G
+
+	The PON technology uses **P**assive **O**ptical **S**plitters to split the data flowing through the fiber and these elements propagate data to different branches.  
+	![POS]()  
+	These devices can split the light to different endpoints. The *passive* here means the fact that they are not actively doing something, but just *copying* the data.  
+	Combining pos we can achieve a kind of multiplexer.  
+	Every time the signal pass through a pos it reduces its power of 3dB, but this is not important given the fact we are using the fiber; anyway the loss can't be huge because we want to cover big distances.  
+	We have three differents types of architectures:
+	
+	- multiple fiber cables from Central Office to single users (uncomfortable but high speed).  
+	- single cable from C.O to the curb and then multiple cables from curb to single users.  
+	- single cable splitted with POS to every single user (cheaper, but we have loss of privacy).  
+	Talking about downstream and upstream:
+		
+	- Downstream:  
+		Network configuration point to  multipoint, we don't have problems in downstream because **O**ptical **L**ine **T**erminal manages all the traffic. The signal is propagated to all the end users (Privacy problem)
+	- Upstream:  
+		In the upstream all the **O**ptical **N**etwork **U**sers use different cables until when they reach the POS, when all the users use the same cable.
+		The *topology* is important, if I use a **Ring** Network topology I can use CSMA/CD.  
+		In a general topology I can use **T**ime **D**ivision **M**ultiple **A**ccess.  
+		In this case the OLT perform a synchronization of end-devices and it can manage all the timeslots for them.  
+		Another problem is the different distances between users and POS.
+		![Attenuation]()
+		The solution is **Automatic gain control**, so OLT *probes* the users and record the Attenuation level.  
+		Then the user just send the data with the signal strength suggested by OLT. 
+
 - Discuss different architectures of FTTX and discuss the differences
+
+	
+
+- Differences between direct and indirect routing in mobile IP
+
+
+
+- Describe how it works and give an example of use of the Local Port Forwarding.
+
+
+
+- Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
+
+
+
+
+- MIMO in LTE e 5G
 - PON architecture and how they work
 - Netfilter and how is it used in firewall
 - VDSL vectoring
 - Difference between IP static routing and dynamic routing
-- Differences between direct and indirect routing in mobile IP
 - In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
 - How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
 - Describe the possible noise effects in a digital signal and how they are combatted
-- Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 - Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
-- Describe how it works and give an example of use of the Local Port Forwarding.

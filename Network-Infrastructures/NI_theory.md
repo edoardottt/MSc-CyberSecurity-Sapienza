@@ -116,11 +116,12 @@ The name of the solutions is determined by the **EOI**'s location (Electro-Optic
 
 #### Describe how it works and give an example of use of the Local Port Forwarding.
 
-In computer networking, port forwarding or port mapping is an application of network address translation (NAT) that redirects a communication request from one address and port number combination to another while the packets are traversing a network gateway, such as a router or firewall. This technique is most commonly used to make services on a host residing on a protected or masqueraded (internal) network available to hosts on the opposite side of the gateway (external network), by remapping the destination IP address and port number of the communication to an internal host.
+In computer networking, port forwarding or port mapping is an application of network address translation (NAT) that redirects a communication request from one address and port number combination to another while the packets are traversing a network gateway, such as a router or firewall.  
+This technique is most commonly used to make services on a host residing on a protected or masqueraded (internal) network available to hosts on the opposite side of the gateway (external network), by remapping the destination IP address and port number of the communication to an internal host.
 
 									(Wikipedia)
 
-Command: `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`
+Command: `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`  
 Example: `ssh -L 80:intra.example.com:80 gw.example.com`
 
 #### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.

@@ -53,7 +53,7 @@ In this example, it is more efficient to communicate with the computer itself th
 LTE has a number of features that enable the operation of the instant conditions of radio channel with a very high efficient. The result is a significant increase in system capacity by optimizing the required power.  
 In return the simulation of such systems gets more difficult. It requires a different approach to that used in other mobile systems to address the planning of such networks.  
 
-The main characteristics of LTE are:
+The **Key Features of LTE** are:
 
 - Adaptive Modulation & Coding (AMC)
 - Hybrid ARQ (HARQ)
@@ -67,7 +67,7 @@ Ideally, any bandwidth can be used within this band (in steps of 180 kHz, corres
 LTE defines possible nominal bandwidths of 1.4 MHz, 3 MHz, 5 MHz, 10 MHz, 15 MHz and 20 MHz.  
 LTE is also capable of operating in both bands paired (FDD) and unpaired (TDD).
 
-The main characteristics of LTE-A are:
+The **Key Features of LTE-A** are:
 
 - Carrier aggregation
 - Enhanced MIMO for LTE-A

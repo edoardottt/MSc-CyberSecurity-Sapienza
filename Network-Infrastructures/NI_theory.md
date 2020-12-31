@@ -44,9 +44,7 @@ The Gateway column contains the same information as the Next hop, i.e. it points
 The Interface indicates what locally available interface is responsible for reaching the gateway. In this example, gateway 192.168.0.1 (the internet router) can be reached through the local network card with address 192.168.0.100.  
 Finally, the Metric indicates the associated cost of using the indicated route.  
 This is useful for determining the efficiency of a certain route from two points in a network.  
-In this example, it is more efficient to communicate with the computer itself through the use of address 127.0.0.1 (called “localhost”) than it would be through 192.168.0.100 (the IP address of the local network card).  
-
-								(WikiPedia)
+In this example, it is more efficient to communicate with the computer itself through the use of address 127.0.0.1 (called “localhost”) than it would be through 192.168.0.100 (the IP address of the local network card). (WikiPedia)
 
 ### Key features of LTE and LTE-A
 
@@ -114,9 +112,7 @@ The name of the solutions is determined by the **EOI**'s location (Electro-Optic
 ### Describe how it works and give an example of use of the Local Port Forwarding.
 
 In computer networking, port forwarding or port mapping is an application of network address translation (NAT) that redirects a communication request from one address and port number combination to another while the packets are traversing a network gateway, such as a router or firewall.  
-This technique is most commonly used to make services on a host residing on a protected or masqueraded (internal) network available to hosts on the opposite side of the gateway (external network), by remapping the destination IP address and port number of the communication to an internal host.
-
-									(Wikipedia)
+This technique is most commonly used to make services on a host residing on a protected or masqueraded (internal) network available to hosts on the opposite side of the gateway (external network), by remapping the destination IP address and port number of the communication to an internal host. (Wikipedia)
 
 Command: `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`  
 Example: `ssh -L 80:intra.example.com:80 gw.example.com`

@@ -70,7 +70,7 @@
 - Traffic engineering in PON for downstream and upstream
 
 	The PON technology uses **P**assive **O**ptical **S**plitters to split the data flowing through the fiber and these elements propagate data to different branches.  
-	![POS]()  
+	![POS](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/pon1.png)  
 	These devices can split the light to different endpoints. The *passive* here means the fact that they are not actively doing something, but just *copying* the data.  
 	Combining pos we can achieve a kind of multiplexer.  
 	Every time the signal pass through a pos it reduces its power of 3dB, but this is not important given the fact we are using the fiber; anyway the loss can't be huge because we want to cover big distances.  
@@ -89,7 +89,7 @@
 		In a general topology I can use **T**ime **D**ivision **M**ultiple **A**ccess.  
 		In this case the OLT perform a synchronization of end-devices and it can manage all the timeslots for them.  
 		Another problem is the different distances between users and POS.
-		![Attenuation]()
+		![Attenuation](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/pon2.png)
 		The solution is **Automatic gain control**, so OLT *probes* the users and record the Attenuation level.  
 		Then the user just send the data with the signal strength suggested by OLT. 
 

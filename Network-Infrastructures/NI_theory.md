@@ -1,6 +1,6 @@
 # Network Infrastructures Q&A
 
-#### DNS and recursive queries
+### DNS and recursive queries
 
 DNS is an acronym that stands for Domain Name System.  
 The main scope of DNS is to resolve aliases/domains with IP addresses.  
@@ -13,7 +13,7 @@ In the iterative scenario a client wants to get the IP address of maps.google.co
 In the second one, the recursive, the client will perform just a single request, the top-level domain server then will ask it to Google.com, it will wait the response, and It will send you the response back. This disgregation of data and processes is called 'delegation'.  
 The most common types of records stored in the DNS database are for Start of Authority (SOA), IP addresses (A and AAAA), SMTP mail exchangers (MX), name servers (NS), pointers for reverse DNS lookups (PTR), and domain name aliases (CNAME).
 
-#### How public key and private key authentication works in ssh? (Make an example)
+### How public key and private key authentication works in ssh? (Make an example)
 
 SSH is an acronym standing for Secure SHell. It allows you to connect remotely servers with a shell exchanging data on a secure channel.  
 The ssh server has to run a ssh server (daemon), while we must have a ssh client on our machine.  
@@ -28,7 +28,7 @@ With the asymmetric authentication we need to deal first with private and public
 My public key has to be inside the `~/.ssh` folder of the server in the file `authorized_keys`. This file contains a list of public keys, one-per-line, that are authorized to log into this account.  
 If I want to connect then, I just have to execute `ssh user@target_ip` and then ssh will use my private key to authorize myself.  
 
-#### Which are the fields of an IP Routing Table and how these are used to route a packet toward a destination (make an example).
+### Which are the fields of an IP Routing Table and how these are used to route a packet toward a destination (make an example).
 
 Example routing table contents:  
 	
@@ -46,7 +46,7 @@ In this example, it is more efficient to communicate with the computer itself th
 
 								(WikiPedia)
 
-#### Key features of LTE and LTE-A
+### Key features of LTE and LTE-A
 
 LTE has a number of features that enable the operation of the instant conditions of radio channel with a very high efficient. The result is a significant increase in system capacity by optimizing the required power.  
 In return the simulation of such systems gets more difficult. It requires a different approach to that used in other mobile systems to address the planning of such networks.  
@@ -68,7 +68,7 @@ The main characteristics of LTE-A are:
 - Enhanced MIMO for LTE-A
 - ?
 
-#### Traffic engineering in PON for downstream and upstream
+### Traffic engineering in PON for downstream and upstream
 		
 - Downstream:  
 	Network configuration point to  multipoint, we don't have problems in downstream because **O**ptical **L**ine **T**erminal manages all the traffic. The signal is propagated to all the end users (Privacy problem)
@@ -83,14 +83,14 @@ The main characteristics of LTE-A are:
 	The solution is **Automatic gain control**, so OLT *probes* the users and record the Attenuation level.  
 	Then the user just send the data with the signal strength suggested by OLT. 
 
-#### Discuss different architectures of FTTX and discuss the differences
+### Discuss different architectures of FTTX and discuss the differences
 
 Fiber in the loop: Various proposed solutions; they are the results from the trade-off between production cost given to copper substitution (fiber installation) and economic income given to the increment of performance.  
 The name of the solutions is determined by the **EOI**'s location (Electro-Optical Interface).
 
 ![fttx](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/fttx.png)
 
-#### Differences between direct and indirect routing in mobile IP
+### Differences between direct and indirect routing in mobile IP
 
 - Indirected routing: 
 	The communication from the corrispondent to the mobile device goes through the home agent e then  forwarded to the visited network where the device is.
@@ -103,7 +103,7 @@ The name of the solutions is determined by the **EOI**'s location (Electro-Optic
 	
 ![](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/dir-routing.png)
 
-#### Describe how it works and give an example of use of the Local Port Forwarding.
+### Describe how it works and give an example of use of the Local Port Forwarding.
 
 In computer networking, port forwarding or port mapping is an application of network address translation (NAT) that redirects a communication request from one address and port number combination to another while the packets are traversing a network gateway, such as a router or firewall.  
 This technique is most commonly used to make services on a host residing on a protected or masqueraded (internal) network available to hosts on the opposite side of the gateway (external network), by remapping the destination IP address and port number of the communication to an internal host.
@@ -113,7 +113,7 @@ This technique is most commonly used to make services on a host residing on a pr
 Command: `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`  
 Example: `ssh -L 80:intra.example.com:80 gw.example.com`
 
-#### PON architecture and how they work
+### PON architecture and how they work
 
 The PON technology uses **P**assive **O**ptical **S**plitters to split the data flowing through the fiber and these elements propagate data to different branches.  
 ![POS](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/pon1.png)  
@@ -126,30 +126,30 @@ We have three differents types of architectures:
 - single cable from C.O to the curb and then multiple cables from curb to single users.  
 - single cable splitted with POS to every single user (cheaper, but we have loss of privacy).
 
-#### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
+### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
-#### Netfilter and how is it used in firewall
+### Netfilter and how is it used in firewall
 
-#### VDSL vectoring
+### VDSL vectoring
 
-#### Difference between IP static routing and dynamic routing
+### Difference between IP static routing and dynamic routing
 
-#### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
+### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
 
-#### How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
+### How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
 
-#### Describe the possible noise effects in a digital signal and how they are combatted
+### Describe the possible noise effects in a digital signal and how they are combatted
 
-#### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
+### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
 
-#### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
+### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
 
-#### Describe how the modulation of the ADSL allows to use, in an efficient way, copper cables.
+### Describe how the modulation of the ADSL allows to use, in an efficient way, copper cables.
 
-#### Describe the functions that are performed in the different functional areas of a network and the main network topologies used in that areas.
+### Describe the functions that are performed in the different functional areas of a network and the main network topologies used in that areas.
 
-#### Provide a description of the fragmentation service in IPv6, explaining the pros and cons of the used approach.
+### Provide a description of the fragmentation service in IPv6, explaining the pros and cons of the used approach.
 
-#### Describe the security services provided by the Encapsulating Security Payload protocol, specifying the differences between the case in which is used in transport or in tunnel mode.
+### Describe the security services provided by the Encapsulating Security Payload protocol, specifying the differences between the case in which is used in transport or in tunnel mode.
 
-#### With reference to the SDN architecture, provide a description of the data-control plane interaction generated by an application that provides the NAT service.
+### With reference to the SDN architecture, provide a description of the data-control plane interaction generated by an application that provides the NAT service.

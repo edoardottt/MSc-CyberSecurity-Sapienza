@@ -69,19 +69,6 @@ The main characteristics of LTE-A are:
 - ?
 
 #### Traffic engineering in PON for downstream and upstream
-
-The PON technology uses **P**assive **O**ptical **S**plitters to split the data flowing through the fiber and these elements propagate data to different branches.  
-![POS](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/pon1.png)  
-These devices can split the light to different endpoints. The *passive* here means the fact that they are not actively doing something, but just *copying* the data.  
-Combining pos we can achieve a kind of multiplexer.  
-Every time the signal pass through a pos it reduces its power of 3dB, but this is not important given the fact we are using the fiber; anyway the loss can't be huge because we want to cover big distances.  
-We have three differents types of architectures:
-	
-- multiple fiber cables from Central Office to single users (uncomfortable but high speed).  
-- single cable from C.O to the curb and then multiple cables from curb to single users.  
-- single cable splitted with POS to every single user (cheaper, but we have loss of privacy).
-
-Talking about downstream and upstream:
 		
 - Downstream:  
 	Network configuration point to  multipoint, we don't have problems in downstream because **O**ptical **L**ine **T**erminal manages all the traffic. The signal is propagated to all the end users (Privacy problem)
@@ -126,9 +113,20 @@ This technique is most commonly used to make services on a host residing on a pr
 Command: `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`  
 Example: `ssh -L 80:intra.example.com:80 gw.example.com`
 
-#### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
-
 #### PON architecture and how they work
+
+The PON technology uses **P**assive **O**ptical **S**plitters to split the data flowing through the fiber and these elements propagate data to different branches.  
+![POS](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/pon1.png)  
+These devices can split the light to different endpoints. The *passive* here means the fact that they are not actively doing something, but just *copying* the data.  
+Combining pos we can achieve a kind of multiplexer.  
+Every time the signal pass through a pos it reduces its power of 3dB, but this is not important given the fact we are using the fiber; anyway the loss can't be huge because we want to cover big distances.  
+We have three differents types of architectures:
+	
+- multiple fiber cables from Central Office to single users (uncomfortable but high speed).  
+- single cable from C.O to the curb and then multiple cables from curb to single users.  
+- single cable splitted with POS to every single user (cheaper, but we have loss of privacy).
+
+#### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
 #### Netfilter and how is it used in firewall
 

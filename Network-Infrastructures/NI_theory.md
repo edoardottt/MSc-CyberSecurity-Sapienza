@@ -139,6 +139,8 @@ Crosstalk cancelling by injecting an “anti-signal” on each crosstalk-impaire
 - Requires calculation of the “anti-signals”
 - Requires a crosstalk estimating mechanism to derive the crosstalk coefficients
 
+![VDSL](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/vdsl.png)
+
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
 ### Netfilter and how is it used in firewall

@@ -130,11 +130,18 @@ We have three differents types of architectures:
 - single cable from C.O to the curb and then multiple cables from curb to single users.  
 - single cable splitted with POS to every single user (cheaper, but we have loss of privacy).
 
+### VDSL vectoring
+
+Crosstalk cancelling by injecting an “anti-signal” on each crosstalk-impaired line  
+
+- Requires full synchronization over the full vectored system
+- All data samples are shared between all the lines
+- Requires calculation of the “anti-signals”
+- Requires a crosstalk estimating mechanism to derive the crosstalk coefficients
+
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
 ### Netfilter and how is it used in firewall
-
-### VDSL vectoring
 
 ### Difference between IP static routing and dynamic routing
 

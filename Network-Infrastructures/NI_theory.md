@@ -1,6 +1,6 @@
 # Network Infrastructures Q&A
 
-(12/23 completed)
+(13/23 completed)
 
 ### DNS and recursive queries
 

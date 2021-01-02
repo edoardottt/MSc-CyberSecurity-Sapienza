@@ -141,6 +141,25 @@ Crosstalk cancelling by injecting an “anti-signal” on each crosstalk-impaire
 
 ![VDSL](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/vdsl.png)
 
+### Describe how the modulation of the ADSL allows to use, in an efficient way, copper cables.
+
+We use a frequency band for the upstream and one for the downstrwam, on those we transmit the digital signal.  
+With ADSL we have two different modulation standards: **CAP**(Carrier-less Amplitude/Phase modulation) and **DMT** (Discrete Multi-Tone).  
+- **CAP**
+It's a version of QAM, where incoming data are modulated with an unique carrier and then they are transmitted on phone line.  
+The *carrier* is the principal frequency where the modulation is applied. The carrier frequency is suppressed before transmission (contains no information and therefore can be reconstructed in the receiver), hence the name “carrier-less” of this scheme of modulation.  
+In this case I don't need to send the principal sinusoid, but it's not a good modulation scheme.
+
+- **DMT**
+Instead of using the whole frequency spectrum with only one signal, we divide the band in little pieces.  
+Various channels are created, everyone with 4Khz -> whole band of ~ 1.1 Mhz.  
+Discrete carriers are used on every sub-band.  
+Then these sub-bands are used to independently transmit data in every sub-channels.  
+This allows us to use efficiently sub-bands with high SNR, while we don't use too much unlucky (low SNR, attenuation) sub-bands.  
+With this scheme we can have 1.5 Mbps on upstream and 15 Mbps on downstream.
+
+### How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
+
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
 ### Netfilter and how is it used in firewall
@@ -149,15 +168,11 @@ Crosstalk cancelling by injecting an “anti-signal” on each crosstalk-impaire
 
 ### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
 
-### How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
-
 ### Describe the possible noise effects in a digital signal and how they are combatted
 
 ### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
 
 ### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
-
-### Describe how the modulation of the ADSL allows to use, in an efficient way, copper cables.
 
 ### Describe the functions that are performed in the different functional areas of a network and the main network topologies used in that areas.
 

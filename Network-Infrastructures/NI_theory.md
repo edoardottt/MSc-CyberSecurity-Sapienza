@@ -167,9 +167,11 @@ With this scheme we can have 1.5 Mbps on upstream and 15 Mbps on downstream.
 ### Difference between IP static routing and dynamic routing
 
 - **Static Routing**
+
 Static routing is a form of routing that occurs when a router uses a manually-configured routing entry, rather than information from dynamic routing traffic. In many cases, static routes are manually configured by a network administrator by adding in entries into a routing table, though this may not always be the case. Unlike dynamic routing, static routes are fixed and do not change if the network is changed or reconfigured. Static routing and dynamic routing are not mutually exclusive. Both dynamic routing and static routing are usually used on a router to maximise routing efficiency and to provide backups in the event that dynamic routing information fails to be exchanged. (Wikipedia)
 
 - **Dynamic Routing**
+
 Dynamic routing, also called adaptive routing, is a process where a router can forward data via a different route or given destination based on the current conditions of the communication circuits within a system.  
 The term is most commonly associated with data networking to describe the capability of a network to 'route around' damage, such as loss of a node or a connection between nodes, so long as other path choices are available.  
 Dynamic routing allows as many routes as possible to remain valid in response to the change.  

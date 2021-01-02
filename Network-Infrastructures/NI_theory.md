@@ -158,6 +158,8 @@ Then these sub-bands are used to independently transmit data in every sub-channe
 This allows us to use efficiently sub-bands with high SNR, while we don't use too much unlucky (low SNR, attenuation) sub-bands.  
 With this scheme we can have 1.5 Mbps on upstream and 15 Mbps on downstream.
 
+![DMT](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/dmt.png)
+
 ### How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.

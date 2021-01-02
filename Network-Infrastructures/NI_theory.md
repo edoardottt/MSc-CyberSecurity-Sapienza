@@ -162,7 +162,21 @@ With this scheme we can have 1.5 Mbps on upstream and 15 Mbps on downstream.
 
 ### How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
 
+ADSL standard supports 8 Mbps in downstream with a typical distance from C.O. of 2 Km.  
+ADSL technology is based on data-over-voice approach, in which the frequencies used for data transmission is above the POTS and/or ISDN basic access channel.  
+The available bandwidth is divided up into upstream and downstream.  
+The region between 4kHz and 40kHz is called the guard band which separates the POTS from ADSL frequencies.  
+There are two methods of creating the separate channels:
 
+- Frequency Division Multiplexing (FDM). FDM assigns one band for upstream and another band for downstream. The two channels are further divided by Time Division Multiplexing (TDM).
+
+- Echo Cancellation. The upstream and downstream channels overlap and are separated by using echo cancellation techniques, Echo cancellation is necessary to minimise the reflection of signals that occurs in the common channel.  
+As we have described above, the downstream is the part of the data transmitted by the C.O. towards the user.  
+If I transmit the downstream in the same band as the upstream, the C.O. it can erase its own transmission.  
+The C.O. it knows the transmission it sends (downstream) and it knows the one it receives (the upstream), and consequently can remove the interference generated between these two streams. This process is called echo cancellation.  
+In practice, to increase the downstream data rate, the C.O. delete the upstream part (it does not send data).
+
+**TO DO**
 
 ### Difference between IP static routing and dynamic routing
 
@@ -180,15 +194,51 @@ Routing Information Protocol (RIP) is a distance-vector routing protocols that p
 Open Shortest Path First (OSPF) uses a link state routing (LSR) algorithm and falls into the group of interior gateway protocols (IGPs).  
 Other commonly used dynamic routing protocols are the RIPv2 and the Border Gateway Protocol (BGP).  
 OSPF detects changes in the topology, such as link failures, and converges on a new loop-free routing structure within seconds.  
-OSPF has become a popular dynamic routing protocol.  
+It implements Dijkstra's algorithm, also known as the shortest path first (SPF) algorithm.  
+OSPF calculate the shortest route to a destination through the network based on an algorithm. The first routing protocol that was widely implemented, the Routing Information Protocol (RIP), calculated the shortest route based on hops, that is the number of routers that an IP packet had to traverse to reach the destination host. RIP successfully implemented dynamic routing, where routing tables change if the network topology changes. But RIP did not adapt its routing according to changing network conditions, such as data-transfer rate. Demand grew for a dynamic routing protocol that could calculate the fastest route to a destination. OSPF was developed so that the shortest path through a network was calculated based on the cost of the route, taking into account bandwidth, delay and load. Therefore, OSPF undertakes route cost calculation on the basis of link-cost parameters, which can be weighted by the administrator. OSPF was quickly adopted because it became known for reliably calculating routes through large and complex local area networks.  
+An OSPF network can be structured, or subdivided, into routing areas to simplify administration and optimize traffic and resource utilization. Areas are identified by 32-bit numbers, expressed either simply in decimal, or often in the same dot-decimal notation used for IPv4 addresses. By convention, area 0 (zero), or 0.0.0.0, represents the core or backbone area of an OSPF network.
+
+### Describe the possible noise effects in a digital signal and how they are combatted
+
+The available bandwidth is divided up into upstream and downstream.  
+There are two methods of creating the separate channels, if we use:  
+- **Echo Cancellation**. The upstream and downstream channels overlap and are separated by using echo cancellation techniques, Echo cancellation is necessary to minimise the reflection of signals that occurs in the common channel.  
+As we have described above, the downstream is the part of the data transmitted by the C.O. towards the user.  
+If I transmit the downstream in the same band as the upstream, the C.O. it can erase its own transmission.  
+The C.O. it knows the transmission it sends (downstream) and it knows the one it receives (the upstream), and consequently can remove the interference generated between these two streams. This process is called echo cancellation.  
+In practice, to increase the downstream data rate, the C.O. delete the upstream part (it does not send data).
+
+Another problem is **Cross-Talk**.  
+The fact that the downstream and upstream are broadcast simultaneously on the same cable and overlapping each other, causes interference.  
+The cables, even if they are different, travel together in the same grouping, called *Binder Group*.  
+The quality of the ADSL transmission therefore also depends on the characteristics of the other cables.  
+Crosstalk = Electromagnetic interference caused by the bundling in a single cable (binder group) of several pairs.  
+In optical communications, this problem does not exist.  
+There are two types of crosstalk noises in ADSL:
+
+- Far-End cross-talk (**FEXT**)
+
+Crosstalk between transmitters and receivers which are both on opposite sides of the cable.  
+The FEXT signal traverses the entire length of the channel.  
+The signal transmitted by one transmitter interferes with the signal transmitted by the other transmitter.  
+If the cable is long, then the interference that is created is low, because the interfering signal arrives attenuated.  
+
+- Near-End cross-talk (**NEXT**)
+
+Crosstalk between transmitters and receivers placed on the same side of the cable.  
+Considering the same part of the cable, the signal arriving at the receiver, since it comes from further away, is weaker than that sent by the transmitter.  
+So there is a strong interference, which reduces the quality of the received data. It is strong because it happens at a short distance.  
+NEXT is a more critical interference than FEXT.  
+For example, we can have this kind of interference in the C.O .. In that case, the C.O. can exploit the echo cancellation technique and cancel the interfering transmission (because it knows it, being generated by itself).  
+However, if the interference happened at the end user level, it would not be possible to cancel it.  
+For this reason, NEXT is one of the reasons for the frequency division for upstream and downstream in ADSL (i.e. the two bands are not overlapped).  
+
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
 ### Netfilter and how is it used in firewall
 
 ### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
-
-### Describe the possible noise effects in a digital signal and how they are combatted
 
 ### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
 

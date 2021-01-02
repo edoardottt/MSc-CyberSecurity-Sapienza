@@ -162,11 +162,27 @@ With this scheme we can have 1.5 Mbps on upstream and 15 Mbps on downstream.
 
 ### How the frequency band is used in the ADSL and how this is reflected in the ADSL architecture.
 
+
+
+### Difference between IP static routing and dynamic routing
+
+- **Static Routing**
+Static routing is a form of routing that occurs when a router uses a manually-configured routing entry, rather than information from dynamic routing traffic. In many cases, static routes are manually configured by a network administrator by adding in entries into a routing table, though this may not always be the case. Unlike dynamic routing, static routes are fixed and do not change if the network is changed or reconfigured. Static routing and dynamic routing are not mutually exclusive. Both dynamic routing and static routing are usually used on a router to maximise routing efficiency and to provide backups in the event that dynamic routing information fails to be exchanged. (Wikipedia)
+
+- **Dynamic Routing**
+Dynamic routing, also called adaptive routing, is a process where a router can forward data via a different route or given destination based on the current conditions of the communication circuits within a system.  
+The term is most commonly associated with data networking to describe the capability of a network to 'route around' damage, such as loss of a node or a connection between nodes, so long as other path choices are available.  
+Dynamic routing allows as many routes as possible to remain valid in response to the change.  
+There are several protocols that can be used for dynamic routing.  
+Routing Information Protocol (RIP) is a distance-vector routing protocols that prevents routing loops by implementing a limit on the number of hops allowed in a path from source to destination.  
+Open Shortest Path First (OSPF) uses a link state routing (LSR) algorithm and falls into the group of interior gateway protocols (IGPs).  
+Other commonly used dynamic routing protocols are the RIPv2 and the Border Gateway Protocol (BGP).  
+OSPF detects changes in the topology, such as link failures, and converges on a new loop-free routing structure within seconds.  
+OSPF has become a popular dynamic routing protocol.  
+
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
 ### Netfilter and how is it used in firewall
-
-### Difference between IP static routing and dynamic routing
 
 ### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
 

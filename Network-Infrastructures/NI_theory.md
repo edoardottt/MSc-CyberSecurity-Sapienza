@@ -233,6 +233,7 @@ There are two types of crosstalk noises in ADSL:
 	However, if the interference happened at the end user level, it would not be possible to cancel it.  
 	For this reason, NEXT is one of the reasons for the frequency division for upstream and downstream in ADSL (i.e. the two bands are not overlapped).  
 
+### Describe the functions that are performed in the different functional areas of a network and the main network topologies used in that areas.
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
@@ -243,8 +244,6 @@ There are two types of crosstalk noises in ADSL:
 ### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
 
 ### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
-
-### Describe the functions that are performed in the different functional areas of a network and the main network topologies used in that areas.
 
 ### Provide a description of the fragmentation service in IPv6, explaining the pros and cons of the used approach.
 

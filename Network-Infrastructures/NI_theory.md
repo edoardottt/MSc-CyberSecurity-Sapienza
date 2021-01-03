@@ -176,7 +176,7 @@ If I transmit the downstream in the same band as the upstream, the C.O. it can e
 The C.O. it knows the transmission it sends (downstream) and it knows the one it receives (the upstream), and consequently can remove the interference generated between these two streams. This process is called echo cancellation.  
 In practice, to increase the downstream data rate, the C.O. delete the upstream part (it does not send data).
 
-**TO DO**
+![ADSL-ARCH](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/adsl-arch.png)
 
 ### Difference between IP static routing and dynamic routing
 

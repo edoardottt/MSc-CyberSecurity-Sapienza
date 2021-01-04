@@ -235,6 +235,33 @@ There are two types of crosstalk noises in ADSL:
 
 ### Describe the functions that are performed in the different functional areas of a network and the main network topologies used in that areas.
 
+We can see three differents Network Functional Areas: *Access Network*, *Edge Network* and *Core Network* (or *Backbone*).
+ 
+In the **Access Network** there are all the users that want to enter the network, so this part connects subscribers to their immediate provider.  
+Some examples are:
+
+- *Fixed Wireless Access*, a network where the communication is done using wireless access, but the devices are fixed.
+- *Copper Based*, The copper is the material that was used in the telephone network and it's still used in the XDSL family, so in this case we use this kind of cables to provide the access network from the peipheral part of the nework and the core.
+- *Fiber Access*, It's the same as copper, but instead of using copper we use fiber. 
+- *Cellular Access*, It's instead mobile by using cellular information to connect the end users to the core.
+
+These four are quite different one in respect to others, for different reasons, the kind of media that they use (copper/wire), the kind of length (short with copper, longer in case of fiber, medium in cellular access and fixed wireless access), the reliability, security, cost, coverage, data rate...  
+
+
+The **Edge Network**, also referred as **Metropolitan Area**, is composed by devices called *Edge devices*, in the particular case of routers *Edge routers*.  
+The role of these devices is becoming important (relatively to access and core) also because we are giving them some capabilities (computing cap.).  
+An example of this is the Quality Of Service (**QOS**). It may happen that in a network, mostly in the bigger ones, there is the interest in having different capacities and different services for different users. So, while the core network is a sort of Highway of our data; where we can differentiate the services and  allow or give priority to different users in order to access the core network while this happens at the edge so in the edge we can perfrom control of the informations that happens that cross the network.  
+This can be easily done by operate at the edge, we can control the traffic that we inject to the network like also the kind of the operation that is done on this traffic. Also called *Edge Computing*, so when we move some networking processes at the edge we can refer at this networking process as E.C.  
+
+What about technologies used in the areas? In the access part we have may different technologies used, while the core part evolved during the time toward the fiber-based. The access part is composed by Copper-based and Fiber-based.  
+Now we want to achieve the full fiber-based network, and this is referred to the Access part because the Core part is already built with fiber.
+
+**Topologies**: 
+
+- The *Backbone* (in general) is mostly composed by using *Rings* (ring has lower cost in respect to a mesh).
+- In the *Access* part we have Central office connected to users using a *Star* topology and then a Central Tandem Office (Y) with a sort of hierarchy until reaching the core part.
+
+
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
 ### Netfilter and how is it used in firewall

@@ -264,13 +264,13 @@ Now we want to achieve the full fiber-based network, and this is referred to the
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
-### Netfilter and how is it used in firewall
+### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
 
 ### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
 
 ### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
 
-### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
+### Netfilter and how is it used in firewall
 
 ### Provide a description of the fragmentation service in IPv6, explaining the pros and cons of the used approach.
 

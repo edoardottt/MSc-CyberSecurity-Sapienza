@@ -261,6 +261,26 @@ Now we want to achieve the full fiber-based network, and this is referred to the
 - The *Backbone* (in general) is mostly composed by using *Rings* (ring has lower cost in respect to a mesh).
 - In the *Access* part we have Central office connected to users using a *Star* topology and then a Central Tandem Office (Y) with a sort of hierarchy until reaching the core part.
 
+### Provide a description of the fragmentation service in IPv6, explaining the pros and cons of the used approach.
+
+IP fragmentation is an Internet Protocol (IP) process that breaks packets into smaller pieces (fragments), so that the resulting pieces can pass through a link with a smaller maximum transmission unit (MTU) than the original packet size. The fragments are reassembled by the receiving host.  
+
+In the IPv4 protocol every intermediate nodes can perform fragmentation when it encounters a smaller MTU.  
+Unlike IPv4, fragmentation in IPv6 is performed only by source nodes, not by routers along a packet's delivery path.  
+
+   - **pros**: less processing, less delay, overhead reduction
+   - **cons**: security threts, need of path MTU discovery procedure
+   
+IPv6 attempts to minimise the use of fragmentation  
+	- minimising teh supported MTU size
+	- allowing only the hosts to fragment datagrams
+
+IPv6 requess that evey link in the Internet have an MTU of 1280 octets or greater.  
+
+![IPV6-FRAGMENT](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/ipv6-fragment-1.png)
+
+**Reassembly**: PL.orig = PL.first - FL.first - 8 + (8 * FO.last) + FL.last
+
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
@@ -271,8 +291,6 @@ Now we want to achieve the full fiber-based network, and this is referred to the
 ### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
 
 ### Netfilter and how is it used in firewall
-
-### Provide a description of the fragmentation service in IPv6, explaining the pros and cons of the used approach.
 
 ### Describe the security services provided by the Encapsulating Security Payload protocol, specifying the differences between the case in which is used in transport or in tunnel mode.
 

@@ -282,6 +282,12 @@ IPv6 requess that evey link in the Internet have an MTU of 1280 octets or greate
 
 **Reassembly**: PL.orig = PL.first - FL.first - 8 + (8 * FO.last) + FL.last
 
+Security Threats:
+
+- If insufficient fragments are received to complete reassembly of a packet within 60 seconds of the reception of the first arriving fragment of that packet: reassembly must be abandoned, all received fragments are discarded.
+- The length of a fragment is not a multiple of 8 octects and the M flag is 1: discard the frame and send an ICMP Parameter problem to the source
+- Fragments of a packet are overlapped: reassembly of that packet must be abandoned, all the received fragments must be discarded, no ICMP error messages should be sent.
+
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 

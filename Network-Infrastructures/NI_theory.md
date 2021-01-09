@@ -273,7 +273,7 @@ Unlike IPv4, fragmentation in IPv6 is performed only by source nodes, not by rou
    
 IPv6 attempts to minimise the use of fragmentation  
 
-   - minimising teh supported MTU size
+   - minimising the supported MTU size
    - allowing only the hosts to fragment datagrams
 
 IPv6 requess that evey link in the Internet have an MTU of 1280 octets or greater.  

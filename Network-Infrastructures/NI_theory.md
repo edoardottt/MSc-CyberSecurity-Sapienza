@@ -1,6 +1,6 @@
 # Network Infrastructures Q&A
 
-(16/23 completed)
+(19/25 completed)
 
 ### DNS and recursive queries
 
@@ -288,6 +288,71 @@ Security Threats:
 - The length of a fragment is not a multiple of 8 octects and the M flag is 1: discard the frame and send an ICMP Parameter problem to the source
 - Fragments of a packet are overlapped: reassembly of that packet must be abandoned, all the received fragments must be discarded, no ICMP error messages should be sent.
 
+### Talk about Security Associations
+
+A security association (SA) is the establishment of shared security attributes between two network entities to support secure communication.  
+An SA may include attributes such as: cryptographic algorithm and mode; traffic encryption key; and parameters for the network data to be passed over the connection.  
+An SA is a simplex (one-way channel) and logical connection which endorses and provides a secure data connection between the network devices.  
+The fundamental requirement of an SA arrives when the two entities communicate over more than one channel.  
+Take, for example, a mobile subscriber and a base station. The subscriber may subscribe itself to more than one service. Therefore, each service may have different service primitives, such as a data encryption algorithm, public key, or initialization vector.  
+A SA is uniquely identified by three parameters:  
+
+- Security Parameters Index (SPI): Enane the receiving system to select the SA for processing the current packet
+- IP Destination Address: Only Unicast are allowed
+- Security Protocol Identifier: AH or ESP
+
+In each IPSec implementation there is a Security Association Database that defines the parameters associated with each SA.  
+IP traffic is related to a specific SAs in the Security Policy Database (SPD).  
+An SPD contains entries, each of which defines a subset of I traffic and points to an SA for that traffic.  
+The SA selectors are used to filter outgoing traffic in order to map it into a particular SA.  
+
+So, in **OUTGOING** traffic, when an IP packet arrives and it's for IPSec we have to select the policy to be used.  
+We look into the SPD that points to certain SA entries in SA Database, then we can process the packet.  
+
+In **INGOING** traffic, when an IP packet arrives and it's for IPSec we have to select instead firstly the right entry fo SA and then look into SPD.
+
+
+### Describe the security services provided by the Encapsulating Security Payload protocol, specifying the differences between the case in which is used in transport or in tunnel mode.
+
+The Encapsulating Security Payload protocol is one of the two main protocols used of IPSec.  
+There are two parts involved, they agree on Encryption Algorithms, keys and other params with a Security Association.  
+We need a S.A. for the outgoing packets and ingoing packets. When we want to use also Authentication Headers we need 4 S.A. in the same time (2 for outogoing communication and two for the ingoing ones).  
+This protocol provides encryption at the third layer, so if you can trust the other part of the communication (see AH) only you and the recipient will read the plaintext content.
+
+The E.S.P. can be used in two ways:  
+
+- Tunnel Mode (Gateway to Gateway, all encrypted) :
+
+In tunnel mode if we have to send a packet from A to B, we have to reach the first Gateway A with the unencrypted data, so plaintext, then the Gateway A will encrypt all the data we send (so Header + Data) and then the Gateway will send it encrypted until it reaches the Gateway B, then it is decrypted in the destination network.  
+In order to have a routable packet we need to append an additional IP header to the old, now encrypted packet.
+
+- Transport Mode (Host to Host, not all encrypted):
+
+In transport mode if we have to send a packet from A to B, we encrypt only the data plus some IPv6 extension headers following the ESP header, then we send it encrypted over the network until it reaches the desination host, then it can be decrypted.
+
+### Describe the security services provided by the Authentication Header protocol, specifying the differences between the case in which is used in transport or in tunnel mode.
+
+
+The Authentication Header protocol is one of the two main protocols used of IPSec.  
+There are two parts involved, they agree on Encryption Algorithms, keys and other params with a Security Association.  
+We need a S.A. for the outgoing packets and ingoing packets. When we want to use also Encapsulating Security Payload we need 4 S.A. in the same time (2 for outogoing communication and two for the ingoing ones).  
+This protocol provides authentication and data integrity at the third layer, so whatever the other part will send to you, you will know:  
+1) The packet is produced by the other part.  
+2) Noone else produced the packet  
+3) Noone modified the packet 
+
+AH prevents address spoofing and replay attacks.
+
+The A.H. can be used in two ways:  
+
+- Tunnel Mode (Gateway to Gateway) :
+
+	In tunnel mode if we have to send a packet from A to B, we have to reach the first Gateway A with the unauthenticated data, then the Gateway A will authenticate all the data we send (so Header + Data) and then the Gateway will send it until it reaches the Gateway B.
+
+- Transport Mode (Host to Host):
+
+	In transport mode if we have to send a packet from A to B, we authenticate only the data plus some IPv6 extension headers following the AH header, then we send it over the network until it reaches the desination host.  
+	The header fields not authenticated can change during the communication. 
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
@@ -298,7 +363,5 @@ Security Threats:
 ### Describe with an example how traceroute can discover the path taken from a packet toward a particular destination.
 
 ### Netfilter and how is it used in firewall
-
-### Describe the security services provided by the Encapsulating Security Payload protocol, specifying the differences between the case in which is used in transport or in tunnel mode.
 
 ### With reference to the SDN architecture, provide a description of the data-control plane interaction generated by an application that provides the NAT service.

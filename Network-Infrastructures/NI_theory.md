@@ -205,7 +205,7 @@ There are two methods of creating the separate channels, if we use:
 - **Echo Cancellation**. The upstream and downstream channels overlap and are separated by using echo cancellation techniques, Echo cancellation is necessary to minimise the reflection of signals that occurs in the common channel.  
 As we have described above, the downstream is the part of the data transmitted by the C.O. towards the user.  
 If I transmit the downstream in the same band as the upstream, the C.O. can erase its own transmission.  
-The C.O. it knows the transmission it sends (downstream) and it knows the one it receives (the upstream), and consequently can remove the interference generated between these two streams. This process is called echo cancellation.  
+The C.O. knows the transmission it sends (downstream) and it knows the one it receives (the upstream), and consequently can remove the interference generated between these two streams. This process is called echo cancellation.  
 In practice, to increase the downstream data rate, the C.O. delete the upstream part (it does not send data).
 
 Another problem is **Cross-Talk**.  

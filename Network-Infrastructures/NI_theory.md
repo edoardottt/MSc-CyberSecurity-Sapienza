@@ -276,7 +276,7 @@ IPv6 attempts to minimise the use of fragmentation
    - minimising the supported MTU size
    - allowing only the hosts to fragment datagrams
 
-IPv6 requess that evey link in the Internet have an MTU of 1280 octets or greater.  
+IPv6 requests that every link in the Internet has an MTU of 1280 octets or greater.  
 
 ![IPV6-FRAGMENT](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/ipv6-fragment-1.png)
 

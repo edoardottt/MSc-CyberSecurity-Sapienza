@@ -18,7 +18,7 @@ The most common types of records stored in the DNS database are for Start of Aut
 ### How public key and private key authentication works in ssh? (Make an example)
 
 SSH is an acronym standing for Secure SHell. It allows you to connect remotely servers with a shell exchanging data on a secure channel.  
-The ssh server has to run a ssh server (daemon), while we must have a ssh client on our machine.  
+The ssh server has to run a ssh server daemon, while we must have a ssh client on our machine.  
 We have two ways to authenticate ourselves to the target server:  
 
  1. Username/password  
@@ -143,7 +143,7 @@ Crosstalk cancelling by injecting an “anti-signal” on each crosstalk-impaire
 
 ### Describe how the modulation of the ADSL allows to use, in an efficient way, copper cables.
 
-We use a frequency band for the upstream and one for the downstrwam, on those we transmit the digital signal.  
+We use a frequency band for the upstream and one for the downstream, on those we transmit the digital signal.  
 With ADSL we have two different modulation standards: **CAP**(Carrier-less Amplitude/Phase modulation) and **DMT** (Discrete Multi-Tone).  
 - **CAP**
 It's a version of QAM, where incoming data are modulated with an unique carrier and then they are transmitted on phone line.  

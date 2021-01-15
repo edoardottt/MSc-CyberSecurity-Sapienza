@@ -269,7 +269,7 @@ In the IPv4 protocol every intermediate nodes can perform fragmentation when it 
 Unlike IPv4, fragmentation in IPv6 is performed only by source nodes, not by routers along a packet's delivery path.  
 
    - **pros**: less processing, less delay, overhead reduction
-   - **cons**: security threts, need of path MTU discovery procedure
+   - **cons**: security threats, need of path MTU discovery procedure (PMTUD)
    
 IPv6 attempts to minimise the use of fragmentation  
 

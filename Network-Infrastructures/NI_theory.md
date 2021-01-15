@@ -241,7 +241,7 @@ In the **Access Network** there are all the users that want to enter the network
 Some examples are:
 
 - *Fixed Wireless Access*, a network where the communication is done using wireless access, but the devices are fixed.
-- *Copper Based*, The copper is the material that was used in the telephone network and it's still used in the XDSL family, so in this case we use this kind of cables to provide the access network from the peipheral part of the nework and the core.
+- *Copper Based*, The copper is the material that was used in the telephone network and it's still used in the XDSL family, so in this case we use this kind of cables to provide the access network from the peripheral part of the nework and the core.
 - *Fiber Access*, It's the same as copper, but instead of using copper we use fiber. 
 - *Cellular Access*, It's instead mobile by using cellular information to connect the end users to the core.
 

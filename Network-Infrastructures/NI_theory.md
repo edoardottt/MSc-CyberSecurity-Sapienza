@@ -367,6 +367,18 @@ In general both are used at the same time.
 
 ### Which are the key differences of the old use of the copper wire to provide data (analog voice band modem) and the digital one.
 
+In the analog form 4 KHz was enough to transfer the voice. There was only a band from 0 KHz to 4 KHz, transferring the voice.  
+
+![PRE-DSL](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/pre-dsl.png)
+
+After that a first tentative to insert also the digital signal was to add a modem (modulator-demodulator) between the computer and the copper cable.
+
+![1st-tentative](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/1st-tentative.png)
+
+Then with the advent of ADSL we tried to move the digital terminal part from the center of the network near to the user.
+
+![ADSL-ARCH](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/adsl-arch.png)
+
 ### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
 
 ### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.

@@ -1,6 +1,6 @@
 # Network Infrastructures Q&A
 
-(20/25 completed)
+(22/25 completed)
 
 ### DNS and recursive queries
 
@@ -380,6 +380,17 @@ Then with the advent of ADSL we tried to move the digital terminal part from the
 ![ADSL-ARCH](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/images/adsl-arch.png)
 
 ### What is MIMO and how it is used in the LTE and future generations cellular systems (5G)
+
+MIMO means Multiple Input Multiple Output. Basically it's about adding antennas on the receiver and te sender.  
+Instead of having one antenna on both the two parts we can have multiple antennas.  
+This helps the communication in two ways:
+
+- I can decide to perform **Spatial Multiplexing**, so differencing the data I send on antennas. If I have n antennas for sending data I can split the data into n parts and send these different parts of data with different antennas.  
+In this way I'm reducing the time needed to send the entire data by n. 
+
+- Or, I can send the same data on all the antennas. In this way I have replicas (the so called *multipath propagation*) but I can leverage this thing combining and comparing the replicas to combat this interference.
+
+The MIMO is then enhanced with the use of beamforming, Massive MIMO.
 
 ### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
 

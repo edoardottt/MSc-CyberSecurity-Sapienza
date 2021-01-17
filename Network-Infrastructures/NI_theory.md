@@ -1,6 +1,6 @@
 # Network Infrastructures Q&A
 
-(22/25 completed)
+(23/26 completed)
 
 ### DNS and recursive queries
 
@@ -391,6 +391,29 @@ In this way I'm reducing the time needed to send the entire data by n.
 - Or, I can send the same data on all the antennas. In this way I have replicas (the so called *multipath propagation*) but I can leverage this thing combining and comparing the replicas to combat this interference.
 
 The MIMO is then enhanced with the use of beamforming, Massive MIMO.
+
+### Which are the methods to combine Security Associations?
+
+1) **ESP with Authentication Header**  
+
+This can be used with:
+	
+   - *Transport mode ESP*: Authentication and encryption apply to the IP payload delivered to the host, but the IP header is not protected.
+   
+   - *Tunnel Mode ESP*: Authentication applies to the entire IP packet delivered to the outer IP destination address, and authentication is performed at that destination 
+
+2) **Transport Adjacency**
+
+Use two bundled transport SAs, with the inner being an ESP SA and the outer being an AH SA.  
+In this case ESP is used without its authentication option.  
+Advantage (w.r.t precedent) is that AH covers more fields, including the source and the destination IP addresses.  
+Disadvantage is the overhead.  
+
+3) **Transport-Tunnel Bundle**
+
+Use bundle consisting of an inner AH transport SA and an outer ESP tunnel SA.  
+Use of authentication prior to encryption might be preferable preferable for several reasons.  
+Because the authentication data are protected by encryption, it is impossible for anyone to intercept the message and alter the authentication data without detection.  
 
 ### In the computation of the capacity that a channel can provide both the effects of the bandwidth and of the SNR are present. Discuss how there have an impact and how they can be managed to improve the channel capacity.
 

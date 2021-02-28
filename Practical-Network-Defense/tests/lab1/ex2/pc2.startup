@@ -1,0 +1,5 @@
+ip addr flush eth0
+umount /etc/resolv.conf
+
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+dhclient eth0

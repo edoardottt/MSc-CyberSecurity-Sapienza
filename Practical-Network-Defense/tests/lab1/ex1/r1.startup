@@ -1,0 +1,6 @@
+ip addr replace 192.168.100.30/29 dev eth0
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+echo "nameserver 151.100.4.2" > /etc/resolv.conf
+echo "nameserver 151.100.4.13" >> /etc/resolv.conf
+

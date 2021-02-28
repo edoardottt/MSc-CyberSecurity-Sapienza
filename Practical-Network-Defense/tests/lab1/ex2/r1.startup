@@ -1,0 +1,9 @@
+ip addr replace 192.168.100.30/28 dev eth0
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+dpkg -i /var/cache/apt/archives/*.deb
+apt install -f udhcpd
+
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+udhcpd /etc/udhcpd.conf

@@ -1,0 +1,3 @@
+ip addr flush eth0
+
+ifup eth0

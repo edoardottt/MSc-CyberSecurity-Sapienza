@@ -2,7 +2,7 @@
 
 Master of Science in Cybersecurity, Sapienza University of Rome.
 
-Notes, examples, tests, homework solutions, code...
+My personal notes, examples, tests, homework solutions, code...
 
 - Cryptography
 - Network Infrastructures

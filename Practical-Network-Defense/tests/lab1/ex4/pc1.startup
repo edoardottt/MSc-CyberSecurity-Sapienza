@@ -1,0 +1,6 @@
+ifconfig eth0 10.0.0.1 netmask 255.255.255.0 up
+echo nameserver 8.8.8.8 > /etc/resolv.conf
+apt update
+apt install -y php  libapache2-mod-php
+/etc/init.d/apache2 start
+

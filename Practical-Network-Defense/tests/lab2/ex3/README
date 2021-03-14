@@ -1,0 +1,21 @@
+One router with one lan with 2 pcs. The assignment is: to
+configure the topology to use staic IPv6 addresses.
+ 
+You have to use SLAAC+DHCPv6 to provide GUA addresses to the 
+machines in the lan. It is a stateless dynamic addressing.
+You have to properly set up radvd and dibbler-server in r1
+and to properly set up the pc configurations.
+
+- lan must have the subnet 2001:DB8:FEDE:1::/64
+ 
+- pc1 and pc2 must obtain the address via SLAAC and the DNS+domain
+  info via stateless DHCPv6
+
+- pc1 has to use dibbler-client
+
+- pc2 has to use dhclient 
+
+- the router has always 1 in the host part of its own address 
+  even in its local-link address.
+
+- the DHCPv6 must provide the DNS server 2001:DB8:FEDE:1::BABE

@@ -1,0 +1,23 @@
+One router with two lans with two pcs. The assignment is: to configure the
+topology to use SLAAC IPv6 addresses. The router is already configured to
+advertise prefixes in both the lans.
+
+You should check the sysctl ipv6 settings. Sysctl write can only be done
+in the lab.conf OR in a priviledged container.
+
+- All the pcs of the topology must have GUA addresses.
+
+- pc1, pc2 and pc3 have to use standard address.
+
+- pc1 has to use the default configuration for the Interface ID
+
+- pc2 has to use a Random Interface ID
+
+- pc3 has to use EUI-64
+
+- pc4 has to use the privacy extension in order to make it use
+  temporary addresses. Set up a short lifetime in order to see multiple 
+  addresses. 
+
+- router r1 is already set up. You only have to turn on the radvd server
+  to capture the router advertisement packets. See the r1.startup file.

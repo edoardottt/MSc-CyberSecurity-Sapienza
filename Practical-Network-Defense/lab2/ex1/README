@@ -1,0 +1,13 @@
+One router with two lan, both with 2 pcs. The assignment is: to
+configure the topology to use static IPv6 addresses. 
+
+You have to provide static GUA addresses to the machines in the topology.
+
+- lan1 and lan2 must have the subnet 2001:DB8:CAFE:1::/64 and
+  2001:DB8:CAFE:2::/64 respectively
+
+- pc1, pc2, pc3 and pc4 must have in the Interface ID: 101, 102, 103 and
+  104 respectively.
+
+- the router r1 has always 1 in the Interface ID of its own address,
+  both link-local and GUA

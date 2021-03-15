@@ -1,0 +1,10 @@
+dpkg -i /var/cache/apt/archives/*deb
+
+echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+apt install -y dibbler-server radvd
+ip addr flush dev eth0
+ip addr add fe80::1/64 dev eth0
+ip addr add 2001:db8:fede:1::1/64 dev eth0
+
+radvd -m logfile -l /var/log/radvd.log
+

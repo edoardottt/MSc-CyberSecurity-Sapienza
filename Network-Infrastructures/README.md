@@ -7,3 +7,4 @@
 #### Useful Resources
 
 - https://github.com/KatharaFramework/Kathara/wiki
+- [Theory Questions and Answers](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/NI_theory.md)

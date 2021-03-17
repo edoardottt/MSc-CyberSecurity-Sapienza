@@ -8,3 +8,4 @@
 
 - https://github.com/KatharaFramework/Kathara/wiki
 - [Theory Questions and Answers](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/NI_theory.md)
+- [Completed Homeworks](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/tree/main/Network-Infrastructures/HW) (22/22 points)

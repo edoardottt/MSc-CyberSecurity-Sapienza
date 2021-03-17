@@ -4,3 +4,7 @@
 - Website ([https://web.uniroma1.it/netlab/](https://web.uniroma1.it/netlab/laboratory-network-design-and-configuration-ex-laboratorio-applicazioni-telematiche))
 
 The main tool used during the course is [Packet Tracer](https://www.netacad.com/courses/packet-tracer) by Cisco.
+
+#### Useful Resources
+
+- [PacketTracer Tutorial](https://www.youtube.com/watch?v=VqMeJ-WH4E0)

@@ -8,3 +8,4 @@ The main tool used during the course is [Packet Tracer](https://www.netacad.com/
 #### Useful Resources
 
 - [PacketTracer Tutorial](https://www.youtube.com/watch?v=VqMeJ-WH4E0)
+- [My exercises](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/tree/main/Laboratory-of-Network-Design-and-Configuration/exercises)

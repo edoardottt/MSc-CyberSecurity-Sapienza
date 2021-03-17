@@ -13,4 +13,4 @@
 - Internet of Things
 - Computer Systems and Programming (partially)
 
-#### [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)
+#### More info about the course here [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)

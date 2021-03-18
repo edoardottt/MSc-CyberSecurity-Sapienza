@@ -4,6 +4,7 @@
 - [Basic Router Configuration](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#basic-router-configuration)
 - [RIPv1](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#ripv1)
 - [RIPv2](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#ripv2)
+- [OSPF](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#ospf)
 - [DHCP](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#dhcp)
 - [NAT](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#nat)
 
@@ -65,19 +66,44 @@
 
 ### RIPv1
 
-
+- Enable RIP: `router rip`
+- Define the interfaces running: `network ADDRESS`
+- Show info about protocols running`show ip protocols`
+- Avoid sending RIP messages through a specific interface (and so into a network): `Passive-Interface Fa0/0`
 
 ### RIPv2
 
+- Enable RIPv2: `router rip`, `version 2`
+- Deactivate network auo-summarization: `no auto-summary`
+- Set a router as border router: `default-information originate`
+- Distribute static routes: `default-information originate`
 
+### OSPF
+
+- Enable OSPF: `router ospf ID` (use `1` as ID)
+- Interfaces on which enable OSPF: `network NETWORK_ADDRESS WILDCARD_MASK area AREA_NUMBER`
+- Change OSPF link cost:
+        - `interface Serial 0/0`
+        - `ip ospf cost COST`
 
 ### DHCP
 
-
+- Start DHCP configuration: `ip dhcp pool POOL_NAME`
+- Definition of the address pool to be assigned dinamically: `network NETWORK_ADDRESS NETMASK`
+- Exclude addresses to be dinamically assigned: `ip dhcp excluded-address IPADDRESS(ES)`
+- Configure default router: `default-router IP_ADDRESS`
+- Configure DNS server: `dns-server IP_ADDRESS`
 
 ### NAT
 
-
+- Set inside NAT: `ip nat inside`
+- Set outside NAT: `ip nat outside`
+- Static NAT configuration (used for servers): `ip nat inside source static PRIVATE_ADDRESS PUBLIC_ADDRESS`
+- Dynamic NAT configuration: pool of IP addresses
+        - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
+        - Pool of public IP addresses: `ip nat pool POOL_NAME START_IP_ADDRESS END_IP_ADDRESS NETMASK NETMASK`
+        - Translation rule: `ip nat inside source list ACL_NUMBER pool POOL_NAME`
+- Dynamic NAT configuration: overload: `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
 
 ### Useful tips
 

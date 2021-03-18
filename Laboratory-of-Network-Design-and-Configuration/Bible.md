@@ -89,8 +89,8 @@
 - Interfaces on which enable OSPF: `network NETWORK_ADDRESS WILDCARD_MASK area AREA_NUMBER`
 - Change OSPF link cost:
 
-        - `interface Serial 0/0`
-        - `ip ospf cost COST`
+    - `interface Serial 0/0`
+    - `ip ospf cost COST`
 
 ### DHCP
 

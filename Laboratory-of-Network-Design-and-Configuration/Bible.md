@@ -39,7 +39,7 @@
 - Show list of commands used in the past: `show history`
 - Show info about flash memory and available IOS image files: `show flash`
 - Show hardware level features of the router and running IOS: `show version`
-- Show ARP table of the router: `show ARP
+- Show ARP table of the router: `show ARP`
 - Show Layer 3 protocols configured at router level and at interface level: `show protocol`
 - Show startup configuration file (saved into the NVRAM): `show startup-configuration`
 - Show running configuration file (saved into the RAM): `show running-configuration`

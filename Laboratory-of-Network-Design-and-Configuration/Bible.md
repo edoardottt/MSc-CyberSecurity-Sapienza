@@ -107,9 +107,9 @@
 - Static NAT configuration (used for servers): `ip nat inside source static PRIVATE_ADDRESS PUBLIC_ADDRESS`
 - Dynamic NAT configuration (pool of IP addresses):
 
-        - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
-        - Pool of public IP addresses: `ip nat pool POOL_NAME START_IP_ADDRESS END_IP_ADDRESS NETMASK NETMASK`
-        - Translation rule: `ip nat inside source list ACL_NUMBER pool POOL_NAME`
+     - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
+     - Pool of public IP addresses: `ip nat pool POOL_NAME START_IP_ADDRESS END_IP_ADDRESS NETMASK NETMASK`
+     - Translation rule: `ip nat inside source list ACL_NUMBER pool POOL_NAME`
 - Dynamic NAT configuration (overload): `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
 
 ### Useful tips

@@ -46,21 +46,26 @@
 - To save the actual configuration in the NVRAM: `copy running-config startup-config`
 - Reload the startup configuration file from NVRAM: `copy startup-config running-config`
 - Serial Interface Configuration:
+
     - `interface Serial 0/0`
     - `ip address ADDRESS NETMASK`
     - `clock rate 56000` (only on the side responsible for the clock)
     - `no shutdown`
 - Ethernet Interface Configuration:
+
     - `interface FastEthernet0/0`
     - `ip address ADDRESS NETMASK`
     - `no shutdown`   
 - Set Interface Description:
+
     - `interface Serial 0/0` (also with `FastEthernet X/X` of course)
     - `description DESCRIPTION`
 - Configure a static route:
+
     - `ip route DEST_IP_ADDR NETMASK OUT_INTERFACE/NEXT_HOP_ROUTER`
     - example: `ip route 10.0.0.0 255.0.0.0 192.168.0.253`
-- Increase the Administrative Distance (1 by default): 
+- Increase the Administrative Distance (1 by default):
+
     - `ip route DEST_IP_ADDR NETMASK OUT_INTERFACE/NEXT_HOP_ROUTER AD`
     - example: `ip route 10.0.0.0 255.0.0.0 192.168.0.253 2`
 
@@ -83,6 +88,7 @@
 - Enable OSPF: `router ospf ID` (use `1` as ID)
 - Interfaces on which enable OSPF: `network NETWORK_ADDRESS WILDCARD_MASK area AREA_NUMBER`
 - Change OSPF link cost:
+
         - `interface Serial 0/0`
         - `ip ospf cost COST`
 
@@ -99,11 +105,12 @@
 - Set inside NAT: `ip nat inside`
 - Set outside NAT: `ip nat outside`
 - Static NAT configuration (used for servers): `ip nat inside source static PRIVATE_ADDRESS PUBLIC_ADDRESS`
-- Dynamic NAT configuration: pool of IP addresses
+- Dynamic NAT configuration (pool of IP addresses):
+
         - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
         - Pool of public IP addresses: `ip nat pool POOL_NAME START_IP_ADDRESS END_IP_ADDRESS NETMASK NETMASK`
         - Translation rule: `ip nat inside source list ACL_NUMBER pool POOL_NAME`
-- Dynamic NAT configuration: overload: `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
+- Dynamic NAT configuration (overload): `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
 
 ### Useful tips
 

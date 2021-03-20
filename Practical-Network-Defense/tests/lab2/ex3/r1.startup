@@ -1,10 +1,7 @@
-dpkg -i /var/cache/apt/archives/*deb
-
 echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-apt install -y dibbler-server radvd
-ip addr flush dev eth0
-ip addr add fe80::1/64 dev eth0
-ip addr add 2001:db8:fede:1::1/64 dev eth0
+dpkg -i /shared/*.deb
+apt install -yf dnsmasq 
 
-radvd -m logfile -l /var/log/radvd.log
-
+/etc/init.d/networking restart
+/etc/init.d/dnsmasq restart
+iptables -A POSTROUTING -o eth1 -t nat -j MASQUERADE

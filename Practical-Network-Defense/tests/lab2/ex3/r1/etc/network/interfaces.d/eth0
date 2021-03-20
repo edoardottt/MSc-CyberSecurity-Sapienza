@@ -1,0 +1,19 @@
+auto eth0
+iface eth0 inet6 static
+    address 2001:DB8:FEDE:1::1
+    netmask 64
+    dad-attempts 0
+    dns-domain netsec.local
+    dns-nameservers 2001:4860:4860::8888
+
+iface eth0 inet static
+    address 192.168.100.1
+    netmask 255.255.255.0
+    dns-domain netsec.local
+    dns-nameservers 8.8.8.8
+
+
+auto eth0:1
+iface eth0:1 inet6 static
+    address FE80::1
+    netmask 64

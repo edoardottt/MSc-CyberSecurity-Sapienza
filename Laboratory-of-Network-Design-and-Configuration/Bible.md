@@ -110,7 +110,10 @@
      - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
      - Pool of public IP addresses: `ip nat pool POOL_NAME START_IP_ADDRESS END_IP_ADDRESS NETMASK NETMASK`
      - Translation rule: `ip nat inside source list ACL_NUMBER pool POOL_NAME`
-- Dynamic NAT configuration (overload): `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
+- Dynamic NAT configuration (overload): 
+     
+     - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
+     - `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
 
 ### Useful tips
 

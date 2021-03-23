@@ -3,7 +3,7 @@ configure the topology to use dynamic IPv6 addresses.
  
 You have to use SLAAC+DHCPv6 to provide GUA addresses to the 
 machines in the lan. It is a stateless dynamic addressing.
-You have to properly set up the addresses of r1 and dnmasq
+You have to properly set up the addresses of r1 and dnsmasq
 and to properly set up the pc configurations.
 
 - lan has the subnet 2001:DB8:FEDE:1::/64 and 192.168.100.0/24

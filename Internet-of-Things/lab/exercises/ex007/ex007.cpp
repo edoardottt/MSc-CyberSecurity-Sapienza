@@ -15,4 +15,5 @@ int main()
     cout << "Enter the second value: ";
     cin >> b;
     cout << "The sum is " << a + b << ". \n";
+    return 0;
 }

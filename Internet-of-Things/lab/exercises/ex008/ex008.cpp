@@ -13,4 +13,5 @@ int main()
     cout << "Enter a sentence: ";
     getline(cin, mystr);
     cout << "You entered " << mystr << " \n";
+    return 0;
 }

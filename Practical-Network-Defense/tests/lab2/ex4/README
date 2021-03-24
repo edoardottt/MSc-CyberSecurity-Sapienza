@@ -1,0 +1,23 @@
+One router with two lan, both with 2 pcs. The router is connected with
+an ISP router.
+The assignment is: to configure the topology to use IPv6 addresses.
+
+The ISP makes use of a DHCPv6 server for address and prefix distribution.
+
+The router has to ask prefixes to its ISP and has to distribute
+addresses inside the two lans, using SLAAC.
+
+You are supposed to configure a DHCPv6 client to make r1 asking for
+prefix delegation and (optionally) for an address and to make router
+advertisements with the received prefixes.
+
+The ISP is already configure to provide prefixes, while the router and the
+pcs have to be configured.
+
+You can use dibbler+radvd or dhcp6c+dnsmasq.
+
+- the router has always 1 in the host part of its own link local address.
+
+- With dibbler, you will have to use a script to make router assigning an address to
+  the interface in the network of the prefix. This will be used as the
+  address radvd will advertise in the network for SLAAC configuration.

@@ -1,5 +1,3 @@
-dpkg -i /var/cache/apt/archives/*deb
-
-echo 'resolvconf resolvconf/linkify-resolvconf boolean false' | debconf-set-selections
-echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+umount /etc/resolv.conf
+dpkg -i /shared/dibbler-client*.deb
 apt install -y dibbler-client

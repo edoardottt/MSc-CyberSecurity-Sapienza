@@ -1,7 +1,9 @@
 echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-dpkg -i /shared/*.deb
-apt install -yf dnsmasq 
+umount /etc/resolv.conf
+dpkg -i --force-confold /shared/*.deb
 
 /etc/init.d/networking restart
 /etc/init.d/dnsmasq restart
-iptables -A POSTROUTING -o eth1 -t nat -j MASQUERADE
+dhcp6c eth0
+dnsmasq -q
+

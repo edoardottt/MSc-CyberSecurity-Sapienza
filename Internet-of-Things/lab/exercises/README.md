@@ -1,4 +1,4 @@
-The *exercises* folder contains stupid programs I wrote to train myself with c++.  
+This *exercises* folder contains stupid programs I wrote to train myself with c++.  
 To compile the programs you can use `make all` or `make build`.
 To clear the folder `make clean`.
 

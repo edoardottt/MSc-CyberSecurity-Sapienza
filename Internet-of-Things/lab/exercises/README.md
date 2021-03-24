@@ -1,0 +1,2 @@
+- Linux: `g++ -std=c++0x example.cpp -o example_program`
+- Windows: https://code.visualstudio.com/docs/languages/cpp

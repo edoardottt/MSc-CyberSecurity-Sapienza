@@ -1,0 +1,5 @@
+auto eth2
+iface eth2 inet6 static
+	address fe80::1
+	netmask 64
+	dad-attemps 0

@@ -1,0 +1,9 @@
+echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+umount /etc/resolv.conf
+dpkg -i --force-confold /shared/*.deb
+
+/etc/init.d/networking restart
+/etc/init.d/dnsmasq restart
+dhcp6c eth0
+dnsmasq -q
+

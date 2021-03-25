@@ -1,0 +1,3 @@
+sleep 5
+
+ip -6 route add default via 2001:db8:cafe:4::1

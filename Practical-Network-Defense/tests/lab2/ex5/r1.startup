@@ -1,0 +1,9 @@
+/etc/init.d/networking restart
+
+dpkg -i radvd_1%3a2.15-2_amd64.deb
+
+ip link set mtu 1400 dev eth0
+
+ip -6 route add default via 2001:db8:cafe:2::2
+
+radvd -m logfile -l /var/log/radvd.log

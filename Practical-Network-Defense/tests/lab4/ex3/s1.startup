@@ -1,0 +1,15 @@
+ip addr add 203.0.113.80/24 dev eth0
+ip route add default via 203.0.113.1
+ip addr add 2001:db8:cafe:2::80/64 dev eth0
+ip -6 route add default via fe80::1 dev eth0
+
+adduser user --disabled-login --quiet --gecos ""
+echo "user:password" | chpasswd
+chown root /etc/apache2/ssl/*
+
+/etc/init.d/ssh start
+a2enmod ssl
+echo "ServerName 203.0.113.80" | tee /etc/apache2/conf-available/fqdn.conf
+a2enconf fqdn
+/etc/init.d/apache2 restart
+

@@ -1,0 +1,11 @@
+ip addr add 203.0.113.25/24 dev eth0
+ip route add default via 203.0.113.1
+ip addr add 2001:db8:cafe:2::25/64 dev eth0
+ip -6 route add default via fe80::1 dev eth0
+
+adduser user --disabled-login --quiet --gecos ""
+echo "user:password" | chpasswd
+apt install -y netcat
+
+/etc/init.d/ssh start
+nc -l -p 25 -k >> netcat.txt

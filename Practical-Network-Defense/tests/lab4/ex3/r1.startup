@@ -1,0 +1,12 @@
+ip addr add 192.168.100.1/24 dev eth0
+ip addr add 2001:db8:cafe:1::1/64 dev eth0
+ip addr add fe80::1/64 dev eth0
+ip addr add 203.0.113.1/24 dev eth1
+ip addr add 2001:db8:cafe:2::1/64 dev eth1
+ip addr add fe80::1/64 dev eth1
+ip addr add 198.51.100.29/24 dev eth2
+ip addr add 2001:db8:beef:1::29/64 dev eth2
+
+chmod +x r1-rules.sh
+
+./r1-rules.sh

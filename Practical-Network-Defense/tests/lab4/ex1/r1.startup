@@ -1,0 +1,8 @@
+ip addr add 192.168.100.1/24 dev eth0
+ip addr add 192.168.10.1/24 dev eth1
+
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+chmod +x r1-rules.sh
+
+./r1-rules.sh

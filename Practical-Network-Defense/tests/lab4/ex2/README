@@ -1,0 +1,8 @@
+A lan with a host, a server, a router. There is also an external lan
+for connecting the host machine.
+You have to experiment with ip6tables
+
+NOTE: if you obtain the error "Table does not exist (do you need 
+to insmod?)" issue the following command in the host machine
+
+$ sudo modprobe ip6table_filter

@@ -25,3 +25,5 @@ You have to experiment with iptables.
 - Remember to clean the route rule with `sudo ip route del 192.168.100.0/24 via 192.168.10.1`.
 
 ### 2. Exercise1 - Configure r1 in order to accept only http traffic to S1.
+
+![ex1](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Practical-Network-Defense/tests/lab4/ex1/ex1.png)

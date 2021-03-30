@@ -1,0 +1,45 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-30 12:01 CEST
+Nmap scan report for VM9529.homenet.telecomitalia.it (192.168.1.4)
+Host is up (0.00020s latency).
+Not shown: 995 closed ports
+PORT      STATE SERVICE     VERSION
+21/tcp    open  ftp         vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-rw-r--r--    1 0        0              67 May 30  2020 usernames
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:192.168.1.5
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 2
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+22/tcp    open  ssh         OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 b4:a5:a7:fc:63:2c:00:0a:ab:6f:be:3e:72:3e:52:47 (RSA)
+|   256 24:da:6f:02:6f:12:6e:6e:c6:03:e5:ba:63:52:71:27 (ECDSA)
+|_  256 7f:63:1d:68:7d:16:c0:97:8e:53:f4:16:8e:63:5d:30 (ED25519)
+139/tcp   open  netbios-ssn Samba smbd 4.6.2
+445/tcp   open  netbios-ssn Samba smbd 4.6.2
+10000/tcp open  http        MiniServ 1.920 (Webmin httpd)
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-title: Login to Webmin
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_nbstat: NetBIOS name: VM9529, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2021-03-30T10:02:03
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 42.34 seconds

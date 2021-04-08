@@ -74,6 +74,8 @@
 - Enable RIP: `router rip`
 - Define the interfaces running: `network ADDRESS`
 - Show info about protocols running`show ip protocols`
+- Set a router as border router: `default-information originate`
+- Distribute static routes: `redistribute static`
 - Avoid sending RIP messages through a specific interface (and so into a network): `Passive-Interface Fa0/0`
 
 ### RIPv2
@@ -81,12 +83,14 @@
 - Enable RIPv2: `router rip`, `version 2`
 - Deactivate network auo-summarization: `no auto-summary`
 - Set a router as border router: `default-information originate`
-- Distribute static routes: `default-information originate`
+- Distribute static routes: `redistribute static`
 
 ### OSPF
 
 - Enable OSPF: `router ospf ID` (use `1` as ID)
 - Interfaces on which enable OSPF: `network NETWORK_ADDRESS WILDCARD_MASK area AREA_NUMBER`
+- Set a router as border router: `default-information originate`
+- Distribute static routes: `redistribute static`
 - Change OSPF link cost:
 
     - `interface Serial 0/0`

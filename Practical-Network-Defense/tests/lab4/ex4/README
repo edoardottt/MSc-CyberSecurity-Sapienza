@@ -1,0 +1,12 @@
+A local lan with 2 pc, a default gateway. The assignment is to properly
+configure the router to act NAT and regulation.
+
+- r1 has to act as the router and masquerade the packet that exit
+  from its eth1 interface (notice that eth1 IP is dynamically assigned)
+
+- r1 has also to accept ICMP echo replies destined to LAN
+
+- r1 has to drop any packet to itself from eth1, but ICMP requests
+
+- r1 has to respond with TCP RST or ICMP Unreachable for incoming
+  requests for blocked ports

@@ -1,0 +1,10 @@
+echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections 
+
+dpkg -i /var/cache/apt/archives/*.deb
+
+ip addr add 192.168.10.17/29 dev eth0
+
+udhcpd -S
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+./iptables-rules.sh

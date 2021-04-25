@@ -28,7 +28,6 @@
 - Assign or change a Router name (in config mode): `hostname NAME`
 - Assign a password for the console access: `line console 0`, `password PASSWORD`, `login`
 - Assign a password for the Telnet access to a **router**: `line vty 0 4`, `password PASSWORD`, `login`
-- Assign a password for the Telnet access to a **switch**: `line vty 0 15`, `password PASSWORD`, `login`
 - Assign a password for the Privileged mode (stored in plaintext): `enable password PASSWORD`
 - Assign a password for the Privileged mode (encrypted): `enable password PASSWORD`, `service password-encryption`
 - Assign a password for the Privileged mode (encrypted, more robust): `enable secret PASSWORD`
@@ -142,6 +141,11 @@
 - Allow only a subset of VLANs to access a trunk port: `switchport trunk allowed vlan X`
 - List all the VLANs configured and associated *access* interfaces: `show vlan brief`
 - Check the mode of an interface: `show interface Fa X/Y switchport`
+- Assign a password for the Telnet access to a **switch**: `line vty 0 15`, `password PASSWORD`, `login`
+- Assign a password for the **configurable** Telnet access to a **switch**: 
+
+    - `line vty 0 15`, `password PASSWORD`, `login`
+    - `enable password PASSWORD`
 
 ### Useful tips
 

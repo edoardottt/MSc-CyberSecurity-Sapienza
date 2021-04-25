@@ -112,7 +112,7 @@
 - Dynamic NAT configuration (pool of IP addresses):
 
      - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
-     - Pool of public IP addresses: `ip nat pool POOL_NAME START_IP_ADDRESS END_IP_ADDRESS NETMASK NETMASK`
+     - Pool of public IP addresses: `ip nat pool POOL_NAME START_IP_ADDRESS END_IP_ADDRESS netmask NETMASK`
      - Translation rule: `ip nat inside source list ACL_NUMBER pool POOL_NAME`
 - Dynamic NAT configuration (overload): 
      
@@ -120,6 +120,27 @@
      - `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
 
 ### VLAN
+
+- Configure a VLAN in a switch: `vlan X`
+- Assign a name to a VLAN: `name NAME`
+- Assign an IP address to the switch: 
+
+    - `interface vlan 99`
+    - `ip address IP_ADDRESS NETMASK`
+    - `no shutdown`
+- Configure an interface as an access port:
+
+    - `interface Fa X/Y`
+    - `switchport mode access`
+    - `switchport access vlan X`
+- Configure an interface as a trunk port:
+
+    - `interface Fa X/Y`
+    - `switchport mode trunk`
+    - `switchport trunk native vlan 99`
+- Allow only a subset of VLANs to access a trunk port: `switchport trunk allowed vlan X`
+- List all the VLANs configured and associated *access* interfaces: `show vlan brief`
+- Check the mode of an interface: `show interface Fa X/Y switchport`
 
 ### Useful tips
 

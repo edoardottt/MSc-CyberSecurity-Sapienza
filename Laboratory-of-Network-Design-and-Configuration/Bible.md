@@ -7,7 +7,7 @@
 - [OSPF](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#ospf)
 - [DHCP](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#dhcp)
 - [NAT](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#nat)
-
+- [VLAN](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#vlan)
 - [Useful tips](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#useful-tips)
 
 
@@ -118,6 +118,8 @@
      
      - Private IP addresses definition: `access-list ACL_NUMBER permit SOURCE_ADDRESS WILDCARD`
      - `ip nat inside source list ACL_NUMBER interface INTERFACE overload`
+
+### VLAN
 
 ### Useful tips
 

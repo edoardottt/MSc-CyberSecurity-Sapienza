@@ -27,7 +27,8 @@
 - List a set of available commands: `?`
 - Assign or change a Router name (in config mode): `hostname NAME`
 - Assign a password for the console access: `line console 0`, `password PASSWORD`, `login`
-- Assign a password for the Telnet access: `line vty 0 4`, `password PASSWORD`, `login`
+- Assign a password for the Telnet access to a **router**: `line vty 0 4`, `password PASSWORD`, `login`
+- - Assign a password for the Telnet access to a **switch**: `line vty 0 15`, `password PASSWORD`, `login`
 - Assign a password for the Privileged mode (stored in plaintext): `enable password PASSWORD`
 - Assign a password for the Privileged mode (encrypted): `enable password PASSWORD`, `service password-encryption`
 - Assign a password for the Privileged mode (encrypted, more robust): `enable secret PASSWORD`

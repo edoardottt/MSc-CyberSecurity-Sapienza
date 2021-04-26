@@ -178,7 +178,10 @@
         - `interface Fa X/Y`
         - `switchport mode trunk`
 
+- To show ARP cache: `arp -a`
+- To delete ARP cache: `arp -d`
 
 ### Useful tips
 
 - Avoid CLI stops when a wrong command is typed: `no ip domain-lookup`
+- If you're having trouble with interVLAN routing, try to delete the ARP cache (from PC CLI): `arp -d`

@@ -147,6 +147,8 @@
     - `line vty 0 15`, `password PASSWORD`, `login`
     - `enable password PASSWORD`
 
+### InterVLAN routing
+
 ### Useful tips
 
 - Avoid CLI stops when a wrong command is typed: `no ip domain-lookup`

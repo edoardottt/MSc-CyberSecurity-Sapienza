@@ -8,6 +8,7 @@
 - [DHCP](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#dhcp)
 - [NAT](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#nat)
 - [VLAN](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#vlan)
+- [InterVLAN routing](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#intervlan-routing)
 - [Useful tips](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#useful-tips)
 
 
@@ -147,6 +148,40 @@
     - `line vty 0 15`, `password PASSWORD`, `login`
     - `enable password PASSWORD`
 
+### InterVLAN routing
+
+##### Traditional way
+
+   - Add as many (copper-straight) links on router to the switch as many VLAN we would like to connect. 
+   - Assign an IP address to the router interfaces (belonging to the VLAN network).
+   - Set as access mode the new interfaces on the switch:
+
+        - `switchport mode access`
+        - `switchport access vlan X`
+   - Assign the IP default gateway on the PCs (the router IP address belonging to the same VLAN).
+
+##### The smart way
+
+   - Add one (copper-straight) link on router to the switch
+   - Configure Router interfaces:
+        
+        - `interface Fa X/Y.ZZ` (where `ZZ` is the ID of the VLAN)
+        - `encapsulation dot1Q ZZ`
+        - `ip address ADDRESS NETMASK`
+        - `no shutdown`
+   - Turn up the physical interface:
+        
+        - `interface Fa X/Y`
+        - `no shutdown`
+   - Configure the switch interface with trunk mode:
+
+        - `interface Fa X/Y`
+        - `switchport mode trunk`
+
+- To show ARP cache: `arp -a`
+- To delete ARP cache: `arp -d`
+
 ### Useful tips
 
 - Avoid CLI stops when a wrong command is typed: `no ip domain-lookup`
+- If you're having trouble with interVLAN routing, try to delete the ARP cache (from PC CLI): `arp -d`

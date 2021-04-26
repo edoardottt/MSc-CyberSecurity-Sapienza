@@ -150,6 +150,20 @@
 
 ### InterVLAN routing
 
+##### Traditional way
+
+   - Add as many (copper-straight) links on router to the switch as many VLAN we would like to connect. 
+   - Assign an IP address to the router interfaces (belonging to the VLAN network).
+   - Set as access mode the new interfaces on the switch:
+
+        - `switchport mode access`
+        - `switchport access vlan X`
+   - Assign the IP default gateway on the PCs (the router IP address belonging to the same VLAN).
+
+##### The smart way
+
+   - 
+
 ### Useful tips
 
 - Avoid CLI stops when a wrong command is typed: `no ip domain-lookup`

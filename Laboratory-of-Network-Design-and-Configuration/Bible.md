@@ -162,7 +162,22 @@
 
 ##### The smart way
 
-   - 
+   - Add one (copper-straight) link on router to the switch
+   - Configure Router interfaces:
+        
+        - `interface Fa X/Y.ZZ` (where `ZZ` is the ID of the VLAN)
+        - `encapsulation dot1Q ZZ`
+        - `ip address ADDRESS NETMASK`
+        - `no shutdown`
+   - Turn up the physical interface:
+        
+        - `interface Fa X/Y`
+        - `no shutdown`
+   - Configure the switch interface with trunk mode:
+
+        - `interface Fa X/Y`
+        - `switchport mode trunk`
+
 
 ### Useful tips
 

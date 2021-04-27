@@ -1,0 +1,4 @@
+ip addr add 192.168.100.99/24 dev eth0
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+dpkg -i /var/cache/apt/archives/*.deb
+apt install -fy libnetfilter-queue-dev libusb-1.0. unzip

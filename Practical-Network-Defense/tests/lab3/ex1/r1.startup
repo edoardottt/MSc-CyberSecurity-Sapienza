@@ -1,0 +1,5 @@
+sudo apt-get install -y libpcap-dev libssl-dev libnetfilter-queue-dev
+ip addr add 192.168.100.1/24 dev eth0
+iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+

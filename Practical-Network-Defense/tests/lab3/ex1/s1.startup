@@ -1,0 +1,7 @@
+ip addr add 192.168.100.100/24 dev eth0
+echo nameserver 8.8.8.8 > /etc/resolv.conf
+echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+dpkg -i /var/cache/apt/archives/*.deb
+apt install -f -y php libapache2-mod-php -o Dpkg::Options::="--force-confold" 
+/etc/init.d/apache2 start
+

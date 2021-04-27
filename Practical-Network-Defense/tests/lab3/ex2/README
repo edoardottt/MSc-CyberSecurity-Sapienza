@@ -1,0 +1,14 @@
+A lan with a host, a server, a router and the attacker machine.
+In the attacker machine you have to install bettercap and perform
+a MITM attack. Bettercap does this with the ARP poisoning
+
+- You can set up the links as for ex1, so that one of the victim
+  machines can also be the hosting box
+
+- Unzip bettercap in a1 and realize the ARP poisoning
+
+- Verify the arp poisoning is effective (capture the packets with
+  wireshark -> beware to the ARP packets!)
+
+- Try to use inject the http-proxy-pwned.js javascript for altering
+  HTTP responses coming from the webserver (see/use caplet proxyspoof.cap)

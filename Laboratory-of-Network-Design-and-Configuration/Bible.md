@@ -179,6 +179,7 @@
         - `interface Fa X/Y`
         - `switchport mode trunk`
 
+- Assign a native vlan to trunk interface: `switchport trunk native vlan 99`
 - To show ARP cache: `arp -a`
 - To delete ARP cache: `arp -d`
 

@@ -185,7 +185,22 @@
 
 ### ACL
 
-- 
+#### Standard ACL
+
+- `access-list <0-99> <deny | permit> IP WILDCARD_MASK`
+
+- Verifying the ACL:
+    
+    - `show ip interface`
+    - `show access-list X`
+    - `show runnning-config`
+- Removing an access-list: `no access-list X`
+- `X` always between 0 and 99!
+
+#### Extended ACL
+
+- It's better to type `access-list ?` in the CLI and follow the suggestions.
+- `X` always between 100 and 999!
 
 ### Useful tips
 

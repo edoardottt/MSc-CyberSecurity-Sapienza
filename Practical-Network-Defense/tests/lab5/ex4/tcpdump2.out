@@ -1,0 +1,25 @@
+IP6 fe80::ec11:1aff:fe17:556a > ff02::2: ICMP6, router solicitation, length 16
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x10), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x10), length 88
+IP6 fe80::485a:2ff:fed1:b397 > ff02::2: ICMP6, router solicitation, length 16
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x11), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x11), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x12), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x12), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x13), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x13), length 88
+IP6 fe80::ec11:1aff:fe17:556a.5353 > ff02::fb.5353: 0 [7q] PTR (QM)? _nfs._tcp.local. PTR (QM)? _ftp._tcp.local. PTR (QM)? _webdav._tcp.local. PTR (QM)? _webdavs._tcp.local. PTR (QM)? _sftp-ssh._tcp.local. PTR (QM)? _smb._tcp.local. PTR (QM)? _afpovertcp._tcp.local. (118)
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x14), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x14), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x15), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x15), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x16), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x16), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x17), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x17), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x18), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x18), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x19), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x19), length 88
+IP6 fe80::485a:2ff:fed1:b397.5353 > ff02::fb.5353: 0 [7q] PTR (QM)? _nfs._tcp.local. PTR (QM)? _ftp._tcp.local. PTR (QM)? _webdav._tcp.local. PTR (QM)? _webdavs._tcp.local. PTR (QM)? _sftp-ssh._tcp.local. PTR (QM)? _smb._tcp.local. PTR (QM)? _afpovertcp._tcp.local. (118)
+

@@ -1,0 +1,7 @@
+Two hosts connected to two different wans. You have to configure IPsec
+between the two hosts. You have to use IPv6.
+They have the the following IPv6 address scheme:
+- r1 and r2 have fd00:cafe:0:1::100/64 and fd00:cafe:0:2::100/64 respectively
+- isp has fd00:cafe:0:1::1/64  and fd00:cafe:0:2::1/64 
+
+Setup IPsec with AH and ESP with a preshared key using setkey

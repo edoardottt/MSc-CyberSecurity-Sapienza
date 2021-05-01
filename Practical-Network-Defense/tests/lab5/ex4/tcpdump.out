@@ -1,0 +1,24 @@
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x6), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x6), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x7), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x7), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x8), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x8), length 88
+IP6 fe80::187f:95ff:fecc:d014 > fe80::74e8:6fff:fe54:22f: ICMP6, neighbor solicitation, who has fe80::74e8:6fff:fe54:22f, length 32
+IP6 fe80::74e8:6fff:fe54:22f > fe80::187f:95ff:fecc:d014: ICMP6, neighbor advertisement, tgt is fe80::74e8:6fff:fe54:22f, length 24
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0x9), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0x9), length 88
+IP6 fe80::485a:2ff:fed1:b397.5353 > ff02::fb.5353: 0 [7q] PTR (QM)? _nfs._tcp.local. PTR (QM)? _ftp._tcp.local. PTR (QM)? _webdav._tcp.local. PTR (QM)? _webdavs._tcp.local. PTR (QM)? _sftp-ssh._tcp.local. PTR (QM)? _smb._tcp.local. PTR (QM)? _afpovertcp._tcp.local. (118)
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0xa), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0xa), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0xb), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0xb), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0xc), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0xc), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0xd), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0xd), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0xe), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0xe), length 88
+IP6 fd00:cafe:0:1::100 > fd00:cafe:0:2::100: ESP(spi=0x000002bd,seq=0xf), length 88
+IP6 fd00:cafe:0:2::100 > fd00:cafe:0:1::100: ESP(spi=0x000002be,seq=0xf), length 88
+

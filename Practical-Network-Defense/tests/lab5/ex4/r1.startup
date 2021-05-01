@@ -1,0 +1,6 @@
+ip addr add fd00:cafe:0:1::100/64 dev eth0
+ip route add default via fd00:cafe:0:1::1
+
+dpkg -i /shared/*.deb
+
+/etc/init.d/setkey start

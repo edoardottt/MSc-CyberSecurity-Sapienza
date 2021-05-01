@@ -1,0 +1,31 @@
+IP6 fe80::9cbc:bcff:fe0e:b023 > ff02::2: ICMP6, router solicitation, length 16
+ARP, Request who-has 100.60.0.1 tell 100.60.0.100, length 28
+ARP, Reply 100.60.0.1 is-at 02:c3:7d:68:14:eb, length 28
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x1), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x1), length 88
+IP6 fe80::b03b:b6ff:feff:9702 > ff02::2: ICMP6, router solicitation, length 16
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x2), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x2), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x3), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x3), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x4), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x4), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x5), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x5), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x6), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x6), length 88
+ARP, Request who-has 100.60.0.100 tell 100.60.0.1, length 28
+ARP, Reply 100.60.0.100 is-at 6a:42:df:54:17:1e, length 28
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x7), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x7), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x8), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x8), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0x9), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0x9), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0xa), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0xa), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0xb), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0xb), length 88
+IP 100.60.0.100 > 100.90.0.100: ESP(spi=0x000002bd,seq=0xc), length 88
+IP 100.90.0.100 > 100.60.0.100: ESP(spi=0x000002be,seq=0xc), length 88
+

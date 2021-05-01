@@ -1,0 +1,7 @@
+Two hosts connected to two different wans. You have to configure IPsec
+between the two hosts.
+They have the the following IPv4 scheme:
+- r1 and r2 have 100.60.0.100/16 and 100.90.0.100/16 respectively
+- isp has 100.60.0.1/16 and 100.90.0.1/16
+
+Setup IPsec with AH and ESP with a preshared key, using setkey.

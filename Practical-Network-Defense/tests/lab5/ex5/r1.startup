@@ -1,0 +1,5 @@
+ip addr add 100.60.0.2/16 dev eth0
+ip addr add 192.168.1.1/24 dev eth1
+ip route add default via 100.60.0.1
+
+dpkg -i /shared/*.deb 

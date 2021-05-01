@@ -1,0 +1,2 @@
+ip addr add 100.60.0.1/16 dev eth0
+ip addr add 100.90.0.1/16 dev eth1

@@ -1,0 +1,10 @@
+Two routers connecting via wan and with two lans. Setup a tunnel between the two lans
+manually configuring the SAs.
+Setup the two lans to have the following IPv4 scheme:
+- lanA: 192.168.1.0/24 (r1 has .1)
+- lanB: 192.168.2.0/24 (r2 has .1)
+- r1 and r2 have 100.60.0.2/16 and 100.90.0.2/16 respectively
+- isp has 100.60.0.1 and 100.90.0.1.
+
+Setup the ip tunnel between r1 and r2 and enable the use of the tunnel
+when connecting the traffic between the two lans using setkey.

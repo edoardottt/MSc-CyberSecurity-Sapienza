@@ -196,13 +196,30 @@
     - `show runnning-config`
 - Removing an access-list: `no access-list X`
 - `X` always between 0 and 99!
+- Block telnet access with a standard ACL:
+
+    - Write the standard ACL inserting the proper rules.
+    - `line vty 0 4` (remember `4` is for router)
+    - `login`
+    - `password PASSWORD`
+    - `access-class NUMBER in`
 
 #### Extended ACL
 
 - It's better to type `access-list ?` in the CLI and follow the suggestions.
 - `X` always between 100 and 999!
 
+#### Named ACL
+
+- To define a named ACL: `ip access-list {extended|standard} NAME`
+- Each rule is defined with a number associated (`10`, `20`, `30`...)
+- It's possible to remove or add a specific rule in any position.
+- To add a rule in a specific point of the rules list: `NUMBER RULE`, e.g. `25 udp deny any any`
+
+
 ### Useful tips
 
-- Avoid CLI stops when a wrong command is typed: `no ip domain-lookup`
-- If you're having trouble with interVLAN routing, try to delete the ARP cache (from PC CLI): `arp -d`
+- Avoid CLI stops when a wrong command is typed: `no ip domain-lookup`.
+- If you're having trouble with interVLAN routing, try to delete the ARP cache (from PC CLI): `arp -d`.
+- The standard ACLs should be put as close as possible to the destination.
+- The extended ACLs should be put as close as possible to the source.

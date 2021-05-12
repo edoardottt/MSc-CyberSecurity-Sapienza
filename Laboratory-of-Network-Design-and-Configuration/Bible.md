@@ -207,7 +207,7 @@
 #### Extended ACL
 
 - It's better to type `access-list ?` in the CLI and follow the suggestions.
-- `X` always between 100 and 999!
+- `X` always between 100 and 199!
 
 #### Named ACL
 

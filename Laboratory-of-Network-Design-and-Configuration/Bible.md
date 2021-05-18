@@ -222,6 +222,17 @@
 
 ### VPN
 
+- Configure a vpn tunnel on one router side:
+
+    - `interface Tunnel X`
+    - `tunnel mode gre ip`
+    - `ip address TUNNEL_IP NETMASK` (`NETMASK` = `255.255.255.252`)
+    - `tunnel source INTERFACE`
+    - `tunnel destination IP_ADDRESS` (`IP_ADDRESS` is the address of the other router)
+    - `ip route LAN_NETWORK LAN_NETMASK IP_ADDRESS` (`IP_ADDRESS` is the address of the other router)
+
+- Repeat this sequence on the other router. 
+
 ### Useful tips
 
 - Avoid CLI stops when a wrong command is typed: `no ip domain-lookup`.

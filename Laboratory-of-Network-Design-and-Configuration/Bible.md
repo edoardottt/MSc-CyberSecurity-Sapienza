@@ -227,6 +227,21 @@
 
 ### LAN Security
 
+#### DHCP Snooping
+
+- `ip dhcp snooping`
+- `ip dhcp snooping vlan X`
+- `no ip dhcp snooping information option`
+- (on interface config) `ip dhcp snooping trust`
+- Repeat this sequence for all interfaces to trust.
+
+#### MAC Flooding
+
+- `switchport port-security`
+- `switchport port-security mac-address XXXX.YYYY.ZZZZ` (static)
+- `switchport port-security mac-address sticky` (dynamic)
+- `switchport port-security maximum X`
+
 ### VPN
 
 - Configure a vpn tunnel on one router side:

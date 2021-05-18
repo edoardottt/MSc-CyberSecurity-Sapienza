@@ -182,8 +182,7 @@
         - `switchport mode trunk`
 
 - Assign a native vlan to trunk interface: `switchport trunk native vlan 99`
-- To show ARP cache: `arp -a`
-- To delete ARP cache: `arp -d`
+
 
 ### ACL
 
@@ -261,3 +260,4 @@
 - If you're having trouble with interVLAN routing, try to delete the ARP cache (from PC CLI): `arp -d`.
 - The standard ACLs should be put as close as possible to the destination.
 - The extended ACLs should be put as close as possible to the source.
+- To show ARP cache: `arp -a`

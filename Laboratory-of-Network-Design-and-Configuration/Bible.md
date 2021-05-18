@@ -218,6 +218,13 @@
 - It's possible to remove or add a specific rule in any position.
 - To add a rule in a specific point of the rules list: `NUMBER RULE`, e.g. `25 udp deny any any`
 
+#### Limit Telnet Access
+
+- Define a standard ACL
+- `line vty 0 X` (`X` can be `4` for a router and `15` for a switch)
+- `access-class Y in` (`Y` is the number of the ACL defined previously)
+- Remember to define a password!!
+
 ### LAN Security
 
 ### VPN

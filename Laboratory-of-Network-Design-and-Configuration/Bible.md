@@ -10,6 +10,8 @@
 - [VLAN](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#vlan)
 - [InterVLAN routing](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#intervlan-routing)
 - [ACL](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#acl)
+- [LAN Security](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#lan-security)
+- [VPN](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#vpn)
 - [Useful tips](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#useful-tips)
 
 
@@ -216,6 +218,9 @@
 - It's possible to remove or add a specific rule in any position.
 - To add a rule in a specific point of the rules list: `NUMBER RULE`, e.g. `25 udp deny any any`
 
+### LAN Security
+
+### VPN
 
 ### Useful tips
 

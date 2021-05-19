@@ -163,7 +163,7 @@
         - `switchport access vlan X`
    - Assign the IP default gateway on the PCs (the router IP address belonging to the same VLAN).
 
-##### The smart way
+##### The smart way (or stick)
 
    - Add one (copper-straight) link on router to the switch
    - Configure Router interfaces:

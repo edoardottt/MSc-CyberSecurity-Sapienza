@@ -181,7 +181,7 @@
         - `interface Fa X/Y`
         - `switchport mode trunk`
 
-- Assign a native vlan to trunk interface: `switchport trunk native vlan 99`
+- Assign a native vlan to trunk interface (quite sure this command should not be executed): `switchport trunk native vlan 99`
 
 
 ### ACL

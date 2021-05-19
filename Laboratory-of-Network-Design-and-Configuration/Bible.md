@@ -236,10 +236,11 @@
 
 #### MAC Flooding
 
+- Show the MAC address of a pc: `ipconfig /all`
 - `switchport port-security`
 - `switchport port-security mac-address XXXX.YYYY.ZZZZ` (static)
-- `switchport port-security mac-address sticky` (dynamic)
-- `switchport port-security maximum X`
+- `switchport port-security mac-address sticky` (sticky dynamic)
+- `switchport port-security maximum X` (dynamic)
 
 ### VPN
 

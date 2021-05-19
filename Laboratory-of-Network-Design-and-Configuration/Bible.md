@@ -194,7 +194,7 @@
     
     - `show ip interface`
     - `show access-list X`
-    - `show runnning-config`
+    - `show running-config`
 - Removing an access-list: `no access-list X`
 - `X` always between 0 and 99!
 - Block telnet access with a standard ACL:

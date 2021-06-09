@@ -1,4 +1,7 @@
-## PacketTracer Useful Commands
+# PacketTracer Useful Commands (LNDC Bible)
+
+**by @edoardottt**  
+If you want to propose changes just open an [issue](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/issues).
 
 - [Fundamentals](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#fundamentals)
 - [Basic Router Configuration](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Laboratory-of-Network-Design-and-Configuration/Bible.md#basic-router-configuration)

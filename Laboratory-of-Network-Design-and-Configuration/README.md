@@ -19,7 +19,7 @@ The main tool used during the course is [Packet Tracer](https://www.netacad.com/
 - RIPv2
 - Open Shortest Path First protocol
 - Dynamic Host Configuration Protocol
-- Network Address Tranlation
+- Network Address Translation
 - Virtual LANs
 - InterVLAN routing
 - Access Control Lists

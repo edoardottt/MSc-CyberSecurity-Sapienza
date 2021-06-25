@@ -16,3 +16,7 @@
 #### More info about the course here [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)
 
 **If you want to propose changes, just open an [issue](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/issues)**
+
+See also:
+
+  - [gitlab.com/myasnik/sapienza-notes-cybersecurity](https://gitlab.com/myasnik/sapienza-notes-cybersecurity)

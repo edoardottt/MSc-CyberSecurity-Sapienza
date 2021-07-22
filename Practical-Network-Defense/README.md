@@ -9,3 +9,6 @@
 - In [tests](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/tree/main/Practical-Network-Defense/tests) folder there are solved exercises on Kathara.
 - [iptables tutorial](https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html)
 - [Wireshark cheat sheet](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
+
+
+If you're interested in the Assignment solutions write me ([edoardottavianelli.it](https://www.edoardoottavianelli.it/))

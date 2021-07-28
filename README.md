@@ -10,7 +10,7 @@
 - Laboratory of Network Design and Configuration
 - Practical Network Defense
 - Cyber and Computer Law
-- Internet of Things
+- Internet of Things (partially)
 - Computer Systems and Programming (partially)
 
 #### More info about the course here [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)

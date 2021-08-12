@@ -11,4 +11,4 @@
 - [Wireshark cheat sheet](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
 
 
-If you're interested in the Assignment solutions write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+If you're interested in the Assignment solutions or you have any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

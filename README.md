@@ -10,6 +10,11 @@
 - Laboratory of Network Design and Configuration
 - Practical Network Defense
 - Cyber and Computer Law
+- Malware Analysis and Incident Forensics
+- Web Security and Privacy
+- Security in Software Applications
+- Security Governance
+- Risk Management
 - Internet of Things (partially)
 - Computer Systems and Programming (partially)
 

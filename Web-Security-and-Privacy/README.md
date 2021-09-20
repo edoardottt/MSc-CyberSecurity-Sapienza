@@ -1,6 +1,7 @@
 # Web Security and Privacy
 
-- Prof. *
+- Prof. Fabrizio D'Amore
+- Prof. Emilio Coppa
 
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

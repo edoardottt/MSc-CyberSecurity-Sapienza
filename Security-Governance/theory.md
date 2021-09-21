@@ -20,5 +20,5 @@ We can divide E.G. into Corporate Governance and Business Governance:
 
 We are interested in the first one. (*Corporate Governance*)  
 
-Every governance system use the **direct/control loop**.
-![direct control loop]()
+Every governance system use the **direct/control loop**.  
+![direct control loop](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/resources/images/01-direct-control-loop.png)

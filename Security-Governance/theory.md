@@ -34,5 +34,18 @@ IT based systems causes serious risks to a company as it manages and stores many
 - Data and information stored
 - Data and information transmitted over the network
 - All the systems and application required to store, transmit and process data and information.
-Electronic assets are exposed to many threats aiming at compromising their CIA
-properties (Confidentiality, Integrity and Availability)
+
+Electronic assets are exposed to many threats aiming at compromising their CIA properties (Confidentiality, Integrity and Availability).
+
+*“Security governance is the means by which you control and direct your organisation’s approach to security.”*
+(UK National Cyber Security Centre)
+
+Which approach your organization should use? Unfortunately there is no 'one fits all' method. Each case is different and we should find the perfect method for each one. There are some parameters we can take in consideration, like the size of the company, the resources, the main goals of the com., the legal and all the external considerations...  
+In few words we should detect (in our company):
+- **What** (Security decisions)
+- **Who** (i.e. Deciders)
+- **Data** (the information required to make sensible and informed choices)
+
+The **Security Governance** is not only responsible for IT Governance but also of the Corporate Governance and Business Governance because an enterprise must be
+secured not only from the perspective of infrastructure but also from the business and corporate points of view that includes people and processes.  
+

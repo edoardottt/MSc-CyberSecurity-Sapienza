@@ -49,3 +49,12 @@ In few words we should detect (in our company):
 The **Security Governance** is not only responsible for IT Governance but also of the Corporate Governance and Business Governance because an enterprise must be
 secured not only from the perspective of infrastructure but also from the business and corporate points of view that includes people and processes.  
 
+Why you should take care of Security Governance?  
+Read the [Verizon 2021 Data Breach Investigations Report](https://enterprise.verizon.com/resources/reports/2021/2021-data-breach-investigations-report.pdf).
+
+An advanced persistent threat (APT) is a set of stealthy and continuous computer hacking processes, often orchestrated by a person (or persons) targeting a specific entity.  
+Usually targets either private organizations, states or both for business or political reasons.  
+Typically, it requires a long period of time to be concluded:
+- **advanced** implies sophisticated techniques using malware to exploit vulnerabilities in systems.
+- **persistent** suggests that an external command and control system is continuously monitoring and extracting data from a specific target.
+- **threat** indicates human involvement in orchestrating the attack.

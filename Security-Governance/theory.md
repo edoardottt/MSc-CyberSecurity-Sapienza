@@ -22,3 +22,17 @@ We are interested in the first one. (*Corporate Governance*)
 
 Every governance system use the **direct/control loop**.  
 ![direct control loop](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/resources/images/01-direct-control-loop.png)
+The final goal is to take care of threats and vulnerabilities (bugs, errors, backdoors.. etc..) putting in place a security governance process.  
+Remember that we can have threats in *any* part of the processes (not only technical ones).  
+The control loop starts from the bottom to reach the top producing reports for upper layers. This report contains the monitor of a metric that measures the effectiveness of the procedures.  
+The **Direct/Control loop is driven by Risks**, the IT Governance Institute redefine the concept of Enterprise (and thus Corporate) Governance as follow:  
+“Enterprise governance is a set of responsibilities and practices exercised by the board and executive management with the goal of providing strategic direction, ensuring that objectives are achieved, ascertaining that risks are managed appropriately and verifying that the enterprise’s resources are used responsibly.”  
+So the **direct loop** has as objective the reduction of the risks and **the control** has instead the objective to measure risk reduction after the application of policies and procedures defined before.  
+
+We will focus more specifically on **IT Governance**.  
+IT based systems causes serious risks to a company as it manages and stores many (if not all) electronic assets like:
+- Data and information stored
+- Data and information transmitted over the network
+- All the systems and application required to store, transmit and process data and information.
+Electronic assets are exposed to many threats aiming at compromising their CIA
+properties (Confidentiality, Integrity and Availability)

@@ -38,3 +38,72 @@ Several existing mechanisms to enforce SW security
     - Trusted Platform Modules (TPM)
     - secure crypto-processor
     - CPU tracking
+
+## Lesson 2 - Basics
+
+One goal of this course is understand the role that software plays in providing security and as a source of insecurity.  
+Software is the weakest link in the security chain, with the possible exception of "the human factor".  
+
+Some examples of problems (threats, vulnerabilities...etc...):
+- Slammer worm (https://it.wikipedia.org/wiki/SQL_Slammer)
+- Buffer overflow in Cisco Router; CVE-2011-0352 (https://nvd.nist.gov/vuln/detail/CVE-2011-0352)
+- Vulnerability in FFmpeg; CVE-2010-4705 (https://nvd.nist.gov/vuln/detail/CVE-2010-4705)
+- Vulnerability in Linux/Windows/macOS; CVE-2011-0638, CVE-2011-0640, CVE-2011-0639 (https://nvd.nist.gov/vuln/detail/CVE-2011-0638, https://nvd.nist.gov/vuln/detail/CVE-2011-0639, https://nvd.nist.gov/vuln/detail/CVE-2011-0640)
+- Vulnerability in Mozilla/Bugzilla; CVE-2010-4568 (https://nvd.nist.gov/vuln/detail/CVE-2010-4568)
+- And so on... (https://us-cert.cisa.gov/ncas/bulletins)
+
+All these problems are due to (bad) software. Such software bugs are why constant patching of system is needed to keep them secure.  
+That bad software that can be executed over the network, or executes on (untrusted) input obtained over the network. With ever more network connectivity, ever more software can be attacked.  
+Traditionally the focus was on Operating systems and network security, today we have threats also in web-based applications, embedded and mobile devices...  
+And even more bad actors are organized, they aren't anymore no-funded young nerd guys.  
+[Current prices for 0-days attacks (Zerodium)](https://zerodium.com/program.html).  
+
+Problems are due to:
+- lack of awareness (of threats, but also of what should be protected)
+- lack of knowledge (of potential security problems, but also of solutions
+- compounded by complexity (software written in complicated languages, using large APIs , and running on huge infrastructure)
+- people choosing functionality over security
+Security is always a secondary concern; primary goal of software is to provide some functionality or services; managing associated risks is a derived/secondary concern.  
+Functionality is about what an application does, security is about what an application should not do.  
+
+*Important distinction*
+1.**Security weakness / flaw**: Something that is wrong or could be better.
+2.**Security vulnerability**: Flaw that can be exploited by an attacker to violate a policy.
+
+So, a flaw must be accessible (an attacker must have access to it) and exploitable (an attacker must be able to use it to compromise system).
+
+Software flaws can be introduced at two levels:
+- Design flaw: the flaw is introduced during the design
+- Bug / code-level flaw:  the flaw is introduced during implementation
+
+Vulnerabilities can also arise from other levels
+- Configuration flaws – when installing the SW
+- “User” flaws
+- Unforeseen consequences of intended functionality (e.g., spam …)
+
+**Coding flaws**:
+Software flaws can be introduced during implementation can be roughly distinguished into
+- Flaws that can be understood by looking at the program e.g.: typos, confusing program variables, off-by-one, access to array, error in program logic, …
+- Flaws due to the interaction with the underlying platform or with other systems
+    - Buffer overflow in C(++) code
+    - Integer overflow/underflow in most programming languages
+    - SQL injection, XSS, CSRF, … in web applications
+
+**Example of insecure code**
+~~~
+int balance;
+
+void decrease(int amount)
+    {
+        if (balance <= amount) {        // ERROR: This should be >=
+            balance = balance – amount; 
+        } else { 
+            printf(“Insufficient funds\n”);
+        }
+    }
+
+void increase(int amount)
+{
+    balance = balance + amount;
+}
+~~~

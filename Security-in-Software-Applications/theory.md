@@ -95,7 +95,8 @@ int balance;
 
 void decrease(int amount)
     {
-        if (balance <= amount) {        // ERROR: This should be >=
+        if (balance <= amount) {        // [ 1 ] ERROR: This should be >=
+                                        // [ 2 ] ERROR: What if amount is negative?
             balance = balance – amount; 
         } else { 
             printf(“Insufficient funds\n”);
@@ -104,6 +105,15 @@ void decrease(int amount)
 
 void increase(int amount)
 {
-    balance = balance + amount;
+    balance = balance + amount;         // [ 3 ] ERROR: What if the sum is too large for an integer?
 }
 ~~~
+
+1. *Logic error*: Can be found by code inspection only
+2. *Lack of input validation of (untrusted) user*: Design flaw or implementation flaw ?
+3. *Problem with interaction with underlying platform*: lower level than previous ones
+
+To prevent standard mistakes we need knowledge and security taken into account from the beginning and throughout the sw. development life cycle. Often organizations tackle security at the end of Sw development life cycle.  
+When we write software, we provide some functionalities. These functionalities come with certain risks. Software security is about managing these risks.  
+![touchpoints](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/01-touchpoints.gif)  
+(http://www.swsec.com/resources/touchpoints/)  

@@ -74,3 +74,18 @@ A good (IT) Risk management strategy is therefore mandatory to implement a good 
 
 One proposed model is the following by **Von Solms R. in 2006** in which we can see the direct loop in the front and new layers at the depth with a one big layer that is the best practice. This model should help in **“doing the right things right”**.
 ![proposed model von Solms](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/resources/images/02-model-von-solms.png)  
+
+We've already seen the front part that is the *direct control loop*.  
+It represents the execution of processes and actions and the influence of the Direct and Control loop on these processes.  
+It is based on two core principles:
+- It covers the 3 well known level of management (*Strategic*, *Tactical* and *Operational*)
+    - We can say that the Strategical level controls **what** to do, the tactical level **how** to do and the operational level is **where** things are actually done.
+- Across these 3 levels, there are very distinct actions
+    - The board is not interested in having long, fully detailed reports on what things happened during the last period of time, it just wants to know the status of the work done and to do, and if things are going bad it may ask for additional informations.
+
+*The***Direct***Part*
+| | Strategic | Tactical | Operational |
+| ----------- | ----------- | --------- | --------- |
+| What does it mean Direct at this level | Identify assets, their relevance and their required level of protection | Directives are 'expanded' into sets of relevant infromation security policies, company standars and procedures | Inputs are expanded into sets of administrative guidelines and administrative procedures and technical measures are physically implemented and managed |
+| Input   | - External factors (legal and regulatory prescriptions and other external risks) - Internal factors (company’s strategic vision, IT role, competitiveness, etc ) | {Output of Strategic} | {Output of Tactical} |
+| Output | a set of Directives indicating (at high level) what the Board expects must be done as far as the protection of the company’s information assets is concerned | policies, procedures and standards | operating procedures specifying how things must be done. It forms the basis of execution on the lowest level |

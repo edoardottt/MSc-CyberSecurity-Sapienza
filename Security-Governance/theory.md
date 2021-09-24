@@ -87,8 +87,7 @@ It is based on two core principles:
 | | Strategic | Tactical | Operational |
 | ----------- | ----------- | --------- | --------- |
 | What does it mean Direct at this level | Identify assets, their relevance and their required level of protection | Directives are 'expanded' into sets of relevant infromation security policies, company standars and procedures | Inputs are expanded into sets of administrative guidelines and administrative procedures and technical measures are physically implemented and managed |
-| Input   | - External factors (legal and regulatory prescriptions and other external risks) 
-- Internal factors (company’s strategic vision, IT role, competitiveness, etc ) | {Output of Strategic} | {Output of Tactical} |
+| Input   | 1. External factors (legal and regulatory prescriptions and other external risks) 2. Internal factors (company’s strategic vision, IT role, competitiveness, etc ) | {Output of Strategic} | {Output of Tactical} |
 | Output | a set of Directives indicating (at high level) what the Board expects must be done as far as the protection of the company’s information assets is concerned | policies, procedures and standards | operating procedures specifying how things must be done. It forms the basis of execution on the lowest level |
 
 *The* **Control** *Part*

@@ -156,10 +156,35 @@ For the first layer of the model of the depth view we have the *Directive* part.
 Security Policy documents are required from Standards and Best Practices.  
 In order to comply with the requirements of having a documented Direct process, it is important to define a methodology to create, manage and distribute
 policy related documents.  
-We will consider the following set of documents as component of an Information Security Policy Architecture (ISPA)  
+We will consider the following set of documents as component of an **Information Security Policy Architecture (ISPA)**  
 - A Board-initiated Directive concerning Information Security Governance
 - A Corporate Information Security Policy (CISP) flowing from the Directive
 - A set of detailed sub-policies flowing from the CISP
 - A set of company standards based on the Corporate and Detailed Policies
 - A set of administrative and operational procedures, again flowing from the detailed set of sub-policies
 
+![ISPA](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/resources/images/03-ISPA.png)  
+(Image taken from: von Solms, S.H., von Solms, Rossouw “Information Security Governance”, Springer 2009)  
+
+Guidelines to create a proper **Corporate Information Security Policy (CISP)**:
+- The CISP must indicate Board and executive management support and commitment and it must be clear that the CISP flows from a higher-level directive
+- The CISP must be accepted and signed by the CEO or equivalent officer
+- The CISP must not be along document, nor must it be written in a technical form. The maximum length should be about four to five pages, and it must contain high-level statements concerning Information Security
+- The CISP should not change very often, and must be ‘stable’ as far as technical developments and changes are concerned
+- For the reason mentioned above, the CISP must not contain any references to specific technologies, and must be ’technology neutral’
+- The CISP must indicate who is the owner of the Policy and what the responsibilities of other relevant people are
+- The CISP must clearly indicate the Scope of the Policy, that is, all people who will be subject to the Policy
+- The CISP must refer to possible (disciplinary) actions for non-conformance to the it and its lower-level constituent policies
+- The CISP must be distributed as widely as possible in the company and must be covered in all relevant awareness courses
+- The CISP must have a Compliance Clause
+
+The set of **Sub-Policies** may differ from company to company, but usually the following ones will be defined for everybody:
+- A Malicious Software Control Policy (Anti-Virus Policy)
+- An Acceptable Internet Usage Policy
+- An Acceptable Email Usage Policy
+- A Logical Access Control Policy
+- A Disaster Recovery (Backup) Policy
+- A Remote Access Control Policy
+- A Third Party Access Control Policy
+
+It is very important that the ISPA clearly indicates where these different policies originate, this means that any sub-policy must be ‘linked’ or ‘traced back’ to the CISP in some way.

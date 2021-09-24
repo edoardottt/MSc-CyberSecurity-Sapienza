@@ -120,7 +120,19 @@ Each main category contains:
 - a control objective stating what needs to be achieved
 - one or more controls that can be applied to achieve the control objective
 
-| ---- | ---- |
-| Control | Defines the specific control statement, to satisfy the control objective. 
-Implementation Guidance | Provides more detailed information to support the implementation of the control and meeting the control objective. The guidance may not be entirely suitable or sufficient in all situations and may not fulfil the organization’s specific control requirements.
-Other Information | Provides further information that may need to be considered, for example legal considerations and references to other standards. If there is no other information to be provided this part is not shown.
+<table>
+  <tbody>
+    <tr>
+      <td>Control</td>
+      <td>Defines the specific control statement, to satisfy the control objective.</td>
+    </tr>
+    <tr>
+      <td>Implementation Guidance</td>
+      <td>Provides more detailed information to support the implementation of the control and meeting the control objective. The guidance may not be entirely suitable or sufficient in all situations and may not fulfil the organization’s specific control requirements.</td>
+    </tr>
+    <tr>
+      <td>Other Information</td>
+      <td>Provides further information that may need to be considered, for example legal considerations and references to other standards. If there is no other information to be provided this part is not shown.</td>
+    </tr>
+  </tbody>
+</table>

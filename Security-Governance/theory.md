@@ -94,8 +94,19 @@ It is based on two core principles:
 To properly Control (manage) we need to measure, so we need to know which information and data to collect.  
 This ‘measurability’ characteristic must be at the centre of all directives, policies, standards and procedures produced during the ‘Direct’ part of the model.
 
-| | Strategic | Tactical | Operational |
+| | Operational | Tactical | Strategic |
 | ----------- | ----------- | --------- | --------- |
 | What does it mean Direct at this level | measurement data is extracted from a wide range of entities (either automatically or manually) | measurement and monitoring against the requirements of the relevant policies, procedures and standards | Situational Awareness |
 | Input   | Measurements | {Output of Strategic} | {Output of Tactical} |
 | Output | Specialized reports can be created on this level using this extracted operational data. | Tactical Management reports, indicating levels of compliance and conformance | Reports reflecting compliance and conformance to relevant directives including risk considerations |
+
+**Note**: The arrows in the direct control loop are not decreasing and increaing the size casually. The information from the Operational layer are stripped in a more concise format. In the direct part is actually the opposite. So basically one main difference is the **granularity** of the informations.  
+
+Talking about the base of the model... What is a **Best Practice**?  
+Best Practices (or Standards or Guidelines) are a set of documents reporting experiences and solutions experienced by experts in ISM
+- Can be seen as the consensus of experts in the field of Information Security
+- Provide an internationally accepted framework that can be used as building block for ISG.  
+Many of them exists, focused on related but different aspects (ISO 27000 family, COBIT, NIST SP 800-\*, CSC, NIST CSF).
+
+**ISO 27002**  
+,

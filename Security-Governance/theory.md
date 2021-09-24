@@ -145,8 +145,8 @@ It is generic and intended to be applicable to all organizations, regardless of 
 
 Comparison between ISO 27002 and 27001:
 - **ISO 27001**: 
-        - very specific and strict, and spells out, in detail, what a company must comply with and have in place to be formally certified.
+    - very specific and strict, and spells out, in detail, what a company must comply with and have in place to be formally certified.
 - **ISO 27002**:
-        - is a ‘guideline’ document, and advises companies on what they should have in place as far as their Information Security Management is concerned, in order to follow ‘Best Practice’
-        - guides a company to structure its Information Security Management according to the experience of other companies
-        - rather high level, and does not drill down to very detailed specifics.
+    - is a ‘guideline’ document, and advises companies on what they should have in place as far as their Information Security Management is concerned, in order to follow ‘Best Practice’
+    - guides a company to structure its Information Security Management according to the experience of other companies
+    - rather high level, and does not drill down to very detailed specifics.

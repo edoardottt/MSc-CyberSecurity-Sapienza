@@ -109,4 +109,18 @@ Best Practices (or Standards or Guidelines) are a set of documents reporting exp
 Many of them exists, focused on related but different aspects (ISO 27000 family, COBIT, NIST SP 800-\*, CSC, NIST CSF).
 
 **ISO 27002**  
-,
+It is an International Standard designed to be used by organizations that intend to:
+- select controls within the process of implementing an Information Security Management System based on ISO/IEC 27001;
+- implement commonly accepted information security controls
+- develop their own information security management guidelines
+
+It contains 14 security control clauses collectively containing a total of 35 main security categories and 114 controls.  
+Each clause defining security controls contains one or more main security categories  
+Each main category contains:  
+- a control objective stating what needs to be achieved
+- one or more controls that can be applied to achieve the control objective
+
+| ---- | ---- |
+| Control | Defines the specific control statement, to satisfy the control objective. 
+Implementation Guidance | Provides more detailed information to support the implementation of the control and meeting the control objective. The guidance may not be entirely suitable or sufficient in all situations and may not fulfil the organization’s specific control requirements.
+Other Information | Provides further information that may need to be considered, for example legal considerations and references to other standards. If there is no other information to be provided this part is not shown.

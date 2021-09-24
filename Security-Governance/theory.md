@@ -90,7 +90,7 @@ It is based on two core principles:
 | Input   | 1. External factors (legal and regulatory prescriptions and other external risks) 2. Internal factors (company’s strategic vision, IT role, competitiveness, etc ) | {Output of Strategic} | {Output of Tactical} |
 | Output | a set of Directives indicating (at high level) what the Board expects must be done as far as the protection of the company’s information assets is concerned | policies, procedures and standards | operating procedures specifying how things must be done. It forms the basis of execution on the lowest level |
 
-*The* **Control** *Part*
+*The* **Control** *Part*  
 To properly Control (manage) we need to measure, so we need to know which information and data to collect.  
 This ‘measurability’ characteristic must be at the centre of all directives, policies, standards and procedures produced during the ‘Direct’ part of the model.
 

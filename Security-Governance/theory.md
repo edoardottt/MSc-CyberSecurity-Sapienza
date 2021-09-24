@@ -59,7 +59,7 @@ Typically, it requires a long period of time to be concluded:
 - **persistent** suggests that an external command and control system is continuously monitoring and extracting data from a specific target.
 - **threat** indicates human involvement in orchestrating the attack.
 
-## Lesson 2 - A model for Information Sec. Governance Part 1
+## Lesson 2 - A model for Information Sec. Governance (Part 1)
 
 In NIST SP 800-100, Information Security Governance is defined as  
 “The process of establishing and maintaining a framework and supporting management structure and processes to provide assurance that information security
@@ -102,15 +102,15 @@ This ‘measurability’ characteristic must be at the centre of all directives,
 
 **Note**: The arrows in the direct control loop are not decreasing and increaing the size casually. The information from the Operational layer are stripped in a more concise format. In the direct part is actually the opposite. So basically one main difference is the **granularity** of the informations.  
 
-Talking about the base of the model... What is a **Best Practice**?  
-Best Practices (or Standards or Guidelines) are a set of documents reporting experiences and solutions experienced by experts in ISM
+Talking about the base of the model... What is a Best Practice?  
+**Best Practices** (or Standards or Guidelines) are *a set of documents reporting experiences and solutions** experienced by experts in ISM
 - Can be seen as the consensus of experts in the field of Information Security
 - Provide an internationally accepted framework that can be used as building block for ISG.  
 Many of them exists, focused on related but different aspects (ISO 27000 family, COBIT, NIST SP 800-\*, CSC, NIST CSF).
 
 **ISO 27002**  
 It is an International Standard designed to be used by organizations that intend to:
-- select controls within the process of implementing an Information Security Management System based on ISO/IEC 27001;
+- select controls within the process of implementing an Information Security Management System based on ISO/IEC 27001
 - implement commonly accepted information security controls
 - develop their own information security management guidelines
 
@@ -150,3 +150,16 @@ Comparison between ISO 27002 and 27001:
     - is a ‘guideline’ document, and advises companies on what they should have in place as far as their Information Security Management is concerned, in order to follow ‘Best Practice’
     - guides a company to structure its Information Security Management according to the experience of other companies
     - rather high level, and does not drill down to very detailed specifics.
+
+**Directive**  
+For the first layer of the model of the depth view we have the *Directive* part.  
+Security Policy documents are required from Standards and Best Practices.  
+In order to comply with the requirements of having a documented Direct process, it is important to define a methodology to create, manage and distribute
+policy related documents.  
+We will consider the following set of documents as component of an Information Security Policy Architecture (ISPA)  
+- A Board-initiated Directive concerning Information Security Governance
+- A Corporate Information Security Policy (CISP) flowing from the Directive
+- A set of detailed sub-policies flowing from the CISP
+- A set of company standards based on the Corporate and Detailed Policies
+- A set of administrative and operational procedures, again flowing from the detailed set of sub-policies
+

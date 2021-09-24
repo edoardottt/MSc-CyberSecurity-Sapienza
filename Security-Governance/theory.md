@@ -188,3 +188,13 @@ The set of **Sub-Policies** may differ from company to company, but usually the 
 - A Third Party Access Control Policy
 
 It is very important that the ISPA clearly indicates where these different policies originate, this means that any sub-policy must be ‘linked’ or ‘traced back’ to the CISP in some way.
+
+**Control**  
+Compliance check is the main scope of the Control part of the model.  
+It is possible to assess only what we can measure, so the compliance clauses that should be present inside the directives, need to provide a clear metric that can be evaluated.  
+Traditionally, Compliance monitoring is done by performing periodic ICT Audit sessions where ICT risks are evaluated and an audit report is produced.  
+These actions should be done in a proper way considering the timing. In particular we should be sure that the directive was received by everyone involved in the policies and that enough time has passed in order to perform a valid audit. The monitoring should also be done in near real time due to the fact that the world is fast and dynamic.  
+It is not an exact science and few guidelines are available:
+- Compliance Clauses must be clear and precise (e.g., a clause like “Employees
+must take Information Security seriously” is vague... What does it mean “seriously”?)
+- Compliance Clauses should express a way to measure its satisfaction

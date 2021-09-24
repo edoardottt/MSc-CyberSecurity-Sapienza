@@ -58,3 +58,19 @@ Typically, it requires a long period of time to be concluded:
 - **advanced** implies sophisticated techniques using malware to exploit vulnerabilities in systems.
 - **persistent** suggests that an external command and control system is continuously monitoring and extracting data from a specific target.
 - **threat** indicates human involvement in orchestrating the attack.
+
+## Lesson 2 - A model for Information Sec. Governance Part 1
+
+In NIST SP 800-100, Information Security Governance is defined as  
+“The process of establishing and maintaining a framework and supporting management structure and processes to provide assurance that information security
+strategies are aligned with and support business objectives, are consistent with applicable laws and regulations through adherence to policies and internal controls, and provide assignment of responsibility, all in an effort to manage risk.”  
+
+Information Security Governance (ISG from now) must ensure cost-effectiveness.  
+- There must be a balance between the cost of protecting electronic resources and the risk to which these resources are exposed
+- NO OVERPROTECTION causing unnecessary expenses
+- NO UNDERPROTECTION causing risk to materialize and impact the company
+
+A good (IT) Risk management strategy is therefore mandatory to implement a good ISG strategy.  
+
+One proposed model is the following by **Von Solms R. in 2006** in which we can see the direct loop in the front and new layers at the depth with a one big layer that is the best practice. This model should help in **“doing the right things right”**.
+![proposed model von Solms](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/resources/images/02-model-von-solms.png)  

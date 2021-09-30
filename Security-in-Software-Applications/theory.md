@@ -358,7 +358,7 @@ strcpy(buff2, buff1);
 ...
 ```
 
-## Lesson 4 - Format string attacks and dynamic countermeasures
+## Lesson 4 - Format string, Integer overflows and dynamic countermeasures
 
 **Format string attacks**  
 Complete new type of attack, invented/discovered in 2000. Like integer overflows, it can lead to buffer overflows.
@@ -445,4 +445,41 @@ General Summary: Buffer overflow is an instance of three more general problems:
     - data and return address on the stack 
 - believing in & relying on an abstraction
     - in this case, the abstraction of procedure calls offered by C
+
+There are more ideas to prevent buffer overflows attacks (StackGuard, SSP, /GS...) based on protecting the memory, make it read-only, or make read-only justthe return address and so on. But the main cause of buffer overflows is not the memory management, but the function pointers. To bypass these protections we can just write a function pointer with another malicious function pointer; e.g. we find a function pointer stored in the stack and we overwrite it with another one, so the destination function will be called. Of course we have to make sure we are not overriding the canary value.  
+
+**Integer overflow**  
+In mathematics, integers form an infinite set, but in systems they are binary strings of fixed length (precision), so a finite set.
+Familiar rules of arithmetic do not apply.
+In unsigned 8-bit integer arithmetic
+- 255+1= 0,
+- 16 X 17=16 and
+- 0-1=255
+
+In particular, a negative value (as in 3.) can be interpreted as a ‘large’ positive one and this can break the checks if they use that value to make comparisons. 
+
+Example:
+```C
+char buf [128]
+combine(char *s1, size_t len1, char *s2,size_t, len2) {
+    if (len1+len2+1 <= sizeof(buf)) {
+        strncpy(buf, s1, len1);
+        strncat(buf, s2, len2); 
+    }
+}
+```
+The system could be attacked by constructing s1 so that len1 <= sizeof(buf) and set len2=`0xFFFFFFFF` (as unsigned integer, it corresponds to 4294967295). Now, since len1+0xFFFFFFFF+1 = len1 <=sizeof(buf)) the strncat is executed and the buffer overrun.  
+
+Example:
+```C
+int main(int argc, char* argv[]) {
+    char _t[10]
+    char p[]=“xxxxxxx”;
+    char k[]=“zzzz”;
+    strncpy(_t, p, sizeof(_t);
+    strncat(_t, k, sizeof(_t) – strlen(_t)-1);
+    return 0;
+}
+```
+After execution, the resulting string in \_t is xxxxxxxzz; Now if we supply 10 chars in p (xxxxxxxxxx), then sizeof(\_t) and strlen(\_t) are equal and the third argument is -1. Since strncat expects unsigned as third argument, it is interpreted as 0xFFFFFFFF and therefore the strcat is unbounded and the buffer overrun again.
 

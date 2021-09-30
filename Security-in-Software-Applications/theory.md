@@ -474,8 +474,8 @@ Example:
 ```C
 int main(int argc, char* argv[]) {
     char _t[10]
-    char p[]=“xxxxxxx”;
-    char k[]=“zzzz”;
+    char p[]="xxxxxxx";
+    char k[]="zzzz";
     strncpy(_t, p, sizeof(_t);
     strncat(_t, k, sizeof(_t) – strlen(_t)-1);
     return 0;

@@ -263,3 +263,9 @@ strncpy(src, base_url, 9);
 strcpy(dest, src);
 // copies src to dest
 ```
+Use this if `dest` should be null-terminated!  
+```C
+strncpy(dest, src, sizeof(dest)-1)
+dst[sizeof(dest-1)] = `\0`;
+```
+

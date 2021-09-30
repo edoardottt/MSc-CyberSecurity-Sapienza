@@ -358,7 +358,7 @@ strcpy(buff2, buff1);
 ...
 ```
 
-## Lesson 4 - Format string attacks
+## Lesson 4 - Format string attacks and dynamic countermeasures
 
 **Format string attacks**  
 Complete new type of attack, invented/discovered in 2000. Like integer overflows, it can lead to buffer overflows.
@@ -371,4 +371,78 @@ What may happen if we execute printf(string) where string is user-supplied ? (if
 - `%n` writes the number of characters printed so far onto the stack. This allow stack overflow attacks...
 - Note that format strings break the **don’t mix data & code** principle.
 - Easy to spot & fix: replace `printf(str)` by `printf("%s", str)`
+ 
+Dynamic countermeasures protection by kernel (Doesn't prevent against heap overflows)
+- non-executable memory (NOEXEC). Prevents attacker executing her code
+- address space layout randomisation (ASLR). Generally makes attacker's life harder
+- instruction set randomisation. Hardware support needed to make this efficient enough.
+ 
+Protection inserted by the compiler
+- stack canaries to prevent or detect malicious changes to the stack; examples to follow
+- obfuscation of memory addresses
+
+Dynamic countermeasure: **stack canaries**
+- introduced in StackGuard in gcc
+- a dummy value (stack canary or cookie) is written on the stack in front of the return address and checked when function returns
+- a careless stack overflow will overwrite the canary, which can then be detected.
+- a careful attacker can overwrite the canary with the correct value.
+
+Additional countermeasures:
+– use a random value for the canary
+– XOR this random value with the return address
+– include string termination characters in the canary value
+
+IMPORTANT. None of these protections is perfect!
+- even if attacks to return addresses are caught, integrity of other data other the stack can still be abused
+- clever attacks may leave canaries intact
+- where do you store the "master" canary value, a cleverer attack could change it
+- none of this protects against heap overflows, eg buffer overflow within a struct...
+
+We can take countermeasures at different points in time: before we even begin programming, during development, when testing, when executing code.  
+To prevent, to detect (at (pre)compile time or at runtime), and to migitate problems with buffer overflows.  Don't use C or C++.
+
+Dangerous C system calls
+![dangerous C system calls](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/05-dangerous-C-syscall.png)  
+(Building secure software, J. Viega & G. McGraw, 2002)  
+
+There is a choice between using statically vs dynamically allocated buffers
+- static approach easy to get wrong, and chopping user input may still have unwanted effects
+- dynamic approach susceptible to out-of-memory errors, and need for failing safely
+
+**Better string libraries**
+- `libsafe.h` provides safer, modified versions of eg strcpy. Prevents buffer overruns beyond current stack frame in the dangerous functions it redefines
+- `libverify` enhancement of libsafe. Keeps copies of the stack return address on the heap, and checks if these match
+- `strlcpy(dst,src,size)` and `strlcat(dst,src,size)` with size the size of dst, not the maximum length copied. Consistently used in OpenBSD
+- `glib.h` provides Gstring type for dynamically growing null-terminated strings in C, but failure to allocate will result in crash that cannot be intercepted, which may not be acceptable
+- `Strsafe.h` by Microsoft guarantees null-termination and always takes destination size as argument
+- C++ string class, but data() and c-str() return low level C strings, ie char*, with result of data() is not always null-terminated on all platforms...
+
+**Detection before shipping**
+- Testing
+    - Difficult! How to hit the right cases?
+    - Fuzz testing (test for crash on long, random inputs) can be succesful in finding some weaknesses
+- Code reviews. Expensive & labour intensive
+- Code scanning tools (aka static analysis). E.g.
+    - RATS (), also for PHP, Python, Perl
+    - Flawfinder , ITS4 , Deputy , Splint
+    - PREfix, PREfast by Microsoft 
+    - Plus other commercial tools (Coverity, Parasoft, Klockwork...)
+- Bounds Checkers
+    - add additonal bounds info for pointers and check these at run time
+    - e.g. Bcc, RTcc, CRED ...
+    - RICH prevents integer overflows
+- Safe variants of C
+    - adding bound checks, but also type checks and more: eg garbage collection or region-based memory management) 
+    - Cyclone, CCured, Vault, Control-C, Fail-Safe C ...
+- Program verification
+    - proving by mathematical means (e.g. Hoare logic) that memory management of a program is safe, but extremely labour intensive.
+- Reducing attack surface
+    - Not running or even installing certain software, or enabling all features by default, mitigates the threat
+
+General Summary: Buffer overflow is an instance of three more general problems:
+- lack of input validation
+- mixing data & code
+    - data and return address on the stack 
+- believing in & relying on an abstraction
+    - in this case, the abstraction of procedure calls offered by C
 

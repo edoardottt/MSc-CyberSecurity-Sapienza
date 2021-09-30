@@ -213,5 +213,53 @@ For efficiency, these bugs are not detected at run time, as discussed before: be
 Process memory layout
 ![process memory layout](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/03-processmemlayout.png)
 
-What if `gets()` read more than 8 bytes?
+What if `gets()` read more than 8 bytes? (*Never* use `gets()`)
 ![stack overflow](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/04-stack-overflow.png)
+
+**Stack overflow** is the overflow of a buffer allocated on the stack.  
+**Heap overflow** idem, of buffer allocated on the heap.  
+Common causes:
+- poor programming with of arrays and strings (library functions for null-terminated strings
+- problems with format strings
+- But other low-level coding defects than can result in buffer overflows, eg integer overflows or data races
+
+Example: gets.  
+Never use gets. Use `fgets(buf, size, stdin)` instead  
+```C
+char buf[20];
+gets(buf);  // read user input until
+            // first EoL or EoF character
+```
+
+Example: strcpy.  
+strcpy assumes dest is long enough, and assumes src is null-terminated. Use `strncpy(dest, src, size)` instead
+```C
+char dest[20];
+strcpy(dest, src); // copies string src to dest
+```
+
+Example:
+```C
+char buf[20];
+char prefix[] = ”http://”;
+...
+strcpy(buf, prefix);
+// copies the string prefix to buf
+strncat(buf, path, sizeof(buf));  
+// concatenates path to the string buf
+// == ERROR ==
+// strncat’s 3rd parameter is number of chars to copy, not the buffer size
+```
+
+Example:
+```C
+char src[9];
+char dest[9];
+char base_url = "www.ru.nl";
+strncpy(src, base_url, 9);
+// copies base_url to src
+// == ERROR ==
+// base_url is 10 chars long, incl. its null terminator, so src won’t be null-terminated
+strcpy(dest, src);
+// copies src to dest
+```

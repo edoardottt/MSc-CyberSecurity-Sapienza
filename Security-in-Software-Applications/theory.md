@@ -118,7 +118,7 @@ When we write software, we provide some functionalities. These functionalities c
 ![touchpoints](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/01-touchpoints.gif)  
 (http://www.swsec.com/resources/touchpoints/)  
 
-## Lesson 3 - Basics (part 2)
+## Lesson 3 - Basics (part 2) and Buffer overflows
 
 Security is about regulating access to assets (eg. information or functionality). Software provides functionalities that come with certain risks, Software security is about managing these risks.  
 Any discussion of security should start with an inventory of the stakeholders, their assets, and the threats to these assets by possible attackers (employees, clients, script kiddies, criminals ...).  
@@ -268,4 +268,107 @@ Use this if `dest` should be null-terminated!
 strncpy(dest, src, sizeof(dest)-1)
 dst[sizeof(dest-1)] = `\0`;
 ```
+
+Example:
+```C
+char *buf;
+int i, len;
+read(fd, &len, sizeof(len));
+// read sizeof(len) bytes, ie. an int and store these in len
+// == ERROR ==
+// We forget to check for bytes representing a negative int, so len might be negative
+buf = malloc(len);
+// == ERROR ==
+// no space for null-terminating char
+read(fd,buf,len);
+// == ERROR ==
+// len cast to unsigned and negative length overflows. read then goes beyond the end of buf
+```
+
+In programming languages with “security” provisions, the programmer would not have to worry about
+- writing past the bounds of the array (IndexOutOfBoundsException for example)
+- implicit conversion from signed to unsigned integers (forbidden or warned by compiler/typechecker)
+- malloc returning null value (OutOfMemoryException for example)
+- malloc non initializing memory (by default)
+- integer overflow (IntegerOverflowException for example)
+
+Example:
+```C
+#ifdef UNICODE
+#define _sntprintf _snwprintf
+#define TCHAR wchar_t
+#else
+#define _sntprintf _snprintf
+#define TCHAR char
+#endif
+
+TCHAR buff[MAX_SIZE];
+_sntprintf(buff, sizeof(buff), ”%s\n”, input);
+// == ERROR ==
+// _snwprintf’s 2 nd param is # of chars in buffer, not # of bytes
+// CodeRed worm exploited su ch an ANSI/Unicode mismatch
+```
+
+Example:
+The integer overflow is the root problem, but the (heap) buffer overflow that this enables make it exploitable
+```C
+#define MAX_BUF = 256
+
+void BadCode (char* input) {
+    short len;
+    char buf[MAX_BUF];
+    len = strlen(input);
+    // == ERROR ==
+    // What if input is longer than 32K?
+    // len will be a negative number, due to integer overflow
+    if (len < MAX_BUF) strcpy(buf,input); // ... hence: potential buffer overflow
+}
+```
+
+Example:
+```C
+bool CopyStructs(InputFile* f, long count) {
+    structs = new Structs[count];
+    // == ERROR ==
+    // effectively does a malloc(count*sizeof(type)) which may cause integer overflow
+    for (long i = 0; i < count; i++)
+        { if !(ReadFromFile(f,&structs[i])))
+            break;
+    }
+}
+```
+
+Example:
+```C
+char buff1[MAX_SIZE], buff2[MAX_SIZE];
+// make sure url a valid URL and fits in buff1 and buff2:
+if (! isValid(url)) return;
+if (strlen(url) > MAX_SIZE – 1) return;
+// copy url up to first separator, ie. first ’/’, to buff1
+// == ERROR ==
+// length up to the first null
+out = buff1;
+do {
+    // skip spaces
+    if (*url != ’ ’) *out++ = *url;
+} while (*url++ != ’/’);
+// == ERROR ==
+// what if there is no ‘/’ in the URL?
+strcpy(buff2, buff1);
+...
+```
+
+## Lesson 4 - Format string attacks
+
+**Format string attacks**  
+Complete new type of attack, invented/discovered in 2000. Like integer overflows, it can lead to buffer overflows.
+Strings can contain special characters, eg %s in `printf(“Cannot find file %s”, filename);`  
+Such strings are called format strings. What happens if we execute the code below?  
+`printf(“Cannot find file %s”);`  
+What may happen if we execute printf(string) where string is user-supplied ? (if it contains special characters, eg `%s`, `%x`, `%n`, `%hn`?)  
+
+- `%x` reads and prints 4 bytes from stack. This may leak sensitive data.  
+- `%n` writes the number of characters printed so far onto the stack. This allow stack overflow attacks...
+- Note that format strings break the **don’t mix data & code** principle.
+- Easy to spot & fix: replace `printf(str)` by `printf("%s", str)`
 

@@ -90,7 +90,7 @@ Software flaws can be introduced during implementation can be roughly distinguis
     - SQL injection, XSS, CSRF, … in web applications
 
 **Example of insecure code**
-~~~
+```Java
 int balance;
 
 void decrease(int amount)
@@ -107,7 +107,7 @@ void increase(int amount)
 {
     balance = balance + amount;         // [ 3 ] ERROR: What if the sum is too large for an integer?
 }
-~~~
+```
 
 1. *Logic error*: Can be found by code inspection only
 2. *Lack of input validation of (untrusted) user*: Design flaw or implementation flaw ?
@@ -118,7 +118,7 @@ When we write software, we provide some functionalities. These functionalities c
 ![touchpoints](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/01-touchpoints.gif)  
 (http://www.swsec.com/resources/touchpoints/)  
 
-## Lesson 3 - Basics (part 2)
+## Lesson 3 - Basics (part 2) and Buffer overflows
 
 Security is about regulating access to assets (eg. information or functionality). Software provides functionalities that come with certain risks, Software security is about managing these risks.  
 Any discussion of security should start with an inventory of the stakeholders, their assets, and the threats to these assets by possible attackers (employees, clients, script kiddies, criminals ...).  
@@ -192,3 +192,183 @@ Sources of software vulnerabilities
 - Inappropriate use of features provided by the infrastructure.
 
 Main causes: complexity of these features, functionality winning over security, again ignorance of developers.  
+
+Reading: https://inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf
+
+Suppose in a C program we have an array of length 4: `char buffer[4];`  
+What happens if we execute the statement below?: `buffer[4] = 'a';`
+Anything can happen! If the data written (ie. the “a”) is user input that can be controlled by an attacker, this vulnerability can be exploited: anything that the attacker wants can happen.  
+The solution to this problem is check the array bounds at runtime. Unfortunately, C and C++ have not adopted this solution, for efficiency reasons (Ada, Perl, Python, Java, C#, and even Visual Basic have). As a result, buffer overflows have been the number 1 security problem in software ever since.  
+Any C(++) code acting on untrusted input is at risk. E.g. code taking input over untrusted network (sendmail, web browser, wireless network driver, ...); code taking input from untrusted user on multi-user system (services running with high privileges, as ROOT on Unix/Linux, as SYSTEM on Windows); code acting on untrusted files that have been downloaded or emailed. Also embedded software, eg. in devices with (wireless) network connection such as mobile phones with Bluetooth, wireless smartcards, airplane navigation systems, ...  
+
+How does **Buffer overflow** work?  
+The program is responsible for its memory management. Memory management is very error-prone (segmentation fault etc.).  
+Typical bugs: 
+- Writing past the bound of an array
+– Dangling pointers: missing initialisation, bad pointer arithmetic, incorrect de- allocation, double de-allocation, failed allocation, ...
+– Memory leaks
+
+For efficiency, these bugs are not detected at run time, as discussed before: behaviour of a buggy program is undefined.  
+
+Process memory layout
+![process memory layout](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/03-processmemlayout.png)
+
+What if `gets()` read more than 8 bytes? (*Never* use `gets()`)
+![stack overflow](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/04-stack-overflow.png)
+
+**Stack overflow** is the overflow of a buffer allocated on the stack.  
+**Heap overflow** idem, of buffer allocated on the heap.  
+Common causes:
+- poor programming with of arrays and strings (library functions for null-terminated strings
+- problems with format strings
+- But other low-level coding defects than can result in buffer overflows, eg integer overflows or data races
+
+Example: gets.  
+Never use gets. Use `fgets(buf, size, stdin)` instead  
+```C
+char buf[20];
+gets(buf);  // read user input until
+            // first EoL or EoF character
+```
+
+Example: strcpy.  
+strcpy assumes dest is long enough, and assumes src is null-terminated. Use `strncpy(dest, src, size)` instead
+```C
+char dest[20];
+strcpy(dest, src); // copies string src to dest
+```
+
+Example:
+```C
+char buf[20];
+char prefix[] = ”http://”;
+...
+strcpy(buf, prefix);
+// copies the string prefix to buf
+strncat(buf, path, sizeof(buf));  
+// concatenates path to the string buf
+// == ERROR ==
+// strncat’s 3rd parameter is number of chars to copy, not the buffer size
+```
+
+Example:
+```C
+char src[9];
+char dest[9];
+char base_url = "www.ru.nl";
+strncpy(src, base_url, 9);
+// copies base_url to src
+// == ERROR ==
+// base_url is 10 chars long, incl. its null terminator, so src won’t be null-terminated
+strcpy(dest, src);
+// copies src to dest
+```
+Use this if `dest` should be null-terminated!  
+```C
+strncpy(dest, src, sizeof(dest)-1)
+dst[sizeof(dest-1)] = `\0`;
+```
+
+Example:
+```C
+char *buf;
+int i, len;
+read(fd, &len, sizeof(len));
+// read sizeof(len) bytes, ie. an int and store these in len
+// == ERROR ==
+// We forget to check for bytes representing a negative int, so len might be negative
+buf = malloc(len);
+// == ERROR ==
+// no space for null-terminating char
+read(fd,buf,len);
+// == ERROR ==
+// len cast to unsigned and negative length overflows. read then goes beyond the end of buf
+```
+
+In programming languages with “security” provisions, the programmer would not have to worry about
+- writing past the bounds of the array (IndexOutOfBoundsException for example)
+- implicit conversion from signed to unsigned integers (forbidden or warned by compiler/typechecker)
+- malloc returning null value (OutOfMemoryException for example)
+- malloc non initializing memory (by default)
+- integer overflow (IntegerOverflowException for example)
+
+Example:
+```C
+#ifdef UNICODE
+#define _sntprintf _snwprintf
+#define TCHAR wchar_t
+#else
+#define _sntprintf _snprintf
+#define TCHAR char
+#endif
+
+TCHAR buff[MAX_SIZE];
+_sntprintf(buff, sizeof(buff), ”%s\n”, input);
+// == ERROR ==
+// _snwprintf’s 2 nd param is # of chars in buffer, not # of bytes
+// CodeRed worm exploited su ch an ANSI/Unicode mismatch
+```
+
+Example:
+The integer overflow is the root problem, but the (heap) buffer overflow that this enables make it exploitable
+```C
+#define MAX_BUF = 256
+
+void BadCode (char* input) {
+    short len;
+    char buf[MAX_BUF];
+    len = strlen(input);
+    // == ERROR ==
+    // What if input is longer than 32K?
+    // len will be a negative number, due to integer overflow
+    if (len < MAX_BUF) strcpy(buf,input); // ... hence: potential buffer overflow
+}
+```
+
+Example:
+```C
+bool CopyStructs(InputFile* f, long count) {
+    structs = new Structs[count];
+    // == ERROR ==
+    // effectively does a malloc(count*sizeof(type)) which may cause integer overflow
+    for (long i = 0; i < count; i++)
+        { if !(ReadFromFile(f,&structs[i])))
+            break;
+    }
+}
+```
+
+Example:
+```C
+char buff1[MAX_SIZE], buff2[MAX_SIZE];
+// make sure url a valid URL and fits in buff1 and buff2:
+if (! isValid(url)) return;
+if (strlen(url) > MAX_SIZE – 1) return;
+// copy url up to first separator, ie. first ’/’, to buff1
+// == ERROR ==
+// length up to the first null
+out = buff1;
+do {
+    // skip spaces
+    if (*url != ’ ’) *out++ = *url;
+} while (*url++ != ’/’);
+// == ERROR ==
+// what if there is no ‘/’ in the URL?
+strcpy(buff2, buff1);
+...
+```
+
+## Lesson 4 - Format string attacks
+
+**Format string attacks**  
+Complete new type of attack, invented/discovered in 2000. Like integer overflows, it can lead to buffer overflows.
+Strings can contain special characters, eg %s in `printf(“Cannot find file %s”, filename);`  
+Such strings are called format strings. What happens if we execute the code below?  
+`printf(“Cannot find file %s”);`  
+What may happen if we execute printf(string) where string is user-supplied ? (if it contains special characters, eg `%s`, `%x`, `%n`, `%hn`?)  
+
+- `%x` reads and prints 4 bytes from stack. This may leak sensitive data.  
+- `%n` writes the number of characters printed so far onto the stack. This allow stack overflow attacks...
+- Note that format strings break the **don’t mix data & code** principle.
+- Easy to spot & fix: replace `printf(str)` by `printf("%s", str)`
+

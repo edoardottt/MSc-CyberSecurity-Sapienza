@@ -117,3 +117,78 @@ To prevent standard mistakes we need knowledge and security taken into account f
 When we write software, we provide some functionalities. These functionalities come with certain risks. Software security is about managing these risks.  
 ![touchpoints](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/01-touchpoints.gif)  
 (http://www.swsec.com/resources/touchpoints/)  
+
+## Lesson 3 - Basics (part 2)
+
+Security is about regulating access to assets (eg. information or functionality). Software provides functionalities that come with certain risks, Software security is about managing these risks.  
+Any discussion of security should start with an inventory of the stakeholders, their assets, and the threats to these assets by possible attackers (employees, clients, script kiddies, criminals ...).  
+Security is about imposing countermeasures to reduce risks to assets to acceptable levels. A security policy is a specification of what security requirements/goals the countermeasures are intended to achieve, so security mechanisms to enforce the policy.  
+Security Objectives: CIA  
+- Confidentiality (unauthorised users cannot read information)
+- Integrity (unauthorised users cannot alter information)
+- Availability (authorised users can access information)
+- Non-repudiation for accountability (authorised users cannot deny actions)
+
+Integrity nearly always more important than confidentiality (e.g. think of your bank account information, your medical records, all your software, incl. entire OS)  
+Availability may be undesirable for privacy (you want certain data to be or become unavailable)  
+The well-known trio (CIA) but there are more “concrete” goals
+- traceability and auditing (forensics)
+- monitoring (real-time auditing)
+- multi-level security
+- privacy & anonymity
+- ... 
+- assurance, the goals are met
+
+How to realise security objectives? AAAA
+- Authentication. Who are you?
+- Access control/Authorisation. Control who is allowed to do what; this requires a specification of who is allowed to do what
+- Auditing. Check if anything went wrong
+- Action. If so, take action
+
+Other names for the last three A's
+- Prevention. Measures to stop breaches of security goals
+- Detection. Measures to detect breaches of security goals
+- Reaction. Measures to recover assets, repair damage, and persecute (and deter) offenders
+
+Threats vs security requirements
+- information disclosure (confidentiality)
+- Tampering with information (integrity)
+- Denial of service (availability)
+- Spoofing (authentication)
+- Unauthorised access (access control)
+
+Countermeasures can also be non-IT related. Countermeasures can lead to new vulnerabilities (eg. if we only allow three incorrect logins, as a countermeasure to brute-force password guessing attacks, which new vulnerability do we introduce?). If a countermeasure relies on software, bugs in this software may mean that it is ineffective, or worse still, that it introduces more weaknesses.  
+
+Security in Software Development Life Cycle  
+![ssdlc](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/02-ssdlc.png)  
+(Gary McGraw, Software security, Security & Privacy Magazine, IEEE, Vol 2, No. 2, pp. 80-83, 2004.)
+
+Security technologies we can use  
+- cryptography (for threats related to insecure communication and storage 
+- access control (for threats related to misbehaving users). e.g. role-based access control
+- language-based security (for threats related to misbehaving programs)
+- typing, memory-safety
+- sandboxing (e.g. Java, .NET/C# ...)
+
+Security technologies may be provided by the infrastructure/platform an application builds on, for instance. Of course, software in such infrastuctures implementing security has to be secure  
+– networking infrastructure, which may eg. use SSL
+– operating system or database system, providing eg. access control
+– programming platform, for instance Java or .NET sandboxing
+
+Applications are built on top of "infrastructure" (This infrastructure provides security mechanisms, but is also a source of insecurity) consisting of
+- operating system  
+- programming language/platform/middleware
+    - programming language itself
+    - interface to CPU & RAM
+    - libraries and API (interface to peripherals, provider of building blocks)
+- other applications & utilities (e.g. database)
+
+Knowledge about threats & vulnerabilities are crucial. Vulnerabilities can be specific to programming language, operating system, database, the type of application... and are continuously evolving. We cannot hope to cover all vulnerabilities in this course, “Fortunately”, people keep making the same mistakes
+and some old favourites never seem to die, esp. public enemy number 1: the buffer overflow and some patterns keep re-emerging.  
+Sources of software vulnerabilities
+- Bugs in the application or its infrastructure, ie. doesn't do what it should do
+- Inappropriate features in the infrastructure, ie. does something that it shouldn't do
+- functionality winning over security
+- Inappropriate use of features provided by the infrastructure.
+
+Main causes: complexity of these features, functionality winning over security, again ignorance of developers.  

@@ -90,7 +90,7 @@ Software flaws can be introduced during implementation can be roughly distinguis
     - SQL injection, XSS, CSRF, … in web applications
 
 **Example of insecure code**
-~~~
+```Java
 int balance;
 
 void decrease(int amount)
@@ -107,7 +107,7 @@ void increase(int amount)
 {
     balance = balance + amount;         // [ 3 ] ERROR: What if the sum is too large for an integer?
 }
-~~~
+```
 
 1. *Logic error*: Can be found by code inspection only
 2. *Lack of input validation of (untrusted) user*: Design flaw or implementation flaw ?

@@ -159,7 +159,36 @@ Threats vs security requirements
 
 Countermeasures can also be non-IT related. Countermeasures can lead to new vulnerabilities (eg. if we only allow three incorrect logins, as a countermeasure to brute-force password guessing attacks, which new vulnerability do we introduce?). If a countermeasure relies on software, bugs in this software may mean that it is ineffective, or worse still, that it introduces more weaknesses.  
 
-Security in Software Development Life Cycle
-![ssdlc](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/02-ssdlc.png)
+Security in Software Development Life Cycle  
+![ssdlc](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/02-ssdlc.png)  
 (Gary McGraw, Software security, Security & Privacy Magazine, IEEE, Vol 2, No. 2, pp. 80-83, 2004.)
 
+Security technologies we can use  
+- cryptography (for threats related to insecure communication and storage 
+- access control (for threats related to misbehaving users). e.g. role-based access control
+- language-based security (for threats related to misbehaving programs)
+- typing, memory-safety
+- sandboxing (e.g. Java, .NET/C# ...)
+
+Security technologies may be provided by the infrastructure/platform an application builds on, for instance. Of course, software in such infrastuctures implementing security has to be secure  
+– networking infrastructure, which may eg. use SSL
+– operating system or database system, providing eg. access control
+– programming platform, for instance Java or .NET sandboxing
+
+Applications are built on top of "infrastructure" (This infrastructure provides security mechanisms, but is also a source of insecurity) consisting of
+- operating system  
+- programming language/platform/middleware
+    - programming language itself
+    - interface to CPU & RAM
+    - libraries and API (interface to peripherals, provider of building blocks)
+- other applications & utilities (e.g. database)
+
+Knowledge about threats & vulnerabilities are crucial. Vulnerabilities can be specific to programming language, operating system, database, the type of application... and are continuously evolving. We cannot hope to cover all vulnerabilities in this course, “Fortunately”, people keep making the same mistakes
+and some old favourites never seem to die, esp. public enemy number 1: the buffer overflow and some patterns keep re-emerging.  
+Sources of software vulnerabilities
+- Bugs in the application or its infrastructure, ie. doesn't do what it should do
+- Inappropriate features in the infrastructure, ie. does something that it shouldn't do
+- functionality winning over security
+- Inappropriate use of features provided by the infrastructure.
+
+Main causes: complexity of these features, functionality winning over security, again ignorance of developers.  

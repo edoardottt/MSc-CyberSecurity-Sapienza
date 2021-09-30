@@ -192,3 +192,26 @@ Sources of software vulnerabilities
 - Inappropriate use of features provided by the infrastructure.
 
 Main causes: complexity of these features, functionality winning over security, again ignorance of developers.  
+
+Reading: https://inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf
+
+Suppose in a C program we have an array of length 4: `char buffer[4];`  
+What happens if we execute the statement below?: `buffer[4] = 'a';`
+Anything can happen! If the data written (ie. the “a”) is user input that can be controlled by an attacker, this vulnerability can be exploited: anything that the attacker wants can happen.  
+The solution to this problem is check the array bounds at runtime. Unfortunately, C and C++ have not adopted this solution, for efficiency reasons (Ada, Perl, Python, Java, C#, and even Visual Basic have). As a result, buffer overflows have been the number 1 security problem in software ever since.  
+Any C(++) code acting on untrusted input is at risk. E.g. code taking input over untrusted network (sendmail, web browser, wireless network driver, ...); code taking input from untrusted user on multi-user system (services running with high privileges, as ROOT on Unix/Linux, as SYSTEM on Windows); code acting on untrusted files that have been downloaded or emailed. Also embedded software, eg. in devices with (wireless) network connection such as mobile phones with Bluetooth, wireless smartcards, airplane navigation systems, ...  
+
+How does **Buffer overflow** work?  
+The program is responsible for its memory management. Memory management is very error-prone (segmentation fault etc.).  
+Typical bugs: 
+- Writing past the bound of an array
+– Dangling pointers: missing initialisation, bad pointer arithmetic, incorrect de- allocation, double de-allocation, failed allocation, ...
+– Memory leaks
+
+For efficiency, these bugs are not detected at run time, as discussed before: behaviour of a buggy program is undefined.  
+
+Process memory layout
+![process memory layout](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/03-processmemlayout.png)
+
+What if `gets()` read more than 8 bytes?
+![stack overflow](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/04-stack-overflow.png)

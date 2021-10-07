@@ -694,4 +694,7 @@ Inside the program, the eval statement becomes equivalent to: `eval "ls .;chmod 
 
 Another Example:
 In PHP backticks ``: execution in a command line by command substitution `command` gets executed before the rest of the command line.  
-Imagine a program that calls a shell to run grep. What happens when this is run? `eval "grep \`./script1\` afile"`
+Imagine a program that calls a shell to run grep. What happens when this is run? 
+```PHP
+eval "grep `./script1` afile"
+```

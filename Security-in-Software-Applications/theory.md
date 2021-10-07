@@ -629,3 +629,69 @@ Documentation of vendor code: Documentation of vendor code components that other
         - Pointer arithmetic would still be unbounded as a pointer might be pointing to an array of 100 bytes, and array of 50 bytes, or to the 40 th byte of an array of 50 bytes
         - Programmers would still have to be educated about buffer overflows because they need to write an interrupt handler to do what they want it to (halt, truncate the buffer, ask the user for different input?)
 
+**(Code injection) Format string attack**  
+In C, you can print using a format string: `printf(const char *format, ...);`, `printf(“Mary has %d cats”, cats);`.  
+- `%d` specifies a decimal number (from an int)
+- `%s` would specify a string argument
+- `%x` would specify an unsigned uppercase hexadecimal (from an int)
+- `%f` expects a double and converts it into decimal notation, rounding as specified by a precision argument
+- ...
+
+It is a fundamental C problem, there is no way to count arguments passed to a C function, so missing arguments are not detected. Format string is interpreted: it mixes code and data.  
+What happens if the following code is run? 
+```C
+int main {
+    printf("Mary has %d cats.");
+}
+```
+Result: `Mary has -1073742416 cats`
+
+The program reads missing arguments off the stack! And gets garbage (or interesting stuff if you want to probe the stack).  
+What happens if the following code is run, assuming there is an argument input by a user?
+```C
+int main(int argc, char *argv[]) {
+    printf(argv[1]);
+    exit(0);
+}
+```
+Try it and input `%s%s%s%s%s%s%s%s%s%s`. How many `%s` arguments do you need to crash it?  
+The program will be terminated by OS. Segmentation fault, bus error, etc... because the program attempted to read where it was not supposed to. User input is interpreted as string format (e.g., %s, %d, etc...). Anything can happen, depending on input!  
+How you should correct the program: `printf("%s", argv[1]);`  
+Discovered relatively recently (~2000), it is a limitation of C family languages. It can affect various memory locations, can be used to create buffer overflows, can be used to read the stack. Not straightforward to exploit, but examples of root compromise scripts available on the web.  
+A format string vulnerability is a call to a function with a format string argument, where the format string is either:  
+- Possibly under the control of an attacker
+- Not followed by appropriate number of arguments
+
+Difficult to establish whether a data string could possibly be affected by an attacker; considered very bad practice to place a string to print as the format string argument. Sometimes the bad practice is confused with the actual presence of a format string vulnerability.  
+Some functions using Format Strings: `printf` (prints to "stdout" stream), `fprintf` (prints to stream), `warn` (standard error output), `err` (standard error output), `setproctitle` (sets the invoking process's title), `sprintf` (char \*str, const char \*format, ...);  
+A possible attack: `%n` format command writes a number to the location specified by argument on the stack. The argument is treated as int pointer. Often either the buffer being written to, or the raw input, are somewhere on the stack. Attacker controls the pointer value! Writes the number of characters written so far. Keeps counting even if buffer size limit was reached! E.g.: `"Count these characters %n"`.  
+
+Preventing format string vulnerabilities:  
+- Always specify a format string
+    - Most format string vulnerabilities are solved by specifying `"%s"` as format string and not using the data string as format string
+- If possible, make the format string a constant
+    - Extract all the variable parts as other arguments to the call
+    - Difficult to do with some internationalization libraries
+- If the above two practices are not possible, use runtime defenses such as FormatGuard
+    - Rare at design time
+    - Perhaps a way to keep using a legacy application and keep costs down
+    - Increase trust that a third-party application will be safe
+- Pscan searches for format string functions called with the data string as format string (few false positives)
+
+**Goal of Code Injection**:  
+Trick program into executing an attacker's code by clever input construction that mixes code and data. Mixed code and data channels have special characters that trigger a context change between data and code interpretation. The attacker wants to inject these meta-characters through some clever encoding or manipulation, so supplied data is interpreted as code.  
+Defend against it by using input cleansing and validation; type casts may help if they are possible. Need to keep track of which data has been cleansed, or keep track of all sources of inputs and cleanse as the input is received.  
+
+Basic example:
+```Bash
+$> cat example
+#!/bin/sh
+A = $1
+eval "ls $A"
+```
+If the "example" file is executable by anyone and we have confidential files not readable by others we could inject this code: `./example ".;chmod o+r *"`.  
+Inside the program, the eval statement becomes equivalent to: `eval "ls .;chmod o+r *"`. Any statement after the ";" would also get executed, because ";" is a command separator. The data argument for "ls" has become code!  
+
+Another Example:
+In PHP backticks ``: execution in a command line by command substitution `command` gets executed before the rest of the command line.  
+Imagine a program that calls a shell to run grep. What happens when this is run? `eval "grep \`./script1\` afile"`

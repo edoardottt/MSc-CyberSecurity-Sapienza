@@ -718,7 +718,7 @@ The program calls ```system(“grep `./script` text”);```, can be verified by 
 So we could make a.out execute any program we want. Imagine that we provide the argument remotely, anyone running a.out would run arbitrary code as the owner of a.out. What if a.out runs with root privileges?  
 
 Shell metacharacters:
-- `\`` to execute something (command substitution)
+- \` to execute something (command substitution)
 - `;` is a command (“pipeline”) separator
 - `&` start process in the background
 - `|` is a pipe (connecting standard output to standard input)
@@ -726,3 +726,4 @@ Shell metacharacters:
 - `<<` or `>>` prepend, append
 - `#` to comment out something
 - Refer to the appropriate man page (man csh) for all characters
+

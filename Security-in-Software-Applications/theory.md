@@ -696,5 +696,33 @@ Another Example:
 In PHP backticks ``: execution in a command line by command substitution `command` gets executed before the rest of the command line.  
 Imagine a program that calls a shell to run grep. What happens when this is run? 
 ```PHP
-eval "grep `./script1` afile"
+eval "grep `./malicious-script` afile"
 ```
+First malicious-script is executed and then the command is executed.  
+
+Another Example:  
+```C
+int main(int argc, char *argv[], char **envp) {
+    char buf [100];
+    buf[0] = '\0';
+    snprintf(buf,sizeof(buf),"grep %s text",argv[1]);
+    system(buf);
+    exit(0);
+}
+```
+What happens when we run the following? 
+```
+$> ./a.out \`./script\`
+```
+The program calls ```system(“grep `./script` text”);```, can be verified by adding ```"printf( "%s", buf)"``` to the program.  
+So we could make a.out execute any program we want. Imagine that we provide the argument remotely, anyone running a.out would run arbitrary code as the owner of a.out. What if a.out runs with root privileges?  
+
+Shell metacharacters:
+- `\`` to execute something (command substitution)
+- `;` is a command (“pipeline”) separator
+- `&` start process in the background
+- `|` is a pipe (connecting standard output to standard input)
+- `&&` ,`||` logical operators AND and OR
+- `<<` or `>>` prepend, append
+- `#` to comment out something
+- Refer to the appropriate man page (man csh) for all characters

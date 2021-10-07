@@ -727,3 +727,74 @@ Shell metacharacters:
 - `#` to comment out something
 - Refer to the appropriate man page (man csh) for all characters
 
+**Defending against Code Injection**  
+- Input cleansing and validation
+    - Model the expected input (Discard what does not fit (e.g., metacharacters))
+    - Keep track of which data has been cleansed (e.g. Perl's taint mode)
+    - Keep track of all sources of inputs (or cleanse as the input is received)
+- Type and range verification, type casts
+- Separating code from data
+    - Transmit, receive and manipulate data using different channels than for code
+
+Input Cleansing:  
+- Key to preventing code injection attacks
+- Common problem where code is generated dynamically from some data
+    - SQL (database Simple Query Language)
+    - System calls and equivalents in PHP, Windows CreateProcess, etc...
+    - HTML may contain JavaScript (Cross-site scripting vulnerabilities)
+
+Intuitive Approach:  
+Block or escape all metacharacters, but what are they? Problems:  
+- Character encodings
+    - octal, hexadecimal, UTF-8, UTF-16, binary, Base-64, URL encoding, ...
+- Obfuscation
+    - Escaped characters that can get interpreted later
+- Engineered strings such that by blocking a character, something else is generated
+
+Wrong way to cleanse input:  
+```C
+int main(int argc, char *argv[], char **envp) {
+    static char bad_chars[] = "/ ;[]<>&\t";
+    char *user_data;
+    char *cp;
+    /* Get the data */
+    user_data = getenv("QUERY_STRING");
+    /* Remove bad characters. WRONG! */
+    for (cp = user_data; *(cp += strcspn(cp,bad_chars));
+    /* */)
+    *cp = '_';
+    ...    
+```
+
+Another wrong way to cleanse input:  
+```C
+(...)
+    strcpy(commandstr, "/usr/local/bin/ph -m ");
+    escape_shell_cmd(serverstr);
+    strcat(commandstr, serverstr);
+    (...)
+    phfp = popen(commandstr,"r");
+(...)
+void escape_shell_cmd(char *cmd) {
+    (...)
+    if(ind("&;`'\"|*?~<>^()[]{}$\\" ,cmd[x]) != -1){
+    (...)
+}
+```
+Author forgot to list newlines in "if" statement. *Exploit*: input "newline" (`\n`) and the commands you want executed...
+
+Defense: Input Sanitization  
+- Do not attempt to list all forbidden characters
+    - It is easy to forget and and one missed character leads to defeat
+- Make a list of all allowed characters
+    - Without metacharacters
+- Convert to a variable of numerical type, if a number is expected
+- Truncate input strings if the expected length is known
+
+Order for Cleansing and Input Validation:  
+1) Resolve all character encoding issues first
+2) Cleanse
+    - If combinations of characters can produce metacharacters, you may need to do several passes. Example: "a" and "b" are legal if separated from each other, but "ab" is considered a metacharacter. The character "d" is not allowed. After you filter out "d" from "adb", you may be allowing "ab" through the filter!
+3) Validate type, range, and format
+4) Validate semantics (i.e., meaning of input)
+

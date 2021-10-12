@@ -798,3 +798,90 @@ Order for Cleansing and Input Validation:
 3) Validate type, range, and format
 4) Validate semantics (i.e., meaning of input)
 
+## Lesson 6 - Program Analysis
+
+Refer to the slides of the course for this topic.
+
+## Lesson 7 - Code Analysis and tools
+
+**Types of analysis**:
+- Static analysis: Approach for verifying software (including finding defects) without executing software
+    - Source code vulnerability scanning tools, code inspections, etc.
+- Dynamic analysis: Approach for verifying software (including finding defects) by executing software on specific inputs and checking results ("oracle")
+    - Functional testing, fuzz testing, etc.
+- Hybrid analysis: Combine above approaches
+- Operational: Tools in operational setting
+    - Minimize risks, report information back, etc.
+    - may be static, dynamic, hybrid; often dynamic
+
+| Analysis/tool report | Report correct | Report incorrect | 
+| ------ | ------ | ------ |
+| Reported a defect | **True positive (TP)**: Correctly reported a defect | **False positive (FP)**: Incorrect, it reported a "defect" that's not a defect | 
+| Did not report a defect | **True negative (TN)**: Correctly did not report a (given) defect | **False negative (FN)**: Incorrect because it failed to report a defect |
+
+- False positive rate: `FPR = #FP / ( #TP + #FP )`, the probability that an alert is false
+- True positive rate: `TPR = #TP / ( #TP + #FN )`, percentage of vulnetabilities found
+- Developers worry about large false positive rate (the tool makes waste my time)
+- Auditors worry about small or <100% TPR for a given category (the tool missed something important)
+
+Binary classifiers must generally trade off between FP rates and TP rates  
+To get more reports (larger TP rate), must accept larger FP rate. What’s more important to you, low FP rate or high TP rate?  
+
+See https://samate.nist.gov/docs/CAS_2011_SA_Tool_Method.pdf
+
+Some tool information sources:
+- Software SOAR (“State-of-the-Art Resources (SOAR) for Software Vulnerability Detection, Test, and Evaluation”) by David A. Wheeler and Rama S. Moorthy, IDA Paper P-5061
+    - http://www.acq.osd.mil/se/docs/P-5061-software-soar-mobility-Final-Full-Doc-20140716.pdf
+    - “Appendix E” has a large matrix of different types of tools
+- NIST SAMATE (http://samate.nist.gov)
+    - “Classes of tools and techniques”: http://samate.nist.gov/index.php/Tool_Survey.html
+    - Can test tools using Software Assurance Reference Dataset (SARD), formerly known as the SAMATE Reference Dataset (SRD). It’s a set of programs with known properties: http://samate.nist.gov/SARD/
+- Build security in (https://buildsecurityin.us-cert.gov)
+    - Software Assurance (SwA) Technology and tools working group
+    - Overview of SwA tools: https://buildsecurityin.us-cert.gov/swa/swa_tools.html
+    - NAVSEA “Software Security Assessment Tools” https://buildsecurityin.us-cert.gov/swa/downloads/NAVSEA-Tools-Paper-2009-03-02.pdf
+- NSA Center for Assured Software (CAS)
+- OWASP (https://www.owasp.org)
+
+Static analysis: Source vs. Executables
+- Source code pros:
+    - Provides much more context; executable-only tools can miss important information
+    - Can examine variable names and comments (can be very helpful!)
+    - Can fix problems found (hard with just executable)
+    - Difficult to decompile code
+Source code cons:
+    - Can mislead tools; executable runs, not source (if there’s a difference)
+    - Often cannot get source for proprietary off-the-shelf programs
+        - Can get for open source software
+        - Often can get for custom
+- Bytecode is somewhere between
+
+(Some) Static analysis approaches:
+- Human analysis (including peer reviews)
+- Type checkers
+- Compiler warnings
+- Style checkers / defect finders / quality scanners
+- Security analysis (text scanners and beyond)
+- Property checkers
+- Knowledge extraction
+- formal methods (separately)
+
+Human (manual) analysis:
+Humans are great at discerning context and intent, but get bored and overwhelmed. They are expensive, especially if analyzing executables. Can be one person, e.g. "desk-checking". Can focus on specific issues e.g. "Is everything that’s supposed be authenticated covered by authentication processes?"  
+
+Automated tool limitations:
+- Tools typically don’t "understand":
+    - System architecture
+    - System mission/goal
+    - Technical environment
+    - Human environment
+- Except for formal methods...
+    - Most have significant FP and/or FN rates
+- Best when part of a process to develop secure software, not as the only mechanism
+
+Typical static analysis tool:  
+![tsat](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/06-tsat.png)  
+
+Many static analysis tools' focus is other than security, may look for generic defects, or focus on "code cleanliness" (maintainability, style, “quality”etc.), but some defects are security vulnerabilities. Reports that clean code is easier for other (security-specific) static analysis to analyze (for fewer false positives/negatives). Probably easier for humans to review too; no hard evidence, some would be welcome! Such tools often faster, cheaper and easier (many do not need to do whole-program analysis). Such tools may be useful in reducing as a precursor step before using security-specific tools. For Java users: Consider quality scanners FindBugs or PMD.  
+
+**Type checkers**

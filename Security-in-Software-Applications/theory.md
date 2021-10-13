@@ -1026,4 +1026,16 @@ Functional testing for security
 - Once defects found by fuzz testing fixed, fuzz testing has a quickly diminishing rate of return
     - Fuzz testing is still a good idea… but not by itself
 
-Done with dynamic analysis, we start talking about hybrid analysis. 
+Done with dynamic analysis, we start talking about hybrid analysis. Hybrid means combining both static and dynamic analysis. The historical common hybrid approach is "Coverage measure". This approach measures how well program has been tested in dynamic analysis.  
+Two common coverage for dynamic testing:
+- Statement coverage: Which (%) program statements have been executed by at least one test?
+- Branch coverage: Which (%) program branch options have been executed by at least one test?
+
+**Penetration testing**  
+- Pretend to be adversary, try to break in
+- Depends on the skills of pentesters
+- Need to set rules-of-engagement (RoE)
+    - Problem: RoE often unrealistic
+- Really a combination of static and dynamic approaches
+
+Remember, a fool with a tool is still a fool.

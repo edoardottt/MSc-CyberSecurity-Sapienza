@@ -885,3 +885,145 @@ Typical static analysis tool:
 Many static analysis tools' focus is other than security, may look for generic defects, or focus on "code cleanliness" (maintainability, style, “quality”etc.), but some defects are security vulnerabilities. Reports that clean code is easier for other (security-specific) static analysis to analyze (for fewer false positives/negatives). Probably easier for humans to review too; no hard evidence, some would be welcome! Such tools often faster, cheaper and easier (many do not need to do whole-program analysis). Such tools may be useful in reducing as a precursor step before using security-specific tools. For Java users: Consider quality scanners FindBugs or PMD.  
 
 **Type checkers**
+- Many languages have static type checking built in
+    - Some more rigorous than others
+    - C/C++ not very strong (and must often work around)
+    - Java/C# stronger (interfaces, etc., ease use)
+- Can detect some defects before fielding
+    - Including some security defects
+    - Also really useful in documenting intent
+- Work with type system – be as narrow as you can
+    - Beware diminishing returns
+
+Compiler warnings: Not security-specific but useful. Where practical, enable compiler/interpreter warnings and fix anything found. Turn on run-time warnings too: May detect security vulnerabilities.  
+
+Style checkers/Defect finders/Quality scanners
+- Compare code (usually source) to set of pre-canned “style” rules or probable defects
+- Goal:
+    - Make it easier to understand/modify code
+    - Avoid common defects/mistakes, or patterns likely to lead to them
+- Some try to have low FP rate
+    - Don’t report something unless it’s a defect
+
+Security defect text scanners
+- Scan source code using simple grep-like lexer
+    - Typically "know" about comments and strings
+    - Look for function calls likely to be problematic
+- Examples: RATS, ITS4, Flawfinder (D.A.Wheeler)
+- Pros:
+    - Fast and cheap
+    - Can process partial code (including un-compilable code)
+- Cons:
+    - Lack of context leads to large FN & FP rates
+    - Useful primarily for warning of "dangerous" functions
+
+Security defect finders
+- Read software and create internal model of software
+- Look for patterns likely to lead to security defects
+- Examples
+    - Proprietary: HP/Fortify, Coverity
+    - OSS: splint (for C), LAPSE+ (for Java)
+
+**Analysis approach: Examining structure / method calls**  
+Example: Warn about calls to gets(): FunctionCall: function is `name == "gets"`.  
+
+**Analysis Approach: Data flow - Taint propagation**  
+- Many tools (static and dynamic) perform "taint propagation"
+    - Input from untrusted users ("sources") considered "tainted"
+    - Warn/forbid sending tainted data to certain methods and constructs ("sinks")
+    - Some operations (e.g. checking) may "untaint" data 
+- Static analysis:
+    - Follow data flow from sources through program
+    - Determine if tainted data can get to vulnerable "sink"
+- Dynamic analysis (e.g. Perl, Ruby):
+    - Variables have "taint" value set when input from some sources
+    - Certain operations (sinks) forbid direct use of tainted data
+        - Counters accidental use of untrusted and unchecked data
+        - esp. useful on injection (SQL, command) and buffer overflow
+
+Example (Taint Propagation): 
+```Java
+buffer = getUntrustedInputFromNetwork(); // Source
+copyBuffer(newBuffer, buffer); // Pass-through
+exec(newBuffer); // Sink
+```
+
+**Property checkers** 
+- "Prove" that a program has very specific narrow property
+- Typically focuses on very specific temporal safety, e.g.:
+    - "Always frees allocated memory"
+    - "Can never have livelock / deadlock"
+- Many strive to be sound ("reports all possible problems")
+- Examples: GrammaTech, GNATPro Praxis, Polyspace
+
+**Knowledge extraction / program understanding**
+- Create view of software automatically for analysis
+    - Especially useful for large code bases
+    - Visualizes architecture
+    - Enables queries, translation to another language
+- Examples:
+    - Hatha Systems’ Knowledge Refinery
+    - IBM Rational Asset Analyzer (RAA)
+    - Relativity MicroFocus (COBOL-focused)
+
+Done with static analysis, we start talking about dynamic analysis. There is one huge problem here, the fact that we can't test all the possible inputs: Given a trivial program like "Add two integers", we have: Input space = `(2^64)*(2^64) = 2^128 possibilities`. This could take up to ~10^15 years.  
+Security (and safety) requirements often have the form "X never happens" (negative requirement). Easier to show there is at least one case where something happens than to show it never happens.  
+
+Functional testing for security
+- Use normal testing approaches, but add tests for security requirements
+    - Test both "should happen" and "should not happen"
+    - Often people forget to test what "should not happen"
+        - "Can I read/write without being authorized to do so?"
+        - "Can I access the system with an invalid certificate?"
+- Branch/statement coverage tools may warn you of untested paths
+- As always, automate and rerun
+
+**Web application scanners**
+- Attempt to go through the various web forms and links
+- Send in attack-like and random data
+    - Key issues: Input vector (Query string? HTTP body? JSON? XML?), scan barrier, crawl / input vector extraction, which vulnerabilities it detects (and how well)
+    - Often build on "fuzzing" techniques (discussed next)
+
+**Fuzz testing ("fuzzing")**  
+- Testing technique that:
+    - Provides (many!) invalid/random input to inputs
+    - Monitors program for crashes and other signs of trouble (failing code assertions, appearance of memory leaks)... not if the final answer is "correct" (this process is the "oracle")
+- Simplifies "oracle" so can create massive data set
+- Do not need source, might not even need executable
+- Often quickly finds a number of real defects
+    - Attackers use it; do not have easy-to-find vulnerabilities
+- Can be very useful for security, often finds problems
+- Typically diminishing rate of return
+
+**Fuzz testing variations: Input**  
+- Test data creation approaches:
+    - Mutation based: mutate existing samples to create test data
+    - Generation based: create test data based on model of input
+        - Including fully random, but that often has poorer coverage
+    - May try to create "likely security vulnerability" patterns (e.g. metachars) to increase value
+- May concentrate on mostly-valid or mostly-invalid
+- Type of input data: File formats, network protocols, environment variables, API call sequences, database contents, etc.
+- Input selection may be based on other factors, including info about program (e.g., uncovered program sections)
+
+**Fuzz testing variations: oracle**  
+- Originally, just "did it crash / hang"?
+- Adding program assertions (enabled!) can reveal more
+- Test other "should not happen"
+    - Ensure files/directories unchanged if shouldn’t be
+    - Memory leak (e.g., valgrind)
+    - Invalid memory access, e.g. using AddressSanitizer (aka ASan) for C/C++/Objective-C to detect buffer overflows and double-frees
+    - More intermediate (external) state checking
+    - Final state "valid" (!= "correct")
+
+**Fuzz testing: Problems**  
+- Fully random often does not test much
+    - e.g. if input has a checksum, fuzz testing ends up primarily checking the checksum algorithm
+- Fuzz testing only finds "shallow" problems
+    - Special cases ("if (a == 2) ...") rare in input space
+    - Sequence of rare-probability events by "random" input will typically not be covered by testing
+    - Can modify generators to increase probability... but you have to know very specific defect pattern before you find defect
+    - In general, only a small amount of program gets covered
+- Once defects found by fuzz testing fixed, fuzz testing has a quickly diminishing rate of return
+    - Fuzz testing is still a good idea… but not by itself
+
+Done with dynamic analysis, we start talking about hybrid analysis. 

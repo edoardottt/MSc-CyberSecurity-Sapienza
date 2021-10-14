@@ -1040,7 +1040,40 @@ Two common coverage for dynamic testing:
 
 Remember, a fool with a tool is still a fool.
 
-## Lesson 8 - SQL Injection & Input validation
+## Lesson 8 - Input validation, Command Injection and SQL Injection
+
+Lack of input validation is the most commonly exploited vulnerability. Many variants of attacks that exploit this: buffer overflows, command injection, SQLi, XSS... 
+
+**Command Injection**
+- A CGI script might contain
+    - `cat thefile | mail clientaddress`
+- An attack might enter email address
+    - `pippo@di.uniroma1.it | rm -rf /`
+- What happens then ?
+    - `cat thefile | mail pippo@di.uniroma1.it | rm -rf /`
+
+Can you think of countermeasures ?
+- validate input
+- reduce access rights of CGI script (defense in depth)
+- maybe we shouldn’t use such a scripting languages for this?
+
+Code that uses the system interpreter to print to a user-specified printer might include
+```C
+char buf[1024];
+snprintf(buf, "system lpr –P %s", printer_name, sizeof(buf)-1);
+system(buf);
+```
+This can be attacked in the same way; entering `miro;xterm&` is less destructive and more interesting than `...;rm –fr /`  
+Vulnerability: many API calls and language constructs in many languages are affected, e.g.
+- C/C++ `system()`, `execvp()`, `ShellExecute()`, ...
+- Java `Runtime.exec()`, ...
+- Perl `system`, `exec`, `open`, \`, `/e`, ...
+- Python `exec`, `eval`, `input`, `execfile`, ...
+- ...
+- Countermeasures
+    - validate all user input
+    - whitelist, not blacklist
+- run with minimal privilige. Doesn't prevent, but mitigates effects  
 
 **SQL Injection**  
 The ability to inject SQL commands into the database engine through an existing application. It is a flaw in "web application" development, it is not a Database or web server problem. SQL stands for Structured Query Language and allows us to access a database. SQL can: execute queries against a database, retrieve, insert, delete and update records in a database. There are many different versions of the SQL language. They support the same major keywords in a similar manner (such as SELECT, UPDATE, DELETE, INSERT, WHERE, and others). Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard! A relational database contains one or more tables identified each by a name and tables contain records (rows) with data. With SQL, we can query a database and have a result set returned. We can divide the SQL language in two parts: Data Definition Language (DDL) and Data Manipulation Language (DML).  
@@ -1112,4 +1145,19 @@ if (objReader.Read()) {
     ...
 ```
 
-**Input validation**  
+Another Example: Stored procedure in Oracle's PL/SQL
+```SQL
+CREATE PROCEDURE login
+(name VARCHAR(100), pwd VARCHAR(100)) AS
+DECLARE @sql nvarchar(4000)
+SELECT @sql =' SELECT * FROM Account WHERE
+username=' + @name + 'AND password=' + @pwd
+EXEC (@sql)
+```
+called from Java with
+```Java
+CallableStatement proc =
+connection.prepareCall("{call login(?, ?)}");
+proc.setString(1, username);
+proc.setString(2, password);
+```

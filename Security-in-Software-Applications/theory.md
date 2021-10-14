@@ -1039,3 +1039,81 @@ Two common coverage for dynamic testing:
 - Really a combination of static and dynamic approaches
 
 Remember, a fool with a tool is still a fool.
+
+## Lesson 8 - SQL Injection & Input validation
+
+**SQL Injection**  
+The ability to inject SQL commands into the database engine through an existing application. It is a flaw in "web application" development, it is not a Database or web server problem. SQL stands for Structured Query Language and allows us to access a database. SQL can: execute queries against a database, retrieve, insert, delete and update records in a database. There are many different versions of the SQL language. They support the same major keywords in a similar manner (such as SELECT, UPDATE, DELETE, INSERT, WHERE, and others). Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard! A relational database contains one or more tables identified each by a name and tables contain records (rows) with data. With SQL, we can query a database and have a result set returned. We can divide the SQL language in two parts: Data Definition Language (DDL) and Data Manipulation Language (DML).  
+How does SQLi work?  
+Common vulnerable login query
+```SQL
+var sql = "SELECT * FROM users
+WHERE login = '" + formusr + "'
+AND password = '" + formpwd + "'";
+```
+Injecting : formusr = `' or 1=1 ––` and formpwd = `anything`
+```SQL
+SELECT * FROM users
+WHERE username = '' or 1=1-- 
+AND password = 'anything'
+```
+The power of `'`: It closes the string parameter. Everything after is considered part of the SQL command. String fields are very common but there are other types of fields: Numeric, Dates ...  
+For the numbers it's the same: Injecting formacct = `1 or 1=1 --`.  
+Input validation circumvention and IDS Evasion techniques are very similar and rely on "signatures". Signatures can be evaded easily. Input validation, IDS detection AND strong database and OS hardening must be used together.  
+Some IDS Signature Evasion:
+- `' OR 'unusual' = 'unusual'`
+- `' OR 'something' = 'some'+'thing'`
+- `' OR 'text' = N'text'`
+- `' OR 'something' like 'some%'`
+- `' OR 2 > 1`
+- `' OR 'text' > 't'`
+- `' OR 'whatever' IN ('whatever')`
+- `' OR 2 BETWEEN 1 AND 3`
+
+SQL Injection Characters
+- `'` or `"`: character String Indicators
+- `--` or `#`: single-line comment
+- `/*…*/`: multiple-line comment
+- `+`: addition, concatenate (or space in url)
+- `||`: (double pipe) concatenate
+- `%`: wildcard attribute indicator
+- `?Param1=foo&Param2=bar`: URL Parameters
+- `PRINT`: useful as non transactional command
+- `@variable`: local variable
+- `@@variable`: global variable
+- `waitfor delay '0:0:10'`: time delay
+
+IDS and input validation can also be circumvented by encoding: URL encoding, Unicode/UTF-8, Hex enconding, char() function...  
+Example: Inject without quotes (string = "root"): `' union select * from users where login = char(114,111,111,116);`  
+
+**Defending against SQL injections**  
+- Sanitize all input.
+    - Assume all input is harmful.
+    - Validate user input that contains dangerous keywords or SQL characters, such as “xp_cmdshell”, “- -”, and “;”.
+    - Consider using regular expressions to remove unwanted characters. This approach is safer than writing your own search and replace routines.
+- Run with least privilege.
+    - Do not execute an SQL SELECT statement as “sa”. Create low-privilege accounts to access data.
+    - Use SQL permissions to lock down databases, stored procedures, and tables.
+    - Remove unused stored procedures.
+- Do not allow clients to view ODBC/OLE DB error messages. Handle these errors with your own code. By default, ASP pages returns error messages to clients.
+- Enable logging of all user access, and set alerts to log all failed attempts to access objects.
+- Do not use string concatenations to build SQL queries. Instead, use parameterized queries or parameterized stored procedures, because they explicitly define input and output values and do not process multiple statements as a batch.  
+
+Example (Why is it safer? Because the SQL server knows that the value of the parameter is not actual code to execute, but data):  
+Replace this
+```Java
+var sql = "SELECT * FROM users WHERE login = '" + formusr + "' AND password = '" + formpwd + "'";
+```
+with this
+```Java
+SqlConnection objConnection=new SqlConnection(_ConnectionString);
+objConnection.Open();
+SqlCommand objCommand = new SqlCommand( "SELECT * FROM User WHERE login = @Name AND password = @Password", objConnection);
+objCommand.Parameters.Add("@Name", NameTextBox.Text);
+objCommand.Parameters.Add("@Password", PasswordTextBox.Text);
+SqlDataReader objReader = objCommand.ExecuteReader();
+if (objReader.Read()) { 
+    ...
+```
+
+**Input validation**  

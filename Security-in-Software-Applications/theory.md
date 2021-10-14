@@ -1046,16 +1046,12 @@ Remember, a fool with a tool is still a fool.
 The ability to inject SQL commands into the database engine through an existing application. It is a flaw in "web application" development, it is not a Database or web server problem. SQL stands for Structured Query Language and allows us to access a database. SQL can: execute queries against a database, retrieve, insert, delete and update records in a database. There are many different versions of the SQL language. They support the same major keywords in a similar manner (such as SELECT, UPDATE, DELETE, INSERT, WHERE, and others). Most of the SQL database programs also have their own proprietary extensions in addition to the SQL standard! A relational database contains one or more tables identified each by a name and tables contain records (rows) with data. With SQL, we can query a database and have a result set returned. We can divide the SQL language in two parts: Data Definition Language (DDL) and Data Manipulation Language (DML).  
 How does SQLi work?  
 Common vulnerable login query
-```SQL
-var sql = "SELECT * FROM users
-WHERE login = '" + formusr + "'
-AND password = '" + formpwd + "'";
+```Java
+var sql = "SELECT * FROM users WHERE login = '" + formusr + "' AND password = '" + formpwd + "'";
 ```
 Injecting : formusr = `' or 1=1 ––` and formpwd = `anything`
 ```SQL
-SELECT * FROM users
-WHERE username = '' or 1=1-- 
-AND password = 'anything'
+SELECT * FROM users WHERE username = '' or 1=1 -- AND password = 'anything'
 ```
 The power of `'`: It closes the string parameter. Everything after is considered part of the SQL command. String fields are very common but there are other types of fields: Numeric, Dates ...  
 For the numbers it's the same: Injecting formacct = `1 or 1=1 --`.  

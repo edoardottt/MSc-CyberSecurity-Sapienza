@@ -1162,7 +1162,7 @@ proc.setString(1, username);
 proc.setString(2, password);
 ```
 
-## Lesson 9 - Input Validation (part 2) and Security best practices
+## Lesson 9 - Input Validation (part 2) and Security design principles
 
 **File name injection aka path traversal**  
 - user-supplied file name may be
@@ -1204,3 +1204,114 @@ Lack of input validation no #1 problem in various guises
 
 See https://cwe.mitre.org/data/definitions/1337.html
 
+**Security Principles**
+- Variations of lists of security principles appear in literature & on-line (see course website)
+- Security vulnerabilities often exploit violations of these principles
+- Good security solutions or countermeasures follow these principles
+- Some overlap & some tension between principles
+- More generally, checklists are useful for security
+
+These are some of them:
+- secure the weakest link
+- defence in depth
+- principle of least privilige
+- minimise attack surface
+- compartmentalize
+- secure defaults
+- keep it simple
+- fail securely
+- promote privacy
+- hiding secrets is hard
+- use community
+- resources
+- be reluctant to trust
+- ...
+
+These principles can be applied at many levels, eg. in source code of a application, between applications on a machine, at OS level, at network level, within an organisation, between organisations, ...  
+
+**Secure the weakest link**
+Spend your efforts on improving the security of the weakest part of a system, as this is where attackers will attack. Educating users may be best investment to improve security. e.g. think of phishing attacks, weak passwords. Web application visible through firewall may be easier to break than the firewall (improve web application security, not the firewall).  
+**Practice defence in depth**
+Have several layers of security, two controls are better than one (no single point of failure). A typical violation: having a firewall, and only having firewall (a user bringing in a laptop circumvents firewall, this is an example of enviromental creep).  A typical example: have a firewall *and* secure web application software *and* run web application with minimal priviliges *and* use OS access control to restrict access to sensitive files *and* encrypt them.  
+**Principle of least privilege**
+Be stingy with priviliges. Only grant permissions that are really needed, resource permissions (eg memory limits, CPU priorities), network permissions, file permissions... Typical violations: logging in as root/administrator, device drivers having to run in kernel mode. Important cause of violations: laziness.  
+In organisation: don’t give everyone access to root passwords, don’t give everyone administrator rights. On computer: run process with minimal set of priviliges.  
+Example (Java):
+```Java
+// not the default policy
+grant codeBase "file:${{java.ext.dirs}}/*" {
+    permission java.security.AllPermission;
+};
+// --> but minimum required
+grant codeBase "file:./forum/*" {
+    permission java.security.FilePermission;
+    "/home/forumcontent/*","read/write";
+};
+```
+Still in Java, remember to use `private`, `protected` or `package` instead of `public` when the last one is not needed. Expose minimal functionality in interfaces of objects, classes, packages, applications.  
+Applying the principle of least privilige in code is tricky & hard and requires work & discipline.  
+**Compartmentalize**
+Principle of least privilige works best if access control is all or nothing for large chunks (compartments) of a system. For simplicity and containing attacker in case of failure.  
+Examples:
+- Use different machines for different tasks (e.g. run web application on a different machine from employee salary database)
+- Use different user accounts on one machine for different tasks 
+    - unfortunately, security breach under one account may compromise both...
+    - compartmentalization provided by typical OSs is poor!
+- Partition hard disk and install OS twice
+- chroot jail
+    - Restricts access of a process to subset of file system, ie. changes the root of file system for that process
+    - E.g. run an application you just downloaded with `chroot /home/sos/paperino/trial;/tmp`.
+    - Nice idea, but hard to get working, and hard to get working correctly.
+- Virtual Machines
+- OS Hypervisors
+- In code (aka modularisation)
+    - using objects, classes, packages, etc.
+    - Restrict sensitive operations to small modules, with small interfaces 
+        - so that you can concentrate efforts on quality of these modules
+        - so that only these have to be subjected to code reviews
+
+**Minimize attack surface**
+Minimize number open sockets, services, services running by default, services running with high priviliges, dynamic content webpages, accounts with administrator rights, files & directories with weak access control and so on...  
+Note that applying the principle of least privilege you are at the same time minimizing the attack surface.  
+Examples (Minimize attack surface in time):
+- Automatically log off users after n minutes
+- Automatically lock screen after n minutes
+- Unplug network connection if you don’t use it
+- Switch off computer if you don’t use it
+
+**Use secure defaults**
+By default, security should be switched on and permissions turned off. This will ensure that we apply principle of least privilige. Counterexample: on bluetooth connection on mobile phone is by default on, but can be abused.  
+**Keep it simple**
+Complexity important cause of security problems; complexity leads to unforeseen feature interaction; complexity leads to incorrect use and insecure configuration by users and developers. Note: compartmentalization is a way of keeping access control simple. Eg: good practice: choke point (small interface through which all control flow must pass).  
+**Fail securely**
+Incorrect handling of unexpected errors is a major cause of security breaches.  
+Counterexamples:
+- fallback to unsafe(r) modes on failure
+    - sometimes for backward compatibility
+    - asking user if security settings can be lowered
+- crashing on failure, leading to DoS attack
+- leaking interesting information for an attacker
+
+Of course, having exceptions in a programming language has a big impact.  
+Example:
+```Java
+isAdmin = true; // enter Admin mode
+try {
+    something that may throw SomeException
+} catch (SomeException ex) {
+    // should we log?
+    log.write(ex.toString());
+    // how should we proceed?
+    isAdmin = false;
+    // or should we exit?
+}
+```
+Failing insecurely threats:
+- Information leakage
+    - about cause of error, which can be exploited
+- Ignoring errors
+    - Easier in a programming language without exceptions! (e.g. forgetting to check for -1 return value in C)
+- Misinterpreting errors
+- Useless errors (why does strncopy return an error value at all?)
+- Handling wrong exceptions
+- Handling all exceptions

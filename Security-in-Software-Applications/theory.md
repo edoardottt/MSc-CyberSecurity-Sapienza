@@ -804,7 +804,7 @@ Refer to the slides of the course for this topic.
 
 ## Lesson 7 - Code Analysis and tools
 
-**Types of analysis**:
+**Types of analysis**:  
 - Static analysis: Approach for verifying software (including finding defects) without executing software
     - Source code vulnerability scanning tools, code inspections, etc.
 - Dynamic analysis: Approach for verifying software (including finding defects) by executing software on specific inputs and checking results ("oracle")
@@ -884,7 +884,7 @@ Typical static analysis tool:
 
 Many static analysis tools' focus is other than security, may look for generic defects, or focus on "code cleanliness" (maintainability, style, “quality”etc.), but some defects are security vulnerabilities. Reports that clean code is easier for other (security-specific) static analysis to analyze (for fewer false positives/negatives). Probably easier for humans to review too; no hard evidence, some would be welcome! Such tools often faster, cheaper and easier (many do not need to do whole-program analysis). Such tools may be useful in reducing as a precursor step before using security-specific tools. For Java users: Consider quality scanners FindBugs or PMD.  
 
-**Type checkers**
+**Type checkers**  
 - Many languages have static type checking built in
     - Some more rigorous than others
     - C/C++ not very strong (and must often work around)
@@ -948,7 +948,7 @@ copyBuffer(newBuffer, buffer); // Pass-through
 exec(newBuffer); // Sink
 ```
 
-**Property checkers** 
+**Property checkers**  
 - "Prove" that a program has very specific narrow property
 - Typically focuses on very specific temporal safety, e.g.:
     - "Always frees allocated memory"
@@ -956,7 +956,7 @@ exec(newBuffer); // Sink
 - Many strive to be sound ("reports all possible problems")
 - Examples: GrammaTech, GNATPro Praxis, Polyspace
 
-**Knowledge extraction / program understanding**
+**Knowledge extraction / program understanding**  
 - Create view of software automatically for analysis
     - Especially useful for large code bases
     - Visualizes architecture
@@ -978,7 +978,7 @@ Functional testing for security
 - Branch/statement coverage tools may warn you of untested paths
 - As always, automate and rerun
 
-**Web application scanners**
+**Web application scanners**  
 - Attempt to go through the various web forms and links
 - Send in attack-like and random data
     - Key issues: Input vector (Query string? HTTP body? JSON? XML?), scan barrier, crawl / input vector extraction, which vulnerabilities it detects (and how well)
@@ -1044,7 +1044,7 @@ Remember, a fool with a tool is still a fool.
 
 Lack of input validation is the most commonly exploited vulnerability. Many variants of attacks that exploit this: buffer overflows, command injection, SQLi, XSS... 
 
-**Command Injection**
+**Command Injection**  
 - A CGI script might contain
     - `cat thefile | mail clientaddress`
 - An attack might enter email address
@@ -1177,7 +1177,7 @@ proc.setString(2, password);
 Filename Injection: File names constructed from user input (eg by string concatenation) are suspect too. Eg what is `"/usr/local/client-info/" ++ name` if name is `../../../etc/passwd`?  
 Directory traversal attack; validating file names is difficult: reuse existing code and/or use chroot jail.  
 
-**General remarks about input validation**
+**General remarks about input validation**  
 Input validations problems are the most common vulnerabilities
 - Never ever trust any user input
     - Apart from generic risks dicussed so far (command, SQL, XSS, filenames ...), there will be additional input risks specific to an application
@@ -1186,7 +1186,7 @@ Input validations problems are the most common vulnerabilities
 - Think like an attacker!
     - think how you might abuse a system with weird input
 
-**Input validation problems: prevention**
+**Input validation problems: prevention**  
 Find out about potential vulnerabilities: use community resources to find out vulnerabilities of the system/language used; avoid use of unsafe constructs, if possible. Make sure all input is validated at clear choke-points in code when doing input validation. Use white-lists, not black-lists (unless you are 100% sure your black-list is complete). Reuse existing input validation code known to be correct.  
 **Input validation problems: detection**  
 - Testing, test with inputs likely to cause problems (There are some tools that can help)
@@ -1204,7 +1204,7 @@ Lack of input validation no #1 problem in various guises
 
 See https://cwe.mitre.org/data/definitions/1337.html
 
-**Security Principles**
+**Security Principles**  
 - Variations of lists of security principles appear in literature & on-line (see course website)
 - Security vulnerabilities often exploit violations of these principles
 - Good security solutions or countermeasures follow these principles
@@ -1229,11 +1229,11 @@ These are some of them:
 
 These principles can be applied at many levels, eg. in source code of a application, between applications on a machine, at OS level, at network level, within an organisation, between organisations, ...  
 
-**Secure the weakest link**
+**Secure the weakest link**  
 Spend your efforts on improving the security of the weakest part of a system, as this is where attackers will attack. Educating users may be best investment to improve security. e.g. think of phishing attacks, weak passwords. Web application visible through firewall may be easier to break than the firewall (improve web application security, not the firewall).  
-**Practice defence in depth**
+**Practice defence in depth**  
 Have several layers of security, two controls are better than one (no single point of failure). A typical violation: having a firewall, and only having firewall (a user bringing in a laptop circumvents firewall, this is an example of enviromental creep).  A typical example: have a firewall *and* secure web application software *and* run web application with minimal priviliges *and* use OS access control to restrict access to sensitive files *and* encrypt them.  
-**Principle of least privilege**
+**Principle of least privilege**  
 Be stingy with priviliges. Only grant permissions that are really needed, resource permissions (eg memory limits, CPU priorities), network permissions, file permissions... Typical violations: logging in as root/administrator, device drivers having to run in kernel mode. Important cause of violations: laziness.  
 In organisation: don’t give everyone access to root passwords, don’t give everyone administrator rights. On computer: run process with minimal set of priviliges.  
 Example (Java):
@@ -1250,7 +1250,7 @@ grant codeBase "file:./forum/*" {
 ```
 Still in Java, remember to use `private`, `protected` or `package` instead of `public` when the last one is not needed. Expose minimal functionality in interfaces of objects, classes, packages, applications.  
 Applying the principle of least privilige in code is tricky & hard and requires work & discipline.  
-**Compartmentalize**
+**Compartmentalize**  
 Principle of least privilige works best if access control is all or nothing for large chunks (compartments) of a system. For simplicity and containing attacker in case of failure.  
 Examples:
 - Use different machines for different tasks (e.g. run web application on a different machine from employee salary database)
@@ -1270,7 +1270,7 @@ Examples:
         - so that you can concentrate efforts on quality of these modules
         - so that only these have to be subjected to code reviews
 
-**Minimize attack surface**
+**Minimize attack surface**  
 Minimize number open sockets, services, services running by default, services running with high priviliges, dynamic content webpages, accounts with administrator rights, files & directories with weak access control and so on...  
 Note that applying the principle of least privilege you are at the same time minimizing the attack surface.  
 Examples (Minimize attack surface in time):
@@ -1279,11 +1279,11 @@ Examples (Minimize attack surface in time):
 - Unplug network connection if you don’t use it
 - Switch off computer if you don’t use it
 
-**Use secure defaults**
+**Use secure defaults**  
 By default, security should be switched on and permissions turned off. This will ensure that we apply principle of least privilige. Counterexample: on bluetooth connection on mobile phone is by default on, but can be abused.  
-**Keep it simple**
+**Keep it simple**  
 Complexity important cause of security problems; complexity leads to unforeseen feature interaction; complexity leads to incorrect use and insecure configuration by users and developers. Note: compartmentalization is a way of keeping access control simple. Eg: good practice: choke point (small interface through which all control flow must pass).  
-**Fail securely**
+**Fail securely**  
 Incorrect handling of unexpected errors is a major cause of security breaches.  
 Counterexamples:
 - fallback to unsafe(r) modes on failure

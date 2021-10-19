@@ -1162,4 +1162,45 @@ proc.setString(1, username);
 proc.setString(2, password);
 ```
 
-## Lesson 9 - Input Validation (part 2) and 
+## Lesson 9 - Input Validation (part 2) and Security best practices
+
+**File name injection aka path traversal**  
+- user-supplied file name may be
+    - existing file: `../../../etc/passwd`
+    - not really a file: `/var/spool/lpr`
+    - file the user can access in other ways: `/mnt/usbkey`, `/tmp/file`
+- this may break
+    - confidentiality (leaking information to the user)
+    - integrity ( (eg. of file or system)
+    - availability (eg. trying to open print device for reading)
+
+Filename Injection: File names constructed from user input (eg by string concatenation) are suspect too. Eg what is `"/usr/local/client-info/" ++ name` if name is `../../../etc/passwd`?  
+Directory traversal attack; validating file names is difficult: reuse existing code and/or use chroot jail.  
+
+**General remarks about input validation**
+Input validations problems are the most common vulnerabilities
+- Never ever trust any user input
+    - Apart from generic risks dicussed so far (command, SQL, XSS, filenames ...), there will be additional input risks specific to an application
+- Beware of implicit assumptions on user input
+    - eg, that usernames only contain alphanumeric characters
+- Think like an attacker!
+    - think how you might abuse a system with weird input
+
+**Input validation problems: prevention**
+Find out about potential vulnerabilities: use community resources to find out vulnerabilities of the system/language used; avoid use of unsafe constructs, if possible. Make sure all input is validated at clear choke-points in code when doing input validation. Use white-lists, not black-lists (unless you are 100% sure your black-list is complete). Reuse existing input validation code known to be correct.  
+**Input validation problems: detection**  
+- Testing, test with inputs likely to cause problems (There are some tools that can help)
+    - for buffer overflow, long inputs (fuzzing)
+    - for SQL injection, inputs with fragments of SQL commands
+    - ...
+- Tainting
+    - effectively typing, with runtime checking or static analysis (more precisely, data flow analysis)
+- Code reviews, possibly using static analysis
+
+Lack of input validation no #1 problem in various guises
+- Never trust user input!
+- Think about, test, and detect malicious inputs!
+- Find out about the vulnerabilities of specific language, platform... and about countermeasures
+
+See https://cwe.mitre.org/data/definitions/1337.html
+

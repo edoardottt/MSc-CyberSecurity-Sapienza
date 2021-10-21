@@ -1250,6 +1250,10 @@ grant codeBase "file:./forum/*" {
 ```
 Still in Java, remember to use `private`, `protected` or `package` instead of `public` when the last one is not needed. Expose minimal functionality in interfaces of objects, classes, packages, applications.  
 Applying the principle of least privilige in code is tricky & hard and requires work & discipline.  
+
+
+## Lesson 10 - Security design principles (part 2)
+
 **Compartmentalize**  
 Principle of least privilige works best if access control is all or nothing for large chunks (compartments) of a system. For simplicity and containing attacker in case of failure.  
 Examples:

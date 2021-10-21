@@ -1173,7 +1173,7 @@ proc.setString(1, username);
 proc.setString(2, password);
 ```
 
-## Lesson 9 - Input Validation (part 2) and Security design principles
+## Lesson 9 - Input Validation (part 2), Race conditions and Security design principles
 
 **File name injection aka path traversal**  
 - user-supplied file name may be
@@ -1215,12 +1215,39 @@ Lack of input validation no #1 problem in various guises
 
 See https://cwe.mitre.org/data/definitions/1337.html
 
+**Race conditions**  
+Two or more processes have access to the same object. Algorithm used by processes does not properly enforce an access order. At least one process modifies the
+object. In a pre-emptively multi-tasked environment, anything can happen in-between the execution of two statements. Check if something is OK to do, do it (perhaps the conditions have changed?), Semaphores and locks are mechanisms that prevent concurrent access to, or modification of, an object by different processes. Race condition occurs when a certain condition assumed true does not hold. Window of vulnerability: interval of time when violation of assumption leads to incorrect behavior. Reduce window to zero: make relevant code atomic. An operation that cannot be interrupted with regards to an object is called "atomic". Example in Java: the keyword `synchronized`.  
+Effects of race conditions:
+- Normally:  
+    - race conditions show up as periodic errors 
+    - frequency of the error will depend upon how likely the 'bad' order is to occur
+    - it is often hard to get race condition errors to repeat
+- When exploited:
+    - crackers can attempt to force the particular conditions that will produce a flaw
+    - depending upon the exact form of the flaw, it may be produced with high probability
+    - most common (mis)use: modify the value of some shared object
+
+An example(Between calls to access and open the file might be removed!):
+```C
+const char *filename="/tmp/erik";
+if (access(filename, R_OK)!=0) {
+    ... // handle error and exit;
+}
+// file exists and we have access
+int fd open (filename, O_RDONLY);
+...
+```
+Anyway, these types of problems can be avoided using modern programming languages and safe programming desing.
+
 **Security Principles**  
 - Variations of lists of security principles appear in literature & on-line (see course website)
 - Security vulnerabilities often exploit violations of these principles
 - Good security solutions or countermeasures follow these principles
 - Some overlap & some tension between principles
 - More generally, checklists are useful for security
+
+See http://web.mit.edu/Saltzer/www/publications/protection/index.html
 
 These are some of them:
 - secure the weakest link

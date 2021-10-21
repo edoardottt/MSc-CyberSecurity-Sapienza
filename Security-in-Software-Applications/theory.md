@@ -1,5 +1,16 @@
 # Security in Software Applications - Theory
 
+- [Lesson 1 - Introduction](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-1---introduction)
+- [Lesson 2 - Basics](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-2---basics)
+- [Lesson 3 - Basics (part 2) and Buffer overflows](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-3---basics-part-2-and-buffer-overflows)
+- [Lesson 4 - Format string, Integer overflows and dynamic countermeasures](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-4---format-string-integer-overflows-and-dynamic-countermeasures)
+- [Lesson 5 - Buffer overflow defenses and code injection](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-5---buffer-overflow-defenses-and-code-injection)
+- [Lesson 6 - Program Analysis](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-6---program-analysis)
+- [Lesson 7 - Code Analysis and tools](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-7---code-analysis-and-tools)
+- [Lesson 8 - Input validation, Command Injection and SQL Injection](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-8---input-validation-command-injection-and-sql-injection)
+- [Lesson 9 - Input Validation (part 2) and Security design principles](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-9---input-validation-part-2-and-security-design-principles)
+- [Lesson 10 - Security design principles (part 2)](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-10---security-design-principles-part-2)
+
 ## Lesson 1 - Introduction
 
 Brief explanation of the concept *Trusting Trust*, the speech Ken Thompson gave when he won the Turing Award in 1983 (https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf).  

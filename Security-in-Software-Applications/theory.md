@@ -1357,3 +1357,42 @@ Failing insecurely threats:
 - Useless errors (why does strncopy return an error value at all?)
 - Handling wrong exceptions
 - Handling all exceptions
+
+**Promote privacy**  
+Privacy of users, but also of systems. Examples: telnet or even all SQL errors report an identical, standard error page, without any further info, errors may still leak information. Worse still, response time may still leak information
+
+**It's hard to keep secrets**  
+- Don’t rely on security by obscurity
+- Don’t assume attackers don’t know the application source code, and can’t reverse-engineer binaries
+    - Don’t hardcode secrets in code.
+    - Don’t rely on code obfuscation
+
+**Use community resources**  
+Use google, books, webforum, etc. to learn & reuse. Learn about vulnerabilities and avoid making the same mistakes. Learn about solutions and countermeasures and reuse them. If security mechanism is too cumbersome, users will switch it off, or find clever ways around it. User education may improve the situation, but only
+up to a point. 
+
+**Don't mix data and code**  
+This is the cause of many problems, eg
+- traditional buffer overflow attacks, which rely on mixing data and code on the stack
+- VB scripts in Office documents, leads to attacks by hostile .doc or .xls
+- javascript in webpages, leads to XSS (cross site scripting attacks)
+- SQL injection relies on use data (user input!) as part of SQL query
+
+**Be reluctant to trust**  
+Read "Ken Thompson - Reflections on trusting trust".  
+All user input is evil! E.g. unchecked user input leads to
+- buffer overflows
+- SQL injection
+- XSS on websites (maybe better to talk about output sanitization...)
+
+User input includes cookies, environment variables... User input should not be trusted, and subjected to strong input validation checks before being is used. Don’t trust third-party software.  
+
+In short, "Software Design": Determine components (e.g., classes, programming languages, frameworks, database systems, etc.) that you’ll use, and how you’ll use them ( interconnections/APIs ), to solve the problem.  
+- There are various key design principles (e.g. Saltzer and Schroeder)
+- Need to design program to counterattack, e.g.:
+    - Minimize privileges
+    - Counter TOCTOU issues
+- Use attack/threat modeling to look for potentially-successful attacks
+    - Before the attacker tries them
+- Many design approaches for self-protection
+- Consider principles and rules-of-thumb in design

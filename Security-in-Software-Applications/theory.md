@@ -8,7 +8,7 @@
 - [Lesson 6 - Program Analysis](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-6---program-analysis)
 - [Lesson 7 - Code Analysis and tools](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-7---code-analysis-and-tools)
 - [Lesson 8 - Input validation, Command Injection and SQL Injection](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-8---input-validation-command-injection-and-sql-injection)
-- [Lesson 9 - Input Validation (part 2) and Security design principles](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-9---input-validation-part-2-and-security-design-principles)
+- [Lesson 9 - Input Validation (part 2), Race conditions and Security design principles](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-9---input-validation-part-2-race-conditions-and-security-design-principles)
 - [Lesson 10 - Security design principles (part 2)](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-10---security-design-principles-part-2)
 
 ## Lesson 1 - Introduction
@@ -1173,7 +1173,7 @@ proc.setString(1, username);
 proc.setString(2, password);
 ```
 
-## Lesson 9 - Input Validation (part 2) and Security design principles
+## Lesson 9 - Input Validation (part 2), Race conditions and Security design principles
 
 **File name injection aka path traversal**  
 - user-supplied file name may be
@@ -1215,12 +1215,39 @@ Lack of input validation no #1 problem in various guises
 
 See https://cwe.mitre.org/data/definitions/1337.html
 
+**Race conditions**  
+Two or more processes have access to the same object. Algorithm used by processes does not properly enforce an access order. At least one process modifies the
+object. In a pre-emptively multi-tasked environment, anything can happen in-between the execution of two statements. Check if something is OK to do, do it (perhaps the conditions have changed?), Semaphores and locks are mechanisms that prevent concurrent access to, or modification of, an object by different processes. Race condition occurs when a certain condition assumed true does not hold. Window of vulnerability: interval of time when violation of assumption leads to incorrect behavior. Reduce window to zero: make relevant code atomic. An operation that cannot be interrupted with regards to an object is called "atomic". Example in Java: the keyword `synchronized`.  
+Effects of race conditions:
+- Normally:  
+    - race conditions show up as periodic errors 
+    - frequency of the error will depend upon how likely the 'bad' order is to occur
+    - it is often hard to get race condition errors to repeat
+- When exploited:
+    - crackers can attempt to force the particular conditions that will produce a flaw
+    - depending upon the exact form of the flaw, it may be produced with high probability
+    - most common (mis)use: modify the value of some shared object
+
+An example(Between calls to access and open the file might be removed!):
+```C
+const char *filename="/tmp/erik";
+if (access(filename, R_OK)!=0) {
+    ... // handle error and exit;
+}
+// file exists and we have access
+int fd open (filename, O_RDONLY);
+...
+```
+Anyway, these types of problems can be avoided using modern programming languages and safe programming desing.
+
 **Security Principles**  
 - Variations of lists of security principles appear in literature & on-line (see course website)
 - Security vulnerabilities often exploit violations of these principles
 - Good security solutions or countermeasures follow these principles
 - Some overlap & some tension between principles
 - More generally, checklists are useful for security
+
+See http://web.mit.edu/Saltzer/www/publications/protection/index.html
 
 These are some of them:
 - secure the weakest link
@@ -1330,3 +1357,42 @@ Failing insecurely threats:
 - Useless errors (why does strncopy return an error value at all?)
 - Handling wrong exceptions
 - Handling all exceptions
+
+**Promote privacy**  
+Privacy of users, but also of systems. Examples: telnet or even all SQL errors report an identical, standard error page, without any further info, errors may still leak information. Worse still, response time may still leak information
+
+**It's hard to keep secrets**  
+- Don’t rely on security by obscurity
+- Don’t assume attackers don’t know the application source code, and can’t reverse-engineer binaries
+    - Don’t hardcode secrets in code.
+    - Don’t rely on code obfuscation
+
+**Use community resources**  
+Use google, books, webforum, etc. to learn & reuse. Learn about vulnerabilities and avoid making the same mistakes. Learn about solutions and countermeasures and reuse them. If security mechanism is too cumbersome, users will switch it off, or find clever ways around it. User education may improve the situation, but only
+up to a point. 
+
+**Don't mix data and code**  
+This is the cause of many problems, eg
+- traditional buffer overflow attacks, which rely on mixing data and code on the stack
+- VB scripts in Office documents, leads to attacks by hostile .doc or .xls
+- javascript in webpages, leads to XSS (cross site scripting attacks)
+- SQL injection relies on use data (user input!) as part of SQL query
+
+**Be reluctant to trust**  
+Read "Ken Thompson - Reflections on trusting trust".  
+All user input is evil! E.g. unchecked user input leads to
+- buffer overflows
+- SQL injection
+- XSS on websites (maybe better to talk about output sanitization...)
+
+User input includes cookies, environment variables... User input should not be trusted, and subjected to strong input validation checks before being is used. Don’t trust third-party software.  
+
+In short, "Software Design": Determine components (e.g., classes, programming languages, frameworks, database systems, etc.) that you’ll use, and how you’ll use them ( interconnections/APIs ), to solve the problem.  
+- There are various key design principles (e.g. Saltzer and Schroeder)
+- Need to design program to counterattack, e.g.:
+    - Minimize privileges
+    - Counter TOCTOU issues
+- Use attack/threat modeling to look for potentially-successful attacks
+    - Before the attacker tries them
+- Many design approaches for self-protection
+- Consider principles and rules-of-thumb in design

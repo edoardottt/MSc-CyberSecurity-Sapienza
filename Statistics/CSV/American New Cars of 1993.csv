@@ -1,0 +1,94 @@
+Car Name,Type,"Min Price ($US1,000)","Med Price ($US1,000)","Max Price ($US1,000)",City (MPG),Open Road (MPG),Airbag,Drive train,Cylinders,Engine Size (Litres),Horsepower (HP),Revs at max power (RPM),Revs at cruising speed (RPM),Manual transmission avaiable,Fuel tank (Gallons),Passenger Capacity (persons),Length (cm),Wheelbase (cm),Width (cm),u-turn space (m),rear seat room (cm),luggage capacity (m3),Weight (kg),USA or Foreign car
+Acura Integra,Small,12.9,15.9,18.8,25,31,None,RearWheelDr,4,1.8,140,"6,300","2,890",yes,13.2,5,450,259,173,11,67,0.31,1227,Foreign
+Acura Legend,Midsize,29.2,33.9,38.7,18,25,DriverPassenger,RearWheelDr,6,3.2,200,"5,500","2,335",yes,18,5,495,292,180,12,76,0.42,1615,Foreign
+Audi 90,Compact,25.9,29.1,32.3,20,26,Driver,RearWheelDr,6,2.8,172,"5,500","2,280",yes,16.9,5,457,259,170,11,71,0.40,1531,Foreign
+Audi 100,Midsize,30.8,37.7,44.6,19,26,DriverPassenger,RearWheelDr,6,2.8,172,"5,500","2,535",yes,21.1,6,490,269,178,11,79,0.48,1544,Foreign
+BMW 535i,Midsize,23.7,30,36.2,22,30,Driver,FrontWheelDr,4,3.5,208,"5,700","2,545",yes,21.1,4,472,277,175,12,69,0.37,1651,Foreign
+Buick Century,Midsize,14.2,15.7,17.3,22,31,Driver,RearWheelDr,4,2.2,110,"5,200","2,565",no,16.4,6,480,267,175,12,71,0.45,1306,American
+Buick LeSabre,Large,19.9,20.8,21.7,19,28,Driver,RearWheelDr,6,3.8,170,"4,800","1,570",no,18,6,508,282,188,13,77,0.48,1574,American
+Buick Roadmaster,Large,22.6,23.7,24.9,16,25,Driver,FrontWheelDr,6,5.7,180,"4,000","1,320",no,23,6,549,295,198,14,77,0.59,1862,American
+Buick Riviera,Midsize,26.3,26.3,26.3,19,27,Driver,RearWheelDr,6,3.8,170,"4,800","1,690",no,18.8,5,503,274,185,12,67,0.40,1585,American
+Cadillac DeVille,Large,33,34.7,36.3,16,25,Driver,RearWheelDr,8,4.9,200,"4,100","1,510",no,18,6,523,290,185,13,89,0.51,1642,American
+Cadillac Seville,Midsize,37.5,40.1,42.7,16,25,DriverPassenger,RearWheelDr,8,4.6,295,"6,000","1,985",no,20,5,518,282,188,13,79,0.40,1785,American
+Chevrolet Cavalier,Compact,8.5,13.4,18.3,25,36,None,RearWheelDr,4,2.2,110,"5,200","2,380",yes,15.2,5,462,257,168,12,64,0.37,1129,American
+Chevrolet Corsica,Compact,11.4,11.4,11.4,25,34,Driver,RearWheelDr,4,2.2,110,"5,200","2,665",yes,15.6,5,467,262,173,12,66,0.40,1263,American
+Chevrolet Camaro,Sporty,13.4,15.1,16.8,19,28,DriverPassenger,FrontWheelDr,6,3.4,160,"4,600","1,805",yes,15.5,4,490,257,188,13,64,0.37,1470,American
+Chevrolet Lumina,Midsize,13.4,15.9,18.4,21,29,None,RearWheelDr,4,2.2,110,"5,200","2,595",no,16.5,6,503,274,180,12,72,0.45,1449,American
+Chevrolet Lumina APV,Van,14.7,16.3,18,18,23,None,RearWheelDr,6,3.8,170,"4,800","1,690",no,20,7,452,279,188,13,77, ,1685,American
+Chevrolet Astro,Van,14.7,16.6,18.6,15,20,None,AllWheelDr,6,4.3,165,"4,000","1,790",no,27,8,493,282,198,13,85, ,1826,American
+Chevrolet Caprice,Large,18,18.8,19.6,17,26,Driver,FrontWheelDr,8,5,170,"4,200","1,350",no,23,6,544,295,196,13,75,0.57,1774,American
+Chevrolet Corvette,Sporty,34.6,38,41.5,17,25,Driver,FrontWheelDr,8,5.7,300,"5,000","1,450",yes,20,2,455,244,188,13, , ,1533,American
+Chrylser Concorde,Large,18.4,18.4,18.4,20,28,DriverPassenger,RearWheelDr,6,3.3,153,"5,300","1,990",no,18,6,516,287,188,12,79,0.42,1594,American
+Chrysler LeBaron,Compact,14.5,15.8,17.1,23,28,DriverPassenger,RearWheelDr,4,3,141,"5,000","2,090",no,16,6,465,264,173,12,77,0.40,1399,American
+Chrysler Imperial,Large,29.5,29.5,29.5,20,26,Driver,RearWheelDr,6,3.3,147,"4,800","1,785",no,16,6,516,279,175,13,91,0.48,1619,American
+Dodge Colt,Small,7.9,9.2,10.6,29,33,None,RearWheelDr,4,1.5,92,"6,000","3,285",yes,13.2,5,442,249,168,10,67,0.31,1030,American
+Dodge Shadow,Small,8.4,11.3,14.2,23,29,Driver,RearWheelDr,4,2.2,93,"4,800","2,595",yes,14,5,437,246,170,12,67,0.37,1211,American
+Dodge Spirit,Compact,11.9,13.3,14.7,22,27,Driver,RearWheelDr,4,2.5,100,"4,800","2,535",yes,16,6,460,264,173,12,77,0.40,1347,American
+Dodge Caravan,Van,13.6,19,24.4,17,21,Driver,AllWheelDr,6,3,142,"5,000","1,970",no,20,7,445,284,183,13,67, ,1681,American
+Dodge Dynasty,Midsize,14.8,15.6,16.4,21,27,Driver,RearWheelDr,4,2.5,100,"4,800","2,465",no,16,6,488,267,175,13,77,0.45,1397,American
+Dodge Stealth,Sporty,18.5,25.8,33.1,18,24,Driver,AllWheelDr,6,3,300,"6,000","2,120",yes,19.8,4,457,246,183,12,51,0.31,1726,American
+Eagle Summit,Small,7.9,12.2,16.5,29,33,None,RearWheelDr,4,1.5,92,"6,000","2,505",yes,13.2,5,442,249,168,11,67,0.31,1041,American
+Eagle Vision,Large,17.5,19.3,21.2,20,28,DriverPassenger,RearWheelDr,6,3.5,214,"5,800","1,980",no,18,6,513,287,188,12,76,0.42,1583,American
+Ford Festiva,Small,6.9,7.4,7.9,31,33,None,RearWheelDr,4,1.3,63,"5,000","3,150",yes,10,4,358,229,160,10,66,0.34,837,American
+Ford Escort,Small,8.4,10.1,11.9,23,30,None,RearWheelDr,4,1.8,127,"6,500","2,410",yes,13.2,5,434,249,170,11,71,0.34,1148,American
+Ford Tempo,Compact,10.4,11.3,12.2,22,27,None,RearWheelDr,4,2.3,96,"4,200","2,805",yes,15.9,5,450,254,173,12,70,0.37,1220,American
+Ford Mustang,Sporty,10.8,15.9,21,22,29,Driver,FrontWheelDr,4,2.3,105,"4,600","2,285",yes,15.4,4,457,257,173,12,61,0.34,1293,American
+Ford Probe,Sporty,12.8,14,15.2,24,30,Driver,RearWheelDr,4,2,115,"5,500","2,340",yes,15.5,4,455,262,178,12,58,0.51,1229,American
+Ford Aerostar,Van,14.5,19.9,25.3,15,20,Driver,AllWheelDr,6,3,145,"4,800","2,080",yes,21,7,447,302,183,14,76, ,1694,American
+Ford Taurus,Midsize,15.6,20.2,24.8,21,30,Driver,RearWheelDr,6,3,140,"4,800","1,885",no,16,5,488,269,180,12,70,0.51,1508,American
+Ford Crown Victoria,Large,20.1,20.9,21.7,18,26,Driver,FrontWheelDr,8,4.6,190,"4,200","1,415",no,20,6,538,290,198,13,76,0.59,1792,American
+Geo Metro,Small,6.7,8.4,10,46,50,None,RearWheelDr,3,1,55,"5,700","3,755",yes,10.6,4,384,236,160,10,70,0.28,769,Foreign
+Geo Storm,Sporty,11.5,12.5,13.5,30,36,Driver,RearWheelDr,4,1.6,90,"5,400","3,250",yes,12.4,4,417,246,170,11,62,0.31,1123,Foreign
+Honda Prelude,Sporty,17,19.8,22.7,24,31,DriverPassenger,RearWheelDr,4,2.3,160,"5,800","2,855",yes,15.9,4,445,254,178,12,60,0.23,1300,Foreign
+Honda Civic,Small,8.4,12.1,15.8,42,46,Driver,RearWheelDr,4,1.5,102,"5,900","2,650",yes,11.9,4,439,262,170,11,71,0.34,1066,Foreign
+Honda Accord,Compact,13.8,17.5,21.2,24,31,DriverPassenger,RearWheelDr,4,2.2,140,"5,600","2,610",yes,17,4,470,272,170,12,71,0.40,1379,Foreign
+Hyundai Excel,Small,6.8,8,9.2,29,33,None,RearWheelDr,4,1.5,81,"5,500","2,710",yes,11.9,5,427,239,160,11,66,0.31,1064,Foreign
+Hyundai Elantra,Small,9,10,11,22,29,None,RearWheelDr,4,1.8,124,"6,000","2,745",yes,13.7,5,437,249,168,11,71,0.34,1188,Foreign
+Hyundai Scoupe,Sporty,9.1,10,11,26,34,None,RearWheelDr,4,1.5,92,"5,550","2,540",yes,11.9,4,422,239,163,10,60,0.25,1036,Foreign
+Hyundai Sonata,Midsize,12.4,13.9,15.3,20,27,None,RearWheelDr,4,2,128,"6,000","2,335",yes,17.2,5,467,264,175,12,79,0.40,1309,Foreign
+Infiniti Q45,Midsize,45.4,47.9,50.4,17,22,Driver,FrontWheelDr,8,4.5,278,"6,000","1,955",no,22.5,5,508,287,183,13,74,0.42,1814,Foreign
+Lexus ES300,Midsize,27.5,28,28.4,18,24,Driver,RearWheelDr,6,3,185,"5,200","2,325",yes,18.5,5,478,262,178,12,70,0.40,1592,Foreign
+Lexus SC300,Midsize,34.7,35.2,35.6,18,23,DriverPassenger,FrontWheelDr,6,3,225,"6,000","2,510",yes,20.6,4,485,269,180,12,64,0.25,1594,Foreign
+Lincoln Continental,Midsize,33.3,34.3,35.3,17,26,DriverPassenger,RearWheelDr,6,3.8,160,"4,400","1,835",no,18.4,6,521,277,185,13,76,0.54,1676,American
+Lincoln Town Car,Large,34.4,36.1,37.8,18,26,DriverPassenger,FrontWheelDr,8,4.6,210,"4,600","1,840",no,20,6,556,297,196,14,80,0.62,1839,American
+Mazda 323,Small,7.4,8.3,9.1,29,37,None,RearWheelDr,4,1.6,82,"5,000","2,370",yes,13.2,4,417,246,168,10,69,0.45,1055,Foreign
+Mazda Protege,Small,10.9,11.6,12.3,28,36,None,RearWheelDr,4,1.8,103,"5,500","2,220",yes,14.5,5,437,249,168,11,67,0.37,1107,Foreign
+Mazda 626,Compact,14.3,16.5,18.7,26,34,Driver,RearWheelDr,4,2.5,164,"5,600","2,505",yes,15.5,5,467,262,175,12,75,0.40,1347,Foreign
+Mazda MPV,Van,16.6,19.1,21.7,18,24,None,AllWheelDr,6,3,155,"5,000","2,240",no,19.6,7,483,279,183,12,70, ,1694,Foreign
+Mazda RX-7,Sporty,32.5,32.5,32.5,17,25,Driver,FrontWheelDr, ,1.3,255,"6,500","2,325",yes,20,2,429,244,175,11, , ,1313,Foreign
+Mercedes-Benz 190E,Compact,29,31.9,34.9,20,29,Driver,FrontWheelDr,4,2.3,130,"5,100","2,425",yes,14.5,5,445,267,170,10,66,0.34,1324,Foreign
+Mercedes-Benz 300E,Midsize,43.8,61.9,80,19,25,DriverPassenger,FrontWheelDr,6,3.2,217,"5,500","2,220",no,18.5,5,475,279,175,11,69,0.42,1599,Foreign
+Mercury Capri,Sporty,13.3,14.1,15,23,26,Driver,RearWheelDr,4,1.6,100,"5,750","2,475",yes,11.1,4,422,241,165,11,48,0.17,1111,American
+Mercury Cougar,Midsize,14.9,14.9,14.9,19,26,None,FrontWheelDr,6,3.8,140,"3,800","1,730",no,18,5,505,287,185,12,71,0.42,1637,American
+Mitsubishi Mirage,Small,7.7,10.3,12.9,29,33,None,RearWheelDr,4,1.5,92,"6,000","2,505",yes,13.2,5,437,249,170,11,66,0.31,1041,Foreign
+Mitsubishi Diamante,Midsize,22.4,26.1,29.9,18,24,Driver,RearWheelDr,6,3,202,"6,000","2,210",no,19,5,483,272,178,13,70,0.40,1692,Foreign
+Nissan Sentra,Small,8.7,11.8,14.9,29,33,Driver,RearWheelDr,4,1.6,110,"6,000","2,435",yes,13.2,5,432,244,168,10,66,0.34,1154,Foreign
+Nissan Altima,Compact,13,15.7,18.3,24,30,Driver,RearWheelDr,4,2.4,150,"5,600","2,130",yes,15.9,5,460,262,170,12,72,0.40,1383,Foreign
+Nissan Quest,Van,16.7,19.1,21.5,17,23,None,RearWheelDr,6,3,151,"4,800","2,065",no,20,7,483,284,188,12,69, ,1860,Foreign
+Nissan Maxima,Midsize,21,21.5,22,21,26,Driver,RearWheelDr,6,3,160,"5,200","2,045",no,18.5,5,478,264,175,12,72,0.40,1451,Foreign
+Oldsmobile Achieva,Compact,13,13.5,14,24,31,None,RearWheelDr,4,2.3,155,"6,000","2,380",no,15.2,5,478,262,170,12,71,0.40,1320,American
+Oldsmobile Cutlass Ciera,Midsize,14.2,16.3,18.4,23,31,Driver,RearWheelDr,4,2.2,110,"5,200","2,565",no,16.5,5,483,267,178,13,71,0.45,1311,American
+Oldsmobile Silhouette,Van,19.5,19.5,19.5,18,23,None,RearWheelDr,6,3.8,170,"4,800","1,690",no,20,7,493,279,188,13,77, ,1685,American
+Oldsmobile Eighty-Eight,Large,19.5,20.7,21.9,19,28,Driver,RearWheelDr,6,3.8,170,"4,800","1,570",no,18,6,511,282,188,13,80,0.48,1574,American
+Plymouth Laser,Sporty,11.4,14.4,17.4,23,30,None,AllWheelDr,4,1.8,92,"5,000","2,360",yes,15.9,4,439,246,170,12,62,0.23,1197,American
+Pontiac LeMans,Small,8.2,9,9.9,31,41,None,RearWheelDr,4,1.6,74,"5,600","3,130",yes,13.2,4,450,251,168,11,65,0.48,1066,American
+Pontiac Sunbird,Compact,9.4,11.1,12.8,23,31,None,RearWheelDr,4,2,110,"5,200","2,665",yes,15.2,5,460,257,168,12,64,0.37,1168,American
+Pontiac Firebird,Sporty,14,17.7,21.4,19,28,DriverPassenger,FrontWheelDr,6,3.4,160,"4,600","1,805",yes,15.5,4,498,257,191,13,64,0.37,1470,American
+Pontiac Grand Prix,Midsize,15.4,18.5,21.6,19,27,None,RearWheelDr,6,3.4,200,"5,000","1,890",yes,16.5,5,495,274,183,12,72,0.45,1565,American
+Pontiac Bonneville,Large,19.4,24.4,29.4,19,28,DriverPassenger,RearWheelDr,6,3.8,170,"4,800","1,565",no,18,6,450,282,188,13,77,0.51,1585,American
+Saab 900,Compact,20.3,28.7,37.1,20,26,Driver,RearWheelDr,4,2.1,140,"6,000","2,910",yes,18,5,467,251,170,11,67,0.40,1259,Foreign
+Saturn SL,Small,9.2,11.1,12.9,28,38,Driver,RearWheelDr,4,1.9,85,"5,000","2,145",yes,12.8,5,447,259,173,12,67,0.34,1132,American
+Subaru Justy,Small,7.3,8.4,9.5,33,37,None,AllWheelDr,3,1.2,73,"5,600","2,875",yes,9.2,4,371,229,152,10,60,0.28,928,Foreign
+Subaru Loyale,Small,10.5,10.9,11.3,25,30,None,AllWheelDr,4,1.8,90,"5,200","3,375",yes,15.9,5,445,246,165,11,70,0.42,1129,Foreign
+Subaru Legacy,Compact,16.3,19.5,22.7,23,30,Driver,AllWheelDr,4,2.2,130,"5,600","2,330",yes,15.9,5,455,259,170,11,69,0.40,1399,Foreign
+Suzuki Swift,Small,7.3,8.6,10,39,43,None,RearWheelDr,3,1.3,70,"6,000","3,360",yes,10.6,4,409,236,160,10,70,0.28,891,Foreign
+Toyota Tercel,Small,7.8,9.8,11.8,32,37,Driver,RearWheelDr,4,1.5,82,"5,200","3,505",yes,11.9,5,411,239,165,11,61,0.31,932,Foreign
+Toyota Celica,Sporty,14.2,18.4,22.6,25,32,Driver,RearWheelDr,4,2.2,135,"5,400","2,405",yes,15.9,4,442,251,175,12,58,0.37,1338,Foreign
+Toyota Camry,Midsize,15.2,18.2,21.2,22,29,Driver,RearWheelDr,4,2.2,130,"5,400","2,340",yes,18.5,5,478,262,178,12,72,0.42,1374,Foreign
+Toyota Previa,Van,18.9,22.7,26.6,18,22,Driver,AllWheelDr,4,2.4,138,"5,000","2,515",yes,19.8,7,475,287,180,12,89, ,1717,Foreign
+Volkswagen Fox,Small,8.7,9.1,9.5,25,33,None,RearWheelDr,4,1.8,81,"5,500","2,550",yes,12.4,4,414,236,160,10,66,0.28,1016,Foreign
+Volkswagen Eurovan,Van,16.6,19.7,22.7,17,21,None,RearWheelDr,5,2.5,109,"4,500","2,915",yes,21.1,7,475,292,183,12,86, ,1796,Foreign
+Volkswagen Passat,Compact,17.6,20,22.4,21,30,None,RearWheelDr,4,2,134,"5,800","2,685",yes,18.5,5,457,262,170,11,80,0.40,1354,Foreign
+Volkswagen Corrado,Sporty,22.9,23.3,23.7,18,25,None,RearWheelDr,6,2.8,178,"5,800","2,385",yes,18.5,4,404,246,168,11,66,0.42,1275,Foreign
+Volvo 240,Compact,21.8,22.7,23.5,21,28,Driver,FrontWheelDr,4,2.3,114,"5,400","2,215",yes,15.8,5,483,264,170,11,75,0.40,1354,Foreign
+Volvo 850,Midsize,24.8,26.7,28.5,20,28,DriverPassenger,RearWheelDr,5,2.4,168,"6,200","2,310",yes,19.3,5,467,267,175,12,76,0.42,1472,Foreign

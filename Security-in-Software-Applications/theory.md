@@ -1453,7 +1453,7 @@ Planning at this stage offers the best opportunity to build secure software in t
     - ...
 - Develop documentation
 - Confirm that all requirements are followed and met
-- Treat Models
+- Threat Models
 - Input Data Types
 - Security Use Cases
 - Security Architecture

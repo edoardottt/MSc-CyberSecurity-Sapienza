@@ -1398,7 +1398,7 @@ In short, "Software Design": Determine components (e.g., classes, programming la
 - Consider principles and rules-of-thumb in design
 
 
-## Lesson 12 - Software Security Engineering
+## Lesson 11 - Software Security Engineering
 
 Software Engineering: Concept of creating and maintaining software applications by applying technologies and practices from computer science and project management fields. (wikipedia)  
 Over 30 years of software development experience created a well defined application software development lifecycle.

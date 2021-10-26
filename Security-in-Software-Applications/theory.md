@@ -1396,3 +1396,119 @@ In short, "Software Design": Determine components (e.g., classes, programming la
     - Before the attacker tries them
 - Many design approaches for self-protection
 - Consider principles and rules-of-thumb in design
+
+
+## Lesson 12 - Software Security Engineering
+
+Software Engineering: Concept of creating and maintaining software applications by applying technologies and practices from computer science and project management fields. (wikipedia)  
+Over 30 years of software development experience created a well defined application software development lifecycle.
+
+- REQUIREMENTS
+- DESIGN
+- IMPLEMENTATION
+- TESTING
+- DEPLOYMENT
+- MAINTENANCE
+
+There are many software development methodologies (ex. XP, waterfall, etc) they all have these basic steps. Capability Maturity Model for Software (SW-CMM) is used to measure quality of methodologies employed.  
+This application development process in its essence fails to address security issues. Consequently, security flaws are identified only at the later stages of the application lifecycle. And thus much greater cost to fix, high maintenance cost...  
+Nearly every company/organization utilizes network security infrastructure (e.g. Firewalls, IDS, etc), but very small number of them invest in application security strategy, design, and code review services.  
+For the software industry, the key to meeting demand for improved security is to implement repeatable processes that reliably deliver measurably improved security. Thus, there must be a transition to a more stringent software development process that greatly focuses on security. Goal: minimize the number of security vulnerabilities in design, implementation, and documentation. Identify and remove vulnerabilities in the development lifecycle as early as possible!!!  
+Three essential components
+- Repeatable process
+- Engineer Education
+- Metrics and Accountability
+
+SDL, Secure Development Lifecycle: Used along with traditional/current software development lifecycle/techniques in order to introduce security at every stage of
+software development.  
+
+**SDL - Requirements Phase**  
+- Development of requirements
+    - Gather information about application (customer/experience/survey)
+- Analysis of requirements
+    - Are all the security issues addressed (C, I, A, ...)
+- Verification of requirements
+    - Any inconsistencies? system interface
+    - correctness
+    - Documentation !!!
+    - Feasibility of requirements
+- repeat
+
+Planning at this stage offers the best opportunity to build secure software in the most efficient manner (cost, time, etc).  
+- Develop Security Requirements
+    - Security Requirements of a system/application must be developed along with any other requirements (e.g. functional, legal, user, etc)
+- Risk analysis
+    - Identify all the assets at risk
+    - Identify all the threats
+- Develop security policies
+    - Used as guidelines for requirements
+- Develop security metrics
+
+**SDL - Desing Phase**  
+- At this stage, all design decisions are made, about
+    - Software Architecture
+    - Software components
+    - Programming languages
+    - Interfaces
+    - ...
+- Develop documentation
+- Confirm that all requirements are followed and met
+- Treat Models
+- Input Data Types
+- Security Use Cases
+- Security Architecture
+- Defense in Layers / Separate Components / Least Privilege
+- Tool
+    - SecureUML and UMLsec
+
+**SDL - Implementation Phase**  
+- This is the stage where coding is done.
+- To produce secure software
+    - Coding Standards
+    - Centralized Security Modules
+    - Secure builds and configurations
+    - Known security vulnerabilities - use good programming practices. Be aware of
+        - Implementation
+        - Race conditions
+        - Buffer overflow
+        - Format string
+        - Malicious logic
+        - ...
+- Follow Design and Develop Documentation
+
+**SDL - Verification Phase**  
+- Testing of the code developed in the previous stage
+- Cleared security tests
+- Security vulnerability tracking
+- Code Reviews
+- Documentation
+
+**SDL - Release Phase**  
+- Secure Management Procedures
+- Monitoring Requirements
+- Security Upgrade Procedures
+
+**SDL – Response Phase**  
+- Causes:
+    - Costumer feedback
+    - Security incident details and vulnerability reports
+    - ...
+- Types of maintenance
+    - Need to introduce new functionality
+    - Need to upgrade to keep up with technology
+    - Discovered vulnerability
+
+Every security vulnerability / flaw overlooked in an earlier phase will show-up at later phase(s) resulting into greater Cost, Time of the software development and/or maintenance.  
+
+**Microsoft – Case Study SD^3 + C**  
+- Secure by Design
+    - Software designed and implemented to “protect” itself and its information
+- Secure by Default
+    - Accept the fact that software will not achieve perfect security
+    - To minimize the harm when vulnerabilities exploited, software's default state should promote security (e.g. least necessary privileges)
+- Secure in Deployment
+    - Software accompanied by tools and guidance to assist secure use
+- Communications
+    - Developers should be prepared for discovery of product vulnerabilities and should communicate openly and responsibly with end users. (e.g. patching, deploying workarounds)
+
+Read https://elearning.uniroma1.it/pluginfile.php/1085661/mod_resource/content/1/MS_SDL_Version_3.2%20copia.pdf

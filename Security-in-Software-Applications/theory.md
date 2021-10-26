@@ -10,6 +10,8 @@
 - [Lesson 8 - Input validation, Command Injection and SQL Injection](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-8---input-validation-command-injection-and-sql-injection)
 - [Lesson 9 - Input Validation (part 2), Race conditions and Security design principles](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-9---input-validation-part-2-race-conditions-and-security-design-principles)
 - [Lesson 10 - Security design principles (part 2)](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-10---security-design-principles-part-2)
+- [Lesson 11 - Software Security Engineering](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-11---software-security-engineering)
+
 
 ## Lesson 1 - Introduction
 

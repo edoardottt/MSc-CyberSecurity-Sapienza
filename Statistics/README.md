@@ -2,7 +2,7 @@
 
 - Prof. Tommaso Gastaldi
 
-My blog is hosted at [edoardottt.wordpress.com](https://edoardottt.wordpress.com/)
+My statistics blog is hosted at [edoardottt.wordpress.com](https://edoardottt.wordpress.com/)
 
   - [Lesson 1](https://edoardottt.wordpress.com/2021/09/28/lesson-1/)
 

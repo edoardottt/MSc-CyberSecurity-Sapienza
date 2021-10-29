@@ -1514,3 +1514,7 @@ Every security vulnerability / flaw overlooked in an earlier phase will show-up 
     - Developers should be prepared for discovery of product vulnerabilities and should communicate openly and responsibly with end users. (e.g. patching, deploying workarounds)
 
 Read https://elearning.uniroma1.it/pluginfile.php/1085661/mod_resource/content/1/MS_SDL_Version_3.2%20copia.pdf
+
+## Lesson 12 - Secure Software Development Models/Methods  
+For this part refer to the slides because it's full of images.
+

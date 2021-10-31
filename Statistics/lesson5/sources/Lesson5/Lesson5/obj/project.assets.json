@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson5\\Lesson5\\Lesson5.csproj",
+      "projectUniqueName": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson5\\sources\\Lesson5\\Lesson5\\Lesson5.csproj",
       "projectName": "Lesson5",
-      "projectPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson5\\Lesson5\\Lesson5.csproj",
+      "projectPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson5\\sources\\Lesson5\\Lesson5\\Lesson5.csproj",
       "packagesPath": "C:\\Users\\edoardottt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson5\\Lesson5\\obj\\",
+      "outputPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson5\\sources\\Lesson5\\Lesson5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\edoardottt\\AppData\\Roaming\\NuGet\\NuGet.Config",

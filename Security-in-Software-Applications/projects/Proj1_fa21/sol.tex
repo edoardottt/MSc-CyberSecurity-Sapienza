@@ -1,0 +1,308 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{verbatim}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\title{Security in Software Applications \\ Project 1}
+\author{Edoardo Ottavianelli \\ 1756005}
+\date{2021/2022}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\clearpage
+
+\section{About Flawfinder}
+
+Flawfinder is a CLI tool that helps developers make software secure. It takes as input a C/C++ file (or more than one, in a single folder) and it analyzes the content of the file searching for potential security issues. It is very useful for static analysis, it's easy to use, it links the issues with the respective CWEs, supports HTML output and it can also work with non-executable software, so even in the middle of development cycle. Another good thing is that you don’t have to create the database of known functions with well-known problems, it comes with the tool. Another good point is that it tries to recognize the severity of each issue (for example if the string as input is static or provided by the user, or an attacker...points of view). Instead two cons are: 1) Sometimes Flawfinder marks functions as potential issues, but clearly they aren't, 2) In certain cases (more complex than a single function) it doesn't recognize security issues; so at the end: Flawfinder is a good tool, but it's just a tool, what matters is the experience of the developer/tester. 
+
+\section{Flawfinder output}
+
+\begin{verbatim}
+Flawfinder version 2.0.19, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 222
+Examining project1_FA21.c
+
+FINAL RESULTS:
+
+project1_FA21.c:42:  [4] (buffer) strcpy:
+  Does not check for buffer overflows when copying to destination [MS-banned]
+  (CWE-120). Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy
+  easily misused).
+project1_FA21.c:54:  [4] (format) fprintf:
+  If format strings can be influenced by an attacker, they can be exploited
+  (CWE-134). Use a constant for the format specification.
+project1_FA21.c:8:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+project1_FA21.c:28:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+project1_FA21.c:33:  [2] (buffer) char:
+  Statically-sized arrays can be improperly restricted, leading to potential
+  overflows or other issues (CWE-119!/CWE-120). Perform bounds checking, use
+  functions that limit length, or ensure that the size is larger than the
+  maximum possible length.
+project1_FA21.c:35:  [2] (buffer) strcat:
+  Does not check for buffer overflows when concatenating to destination
+  [MS-banned] (CWE-120). Consider using strcat_s, strncat, strlcat, or
+  snprintf (warning: strncat is easily misused). Risk is low because the
+  source is a constant string.
+project1_FA21.c:8:  [1] (buffer) strlen:
+  Does not handle strings that are not \0-terminated; if given one it may
+  perform an over-read (it could cause a crash if unprotected) (CWE-126).
+project1_FA21.c:9:  [1] (buffer) strncpy:
+  Easily used incorrectly; doesn't always \0-terminate or check for invalid
+  pointers [MS-banned] (CWE-120).
+project1_FA21.c:9:  [1] (buffer) strlen:
+  Does not handle strings that are not \0-terminated; if given one it may
+  perform an over-read (it could cause a crash if unprotected) (CWE-126).
+project1_FA21.c:10:  [1] (buffer) strlen:
+  Does not handle strings that are not \0-terminated; if given one it may
+  perform an over-read (it could cause a crash if unprotected) (CWE-126).
+project1_FA21.c:17:  [1] (buffer) read:
+  Check buffer boundaries if used in a loop including recursive loops
+  (CWE-120, CWE-20).
+project1_FA21.c:22:  [1] (buffer) read:
+  Check buffer boundaries if used in a loop including recursive loops
+  (CWE-120, CWE-20).
+project1_FA21.c:34:  [1] (buffer) strncpy:
+  Easily used incorrectly; doesn't always \0-terminate or check for invalid
+  pointers [MS-banned] (CWE-120).
+
+ANALYSIS SUMMARY:
+
+Hits = 13
+Lines analyzed = 63 in approximately 0.00 seconds (16370 lines/second)
+Physical Source Lines of Code (SLOC) = 53
+Hits@level = [0]   2 [1]   7 [2]   4 [3]   0 [4]   2 [5]   0
+Hits@level+ = [0+]  15 [1+]  13 [2+]   6 [3+]   2 [4+]   2 [5+]   0
+Hits/KSLOC@level+ = [0+] 283.019 [1+] 245.283 [2+] 113.208 [3+] 37.7358 [4+] 37.7358 [5+]   0
+Minimum risk level = 1
+
+Not every hit is necessarily a security vulnerability.
+You can inhibit a report by adding a comment in this form:
+// flawfinder: ignore
+Make *sure* it's a false positive!
+You can use the option --neverignore to show these.
+
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.
+\end{verbatim}
+
+\section{Analysis of the warnings}
+
+\begin{itemize}
+
+\item 
+\begin{verbatim}
+project1_FA21.c:42:  [4] (buffer) strcpy:
+\end{verbatim}
+The program copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow.
+Solution: strlcpy(buffer, foo, 10);
+
+\item 
+\begin{verbatim}
+project1_FA21.c:54:  [4] (format) fprintf:
+\end{verbatim}
+The code is strange here because the try-catch statement is not compatible with C, anyway since we can suppose the developer would like to catch the message crafted by the user a simple solution is: fprintf(stderr, "\%s", message); avoiding the format string attack problem.
+
+\item 
+\begin{verbatim}
+project1_FA21.c:8:  [2] (buffer) char:
+\end{verbatim}
+To avoid operations on memory that can read from or write to a memory location that is outside of the intended boundary of the buffer we should use malloc().
+
+\item 
+\begin{verbatim}
+project1_FA21.c:28:  [2] (buffer) char:
+\end{verbatim}
+To avoid operations on memory that can read from or write to a memory location that is outside of the intended boundary of the buffer we should use malloc().
+
+\item 
+\begin{verbatim}
+project1_FA21.c:33:  [2] (buffer) char:
+\end{verbatim}
+To avoid operations on memory that can read from or write to a memory location that is outside of the intended boundary of the buffer we should use malloc().
+
+\item 
+\begin{verbatim}
+project1_FA21.c:35:  [2] (buffer) strcat:
+\end{verbatim}
+This one isn't a vulnerability because: (1) the input is static and an attacker can't craft the input for this function and also (2) we have enough memory to store the string (so never a BO). Anyway an easy fix is strlcat(errormsg, " is not  a valid ID", 1044);
+
+\item 
+\begin{verbatim}
+project1_FA21.c:8:  [1] (buffer) strlen:
+\end{verbatim}
+Since we don't know the provenience of the input string src, the input string could be not 0-terminated, so it's safer to use sizeof() instead of strlen(). 
+
+\item 
+\begin{verbatim}
+project1_FA21.c:9:  [1] (buffer) strncpy:
+\end{verbatim}
+Since we don't know the provenience of the input string src, the input string could be not 0-terminated, so it's safer to use strlcpy() with particular attention at the third parameter.
+
+\item 
+\begin{verbatim}
+project1_FA21.c:9:  [1] (buffer) strlen:
+\end{verbatim}
+Since we don't know the provenience of the input string src, the input string could be not 0-terminated, so it's safer to use sizeof() instead of strlen().
+
+\item 
+\begin{verbatim}
+project1_FA21.c:10:  [1] (buffer) strlen:
+\end{verbatim}
+Since strlen() returns the length of the string until a null terminator is reached, to append a null terminator at the real end of the buffer (even if with the previous fixes we are 100\% sure that the buffer is 0-terminated, so it isn't a security vulnerability) we can use also here sizeof() instead of strlen().
+
+\item 
+\begin{verbatim}
+project1_FA21.c:17:  [1] (buffer) read:
+\end{verbatim}
+Since this read is not used in a loop, this is a false positive. We can ignore it with the comment //flawfinder: ignore.
+
+\item 
+\begin{verbatim}
+project1_FA21.c:22:  [1] (buffer) read:
+\end{verbatim}
+Since this read is not used in a loop, this is a false positive. We can ignore it with the comment //flawfinder: ignore.
+
+\item 
+\begin{verbatim}
+project1_FA21.c:34:  [1] (buffer) strncpy:
+\end{verbatim}
+This is a false positive because the input is inserted inside the buffer called 'buffer' at line 30 using fgets() that appends a null terminator at the end of the input. We can ignore it with the comment //flawfinder: ignore or just use strlcpy.
+
+\end{itemize}
+
+\section{Vulnerabilities not found by Flawfinder}
+
+\begin{itemize}
+
+\item The fragment at the line 59 tries to insert an integer value at position 10 of the buffer a, but the highest position is 9.
+
+\end{itemize}
+
+\section{Corrected version}
+
+There are little fixes (like include statements with the \# symbol, the return type of main function etc...) but the fragment is still not executable.
+
+\begin{lstlisting}[style=CStyle]
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+void func1(char *src) {
+    char *dst = malloc(sizeof(src) * sizeof(char));
+    strlcpy(dst, src, sizeof(src) * sizeof(char));
+    dst[sizeof(dst)-1] = 0;
+}
+
+void func2(int fd) {
+    char *buf;
+    size_t len;
+    read(fd, &len, sizeof(len)); //flawfinder: ignore
+
+    if (len > 1024) return;
+    buf = malloc(len+1); 
+    read(fd, buf, len); //flawfinder: ignore
+    buf[len] = '\0';
+}
+
+void func3() {  
+    char *buffer = malloc(1024 * sizeof(char));
+    printf("Please enter your user id :");
+    fgets(buffer, 1024, stdin);
+    if (!isalpha(buffer[0])) {
+        char *errormsg = malloc(1044 * sizeof(char));
+        strlcpy(errormsg, buffer, 1024);
+        strlcat(errormsg, " is not  a valid ID", 1044);
+    }
+}
+
+void func4(char *foo) {
+    char *buffer = (char *)malloc(10 * sizeof(char));
+    strlcpy(buffer, foo, 10);
+}
+
+int main() {
+    int y=9;
+    int a[10];
+    func4("fooooooooooooooooooooooooooooooooooooooooooooooooooo");
+
+    try {
+        func3();
+    } catch(char *message) {
+        fprintf(stderr, "%s", message);
+    }
+
+    fprintf(aFile, "%s", "hello world");
+
+    while (y>=0) {
+        a[y]=y;
+        y=y-1;
+    }
+    return 0;
+}
+\end{lstlisting}
+
+\begin{verbatim}
+Flawfinder version 2.0.19, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 222
+Examining safe.c
+
+FINAL RESULTS:
+
+
+ANALYSIS SUMMARY:
+
+No hits found.
+Lines analyzed = 56 in approximately 0.00 seconds (16659 lines/second)
+Physical Source Lines of Code (SLOC) = 47
+Hits@level = [0]   3 [1]   0 [2]   0 [3]   0 [4]   0 [5]   0
+Hits@level+ = [0+]   3 [1+]   0 [2+]   0 [3+]   0 [4+]   0 [5+]   0
+Hits/KSLOC@level+ = [0+] 63.8298 [1+]   0 [2+]   0 [3+]   0 [4+]   0 [5+]   0
+Suppressed hits = 2 (use --neverignore to show them)
+Minimum risk level = 1
+
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.
+\end{verbatim}
+
+
+\end{document}

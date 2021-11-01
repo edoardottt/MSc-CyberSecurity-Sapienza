@@ -36,11 +36,13 @@ namespace Lesson6
         Font smallFont = new Font("Calibri", 13, FontStyle.Regular, GraphicsUnit.Pixel);
         Rectangle viewport;
         bool moveMouseOk = false;
+        List<Interval> middleIntervals;
+        List<Interval> finalIntervals;
 
         // == INITIALIZE THE GRAPHICS OBJECT ==
         private void initGraphics()
         {
-            viewport = new Rectangle(10, 10, Convert.ToInt32(pictureBox1.Width) - 50, pictureBox1.Height - 50);
+            viewport = new Rectangle(10, 10, Convert.ToInt32(pictureBox1.Width) - 150, pictureBox1.Height - 20);
             b = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             g = Graphics.FromImage(b);
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -164,12 +166,195 @@ namespace Lesson6
                     }
                 }
             }
+            int yLow = calculateYViewport(((p - epsilon) * maxY_Window), viewport, minY_Window, rangeY);
+            g.DrawLine(Pens.Black, new Point(viewport.Left, yLow), 
+                new Point(viewport.Right, yLow)
+            );
+            int yHigh = calculateYViewport(((p + epsilon) * maxY_Window), viewport, minY_Window, rangeY);
+            g.DrawLine(Pens.Black, new Point(viewport.Left, yHigh),
+                new Point(viewport.Right, yHigh)
+            );
+        }
+
+        // == INTERVAL CLASS ==
+        public class Interval : IComparable<Interval>
+        {
+            public int upperEnd;
+            public int lowerEnd;
+            public int count;
+            public List<int> values;
+
+            public Boolean containsValue(double v)
+            {
+                return v >= lowerEnd && v < upperEnd;
+            }
+
+            public override string ToString()
+            {
+                return "[" + string.Format("{0:F1}", lowerEnd) + ", " + string.Format("{0:F1}", upperEnd) + ")";
+            }
+
+            public int CompareTo(Interval interval2)
+            {
+                return Comparer<double>.Default.Compare(lowerEnd, interval2.lowerEnd);
+            }
+        }
+
+        // == CALCULATE THE CONTINUOUS DISTRIBUTION ==
+        private List<Interval> continuousDistribution(List<int> input)
+        {
+            bool valueAssigned = false;
+            int endingPoint = 500;
+            int startingPoint = 475;
+            List<Interval> continuousValues = new List<Interval>();
+            //double min = 0;
+            //double max = 1000;
+            // first interval
+            Interval interval0 = new Interval();
+            interval0.lowerEnd = startingPoint;
+            interval0.upperEnd = endingPoint;
+            interval0.count = 0;
+            interval0.values = new List<int>();
+            continuousValues.Add(interval0);
+
+            foreach (int value in input)
+            {
+                valueAssigned = false;
+                for (int i = 0; i < continuousValues.Count; i++)
+                {
+                    if (valueAssigned)
+                    {
+                        break;
+                    }
+
+                    if (value >= continuousValues[i].lowerEnd && value < continuousValues[i].upperEnd)
+                    {
+                        continuousValues[i].count += 1;
+                        continuousValues[i].values.Add(value);
+                        valueAssigned = true;
+                        break;
+                    }
+                    // LEFT
+                    if (value < continuousValues[i].lowerEnd)
+                    {
+                        if (valueAssigned)
+                        {
+                            break;
+                        }
+                        Interval item = continuousValues[i];
+                        int j = i;
+                        while (value < item.lowerEnd)
+                        {
+                            if (j == 0)
+                            {
+                                // generate a new interval on the left
+                                Interval interval = new Interval();
+                                interval.lowerEnd = item.lowerEnd - (endingPoint - startingPoint);
+                                interval.upperEnd = item.lowerEnd;
+                                interval.count = 0;
+                                interval.values = new List<int>();
+                                continuousValues.Insert(0, interval);
+                            }
+                            else
+                            {
+                                j--;
+                            }
+                            item = continuousValues[j];
+                        }
+                        if (value >= continuousValues[j].lowerEnd && value < continuousValues[j].upperEnd)
+                        {
+                            continuousValues[j].count += 1;
+                            continuousValues[j].values.Add(value);
+                            valueAssigned = true;
+                            break;
+                        }
+                    }
+                    // RIGHT
+                    if (value >= continuousValues[i].upperEnd)
+                    {
+                        Interval item = continuousValues[i];
+                        int j = i;
+                        while (value >= item.upperEnd)
+                        {
+                            if (j == continuousValues.Count - 1)
+                            {
+                                // generate a new interval on the right
+                                Interval interval = new Interval();
+                                interval.lowerEnd = item.upperEnd;
+                                interval.upperEnd = item.upperEnd + (endingPoint - startingPoint);
+                                interval.count = 0;
+                                interval.values = new List<int>();
+                                continuousValues.Add(interval);
+                            }
+                            j++;
+                            item = continuousValues[j];
+                        }
+                        if (value >= continuousValues[j].lowerEnd && value < continuousValues[j].upperEnd)
+                        {
+                            continuousValues[j].count += 1;
+                            continuousValues[j].values.Add(value);
+                            valueAssigned = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            return continuousValues;
+        }
+
+        // == DRAW HISTOGRAMS ==
+        private void drawHistograms()
+        {
+            int middlex = calculateXViewport(Convert.ToInt32(n/2), viewport, minX_Window, rangeX);
+            int finalx = calculateXViewport(n, viewport, minX_Window, rangeX);
+            int maximumSize = 300;
+            List<int> inputMiddle = new List<int>();
+            List<int> inputFinal = new List<int>();
+            foreach (Point value in points[Convert.ToInt32(n / 2)])
+            {
+                inputMiddle.Add(value.Y);
+            }
+            foreach (Point value in points[n - 1])
+            {
+                inputFinal.Add(value.Y);
+            }
+            middleIntervals = continuousDistribution(inputMiddle);
+            foreach (Interval inte in middleIntervals)
+            {
+                if (inte != null)
+                {
+                    int y = inte.lowerEnd;
+                    int x = middlex;
+                    int width = Convert.ToInt32((maximumSize * inte.count) / n);
+                    int height = inte.upperEnd - inte.lowerEnd;
+                    Rectangle rect = new Rectangle(x, y, width, height);
+                    g.DrawRectangle(Pens.AliceBlue, rect);
+                    g.FillRectangle(Brushes.Blue, rect);
+                }
+            }
+
+            finalIntervals = continuousDistribution(inputFinal);
+            foreach (Interval inte in finalIntervals)
+            {
+                if (inte != null)
+                {
+                    int y = inte.lowerEnd;
+                    int x = finalx;
+                    int width = Convert.ToInt32((maximumSize * inte.count) / n);
+                    int height = inte.upperEnd - inte.lowerEnd;
+                    Rectangle rect = new Rectangle(x, y, width, height);
+                    g.DrawRectangle(Pens.AliceBlue, rect);
+                    g.FillRectangle(Brushes.Blue, rect);
+                }
+            }
         }
 
         // == PLOT EVERYTHING ==
         private void button1_Click(object sender, EventArgs e)
         {
             points = new Dictionary<int, ArrayList>();
+            middleIntervals = new List<Interval>();
+            finalIntervals = new List<Interval>();
             bool inputOk = checkInput();
             if (inputOk)
             {
@@ -179,6 +364,18 @@ namespace Lesson6
                 richTextBox1.Text += "> P: " + p + "\n";
                 richTextBox1.Text += "> E: " + epsilon + "\n";
                 drawPaths();
+                drawHistograms();
+                int count = 0;
+                foreach (Interval inte in finalIntervals)
+                {
+                    System.Diagnostics.Debug.WriteLine("Interval " + inte.ToString());
+                    foreach (int value in inte.values)
+                    {
+                        count += 1;
+                        System.Diagnostics.Debug.WriteLine(value);
+                    }
+                }
+                System.Diagnostics.Debug.WriteLine("values= " + count);
                 pictureBox1.Image = b;
             }
         }

@@ -398,10 +398,10 @@ namespace Lesson5
                             }
                             item = continuousValues[j];
                         }
-                        if (value >= continuousValues[0].lowerEnd && value < continuousValues[0].upperEnd)
+                        if (value >= continuousValues[j].lowerEnd && value < continuousValues[j].upperEnd)
                         {
-                            continuousValues[0].count += 1;
-                            continuousValues[0].values.Add(value);
+                            continuousValues[j].count += 1;
+                            continuousValues[j].values.Add(value);
                             valueAssigned = true;
                             break;
                         }
@@ -423,17 +423,13 @@ namespace Lesson5
                                 interval.values = new List<double>();
                                 continuousValues.Add(interval);
                             }
-                            else
-                            {
-                                j++;
-                            }
+                            j++;
                             item = continuousValues[j];
                         }
-                        int last = continuousValues.Count - 1;
-                        if (value >= continuousValues[last].lowerEnd && value < continuousValues[last].upperEnd)
+                        if (value >= continuousValues[j].lowerEnd && value < continuousValues[j].upperEnd)
                         {
-                            continuousValues[last].count += 1;
-                            continuousValues[last].values.Add(value);
+                            continuousValues[j].count += 1;
+                            continuousValues[j].values.Add(value);
                             valueAssigned = true;
                             break;
                         }

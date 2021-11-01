@@ -33,7 +33,6 @@ namespace Lesson6
         Dictionary<int, ArrayList> points; // All the random generated points
         Bitmap b;
         Graphics g;
-        Font smallFont = new Font("Calibri", 13, FontStyle.Regular, GraphicsUnit.Pixel);
         Rectangle viewport;
         bool moveMouseOk = false;
         List<Interval> middleIntervals;
@@ -302,22 +301,25 @@ namespace Lesson6
             return continuousValues;
         }
 
+        // == POINTS SCREENSHOT AFTER N TRIES == 
+        private List<int> screenShotPoints(int tries)
+        {
+            List<int> result = new List<int>();
+            for (int i=0;i<m;i++)
+            {
+                result.Add(((Point)points[i][tries]).Y);
+            }
+            return result;
+        }
+
         // == DRAW HISTOGRAMS ==
         private void drawHistograms()
         {
             int middlex = calculateXViewport(Convert.ToInt32(n/2), viewport, minX_Window, rangeX);
             int finalx = calculateXViewport(n, viewport, minX_Window, rangeX);
             int maximumSize = 300;
-            List<int> inputMiddle = new List<int>();
-            List<int> inputFinal = new List<int>();
-            foreach (Point value in points[Convert.ToInt32(n / 2)])
-            {
-                inputMiddle.Add(value.Y);
-            }
-            foreach (Point value in points[n - 1])
-            {
-                inputFinal.Add(value.Y);
-            }
+            List<int> inputMiddle = screenShotPoints(Convert.ToInt32(n / 2));
+            List<int> inputFinal = screenShotPoints(n - 1);
             middleIntervals = continuousDistribution(inputMiddle);
             foreach (Interval inte in middleIntervals)
             {
@@ -365,17 +367,6 @@ namespace Lesson6
                 richTextBox1.Text += "> E: " + epsilon + "\n";
                 drawPaths();
                 drawHistograms();
-                int count = 0;
-                foreach (Interval inte in finalIntervals)
-                {
-                    System.Diagnostics.Debug.WriteLine("Interval " + inte.ToString());
-                    foreach (int value in inte.values)
-                    {
-                        count += 1;
-                        System.Diagnostics.Debug.WriteLine(value);
-                    }
-                }
-                System.Diagnostics.Debug.WriteLine("values= " + count);
                 pictureBox1.Image = b;
             }
         }
@@ -393,18 +384,23 @@ namespace Lesson6
             {
                 pictureBox1.Left += e.X - point.X;
                 pictureBox1.Top += e.Y - point.Y;
+                if (moveMouseOk)
+                {
+                    g.DrawRectangle(Pens.Black, viewport);
+                    g.FillRectangle(Brushes.LightGray, viewport);
+                }
             }
             if (e.Button == MouseButtons.Right)
             {
                 point = e.Location;
                 pictureBox1.Size = new Size(point.X, point.Y);
+                if (moveMouseOk)
+                {
+                    g.DrawRectangle(Pens.Black, viewport);
+                    g.FillRectangle(Brushes.LightGray, viewport);
+                }
             }
             base.OnMouseMove(e);
-            if (moveMouseOk)
-            {
-                g.DrawRectangle(Pens.Black, viewport);
-                g.FillRectangle(Brushes.LightGray, viewport);
-            }
         }
     }
 }

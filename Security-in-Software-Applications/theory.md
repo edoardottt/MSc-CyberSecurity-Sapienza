@@ -1651,7 +1651,7 @@ Focus is on implementation bugs, Essentially those that static analysis can find
     - Everything outside of the code but is important for the security of the software
     - E.g., password in configuration file (hardwired)
 
-**Architectural risk analysis**
+**Architectural risk analysis**  
 Three critical steps (or subprocesses)
     - Attack Resistance Analysis
     - Ambiguity Analysis

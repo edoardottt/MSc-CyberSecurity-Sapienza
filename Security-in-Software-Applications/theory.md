@@ -1562,3 +1562,97 @@ Solution for flaws, defects, bugs... **Three pillars of security**
 - CR and ARA can be switched; skipping one solves only half of the problem
 - Big organization may adopt these touchpoints simultaneously
 
+![Best practices](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/07-best-practices.png)  
+
+**Pillar III: Knowledge**  
+- Involves
+    - Gathering, encapsulating, and sharing security knowledge
+- Software security knowledge catalogs
+    - Principles
+    - Guidelines
+    - Rules
+    - Vulnerabilities
+    - Exploits
+    - Attack patterns
+    - Historical risks
+
+**Risk management framework: Five Stages**  
+1. Identify the Business and Technical Risk
+    - Risk management
+        - Occurs in a business context
+        - Affected by business motivation
+    - Key activity of an analyst
+        - Extract and describe business goals – clearly
+            - Increasing revenue; reducing dev cost; meeting SLAs; generating high return on investment (ROI)
+        - Set priorities
+        - Understand circumstances
+    - Bottomline. answer the question
+        - who cares?
+2. Understand the Business context
+    - Business risks have impact
+        - Direct financial loss; loss of reputation; violation of customer or regulatory requirements; increase in development cost
+    - Severity of risks
+        - Should be capture in financial or project management terms
+    - Key is tie technical risks to business context  
+3. Synthesize and Rank the Risks
+    - Prioritize the risks alongside the business goals
+    - Assign risks appropriate weights for resolution
+    - Risk metrics
+        - Risk likelihood
+        - Risk impact
+        - Number of risks mitigated over time 
+4. Define the Risk Mitigation Strategy 
+    - Develop a coherent strategy
+        - For mitigating risks in cost effective manner; accounting for
+            - Cost, Completeness, Likelihood of success, Implementation time, Impact
+    - A mitigation strategy should
+        - Be developed within the business context
+        - Be based on what the organization can afford, integrate and understand
+        - Must directly identify validation techniques
+5. Carry out fixes And validate
+    - Execute the chosen mitigation strategy
+        - Measure completeness
+        - Estimate (Progress, residual risks)
+    - Validate that risks have been mitigated
+        - Testing can be used to demonstrate and measure
+        - Develop confidence that unacceptable risk does not remain
+
+**Code Review**  
+Focus is on implementation bugs, Essentially those that static analysis can find. Security bugs are real problems, but architectural flaws are just as big a problem (e.g. Code review can capture only half of the problems, Buffer overflow bug in a particular line of code). Architectural problems are very difficult to find by looking at the code esppecially true for today's large software.  
+*Taxonomy of coding errors:*  
+- Input validation and representation
+    - Some source of problems:
+        - Meta-characters, alternate encodings, numeric representations
+        - Forgetting input validation
+        - Trusting input too much
+        - Example: buffer overflow; integer overflow
+- API abuse
+    - API represents contract between caller and callee e.g., failure to enforce principle of least privilege
+- Security features
+    - Getting right security features is difficult e.g., insecure randomness, password management, authentication, access control, cryptography, privilege management, etc.
+- Time and state
+    - Typical race condition issues
+    - e.g., TOCTOU; deadlock
+- Error handling
+    - Security defects related to error handling are very common
+    - Two ways
+        - Forget to handle errors or handling them roughly
+        - Produce errors that either give out way too much information or so radioactive no one wants to handle them e.g., unchecked error value; empty catch block
+- Code quality
+    - Poor code quality leads to unpredictable behavior
+    - Poor usability
+    - Allows attacker to stress the system in unexpected ways
+    - E.g., Double free; memory leak
+- Encapsulation
+    - Object oriented approach
+    - Include boundaries
+    - E.g., comparing classes by name
+- Environment
+    - Everything outside of the code but is important for the security of the software
+    - E.g., password in configuration file (hardwired)
+
+**Architectural risk analysis**
+Three critical steps (or subprocesses)
+    - Attack Resistance Analysis
+    - Ambiguity Analysis
+    - Weakness Analysis

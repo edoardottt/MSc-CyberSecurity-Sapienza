@@ -12,6 +12,7 @@
 - [Lesson 10 - Security design principles (part 2)](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-10---security-design-principles-part-2)
 - [Lesson 11 - Software Security Engineering](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-11---software-security-engineering)
 - [Lesson 12 - Secure Software Development Models/Methods](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-12---secure-software-development-modelsmethods)
+- [Lesson 13 - Build Security](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-13---build-security)
 
 ## Lesson 1 - Introduction
 

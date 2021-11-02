@@ -1518,3 +1518,47 @@ Read https://elearning.uniroma1.it/pluginfile.php/1085661/mod_resource/content/1
 ## Lesson 12 - Secure Software Development Models/Methods  
 For this part refer to the slides because it's full of images.
 
+## Lesson 13 - Build Security
+
+Renewed interest  
+- “idea of engineering software so that it continues to function correctly under malicious attack”
+- Existing software is riddled with design flaws and implementation bugs 
+- “any program, no matter how innocuous it seems, can harbor security holes”
+
+**Software security is about**  
+- Understanding software-induced security risks and how to manage them
+- Leveraging software engineering practice, thinking security early in the software lifecyle
+- Knowing and understanding common problems
+- Designing for security
+- Subjecting all software artifacts to thorough objective risk analyses and testing
+- It is a knowledge intensive field
+
+Solution for flaws, defects, bugs... **Three pillars of security**  
+
+**Pillar I: Applied Risk management**  
+- Architectural risk analysis
+    - Sometimes called threat modeling or security design analysis
+    - Is a best practice and is a touchpoint
+- Risk management framework
+    - Considers risk analysis and mitigation as a full life cycle activity
+
+**Pillar II: Software Security Touchpoints**  
+- “Software security is not security software”
+    - Software security
+        - is system-wide issues (security mechanisms and design security)
+        - Emergent property
+- Touchpoints in order of effectiveness (based on experience)
+    - Code review (bugs)
+    - Architectural risk analysis (flaws)
+        - first two can be swapped
+    - Penetration testing
+    - Risk-based security tests
+    - Abuse cases
+    - Security requirements
+    - Security operations
+- Many organization
+    - Penetration first
+        - a reactive approach
+- CR and ARA can be switched; skipping one solves only half of the problem
+- Big organization may adopt these touchpoints simultaneously
+

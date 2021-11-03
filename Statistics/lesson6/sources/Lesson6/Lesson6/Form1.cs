@@ -37,6 +37,7 @@ namespace Lesson6
         bool moveMouseOk = false;
         List<Interval> middleIntervals;
         List<Interval> finalIntervals;
+        bool relative;
 
         // == INITIALIZE THE GRAPHICS OBJECT ==
         private void initGraphics()
@@ -110,6 +111,7 @@ namespace Lesson6
                 richTextBox1.Text = "Epsilon must be a valid double between 0 and 1!";
                 return false;
             }
+            relative = radioButton1.Checked;
             return true;
         }
 
@@ -155,7 +157,25 @@ namespace Lesson6
                     {
                         success+=1;
                     }
-                    double successNow = ((double)success / (double)(j + 1)) * maxY_Window;
+                    double successNow;
+                    if (!relative)
+                    {
+                        // STANDARD RELATIVE (?)
+                        //double relative = ((double)success / (double)(j + 1));
+                        // f(t) = relative
+                        // p = probability of success
+                        // t = trials (j + 1)
+                        //  standard relative frequency: (f(t)-p) / sqrt(p(1-p)/t) (??????)
+
+                        // ABSOLUTE
+                        successNow = (double)success * maxY_Window / (double)(n);
+                    }
+                    else
+                    {
+                        //RELATIVE
+                        // f(t) = #success / #trials 
+                        successNow = ((double)success / (double)(j + 1)) * maxY_Window;
+                    }
                     int XviewPort = calculateXViewport(j, viewport, minX_Window, rangeX);
                     int Yviewport = calculateYViewport(successNow, viewport, minY_Window, rangeY);
                     points[i].Add(new Point(XviewPort, Yviewport));
@@ -202,9 +222,9 @@ namespace Lesson6
         // == CALCULATE THE CONTINUOUS DISTRIBUTION ==
         private List<Interval> continuousDistribution(List<int> input)
         {
-            bool valueAssigned = false;
+            bool valueAssigned;
             int endingPoint = 500;
-            int startingPoint = 475;
+            int startingPoint = 480;
             List<Interval> continuousValues = new List<Interval>();
             //double min = 0;
             //double max = 1000;

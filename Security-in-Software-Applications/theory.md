@@ -1657,3 +1657,133 @@ Three critical steps (or subprocesses)
     - Attack Resistance Analysis
     - Ambiguity Analysis
     - Weakness Analysis
+
+## Lesson 14 - Language-based Security. Overview of Types
+
+Objective:  
+- Design security into the language
+- Compiler rules out insecure programs
+- Compiler does not run the program (no testing)
+
+What is insecure?  
+- Buffer overflows
+- Information-flow leaks
+- Violations of access rights
+- ...
+
+One approach is based on *types*.  
+A type is a specification of data or code in a program.  
+Examples from C:
+- Basic types
+    - `int`, `char`, `float`, `double`, `void`
+    - `int x;`, variable x will store an integer
+- Function types
+    - `int -> double`, ...
+    - `int factorial(int);`, factorial is a function that takes an integer as an argument and returns an integer (type int -> int)
+- Structures types
+- `struct pair {int x; int y;};`, type
+- `pair p;`, variable p stores a pair
+- Array types
+    - `int[n]`, `char[n][m]`, ...
+    - `int arr[8];`, variable arr stores sequence of 8 integers
+- Pointer types
+    - `int*`, `int**`, ...
+    - `int* p;`, variable p stores the address of a variable that stores an integer
+    - `int** p;`, variable p stores the address of a variable that stores the address of a variable that stores an integer
+
+Type correct program:
+```C
+int readint();                  // readint: void -> int
+void writeint(int);             // writeint: int -> void
+int factorial(int n){           // factorial: int -> int
+    int f = 1;                  // f: int
+    int c = 1;                  // c: int
+    while (c <= n) {            // c <= n: boolean
+        f = f * c;              // *: (int,int) -> int
+        c++;                    // ++: int -> int
+    }
+    return f;                   // f: int
+}                   
+void main() {                   // main: void -> void
+    int v;                      // v: int
+    v = readint();              // readint(): int
+    writeint(factorial(v));     // factorial(v): int
+}
+```
+With this piece of code as main function would be type correct?
+```C
+void main() {
+    string s;
+    s = readint();
+    writeint(factorial(s));
+}
+```
+
+- Types are necessary to compile source code
+- What is the binary representation of variables?
+    - `int x;`, x is 4 bytes
+    - `char x;`, x is 1 byte
+    - `int arr[8];`, arr is 32 bytes
+- How to compute in assembly?
+    - `int x; int y; x + y` --> `add r1,r2`
+    - `float x; float y; x + y` --> `fadd r1,r2`
+    - Difference is based on types
+
+Type checking: A compiler can ensure that data and code are used only as specified by types without running the program.
+Types can be used to reject at compile time programs that:
+- Use strings as integers
+- Use integers as pointers
+- Cause null-pointer exceptions
+- Cause array overflows
+- Leak secret information
+
+A program is called safe if it's not stuck and has not crashed. A language is called type-safe if well-typed programs always remain safe. Presence of types does not imply type-safety (e.g. C has types but is not type-safe).  
+Buffer overflow with scanf in C:
+```C
+void readstring(char str[]) {
+    scanf(“%s”,str);
+}
+void main() {
+    char buf[8];
+    readstring(buf);
+...
+}
+```
+This program is well-typed, but can crash with input longer than 7 bytes. C is not type-safe. char[] != char[8]. This program should be rejected! However, C allows unsafe type-casting and accepts the program.  
+
+Type-casting: convert the type of a variable to another
+- The C compiler will convert types (e.g. from char[8] to char[])
+- Some conversions violate type specifications
+- This makes C type-unsafe
+
+**Safe and unsafe Type cast in C**
+| Type cast | Safe in C? |
+| ------ | ------ |
+| `char* x; int* y = (int*) x` | No |
+| `int* x; void* y = (void*) x` | Yes |
+| `void* x; int* y = (int*) x` | No |
+| `int x; char* y = (char*) x` | No |
+| `char* x; int y = (int) x` | Yes |
+| `int x; float y = (float) x` | Yes |
+| `float x; int y = (int) x` | Yes |
+
+- Untyped languages do not have types
+    - e.g., Bash, Perl, Ruby, …
+    - Usually interpreted; difficult to compile without types
+    - Program safety is programmer's responsibility: programs difficult to debug
+- Weakly typed languages use types only for compilation; no type-safety
+    - e.g., C, C++, etc.
+    - Often allow unsafe casts, e.g., char[8] to char[] and int to char*
+    - Program safety is programmer's responsibility: buffer overflows and segmentation faults are common in programs
+- Strongly typed languages use types for compilation and guarantee type-safety
+    - e.g., BASIC, Pascal, Cyclone, Haskell, SML, Java, etc.
+    - No unsafe casts, e.g., an integer cannot be cast to a pointer, an array of length 8 is not an unbounded array, etc.
+    - Safety is guaranteed but believed unsuitable for some low-level programs (debatable)
+
+- Types are specifications of data and code
+- Compiler may check well-typedness without executing the program
+- Existence of type specifications may imply program safety (type-safety)
+- Not all languages with types are type-safe
+    - e.g., C is not type-safe
+
+Here the lesson follows with a simple type-safe language to understand type-safety more formally, read this part on the slides.

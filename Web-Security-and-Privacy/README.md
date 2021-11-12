@@ -3,9 +3,9 @@
 - Prof. Fabrizio D'Amore
 - Prof. Emilio Coppa
 
-CTF challenges at [webhack.it](https://webhack.it/)
+**CTF challenges** at [webhack.it](https://webhack.it/)
 
-Topics covered:
+**Topics covered**:
 - Email Security (SMTP, MIME, SPF, DKIM, DMARC, PGP)
 - Web technologies 
     - HTTP(S), Client server comunication
@@ -15,7 +15,7 @@ Topics covered:
     - Command and Code injection
     - SQL injection
 
-Tools:
+**Tools**:
 - Burpsuite (mainly)
 - ngrok
 - Shell commands

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson7\\sources\\Lesson7A\\Lesson7A\\Lesson7A.csproj": {}
+    "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson7B\\Lesson7B\\Lesson7B.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson7\\sources\\Lesson7A\\Lesson7A\\Lesson7A.csproj": {
+    "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson7B\\Lesson7B\\Lesson7B.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson7\\sources\\Lesson7A\\Lesson7A\\Lesson7A.csproj",
-        "projectName": "Lesson7A",
-        "projectPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson7\\sources\\Lesson7A\\Lesson7A\\Lesson7A.csproj",
+        "projectUniqueName": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson7B\\Lesson7B\\Lesson7B.csproj",
+        "projectName": "Lesson7B",
+        "projectPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson7B\\Lesson7B\\Lesson7B.csproj",
         "packagesPath": "C:\\Users\\edoardottt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson7\\sources\\Lesson7A\\Lesson7A\\obj\\",
+        "outputPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson7B\\Lesson7B\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\edoardottt\\AppData\\Roaming\\NuGet\\NuGet.Config",

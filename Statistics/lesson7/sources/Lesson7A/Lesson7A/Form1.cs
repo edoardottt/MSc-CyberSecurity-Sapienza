@@ -84,7 +84,7 @@ namespace Lesson7A
             points = new List<Point>();
             timer = new Timer();
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = 100;
+            timer.Interval = 1000;
             running = true;
             timer.Start();
             n = 0;
@@ -138,7 +138,7 @@ namespace Lesson7A
             int count = 0;
             foreach (int key in values.Keys) {
                 double x = key;
-                count += values[key];
+                count += values[key] / count;
                 double y = maxY_Window * count / n;
                 int xViewport = calculateXViewport(x, viewport, minX_Window, rangeX);
                 int yViewport = calculateYViewport(y, viewport, minY_Window, rangeY);

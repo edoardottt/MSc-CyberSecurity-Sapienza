@@ -21,11 +21,11 @@ namespace Lesson7A
         // == GLOBAL VARIABLES ==
         Point point; // mouse location handler
         double minX_Window = 0;
-        double maxX_Window = 100;
+        double maxX_Window = 1000;
         double minY_Window = 0;
-        double maxY_Window = 100;
-        double rangeX = 100;
-        double rangeY = 100;
+        double maxY_Window = 1000;
+        double rangeX = 1000;
+        double rangeY = 1000;
         List<Point> points; // All the random generated points
         Bitmap b;
         Graphics g;
@@ -84,7 +84,7 @@ namespace Lesson7A
             points = new List<Point>();
             timer = new Timer();
             timer.Tick += new EventHandler(TimerTick);
-            timer.Interval = 1000;
+            timer.Interval = 10;
             running = true;
             timer.Start();
             n = 0;
@@ -135,10 +135,17 @@ namespace Lesson7A
         {
             g.DrawRectangle(Pens.Black, viewport);
             g.FillRectangle(Brushes.LightGray, viewport);
+            g.DrawLine(Pens.Red, new Point(
+                calculateXViewport(0, viewport, minX_Window, rangeX), calculateYViewport(0, viewport, minY_Window, rangeY)
+                ),
+                new Point(
+                calculateXViewport(maxX_Window, viewport, minX_Window, rangeX), calculateYViewport(maxY_Window, viewport, minY_Window, rangeY)
+                )
+            );
             int count = 0;
             foreach (int key in values.Keys) {
                 double x = key;
-                count += values[key] / count;
+                count += values[key];
                 double y = maxY_Window * count / n;
                 int xViewport = calculateXViewport(x, viewport, minX_Window, rangeX);
                 int yViewport = calculateYViewport(y, viewport, minY_Window, rangeY);

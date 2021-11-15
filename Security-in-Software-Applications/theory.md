@@ -14,6 +14,7 @@
 - [Lesson 12 - Secure Software Development Models/Methods](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-12---secure-software-development-modelsmethods)
 - [Lesson 13 - Build Security](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-13---build-security)
 - [Lesson 14 - Language-based Security. Overview of Types](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-14---language-based-security-overview-of-types)
+- [Lesson 15 - Language-based Security. Safety](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-15---language-based-security-safety)
 
 ## Lesson 1 - Introduction
 

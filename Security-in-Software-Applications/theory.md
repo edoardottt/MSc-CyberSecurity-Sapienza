@@ -1903,3 +1903,73 @@ Buffer overflow can still be present
 - through bugs in the implementation of the type-checker or in the type system (unsound)
 - The VM (along with the bcv) is part of the Trusted Computing Base (TCB) for both memory and type safety
 
+Type safety is not a robust property. Data values and objects are just memory locations. If type confusion is created (e.g. by having different references with
+different types referring to the same memory locations), there can be NO type guarantees.  
+
+How to know a type system is sound?  
+- Representation independence (for booleans)
+    - no difference if true is represented as 0 and false as 1 (or FF) or viceversa
+        - given program with either representation guaranteed to produce same result
+    - test for it or prove it
+        - given formal definition of language, prove that the representation of true/false has no effect on any program
+    - similar properties should hold for all datatypes
+- Give two formal definitions of the programming language
+    - a typed operational semantics, which records and checks type information at runtime
+    - an untyped operational sematics which does not and prove their equivalence for all well-typed programs 
+- in other words, prove the equivalence of
+    - a defensive execution engine (which records and checks all type information at runtime) and
+    - a normal execution engine which does not for any program accepted by the type checker
+
+Many ways to enrich type systems (further)  
+e.g. distinguish non-null and possibly-null types `public @nonNull String hello = “hello”;` to improve efficiency, prevent null pointer bugs or catch them earlier, at compile time. Alias control to restrict interferences due to "double names" information flow to control the way tainted information flows through
+
+Other language-based guarantees: visibility: public, private etc. Immutability: of primitive values (constants)...
+
+*Safe arithmetic*: What happens if i=i+1; overflows ?
+1. Unsafest approach : leaving this as an undefined behavior (as in C and C++)
+2. Safer approach : specify how over/under flow behaves (as in Java and C#)
+3. Safer still : integer overflow results in an exception (as in checked mode in C#)
+4. Safest approach : have infinite precision integers and reals, so that overflow never happens (in some experimental functional languages)
+
+*(Lack of) tread safety*  
+Two concurrent execution threads executing the same statement `x = x+1;`, at the end x can have value 2 or 1. Cause: data race since `x = x+1;` is not an atomic
+operation, but consists of two steps which may be interleaved in unexpected ways (and can cause security problems ...).  
+Data races and thread safety: 
+- a program contains a data race if two threads simultaneously access (not in read only) the same variable
+- thread-safety = the behavior of a program consisting of several threads can be understood as interleaving of those thread
+- in Java, the semantics of programs with data races is effectively undefined, so only programs without data races are thread-safe
+- MORAL: even “safe” programming languages can sport weird behavior in presence of concurrency
+
+*Typing breaks in C, Java, C# ...:*  
+Dangerous combinations: aliasing & mutation threads or objects A and B both have references to a mutable object shared. This can cause many problems, not just with concurrency:  
+1. in concurrent (multi-threaded) context: data races. Locking objects (as with `synchronized` in Java) can help but is expensive and risks deadlock
+2. in single-threaded context : dangling pointers
+3. in single-threaded context: broken assumptions, who is responsible for free-ing shared? A or B? If A changes the shared object, B's assumptions about shared may not hold and B's code broken
+
+In multi-threaded programs, references to mutable data structures can be a problem, since referenced data can change even in safe languages (like Java or C#).  
+```Java
+public void f(char[] x) {
+    if (x[0] != ‘a’ {throw new Exception();}
+    // cannot assume first element is ‘a’
+    ...
+}
+```
+Another thread with reference to x can change the content of the array at any moment, also just after the if-statement has been executed.  
+In multi-threaded programs, references to immutable data structures are safer.  
+```Java
+public void g(String x) {
+    if (x.charAt(0) != ‘a’ {throw new Exception();}
+    // can assume here that first character is ‘a’
+    ...
+}
+```
+Another thread with a reference to the same string x cannot change the content of the array (value of the string) since Java strings are immutable.  
+
+*"Secure" programming languages*  
+- Languages like Java and .NET can provide security guarantees in the presence of untrusted code
+- the languages can guarantee restrictions on the possible interactions between different modules by using a combination of
+    - typing
+    - visibility
+- enforced by a combination of static and runtime checks
+    - static checks at load-time rather than at compile-time
+

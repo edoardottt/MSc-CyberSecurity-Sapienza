@@ -1788,3 +1788,6 @@ Type-casting: convert the type of a variable to another
     - e.g., C is not type-safe
 
 Here the lesson follows with a simple type-safe language to understand type-safety more formally, read this part on the slides.
+
+## Lesson 15 - Language-based Security. Safety
+

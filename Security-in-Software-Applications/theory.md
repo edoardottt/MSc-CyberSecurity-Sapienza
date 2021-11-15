@@ -1872,3 +1872,34 @@ Also: manual memory management: de-allocation e.g. free() in C causing dangling 
     - at runtime (dynamic typing)
 - Type soundness (type-safety / strong typing) refers to a system that guarantees that the assertions hold at runtime
 
+Type-safe programming languages guarantee that programs that pass the type-checker verification can only manipulate data in ways allowed by their type: booleans are not multiplied, integers are not dereferenced, references not the argument of square roots in OO languages, never Method_not_found errors at runtime...  
+Programming languages can be: 
+- memory-safe, typed and type safe
+- memory-safe and untyped
+- memory-unsafe, typed and type unsafe
+
+Ruled-out at the language level by combination of
+- compile-time (static) type checking
+    - also at load-time by bytecode verifier (bcv)
+- runtime (dynamic) checks
+
+what runtime checks are performed during the execution of
+```Java
+public class A extends Super{
+    protected int[] d;
+    private A next;
+    public A() { d = new int[3] ; }         // runtime check for non-nullness of d and array bound
+    public void m(int j) { d[0] = j ;}
+    public setNext(Object s) {
+        next = (A)s;                       // runtime check for type downcast
+    }
+}
+```
+
+Buffer overflow can still be present
+- in native code
+- in C# in code blocks declared unsafe
+- through bugs in the Virtual Machine (VM) implementation (typically written in C++)
+- through bugs in the implementation of the type-checker or in the type system (unsound)
+- The VM (along with the bcv) is part of the Trusted Computing Base (TCB) for both memory and type safety
+

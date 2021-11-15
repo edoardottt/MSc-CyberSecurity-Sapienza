@@ -1792,3 +1792,83 @@ Here the lesson follows with a simple type-safe language to understand type-safe
 
 ## Lesson 15 - Language-based Security. Safety
 
+Programming Languages can provide security features and guarantees
+- safety guarantees
+    - memory safety
+    - type safety (different levels depending on expressivity)
+    - thread safety
+- Access Control (in some form)
+    - visibility and access restrictions (public, private, ...)
+    - sandboxing mechanisms
+- Information Flow Control (in some form)
+    - JFlow/Jif or next generation Javascript
+- These features often interdependent (type needs memory, sandboxing needs memory and type, ...)
+
+A programming language can help security also if it:
+- offers good APIs and libraries
+    - API with parametrized queries for SQL
+    - secure string libraries for C
+- supports external languages
+- offers useful features
+    - such as exceptions and their handling
+- makes assurance easier
+    - understand code in modular way ...
+
+Insecure programs can be written in ANY language (forget input validation, flaw in program logic, ...)  
+Sometimes confused (Separation line not clear, but good for safety also good for security):  
+- *SAFETY*: system protected against accidental failures
+- *SECURITY*: system protected against induced failures (active attacker)
+
+When does the assignment `a[i] = (byte)b;` make sense?  
+- `a` must be a non-null byte array
+- `i` a non-negative integer < arraylength
+- `b` should be a byte or converted to one
+
+Two approaches:
+1. the programmer is responsible for verifying these conditions (unsafe approach)
+2. the language is responsible for checking these conditions (safe approach)
+
+Safe programming languages impose some discipline (via restrictions) on the programmer. Offer abstractions (enforced with associated guarantees) to the programmer. Reduced freedom and flexibility in exchange for added safety and clearer understanding.  
+Example abstractions: programming languages constructs provide abstraction from CPU instructions, programming language variables and types provide abstraction of memory, procedure call mechanism provides abstraction over call stack mechanism...  
+We have of course abstractions also from a pov of OS: OS provides virtual memory as abstraction of raw memory, OS provides process as abstraction of CPU and memory, OS provide security by separating processes, controlling access to resources by process, BUT this security breaks whenever these abstractions break!  
+
+Abstractions are crucial to reduce complexity, reducing complexity reduces bugs. Abstractions provide security (access control): memory access control by paging/segmentation, access to files (bits of hard disk) by processes.
+
+A programming language can be considered safe if:
+1. the abstractions provided by the language can be trusted
+    - enforced and cannot be broken
+    - boolean always true or false, never 35 or null,
+    - independently of representation 0x00 / true
+2. programs have precise and well-defined semantics
+    - undefined behavior is source of trouble
+3. the behavior of programs can be understood in a modular way
+
+Safety: how? mechanisms to provide safety include
+- compile time checks (e.g., type checking)
+- run time checks (for array bounds, null pointers, runtime type checks, ...)
+- garbage collector for automated memory management (no need to free() dynamic memory)
+- execution engine
+    - in JVM, bytecode verifier to type-check code, runtime checks, garbage collector invoked periodically
+
+| Compiled binaries | Execution engines | 
+| --------- | ---------- |
+| Compiled binary runs on bare hardware. Any defensive measures must be compiled into the code | Execution engine isolates code from hardware. The programming language is still "there" at runtime and the execution engine can provide checks at runtime |
+
+A programming language is memory-safe if it guarantees that:
+1. programs can never access unallocated or deallocated memory
+    - hence, no segmentation faults at runtime
+    - so: OS access control for memory not necessary (if there are no bugs in execution engine)
+2. (maybe) programs can never access uninitialized memory
+    - so there is no need to zero-out memory before deallocating to avoid information leaks (if there ...)
+
+Unsafe language features that can break memory-safety: unchecked array bounds, pointer arithmetic, null pointers (only when behavior is undefined).  
+Also: manual memory management: de-allocation e.g. free() in C causing dangling pointers, use-after-free and double-free bugs can be avoided by not using the heap at all (in MISRA C), automating it with garbage collection, first used in LISP in 1959, then accepted with Java in 1995.  
+- Types assert invariant properties of elements of a program
+    - this variable will always hold an integer
+    - this function will always return an object of class C
+    - this array will never store more than 10 elements
+- Type checking verifies these assertions and can be done
+    - at compile time (static typing)
+    - at runtime (dynamic typing)
+- Type soundness (type-safety / strong typing) refers to a system that guarantees that the assertions hold at runtime
+

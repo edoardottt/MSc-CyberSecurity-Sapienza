@@ -1973,3 +1973,200 @@ Another thread with a reference to the same string x cannot change the content o
 - enforced by a combination of static and runtime checks
     - static checks at load-time rather than at compile-time
 
+## Lesson 16 - Java guarantees & aliasing
+
+The Java platform offers security features
+- memory safety
+- strong typing
+- visibility restrictions (public, private,…)
+- sandboxing based on stackwalking
+
+This allows security guarantees to be made: even if part of the code is untrusted, or simply buggy. Of course, the same goes for Microsoft .NET/C#.  
+Even if type system is sound, VM and type checker are correct, sandboxing is sound and implemented correctly, a particular Java class may still be vulnerable to attacks by untrusted code. Programming guidelines have been proposed to prevent known vulnerabilities.  
+Spot the defect
+```Java
+public class String{
+    public char[] contents; public int offset, len;
+    // idea: String is contents[offset ... offset+len]
+    String() {contents=null; offset=0; len=0;}
+    String(char[] a) {
+        contents = a; offset = 0; len = a.len;
+    }
+    String substring(int take) {
+        if (take<=0) throw new NegativeSizeException();
+        String s = new String(); s.content=this.content;
+        s.offset=0; s.len=Math.min(take,s.len); return s;
+    }
+    int getLength() { return len; }
+...
+```
+1. class should be final to prevent malicious subclasses
+2. fields should be not be public to prevent unauthorised changes, ie. preserve integrity
+3. fields should be final (for thread-safety)
+4. array should be cloned to prevent representation exposure which allows unauthorised changes
+
+NB the context of these rules: only really relevant for  
+- applications that are – or may some day be – extended with less trusted or untrusted code
+- API components that are by definition extended with less trusted code
+
+**Java security programming guidelines**  
+- Do not use public fields
+- Do not use protected fields
+    - Why? Protected fields can be accessed in
+        1. subclasses
+        2. in the package
+    - Anyone can (1) create subclasses or (2) extend the package
+    - We can rule out 1 by making a class final
+    - We can rule out 2 by making a package sealed
+- Do not rely on package protection for security
+- Limit access to classes, methods, and fields
+    - make them private, unless... there is a need for them to be more visible
+- Never return (a reference to) a mutable object (incl. arrays) to untrusted code
+- Never store a reference to a mutable object (incl. arrays) obtained from untrusted code
+- Don’t use inner classes.
+- Make classes non-cloneable
+- Make classes non-deserialiseable.
+- Make classes non-serialiseable.
+
+Potential visibility loophole: *reflection*
+- Reflection allows access to fields that are normally not visible
+- The default security manager prevents this, and will throw an AccessControlException
+- unless java.lang.reflect.ReflectPermission is granted
+
+General observations:  
+- Flexibility & extensibility provided by OO is nice for programming, but nasty for security
+    - usual tension between functionality & security
+- These issues are not at all obvious, and typical programmers won’t know these things, unless they have actively looked for information
+    - see principle: use your community resources, eg google for language/setting specific security guidelines
+
+More programming guidelines:  
+- There are more programming guidelines, that are not directly motivated by security.
+- Specific APIs may come with their own programming guidelines, possibly security-related
+- Guidelines are very useful as checklists, but do not be tempted into thinking they are complete and give absolute guarantees.
+
+**Aliasing**  
+- Safe languages such as Java and C# do not have pointer arithmetic (eg &x; x*, ...) but they do have references and allow aliasing
+- aliasing = having more than one reference to the same object
+
+*desirable aliasing*:  
+- Efficiency
+    - in time: e.g. alias to middle of list in list traversal
+    - in space, by sharing object
+- Consistent view to shared objects
+- Useful programming patterns
+    - e.g. callbacks, observer pattern, ...
+- For "objects“/”things” in the informal sense of the word, as opposed to values, using references make sense
+    - e.g. files, windows, USB sticks, ....
+    - e.g. for anything that is hard in functional programming
+
+*undesirable aliasing*:  
+- side-effects hard to control and understand
+    - hard to debug
+    - hard to maintain object invariants
+    - hard to ensure consistent access
+        - esp. when concurrency can cause race conditions
+- aliases allow to by-pass interface operations
+    - i.e. break encapsulation boundaries
+    - aka representation exposure
+    - This can cause problems if you have several pieces of code, some of which are more trusted than others, because untrusted code may exploit this
+
+*two ways to unwanted alias of internal representation*:
+- exporting a reference: `int[] getcontents() { return c;}`
+- importing a reference: `IntSet(int[] a) { c = a; }`
+
+Many systems have been (and are being) proposed for alias control (aka ownership, encapsulation, confinement,...).  
+Many of these require annotations to express the programmer's intent.
+
+Which fields do you think are (not) meant to be aliased?  
+```Java
+public class BankTransfer{
+private BankAccount from,to;
+private int[] amount;
+private char[] description;
+...
+}
+```
+Several alias control type systems use notion of rep field
+```
+public class BankTransfer{
+private BankAccount from,to;
+private @rep int[] amount;
+private @rep char[] description;
+...
+}
+```
+- rep field is owned by the object
+- Important design decision, about the programmer's intention, which should be made explicit
+
+Idea: objects of type @rep int[] and of type int[] are not assignment compatible
+Question: should a.amount and b.amount be assignment compatible for different Banktransfer objects a and b?
+Question: could this solve the signers problem?
+
+- Many type systems have been, and are still being, proposed for alias control, e.g. 
+    - universes by Peter Muller
+        - fine-grained alias control per object
+    - confined types by Jan Vitek and Boris Bokowski
+        - coarser alias control per package
+- Design challenge: defining a system that is
+    - flexible and expressive enough to capture typical programming patterns,
+    - simple enough to be understandable and statically checkable
+
+- Another way to prevent aliasing problems:
+    - make objects immutable
+- About 660 (20%) classes in the Java standard library are immutable
+    - Prime example: java.lang.String is immutable.
+    - NB many (trusted) API methods take/produce strings as arguments/result. (Why is immutability important then?)
+- The programming language Scala clearly distinguishes immutable objects and treats them in special ways, encouraging a more functional programming style
+
+*advantages of immutability*  
+- Immutable objects can be aliased without problems
+- They are immune to race conditions
+- Conceptually simple (they are values)
+- Because immutable objects can be safely shared, this can improve efficiency
+    - because sharing objects saves the cost of copying them
+- However, using immutable objects can also decrease efficiency
+    - because not being able to change requires the creation of new objects for every change
+    - eg think of using StringBuffer vs String
+
+Using immutability in the BankTransfer example: instead of
+```Java
+public class BankTransfer{
+    private BankAccount from,to;
+    private int[] amount;
+    // should not be aliased!!
+    private char[] description; // should not be aliased!!
+```
+we would get->
+```Java
+public class BankTransfer{
+    private BankAccount from,to;
+    private Integer amount;
+    // Integer objects are immutable, so no worries
+    private String description;
+    // String objects are immutable , so no worries
+```
+Even better
+```Java
+public class BankTransfer{
+    final private BankAccount from,to;
+    final private Integer amount;
+    // Integer objects are immutable
+    final private String description;
+    // String objects are immutable
+    ...
+}
+```
+Immutability of classes is an important property that deserved to be made explicit in code, and checked.  
+e.g. `public @Immutable class BankTransfer{ ...}`.  
+
+We need to know which fields are rep-fields, ie. part of the object representation, in order to know what immutabity means.
+
+**Recap**:  
+- Language constructs such as public/private/... enable protection of access to fields, methods, classes
+- but do not provide a way to protect integrity of objects in system of interacting objects
+- Confined Types
+    - a particular scheme for alias control, that can provide integrity
+    - all package scoped objects should be confined?
+- Immutability
+    - another way to avoid/reduce aliasing problems
+    - built-in in newer programming languages such as Scala

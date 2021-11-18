@@ -2171,3 +2171,9 @@ We need to know which fields are rep-fields, ie. part of the object representati
 - Immutability
     - another way to avoid/reduce aliasing problems
     - built-in in newer programming languages such as Scala
+
+## Lesson 17 - Program Verification and JML 
+
+For this part refer to the appropriate slides (Verification and intro JML), because they are full of pieces of code and images.  
+Read also http://www-verimag.imag.fr/~mounier/Enseignement/Software_Security/Java-Architecture.pdf.  
+

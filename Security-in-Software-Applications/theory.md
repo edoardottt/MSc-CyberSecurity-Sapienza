@@ -16,6 +16,7 @@
 - [Lesson 14 - Language-based Security. Overview of Types](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-14---language-based-security-overview-of-types)
 - [Lesson 15 - Language-based Security. Safety](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-15---language-based-security-safety)
 - [Lesson 16 - Java guarantees & aliasing](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-16---java-guarantees--aliasing)
+- [Lesson 17 - Program Verification and JML](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-17---program-verification-and-jml)
 
 ## Lesson 1 - Introduction
 

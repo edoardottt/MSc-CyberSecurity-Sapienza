@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson8B\\Lesson8B\\Lesson8B.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson8B\\Lesson8B\\Lesson8B.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson8B\\Lesson8B\\Lesson8B.csproj",
+        "projectName": "Lesson8B",
+        "projectPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson8B\\Lesson8B\\Lesson8B.csproj",
+        "packagesPath": "C:\\Users\\edoardottt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson8B\\Lesson8B\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\edoardottt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj": {}
+    "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson9\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj": {
+    "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson9\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj",
+        "projectUniqueName": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson9\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj",
         "projectName": "Lesson9A",
-        "projectPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj",
+        "projectPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson9\\sources\\Lesson9A\\Lesson9A\\Lesson9A.csproj",
         "packagesPath": "C:\\Users\\edoardottt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\sources\\Lesson9A\\Lesson9A\\obj\\",
+        "outputPath": "C:\\Users\\edoardottt\\Desktop\\Statistics\\lesson9\\sources\\Lesson9A\\Lesson9A\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\edoardottt\\AppData\\Roaming\\NuGet\\NuGet.Config",

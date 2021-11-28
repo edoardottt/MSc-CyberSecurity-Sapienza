@@ -326,7 +326,7 @@ namespace Lesson9A
         {
             int middlex = calculateXViewport(Convert.ToInt32(n / 2), viewport, minX_Window, rangeX);
             int finalx = calculateXViewport(n, viewport, minX_Window, rangeX);
-            int maximumSize = 500;
+            int maximumSize = 600;
             List<double> inputMiddle = screenShotPoints(Convert.ToInt32(n / 2));
             List<double> inputFinal = screenShotPoints(n - 1);
             middleIntervals = continuousDistribution(inputMiddle);
@@ -375,7 +375,6 @@ namespace Lesson9A
                 richTextBox1.Text += "> N: " + n + "\n";
                 richTextBox1.Text += "> deviation: " + deviation + "\n";
                 drawPaths();
-                System.Diagnostics.Debug.WriteLine("ciao");
                 drawHistograms();
                 pictureBox1.Image = b;
             }

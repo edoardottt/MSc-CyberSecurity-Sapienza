@@ -18,4 +18,6 @@ My statistics blog is hosted at [edoardottt.wordpress.com](https://edoardottt.wo
 
   - [Lesson 7](https://edoardottt.wordpress.com/2021/11/14/lesson-7/)
 
+  - [Lesson 8](https://edoardottt.wordpress.com/2021/11/21/lesson-8/)
+
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

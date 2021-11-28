@@ -306,6 +306,7 @@ namespace Lesson9B
                 }
             }
             startingPoint = 0;
+            if (numberIntervals > 300) numberIntervals = 300; 
             endingPoint = startingPoint + ((max - min) / numberIntervals);
             // first interval
             Interval interval0 = new Interval();

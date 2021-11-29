@@ -9,11 +9,13 @@
 - Email Security (SMTP, MIME, SPF, DKIM, DMARC, PGP)
 - Web technologies 
     - HTTP(S), Client server comunication
-    - HTTP/2, HTTP/3, DOM, Authentication
+    - HTTP/2, HTTP/3, Authentication
+    - Same Origin Policy (SOP), DOM/BOM, JSONP, CORS, Client-side Messaging
 - Web Security
     - Path Traversal
     - Command and Code injection
     - SQL injection
+    - Server Side Request Forgery
 
 **Tools**:
 - Burpsuite (mainly)

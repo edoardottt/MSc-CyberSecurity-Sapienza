@@ -19,5 +19,6 @@
 - Burpsuite (mainly)
 - ngrok
 - Shell commands
+- Python
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

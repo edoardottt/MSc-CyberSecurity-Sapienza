@@ -16,6 +16,7 @@
     - Command and Code injection
     - SQL injection
     - Server Side Request Forgery
+- plus Privacy part
 
 **Tools**:
 - Burpsuite (mainly)

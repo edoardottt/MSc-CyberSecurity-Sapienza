@@ -2378,3 +2378,6 @@ In any code review, such code obviously requires extra attention!
     - But less expressive & less flexible
         - no stackwalking or rich set of permissions
 
+## Lesson 19 - Proof Carrying Code & Information Flow  
+
+For this part refer to the appropriate slides.

@@ -2302,3 +2302,79 @@ The algorithm for granting permission is based on stack inspection aka stack wal
 
 ![stackwalking](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/09-stackwalking.png)  
 
+Basic algorithm is too restrictive in some cases. E.g.:
+- allowing an untrusted component to delete some specific files
+- giving a partially trusted component the right to open specially marked windows (eg. security pop-ups) without giving it the right to open arbitrary windows
+- giving an app the right to phone certain phone numbers (eg. only domestic ones, or only ones in the mobile’s phonebook)
+
+**Stack walk modifiers**  
+- Enable_permission(P):
+    - means: don’t check my callers for this permission, I take full responsibility
+    - This is essential to allow controlled access to resources for less trusted code
+- Disable_permission(P):
+    - means: don’t grant me this permission, I don’t need it
+    - This allows applying the principle of real privilege (ie. only give or ask the privileges really needed, and only when they are really needed)
+
+Spot the security flaw:
+```Java
+Class Good{
+    public void m1 (String filename) {
+        // lot of checks on filename;
+        enablePermission (FileDeletionPermission);
+        delete(filename);
+    }
+    public void m2( byte[] filename) {
+        // lot of checks on filename;
+        enablePermission (FileDeletionPermission);
+        delete(filename);
+    }
+}
+```
+- m1 is secure, because Strings are immutable
+- m2 is insecure, because byte arrays are mutable: an attacker could change the value of filename after the checks, in a multi-threaded execution
+
+**Programming language platform vs OS**  
+Note the similarity between
+- methods which enable some permissions
+- Linux setuid root programs or Windows Local System Services which can be started by any user, but then run in admin mode
+- OS systems calls invoked from a user program 
+
+All are trusted services that elevate the privileges of their clients
+- hopefully in a secure way...
+- if not: privilege elevation attacks
+
+In any code review, such code obviously requires extra attention!
+
+**Sandboxing in unsafe languages**  
+- Unsafe languages cannot provide sandboxing at language level
+- An application written in an unsafe language could still use OS sandboxing by splitting the code across different processes (as e.g. Chrome does)
+- An alternative approach: use sandboxing support provided by underlying hardware
+- Additional possible benefit: drastically reducing the size of TCB by keeping OS outside the TCB for executing security-sensitive code
+    - Less flexible than eg. Java sandboxing, but more secure by having a smaller TCB:
+        - the "platform", incl. VM and OS, no longer in the TCB
+
+**Secure enclaves**  
+- Enclaves isolates part of the code together with its data
+    - Code outside the enclave cannot access the enclave's data
+    - Code outside the enclave can only jump to valide entry points for the code in the enclave
+- Less flexible than stack walking:
+    - Code in the enclave cannot inspect the stack as the basis for security decisions
+- Not such a rich collection of permissions, and programmer cannot define his own permissions
+- More secure, because
+    - OS & Java VM (Virtual Machine) are not in the TCB
+    - Also some protection against physical attacks is possible
+
+**Recap**:  
+- Conventional OS access control (access control of applications and between applications)
+- Language-level sandboxing in safe languages (e.g. Java sandboxing using stackwalking)
+- Hardware-supported enclaves in unsafe languages
+
+- Language-based sandboxing is a way to do access control within a application: different access right for different parts of code
+    - This reduces the TCB for some functionality
+    - This may allows us to limit code review to small part of the code
+    - This allows us to run code from many sources on the same VM and don’t trust all of them equally
+- Hardware-based sandboxing can also achieve this also for unsafe programming languages
+    - This has much smaller TCB: OS and VM are no longer in the TCB
+    - But less expressive & less flexible
+        - no stackwalking or rich set of permissions
+

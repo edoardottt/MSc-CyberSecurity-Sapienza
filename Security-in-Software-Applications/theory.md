@@ -2227,3 +2227,78 @@ Remedies/improvements: allowing users to drop rights when they start a process, 
 
 ![chrome](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/08-chrome.png)  
 
+**Access control at the language level**  
+In a safe programming language, access control can be provided within a process, at language-level, because interactions between components can be restricted & controlled. This makes it possible to have security guarantees in the presence of untrusted code (which could be malicious or just buggy).  
+Without memory-safety, this is impossible. Why? Because B can access any memory used by A.  
+Without type-safety, it is hard. Why? Because B can pass ill-typed arguments to A's interface.  
+
+**Sandboxing with code-based access control**  
+Language platforms such as Java and .NET provide code-based access control:  
+- this treats different parts of a program differently
+- on top of the user-based access control of the OS
+
+Ingredients for this access control, as for any form of access control:
+1. permissions
+2. components (aka protection domains), in traditional OS access control, this is the user ID
+3. policies, which gives permissions to components ie. who is allowed to do what
+
+Example configuration file that expresses a policy (Java):
+```Java
+grant
+    codebase "http://www.edoardoottavianelli.it/example", signedBy "FPP",
+        { permission
+            java.io.FilePermission "/home/edoardottt","read";
+        };
+
+grant
+    codebase "file:/.*"         // <- protection domain
+        { permission
+            java.io.FilePermission "/home/edoardottt","write";
+        };
+```
+Protection domains based on evidence  
+1. Where did it come from? where on the local file system (hard disk) or where on the internet
+2. Was it digitally signed and if so by who? using a standard PKI
+
+When loading a component, the Virtual Machine (VM) consults the security policy and remembers the permissions.  
+
+Permissions represent a right to perform some actions e.g. `FilePermission(name, mode)`, `NetworkPermission`, `WindowPermission`. Permissions have a set semantics, so one permission can be a superset of another one. Developers can define new custom permissions.  
+
+Complication: method calls.  
+There are different possibilities here
+1. allow action if top frame on the stack has permission
+2. only allow action if all frames on the stack have permission
+3. ...
+
+Pros? Cons?
+1. is very dangerous: a class may accidentally expose dangerous functionality
+2. is very restrictive: a class may want to, and need to, expose some dangerous functionality, but in a controlled way
+
+More flexible solution: stackwalking aka stack inspection
+
+Exposing dangerous functionality, (in)securely
+```Java
+Class Good {
+    public void unsafeMethod(File f){
+        delete f; // Could be abused by evil caller 
+    } 
+    public void safeMethod(File f) {
+        ... // lots of checks on f;
+        // if all checks are passed, then delete f;}
+        // Cannot be abused, assuming checks are bullet-proof
+    public void anotherSafeMethod(){
+        delete ″/tmp/bla″; 
+    }
+        // Cannot be abused, as filename is fixed.
+        // Assuming this file is not important..
+}
+```
+
+Using visibility to control access? Use `private` in unsafeMethod !!!!!
+
+**Stack walking**  
+Every resource access or sensitive operation protected by a demandPermission(P) call for an appropriate permission P, no access without asking permission!  
+The algorithm for granting permission is based on stack inspection aka stack walking.  
+
+![stackwalking](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/09-stackwalking.png)  
+

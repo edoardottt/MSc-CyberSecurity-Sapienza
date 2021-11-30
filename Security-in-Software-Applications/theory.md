@@ -17,6 +17,7 @@
 - [Lesson 15 - Language-based Security. Safety](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-15---language-based-security-safety)
 - [Lesson 16 - Java guarantees & aliasing](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-16---java-guarantees--aliasing)
 - [Lesson 17 - Program Verification and JML](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-17---program-verification-and-jml)
+- [Lesson 18 - Sandboxing](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-18---sandboxing)
 
 ## Lesson 1 - Introduction
 

@@ -2178,3 +2178,51 @@ We need to know which fields are rep-fields, ie. part of the object representati
 For this part refer to the appropriate slides (Verification and intro JML), because they are full of pieces of code and images.  
 Read also http://www-verimag.imag.fr/~mounier/Enseignement/Software_Security/Java-Architecture.pdf.  
 
+## Lesson 18 - Sandboxing
+
+**Overview**  
+1. Compartmentalisation
+2. Classic OS access control (compartementalisation between processes)
+3. Language-level access control
+    - compartementalisation within a process
+    - by sandboxing support in safe programming languages
+    - notably Java and .NET
+4. Hardware-based sandboxing
+    - compartementalisation within a process, also for unsafe languages
+
+Compartmentalisation can be applied on many levels: organization, IT system, single computer, inside a program...  
+
+**Compartmentalisation for security**  
+1. Divide systems into chunks, aka compartments, components... Different compartments for different tasks
+2. Give minimal access rights to each compartment aka principle of least privilege
+3. Have strong encapsulation between compartments so flaw in one compartment cannot corrupt others
+4. Have clear and simple interfaces between compartments exposing minimal functionality
+
+Benefits:
+    - reduces TCB (Trusted Computing Base) for certain security-sensitive functionality
+    - reduces the impact of any security flaws.
+
+Sandboxing: Runtime access control aka sandboxing is one of the standard ways to provide compartmentalisation. This involves right/permissions and policies that give rights to parties (who is allowed to do that).  
+
+**Problems with OS access control**  
+1. Size of the TCB. The Trusted Computing Base for OS access control is HUGE so there will be security flaws in the code. The only safe assumption: a malicious process on a typical OS (Linux, Windows, BSD, iOS, Android, ...) will be able to get superuser/root/administrator rights.
+2. Too much complexity. The languages to express access control policy are very complex, so people will make mistakes 
+3. Not enough expressivity/granularity. E.g. the OS cannot do access control within process, as processes as the "atomic" units.
+
+Note the fundamental conflict between the need for expressivity and the desire to keep things simple.  
+
+**Complexity problem (resulting in privilige escalation)**  
+UNIX access control uses 3 permissions (rwx) for 3 categories of users (owner,group,others) for files and directories. Windows XP uses 30 permissions, 9 categories of users, and 15 kinds of objects. 
+
+Example common configuration flaw in XP access control, in 4 steps:
+1. Windows XP uses Local Service or Local System services for privileged functionality (where UNIX uses setuid binaries)
+2. The permission SERVICE_CHANGE_CONFIG allows changing the executable associated with a service
+3. But... it also allows to change the account under which it runs, incl. to Local System, which gives maximum root privileges.
+4. Many services mistakenly grant SERVICE_CHANGE_CONFIG to all Authenticated Users...
+
+**Limitation of classic OS access control**  
+A process has a fixed set of permissions. Usually, all permissions of the user who started it. Execution with reduced permission set may be needed temporarily when executing untrusted or less trusted code. For this OS access control may be too coarse.  
+Remedies/improvements: allowing users to drop rights when they start a process, asking user approval for additional permissions at run-time, using different user accounts for different applications (as Android does), split a process into multiple processes with different access rights.  
+
+![chrome](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/resources/images/08-chrome.png)  
+

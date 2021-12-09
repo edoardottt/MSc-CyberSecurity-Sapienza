@@ -2382,3 +2382,7 @@ In any code review, such code obviously requires extra attention!
 ## Lesson 19 - Proof Carrying Code & Information Flow  
 
 For this part refer to the appropriate slides.
+
+## Lesson 20 - project SPARTA
+
+For this part refer to the appropriate slides.

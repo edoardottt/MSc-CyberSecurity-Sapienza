@@ -16,6 +16,9 @@
     - Command and Code injection
     - SQL injection
     - Server Side Request Forgery
+    - Cross Site Request Forgery
+    - Cross Site Scripting
+    - Content Security Policy
 - plus Privacy part
 
 **Tools**:

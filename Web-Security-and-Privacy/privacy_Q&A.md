@@ -23,7 +23,9 @@ Alice may try to launch a double-spend attack. Assume that Alice is a customer o
 orphan block.
 
 
-3. i) Explain what is the meaning of the following claim”Bitcoins are immutable”; ii)  the number of bitcoins available increases every day (for several years). Discuss this claim explaining why the designer of Bitcoin decided to include such possibility in the protocol.
+**3. i) Explain what is the meaning of the following claim: "Bitcoins are immutable"; ii)  the number of bitcoins available increases every day (for several years). Discuss this claim explaining why the designer of Bitcoin decided to include such possibility in the protocol.**
+
+
 
 4. Bitcoin network: Bitcoin is completely anonymous but  all transactions are public. Discuss how the netowk of Bitcoin transactions looks like and how it is possible to use this knowledge to  deanonymize the Bitcoin network. Discuss at least one example. 
 

@@ -25,6 +25,9 @@ orphan block.
 
 **3. i) Explain what is the meaning of the following claim: "Bitcoins are immutable"; ii)  the number of bitcoins available increases every day (for several years). Discuss this claim explaining why the designer of Bitcoin decided to include such possibility in the protocol.**
 
+Immutability is one of the key features of Bitcoin and blockchain technology. Immutable transactions make it impossible for any entity (for example, a government or corporation) to manipulate, replace, or falsify data stored on the network. Since all historical transactions can be audited at any point in time, immutability enables a high degree of data integrity. The immutability of public blockchains can enhance the current trust and audit system. It can reduce the time and cost of audits since verifying information becomes much simpler or effectively redundant. Immutability can also increase the overall efficiency of many businesses by providing them with the opportunity to maintain a full historical record of their business processes. Immutability can also provide clarity to many business disputes, as it enables a verifiable, shared source of truth.  
+
+
 
 
 4. Bitcoin network: Bitcoin is completely anonymous but  all transactions are public. Discuss how the netowk of Bitcoin transactions looks like and how it is possible to use this knowledge to  deanonymize the Bitcoin network. Discuss at least one example. 

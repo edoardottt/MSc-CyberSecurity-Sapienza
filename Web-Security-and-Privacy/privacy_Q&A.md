@@ -58,17 +58,17 @@ within the network (i.e. a form of payment for the network nodes that execute th
 Ripple is an open-source, P2P decentalized digital payment platform that allows for fast transfers of currency (e.g. US Dollar, Yen, Bitcoin, ...) launched in 2012 by the company Ripple (Labs) responsible for the further development of the Ripple protocol. First company to have received a "BitLicense" for an institutional use case of digital assets from New York’s Department of Financial Services. Ripple's uses the cryptocurrency XRP. XRP was built to become a bridge currency to allow ﬁnancial institutions to settle cross-border payments a lot faster and cheaper than they can using the global payment networks that are in place today, which can be slow and involve multiple middlemen (i.e. banks). According to Ripple, XRP can handle more than 1,500 transactions per second. While it was initially developed and intended for enterprise use, it has been adopted by a large number of cryptocurrency users. Ripple (XRP) is not based on a PoW or a PoS mechanism to validate transactions, but it makes use of its own speciﬁc consensus protocol. The total supply of XRP has been fully “pre-mined” (or better: created upon the coin’s inception) by its inventors. At present, 8 billion XRP is held by Ripple (Labs), (39 billion XRP has been distributed; and 52 billion XRP has been placed in escrow to create certainty of XRP supply at any given time.
 
 
-9. Illustrate  Mixing in Bitcoin discussing its advantages and its limitations; discuss digital coins that allow anonimyty.
+**9. Illustrate Mixing in Bitcoin discussing its advantages and its limitations; discuss digital coins that allow anonimity.**
 
-10. Discuss how people might release sensible data in exchange of  an immediate advantage.  Discuss examples that give evidence to your claims. Possiblty give a specific example in which you or a person you know was involved. 
+**10. Discuss how people might release sensible data in exchange of an immediate advantage. Discuss examples that give evidence to your claims. Possibilty give a specific example in which you or a person you know was involved. 
 
-11. Discuss extension of blockchain technologies beyond digital currency.
+**11. Discuss extension of blockchain technologies beyond digital currency.**
 
-12. When do we claim that a social network has been deanonymized? Clearly it is not necessary that all data in the network have been deanonymized. Provide the different definitions that are used to claim that a network has been (possibly partially) deanonymised? Be specific and provide at least one example.
+**12. When do we claim that a social network has been deanonymized? Clearly it is not necessary that all data in the network have been deanonymized. Provide the different definitions that are used to claim that a network has been (possibly partially) deanonymized? Be specific and provide at least one example.**
 
-13. What is pseudoanonimity and discuss key features with reference to a practical example.  Explain the advantages and weakness of pseudoanonimity discussing how it should be used in practical situations. 
+**13. What is pseudononimity and discuss key features with reference to a practical example. Explain the advantages and weakness of pseudononimity discussing how it should be used in practical situations.**
 
-14. Explain what is k-anonimity of a data base  and provide one example where a k-anonymous data base does not leak any  information (i.e. it preserves privacy) and one in which  a k-anonymous data base can leak information. 
+**14. Explain what is k-anonimity of a database and provide one example where a k-anonymous database does not leak any  information (i.e. it preserves privacy) and one in which a k-anonymous database can leak information.** 
 
 15. Given the following table
 

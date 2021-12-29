@@ -33,7 +33,11 @@ The node that creates a block includes a special transaction in that block: a co
 Many users broadcast transactions; nodes must agree on exactly which transactions were broadcast and the order in which these transactions happened. Many ledgers: At any given point, all the nodes in the peer-to-peer network have a ledger consisting of a sequence of blocks, each containing a list of transactions, that they’ve reached consensus on. The protocol is able to keep consistency (with time delay). All nodes agree on a single, global ledger (=accounting book) for the system. A transaction contains Alice's signature, an instruction to pay to Bob's public key, and a hash. The hash represents a pointer to a previous transaction output that Alice received and is now spending. The pointer references a transaction that was included in some previous block in the consensus chain. Blocks (set of transactions) include a hash pointer to the previous block that they're extending. Extending a block takes a random time and significant computational effort. Ledger (set of blocks) contains all blocks with all Bitcoin transactions.
 
 
-5. Today Bitcoin is very popular and its use is increasing rapidly. Discuss potential problems that might arise in the future and that might dramatically limit the use of Bitcoin.
+**5. Today Bitcoin is very popular and its use is increasing rapidly. Discuss potential problems that might arise in the future and that might dramatically limit the use of Bitcoin.**
+
+One problem ould be the mining difficulty: Diﬃculty changes every 2016 blocks to maintain the time for ﬁnding a block to be about 10 minutes (more hash power more diﬃcult, less hash power less diﬃcult. Today about 500 x 10^9 hash). The more we go forward, higher will be the difficulty to mine new blocks. This means miners will have to upgrade the hash power (cost of electricity, cold climate, network speed...).  
+
+
 
 6. Which are the possibility to store bitcoins; discuss  the risks that are associated.
 

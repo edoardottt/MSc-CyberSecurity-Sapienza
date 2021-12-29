@@ -73,7 +73,9 @@ Coinjoin algorithm:
 Coinjoin remaining problems: Hot to find peers, peers know your input-output mapping (This is a worse problem than for centralized mixes), DoS.
 
 
-**10. Discuss how people might release sensible data in exchange of an immediate advantage. Discuss examples that give evidence to your claims. Possibilty give a specific example in which you or a person you know was involved.**
+**10. Discuss how people might release sensible data in exchange of an immediate advantage. Discuss examples that give evidence to your claims. Possibly give a specific example in which you or a person you know was involved.**
+
+I am not understanding the question.
 
 **11. Discuss extension of blockchain technologies beyond digital currency.**
 

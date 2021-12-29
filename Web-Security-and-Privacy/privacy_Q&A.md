@@ -61,6 +61,18 @@ Other mentionable coins are: Bitcoin cash (BCH), litecoin, IOTA.
 
 **9. Illustrate Mixing in Bitcoin discussing its advantages and its limitations; discuss digital coins that allow anonimity.**
 
+Bitcoin activities are recorded and available publicly via the blockchain; when you finally use Bitcoin to pay for goods and services, you will of course need to provide your name and address to the seller for delivery purposes. It means that a third party can trace your transactions and find ID information. To avoid this, such mixing service provide the ability to exchange your bitcoins. Mixing services are used to mix one's funds with other people's money, intending to confuse the trail back to the funds' original source. In traditional financial systems, the equivalent would be moving funds through banks in countries with bank secrecy laws (Cayman islands, Bahamas etc.). When mixing bitcoins, you send your money to an anonymous service and they will send you someone else's coins. So, now, whatever those coins were used for may now be traceable back to you. Additionally, mixing large amounts of money may be illegal.  
+It's also possible to use decentralized mixing, why? No bootstrapping problem, theft impossible, possibly better anonymity and more philosophically aligned with Bitcoin.  
+Coinjoin algorithm:  
+1. Find peers who want to mix
+2. Exchange input/output addresses
+3. Construct transaction
+4. Send it around, collect signatures (Before signing, each peer checks if her output is present)
+5. Broadcast the transaction
+
+Coinjoin remaining problems: Hot to find peers, peers know your input-output mapping (This is a worse problem than for centralized mixes), DoS.
+
+
 **10. Discuss how people might release sensible data in exchange of an immediate advantage. Discuss examples that give evidence to your claims. Possibilty give a specific example in which you or a person you know was involved.**
 
 **11. Discuss extension of blockchain technologies beyond digital currency.**

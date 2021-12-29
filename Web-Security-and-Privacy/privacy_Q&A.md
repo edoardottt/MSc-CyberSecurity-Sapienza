@@ -60,7 +60,7 @@ Ripple is an open-source, P2P decentalized digital payment platform that allows 
 
 **9. Illustrate Mixing in Bitcoin discussing its advantages and its limitations; discuss digital coins that allow anonimity.**
 
-**10. Discuss how people might release sensible data in exchange of an immediate advantage. Discuss examples that give evidence to your claims. Possibilty give a specific example in which you or a person you know was involved. 
+**10. Discuss how people might release sensible data in exchange of an immediate advantage. Discuss examples that give evidence to your claims. Possibilty give a specific example in which you or a person you know was involved.**
 
 **11. Discuss extension of blockchain technologies beyond digital currency.**
 

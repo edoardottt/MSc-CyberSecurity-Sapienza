@@ -120,20 +120,40 @@ There were made some census on US populations in differents years (2000, 2010, 2
 
 **20. What are according to you the main concerns of privacy protection in social networks?**
 
+todo
+
 **21. Discuss the difference between a  semi-honest attacker and a malicious one in a social network; give examples of attacks.**
+
+todo
 
 **22. Present and discuss how the Netflix network was deanonymized.**
 
+todo
+
 **23. Which are the main characteristics of  the new European regulations for privacy for individuals?**
+
+todo
 
 **24. Which are the main characteristics of  the new European regulations for privacy for business?**
 
+todo
+
 **25.  Privacy by Design (PbD) is an  important technical elements in the GDPR.  Present main ideas of  PbD, its adavantages and its limitations.**
+
+todo
 
 **26. Pseudoanonymization is an  important technical elements in the GDPR.  Present main ideas of  Pseudoanonymization, its adavantages and its limitations.**
 
+todo
+
 **27. According to the new European rules companies and organizations need a Data Protection Officer; which are the task and the obligations related to this person?**
+
+todo
 
 **28. The regulations and law that protect sensible data are evolving.  With reference to the Italian regulations  discuss which data are considered sensible and which are the main rules to protect such data. Discuss which are the main problems in processing information  according to the regulations and which kind of  difficulties/problems such regulations poses  to companies and administrations.**
 
+todo
+
 **29. What are the main challenges and difficulties of making a job as an expert in  privacy protection? Do you think that there will be good opportunities (e.g. well paid?, interesting?) for such a job?  Which are the main issues that you foresee. Explain why yes or not.**
+
+todo

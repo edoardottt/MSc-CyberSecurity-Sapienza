@@ -150,7 +150,15 @@ todo
 
 **24. Which are the main characteristics of  the new European regulations for privacy for business?**
 
-todo
+- Regulators can impose fines up to 4% of annua turnover (or EUR 20 mln, highest possible), they can perform audits, warnings or ban on processing. 
+- Organizations must demonstrate they are compliant by evidencing that they comply with the GDPR conditions, so orgs must document suitable policies, perform privacy assessments and implement technical security measures.
+- Companies must provide some additional rights: right to access and rectify personal data, right to be forgotten, right to data portability and some others. 
+-It is mandatory to implement Privacy by Design (and so Privacy by Default). 
+- In certain cases there must exist a Data Protection Officer (DPO). It is mandatory for 'high' risk personal data processing performing Privacy Impact Assessments.
+- Increase of mandatory amount of informations included in privacy notices and also translated in local languages.
+- Consent must be freely given, specific, informed and unambiguous.
+- It is mandatory to keep records of all security related informations and notify users/authorities of security breaches.
+- GDPR applies also to organizations that target EU citizens
 
 **25. Privacy by Design (PbD) is an important technical element in the GDPR. Present main ideas of PbD, its advantages and its limitations.**
 

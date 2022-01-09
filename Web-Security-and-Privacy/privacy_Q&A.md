@@ -174,7 +174,13 @@ todo
 
 **27. According to the new European rules companies and organizations need a Data Protection Officer; which are the task and the obligations related to this person?**
 
-todo
+The key principle is the accountability. Ensure and be able to demonstrate compliance: Adopt policies and implement appropriate measures, documentation.  
+The Data Protection Officer will:
+
+- Inform and advise the owner of the treatment about their obligations under the EU regulation
+- Check the implementation and application of the regulations, provide opinions on the assessment of the impact on data protection
+- Act as a contact point about any issue related to the processing of their data or the exercise of their rights
+- Act as a contact point for the Authority for the protection of personal data
 
 **28. The regulations and law that protect sensible data are evolving.  With reference to the Italian regulations  discuss which data are considered sensible and which are the main rules to protect such data. Discuss which are the main problems in processing information  according to the regulations and which kind of  difficulties/problems such regulations poses  to companies and administrations.**
 

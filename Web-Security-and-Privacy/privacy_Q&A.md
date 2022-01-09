@@ -79,9 +79,15 @@ I am not understanding the question.
 
 **11. Discuss extension of blockchain technologies beyond digital currency.**
 
+todo
+
 **12. When do we claim that a social network has been deanonymized? Clearly it is not necessary that all data in the network have been deanonymized. Provide the different definitions that are used to claim that a network has been (possibly partially) deanonymized? Be specific and provide at least one example.**
 
+todo
+
 **13. What is pseudononimity and discuss key features with reference to a practical example. Explain the advantages and weakness of pseudononimity discussing how it should be used in practical situations.**
+
+todo
 
 **14. Explain what is k-anonimity of a database and provide one example where a k-anonymous database does not leak any  information (i.e. it preserves privacy) and one in which a k-anonymous database can leak information.**
 

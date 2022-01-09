@@ -102,34 +102,38 @@ ii) The minimal loss I found is obtained removing the second digit for the Age v
 iii) This generalized table is 2-diverse.
 iv) This is still 2-diverse.
 
-16. K-anonimity is not sufficient for maintaining anonimity.  Provide other formulations that enforce the concept. Discuss the approach and provide one example that shows that this approach might be better than K-anonimity; show  one negative example that shows that this  approach is not adequate.
+**16. K-anonimity is not sufficient for maintaining anonimity.  Provide other formulations that enforce the concept. Discuss the approach and provide one example that shows that this approach might be better than K-anonimity; show  one negative example that shows that this  approach is not adequate.**
 
 Even if we have a k-anonymous table, if we have an equivalence class and this has all the same sensitive values, it's obvious to link sensitive values and equivalence class records. So we should modify the generalization in a manner that we have diversity in sensitive values of the records in each equivalence class. l-diversity means that we have at least l different elements in those fields for an equivalence class. Anyway, l-diversity doesn't take into account the semantic value of the values: if we take an equivalence class with 99% if values HIV+ and 1% HIV-; this is really different from 99% HIV- and 1% HIV+. Those are two complete different degrees of sensitivity.
 
-17. The main limitation of K-anonimity and its extensions  for guaranteeing privacy is the use of additional information. Provide at least two examples.
+**17. The main limitation of K-anonimity and its extensions  for guaranteeing privacy is the use of additional information. Provide at least two examples.**
 
-18. What is differential privacy and discuss its advantages and disadvantages with respect ot other approaches. Provide one example in which differential privacy is useful.
+todo
+
+**18. What is differential privacy and discuss its advantages and disadvantages with respect ot other approaches. Provide one example in which differential privacy is useful.**
+
+todo
 
 **19. Discuss how differential privacy has been used in the US census. In particular discuss an example that motivates why publishing census data does not preserve privacy and discuss the kind of operation that are performed to achieve differential privacy**
 
 There were made some census on US populations in differents years (2000, 2010, 2018...). The data that has been collected concerned about 6 different fields (race, sex, location, age...). The US agencies had roughly ~1.7 GB of data belonging to about 300 million citizens. They cannot publish the data without any modification, because this could mean (and will) a privacy violation. So they managed to collect all the respondents informations, then there was a noise addition, and then they published the statistical data. The main challenge was to understand how much noise add to the records, in order to achieve both privacy and accuracy of the informations. The epsilon in differential privacy is a measure of amount of data loss; the higher epsilon is, more accuracy you have, but of course this means no privacy at all. The lower epsilon is, higher will be the privacy, but the data of course will be less accurate. In a study was discovered that using the informations coming from the first census, it was possible to deanonymize and reconstruct the data of 17% of US population. There were taken into account two methodologies: block by block perturbation and top-down framework perturbation. The first one means add noise to each block separately (a 'block' is the littlest piece of US surface considered), while the latter means add noise for the histograms related to whole population and then consequently to other histograms with higher accuracy of localization (state, city, tracks, group of blocks, block). According to Prof. Ruggles, "Differential privacy will degrade the quality of data available about the population, and will probably make scientifically useful public use microdata impossible."
 
-20. What are according to you the main concerns of privacy protection in social networks? 
+**20. What are according to you the main concerns of privacy protection in social networks?**
 
-21. Discuss the difference between a  semi-honest attacker and a malicious one in a social network; give examples of attacks.  
+**21. Discuss the difference between a  semi-honest attacker and a malicious one in a social network; give examples of attacks.**
 
-22. Present and discuss how the Netflix network was deanonymized. 
+**22. Present and discuss how the Netflix network was deanonymized.**
 
-23. Which are the main characteristics of  the new European regulations for privacy for individuals?
+**23. Which are the main characteristics of  the new European regulations for privacy for individuals?**
 
-24. Which are the main characteristics of  the new European regulations for privacy for business? 
+**24. Which are the main characteristics of  the new European regulations for privacy for business?**
 
-25.  Privacy by Design (PbD) is an  important technical elements in the GDPR.  Present main ideas of  PbD, its adavantages and its limitations.
+**25.  Privacy by Design (PbD) is an  important technical elements in the GDPR.  Present main ideas of  PbD, its adavantages and its limitations.**
 
-26. Pseudoanonymization is an  important technical elements in the GDPR.  Present main ideas of  Pseudoanonymization, its adavantages and its limitations. 
+**26. Pseudoanonymization is an  important technical elements in the GDPR.  Present main ideas of  Pseudoanonymization, its adavantages and its limitations.**
 
-27. According to the new European rules companies and organizations need a Data Protection Officer; which are the task and the obligations related to this person?
+**27. According to the new European rules companies and organizations need a Data Protection Officer; which are the task and the obligations related to this person?**
 
-28. The regulations and law that protect sensible data are evolving.  With reference to the Italian regulations  discuss which data are considered sensible and which are the main rules to protect such data. Discuss which are the main problems in processing information  according to the regulations and which kind of  difficulties/problems such regulations poses  to companies and administrations.
+**28. The regulations and law that protect sensible data are evolving.  With reference to the Italian regulations  discuss which data are considered sensible and which are the main rules to protect such data. Discuss which are the main problems in processing information  according to the regulations and which kind of  difficulties/problems such regulations poses  to companies and administrations.**
 
-29. What are the main challenges and difficulties of making a job as an expert in  privacy protection? Do you think that there will be good opportunities (e.g. well paid?, interesting?) for such a job?  Which are the main issues that you foresee. Explain why yes or not. 
+**29. What are the main challenges and difficulties of making a job as an expert in  privacy protection? Do you think that there will be good opportunities (e.g. well paid?, interesting?) for such a job?  Which are the main issues that you foresee. Explain why yes or not.**

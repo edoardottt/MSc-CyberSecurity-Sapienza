@@ -97,10 +97,10 @@ l-anonimity
 (iv) Assume suppressing the last digit of the Zip column and generalising Age to {[0- 22]; [23-90]}
 For what value of l can distinct l-diversity now be guaranteed.**
 
-i) The largest k is 2. This because under the Age column we have only 2 occurrences of the value 24, so it's the minimum.
-ii) The minimal loss I found is obtained removing the second digit for the Age value (2*) and suppressing the zip values 10001.
-iii) This generalized table is 2-diverse.
-iv) This is still 2-diverse.
+i) The largest k is 2. This because under the Age column we have only 2 occurrences of the value 24, so it's the minimum.  
+ii) The minimal loss I found is obtained removing the second digit for the Age value (2*) and suppressing the zip values 10001.  
+iii) This generalized table is 2-diverse.  
+iv) This is still 2-diverse.  
 
 **16. K-anonimity is not sufficient for maintaining anonimity.  Provide other formulations that enforce the concept. Discuss the approach and provide one example that shows that this approach might be better than K-anonimity; show  one negative example that shows that this  approach is not adequate.**
 

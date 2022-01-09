@@ -152,7 +152,7 @@ todo
 
 todo
 
-**25.  Privacy by Design (PbD) is an  important technical elements in the GDPR.  Present main ideas of  PbD, its advantages and its limitations.**
+**25. Privacy by Design (PbD) is an important technical element in the GDPR. Present main ideas of PbD, its advantages and its limitations.**
 
 todo
 

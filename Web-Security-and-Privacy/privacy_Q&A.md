@@ -83,11 +83,11 @@ I am not understanding the question.
 
 **13. What is pseudononimity and discuss key features with reference to a practical example. Explain the advantages and weakness of pseudononimity discussing how it should be used in practical situations.**
 
-**14. Explain what is k-anonimity of a database and provide one example where a k-anonymous database does not leak any  information (i.e. it preserves privacy) and one in which a k-anonymous database can leak information.** 
+**14. Explain what is k-anonimity of a database and provide one example where a k-anonymous database does not leak any  information (i.e. it preserves privacy) and one in which a k-anonymous database can leak information.**
 
-15. Given the following table
+K-anonimity is a technique used to understand how to release public informations from a private database without violating privacy. However, be aware that only using k-anonimity there could still be some problems (solved partially by t-closeness and l-diversity). When we have a private table, we can distinguish between three main groups of data: Key attributes, quasi-identifiers and sensitive attributes. Of course we don't want to release the sensitive data linked to personally identifiable informations, so we need to delete the first ones (e.g. names, SSN, phone number...). So we have now in our table the quasi-identifiers and the sensitive attributes. We could say that this table preserves privacy, but it could not. We need to modify the table in order to avoid inference control by the attacker. We use the k-anonimity to be sure that, identified an equivalence class (same quasi-identifiers), we have at least k records in that class. Let's make two useful examples: if we have a 4-anonymous table, this means at least 4 records for each equivalence class; let's suppose we have at least 4 records having 4 different sensitive attributes. It's difficult to understand which records belong to. Different is the case if we have 4 sensitive attributes with all the same value. It's obvious in this case that if Bob belongs to that particular equivalence class, that unique sensitive attributes belong to him.
 
-
+**15. Given the following table
 k-Anonymity:
 (i) Determine the largest k such that the table is k-anonym. Explain which rows contradict the (k+1)-
 anonymity.
@@ -95,7 +95,12 @@ anonymity.
 l-anonimity
 (iii) What is the largest l such that the above mentioned dataset is distinct l-diverse?
 (iv) Assume suppressing the last digit of the Zip column and generalising Age to {[0- 22]; [23-90]}
-For what value of l can distinct l-diversity now be guaranteed.
+For what value of l can distinct l-diversity now be guaranteed.**
+
+i) The largest k is 2. This because under the Age column we have only 2 occurrences of the value 24, so it's the minimum.
+ii) The minimal loss I found is obtained removing the second digit for the Age value (2*) and suppressing the zip values 10001.
+iii) This generalized table is 2-diverse.
+iv) This is still 2-diverse.
 
 16. K-anonimity is not sufficient for maintaining anonimity.  Provide other formulations that enforce the concept. Discuss the approach and provide one example that shows that this approach might be better than K-anonimity; show  one negative example that shows that this  approach is not adequate.
 

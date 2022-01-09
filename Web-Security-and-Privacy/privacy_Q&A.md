@@ -104,6 +104,8 @@ iv) This is still 2-diverse.
 
 16. K-anonimity is not sufficient for maintaining anonimity.  Provide other formulations that enforce the concept. Discuss the approach and provide one example that shows that this approach might be better than K-anonimity; show  one negative example that shows that this  approach is not adequate.
 
+Even if we have a k-anonymous table, if we have an equivalence class and this has all the same sensitive values, it's obvious to link sensitive values and equivalence class records. So we should modify the generalization in a manner that we have diversity in sensitive values of the records in each equivalence class. l-diversity means that we have at least l different elements in those fields for an equivalence class. Anyway, l-diversity doesn't take into account the semantic value of the values: if we take an equivalence class with 99% if values HIV+ and 1% HIV-; this is really different from 99% HIV- and 1% HIV+. Those are two complete different degrees of sensitivity.
+
 17. The main limitation of K-anonimity and its extensions  for guaranteeing privacy is the use of additional information. Provide at least two examples.
 
 18. What is differential privacy and discuss its advantages and disadvantages with respect ot other approaches. Provide one example in which differential privacy is useful.

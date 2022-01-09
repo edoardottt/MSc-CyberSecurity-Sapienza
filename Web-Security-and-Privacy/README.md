@@ -1,7 +1,7 @@
 # Web Security and Privacy
 
-- Prof. Fabrizio D'Amore
 - Prof. Emilio Coppa
+- Prof. Alberto Marchetti Spaccamela
 
 **CTF challenges** at [webhack.it](https://webhack.it/)
 

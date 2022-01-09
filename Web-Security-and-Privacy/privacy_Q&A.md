@@ -144,11 +144,14 @@ Anyway, since ratings about not top100 movies are very personalized (is unusual 
 With only eight movie ratings, and dates that may be up to two weeks in error, they can uniquely identify 99% of the records in the dataset. After all, all they need is a little bit of identifiable data: from the IMDb, from your blog, from anywhere.
 The moral is that it takes only a small named database for someone to pry the anonymity off a much larger anonymous database
 
-**23. Which are the main characteristics of  the new European regulations for privacy for individuals?**
+**23. Which are the main characteristics of the new European regulations for privacy for individuals?**
 
-todo
+- It's easier to access your own data, individuals will have more informations (clear and understandable) on how their data is processed. For example, if an individual has given her or his consent to processing for a specific purpose (e.g. display on a social networking site, and does not want this service anymore, than there is no reason to keep the data in the system).
+- Right to data portability: it will be easier to transfer your personal data between service providers.
+- Right to be forgotten: when you no longer want your data to be processed, the data will be deleted. This is not completely true, for example if the retention of the data is necessary for the performance of a contract or for compliance with a legal obligation, the data can be kept as long as necessary.
+- Companies and orgs must notify the national supervisory authority of serious data breaches as soon as possible.
 
-**24. Which are the main characteristics of  the new European regulations for privacy for business?**
+**24. Which are the main characteristics of the new European regulations for privacy for business?**
 
 - Regulators can impose fines up to 4% of annual turnover (or EUR 20 mln, highest possible), they can perform audits, warnings or ban on processing. 
 - Organizations must demonstrate they are compliant by evidencing that they comply with the GDPR conditions, so orgs must document suitable policies, perform privacy assessments and implement technical security measures.

@@ -134,7 +134,15 @@ todo
 
 **22. Present and discuss how the Netflix network was deanonymized.**
 
-todo
+Due to a contest for recommendation system Netflix released a version of the database of ratings, with some level of anonymization (names removed, perturbation of information). Combined with background knowledge, which was IMDB, an attacker can perform a deanonymization attack with usage of another, similar, database.  
+In details, the objective was to:  
+- Fix some target record of original Netflix dataset  
+- Try to learn as much about this record as possible  
+
+But background knowledge (IMDB dataset) was noisy, and Netflix dataset was perturbed (with only a sample of records released).
+Anyway, since ratings about not top100 movies are very personalized (is unusual for two users give same rating on same not so known movies), the researchers in this project found out that, with this cross references on movie ratings and date of ratings, some users turned out to be members of both IMDB and Netflix (with some personal informations voluntarily released on IMDB), and personal information was obtained with a very low percentage of error (in the experiment, just 4 ratings, in mean, were enough to uniquely identify the user).
+With only eight movie ratings, and dates that may be up to two weeks in error, they can uniquely identify 99% of the records in the dataset. After all, all they need is a little bit of identifiable data: from the IMDb, from your blog, from anywhere.
+The moral is that it takes only a small named database for someone to pry the anonymity off a much larger anonymous database
 
 **23. Which are the main characteristics of  the new European regulations for privacy for individuals?**
 

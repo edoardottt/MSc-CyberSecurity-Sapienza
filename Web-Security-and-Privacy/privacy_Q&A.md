@@ -86,7 +86,16 @@ Coinjoin remaining problems: Hot to find peers, peers know your input-output map
 
 **10. Discuss how people might release sensible data in exchange of an immediate advantage. Discuss examples that give evidence to your claims. Possibly give a specific example in which you or a person you know was involved.**
 
-I am not understanding the question.
+People often provide, without worrying too much, a lot of personal information in exchange of some services and/or immediate advantage.  
+For example:  
+- Some restaurants require personal information in order to use public Wi-Fi. These data are collected by the managers of the company.
+- Some television companies require personal information (through registration) in order to let you stream legally from your computer. These data are collected and used to perform analysis (marketing purposes).
+- Some websites require personal information in order to notify you promotional offers and to get advanced functionalities (e.g. Groupon, Amazon...)
+- Releasing sensitive or personal data just for take prize in competitions with prize.
+- An important example is also Google or similar services. These services are based on users' data, this means that in order to use Google services you need to provide them the data they ask for (even if you are not authenticated in the browser they can collect data!)
+
+I remember when I was younger there were a lot of stupid quiz results published on Facebook (e.g. Which type of vegetable you are?) from my friends, these quizzes asked you to provide profile informations in order to take the quiz.
+
 
 **11. Discuss extension of blockchain technologies beyond digital currency.**
 

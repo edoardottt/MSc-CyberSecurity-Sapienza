@@ -131,7 +131,13 @@ There were made some census on US populations in differents years (2000, 2010, 2
 
 **20. What are according to you the main concerns of privacy protection in social networks?**
 
-todo
+Third party applications, as social network, doesn’t have term of conditions and they can easily steal personal informations. The main challenge of data priacy is to utilize data while protecting individual’s privacy preferences and their personally identifiable information. Social network is a structure made up of a set of actors (such as individuals or organizations), and interactions between these actors. Privacy concerns with social networking services is a subset of data privacy. Social network privacy issues result from the amounts of informations these sites process each. Features that invite users to participate in messages, invitations, photos, open platform applications and other applications are often the venues for others to gain access to a user’s private information.
+As there are so much informations provided by social networks, other things can be deduced, such as the person's social security number (fiscal code), which can then be used as part of identity theft. Many studies shown that it is possible to predict most and sometimes all of an individual’s 9- digit Social Security number (16 for fiscal code) using information gained from social networks and on-line databases.  
+Due to the high content of personal informations laced on social networking sites, as well as the ability to hide behind a pseudo-identity, such sites have become increasingly popular for sexual predators. Further, the lack of age verification mechanisms is a cause of conerns in these cosial networking platforms.
+It has been noted that the number of sexual predators caught using social networking sites has been increasing, and has now reached an almost weekly basis.
+In worst cases children have become victims of pedophiles or lured to meet strangers.  
+With the amount of information that users post about themselves on-line, it is easy for users to become a victim of stalking without even being aware of the risk. 63% of Facebook profiles are visible to the public, meaning that if you Google someone’s name and adding "+Facebook" in the search bar, you pretty much will see most of the person profiles.  
+Twitter, Facebook, and others, are application which allow users to share their current location information. However, the siclousure of location information within these networks can cause privacy concerns among mobile users. Although there are algorithms using encryption, k- anonymity and noise injection algorithms, its better to understand how the location sharing works in these applications to see if they have good algorithms in place to protect location privacy.
 
 **21. Discuss the difference between a  semi-honest attacker and a malicious one in a social network; give examples of attacks.**
 

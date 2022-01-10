@@ -49,7 +49,7 @@ No, her block could be the one with the longest valid branch and be approved by 
 **8. Discuss digital coins that have been proposed after Bitcoin focusing on their differences from Bitcoin.**
 
 There are two methods for adding new blocks and validating transactions (thus enlarging the blockchain):  
-1. Proof of Work (PoW) = network participants must solve a “Cryptografic puzzles” in order to add new blocks to the blockchain. This process is called "mining".
+1. Proof of Work (PoW) = network participants must solve a "Cryptographic puzzle" in order to add new blocks to the blockchain. This process is called "mining".
 The mining calculation gets bigger and bigger with time and therefore the miners will receive a reward in digital coins. BitCoins rely on this PoW consensus mechanism.  
 2. Proof of Stake (PoS) = in order to participate in the validation, a network node must demonstrate that it has a certain amount of coins. This validation action is called "forging". Depending on how many coins you have, you will have a better chance to validate the next block (the amount of money is a sign of seniority in the network). A commission is paid to the validator.
 

@@ -139,7 +139,7 @@ Even if we have a k-anonymous table, if we have an equivalence class and this ha
 
 **17. The main limitation of K-anonimity and its extensions  for guaranteeing privacy is the use of additional information. Provide at least two examples.**
 
-todo
+Look at answers 14, 15, 16 + t-closeness.
 
 **18. What is differential privacy and discuss its advantages and disadvantages with respect ot other approaches. Provide one example in which differential privacy is useful.**
 

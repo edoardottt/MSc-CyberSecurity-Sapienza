@@ -157,7 +157,7 @@ Due to the high content of personal informations laced on social networking site
 It has been noted that the number of sexual predators caught using social networking sites has been increasing, and has now reached an almost weekly basis.
 In worst cases children have become victims of pedophiles or lured to meet strangers.  
 With the amount of information that users post about themselves on-line, it is easy for users to become a victim of stalking without even being aware of the risk. 63% of Facebook profiles are visible to the public, meaning that if you Google someone’s name and adding "+Facebook" in the search bar, you pretty much will see most of the person profiles.  
-Twitter, Facebook, and others, are application which allow users to share their current location information. However, the siclousure of location information within these networks can cause privacy concerns among mobile users. Although there are algorithms using encryption, k- anonymity and noise injection algorithms, its better to understand how the location sharing works in these applications to see if they have good algorithms in place to protect location privacy.
+Twitter, Facebook, and others, are application which allow users to share their current location information. However, the disclousure of location information within these networks can cause privacy concerns among mobile users. Although there are algorithms using encryption, k-anonymity and noise injection algorithms, its better to understand how the location sharing works in these applications to see if they have good algorithms in place to protect location privacy.
 
 **21. Discuss the difference between a  semi-honest attacker and a malicious one in a social network; give examples of attacks.**
 

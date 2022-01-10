@@ -49,7 +49,15 @@ Simplest way: putting them on a local device (phone, laptop). Storing bitcoins i
     • What factors affect the rate of orphan blocks? 
     • if Mynie hears about Minnie’s block just before she’s about to discover hers, does that mean she wasted her effort?**
 
-to do
+1. In general, if we have two blocks A and B at the same time, we can have the following situation:  
+a. A valid and B invalid = the miner will obviously continue to choose chain A  
+b. A valid and B valid = The general rule is that a miner continues on the longest branch. In this situation we have two branches with the same length so a miner can pick one at random. This means that the next block will determine the longest chain. The nodes try to extend the transaction they are aware of: the accepted transaction is the one that will be the longest; the time to extend is random. The accepted transaction is decided within a time window: more time, more certainty.  
+2. There are essentially two main factors affecting the orphan block rate:  
+a. Network delay = delay in the network, therefore more time to reach consensus;  
+b. Time to find a block = Time to find a block.   Easier hash puzzle → Shorter average time to build one block → Greater chance of having different blocks at the same time → More chains → More orphaned blocks.  
+3. Mynie wastes no time if Minnie's lock is invalid. In fact, in this case Mynie can discard the received block and continue solving the hash puzzle.
+Instead, if Minnie's block is valid, Mynie has no incentive to continue working on her block because with a high probability she will become an orphan block.
+No, her block could be the one with the longest valid branch and be approved by consensus before the other. (she or she looks for a new block starting from Minnie's) (??????)
 
 **8. Discuss digital coins that have been proposed after Bitcoin focusing on their differences from Bitcoin.**
 

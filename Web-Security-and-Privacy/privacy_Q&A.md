@@ -143,7 +143,7 @@ DEF: Given a real number, we say that a function K provides differential privacy
 It means that if a participant added or removed his/her to/from the set, no output would become more or less likely.  
 (PRO) The power of differential privacy is that any event (anything an opponent might do to you) has nearly the same chance whether you join or don't join, lie or tell the truth.
 So, if an attacker has a lot of information that is not in the dataset about the user, they will never find information that is in the dataset about that user, while for example with k-anonymous database if we know exactly all the information about the user we can discover sensitive information.  
-(CONS) The problem with differential privacy is that the parameter is public and the value of this parameter is still uncertain, because given a high value of it implies that the protection of the dataset is very strong but it happens that the response to a query is insignificant, on the other hand, a low value of can allow an attacker to discover the data.
+(CONS) The problem with differential privacy is that the parameter is public and the value of this parameter is still uncertain, because given a low value of it implies that the protection of the dataset is very strong but it happens that the response to a query is insignificant, on the other hand, a high value of can allow an attacker to discover the data.
 
 **19. Discuss how differential privacy has been used in the US census. In particular discuss an example that motivates why publishing census data does not preserve privacy and discuss the kind of operation that are performed to achieve differential privacy**
 

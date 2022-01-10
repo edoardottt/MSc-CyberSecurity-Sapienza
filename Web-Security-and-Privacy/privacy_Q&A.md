@@ -53,7 +53,7 @@ There are two methods for adding new blocks and validating transactions (thus en
 The mining calculation gets bigger and bigger with time and therefore the miners will receive a reward in digital coins. BitCoins rely on this PoW consensus mechanism.  
 2. Proof of Stake (PoS) = in order to participate in the validation, a network node must demonstrate that it has a certain amount of coins. This validation action is called "forging". Depending on how many coins you have, you will have a better chance to validate the next block (the amount of money is a sign of seniority in the network). A commission is paid to the validator.
 
-Other types of blockchains:
+Types of blockchain:
 1. Permissionless = a node can participate in the network and can leave when it wants because this network is not managed by anyone;  
 2. Permissioned = the network is managed by a central entity, an administrator, who allows you to participate in the network or not.  
 The permissioned blockchain can be divided into two sub-categories:

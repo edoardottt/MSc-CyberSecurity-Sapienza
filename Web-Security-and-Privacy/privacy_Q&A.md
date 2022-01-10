@@ -138,7 +138,7 @@ todo
 
 **18. What is differential privacy and discuss its advantages and disadvantages with respect ot other approaches. Provide one example in which differential privacy is useful.**
 
-Differential privacy aims to provide means to maximize the accuracy of queries from statistical databases by minimizing the possibilities of defining its records. Therefore, the goal is to release statistical information without compromising the privacy of the individual interviewee. Differential privacy ensures that removing or adding an item in the database does not affect the outcome of any analysis; therefore, there is no risk in joining the database.  
+Differential privacy aims to provide means to maximize the accuracy of queries from statistical databases by minimizing the possibilities of defining its records. Therefore, the goal is to release statistical information without compromising the privacy of the individual respondents. Differential privacy ensures that removing or adding an item in the database does not affect the outcome of any analysis; therefore, there is no risk in joining the database.  
 DEF: Given a real number, we say that a function K provides differential privacy and, if for all datasets D1, D2 differ at most on one element and for all S belonging to the interval (K): Pr [K (D1) belongs to S] <= exp (epsilon) * Pr [K (D2) belongs to S].  
 It means that if a participant added or removed his/her to/from the set, no output would become more or less likely.  
 (PRO) The power of differential privacy is that any event (anything an opponent might do to you) has nearly the same chance whether you join or don't join, lie or tell the truth.

@@ -103,7 +103,12 @@ todo
 
 **12. When do we claim that a social network has been deanonymized? Clearly it is not necessary that all data in the network have been deanonymized. Provide the different definitions that are used to claim that a network has been (possibly partially) deanonymized? Be specific and provide at least one example.**
 
-todo
+Operators of online social networks are increasingly sharing potentially sensitive information about users and their relationships with advertisers, application developers, and datamining researchers. To alleviate privacy concerns, the networks are anonymized, i.e., names and demographic information associated with individual nodes are suppressed. But despite there is the possibility     about specific user with deanonymization processes.
+In general, in order to deanonymize something the goal is: fixing some target record "r" in the original dataset learn as much about "r" as possibile. A network is partially or totally deanonymized when the attacker, starting from a reidentification of a fraction of nodes from an auxiliary network that partially overlaps with the original network,
+gains knowledge about the edges of the graph that represents the network. So in a more technical way determine a 1-1 mapping between two graphs.
+As example we can consider the partial deanonymization performed on twitter graph passing through Flickr graph. The two companies both exposes: Mandatory username, optional name, optional location. As result researchers obtained: 27,000 mappings. Starting from a seed of 150 pairs of randomly selected mappings with the constraint that the degree of each mapped node in the auxiliary graph is at least 80 the result is: 30.8% of the mappings were re-identified correctly, 12.1% were identified incorrectly, and 57% were not identified.
+“An example is for example deanonymization of Netflix users by using IMDB dataset, that is the auxiliary network.”
+
 
 **13. What is pseudononimity and discuss key features with reference to a practical example. Explain the advantages and weakness of pseudononimity discussing how it should be used in practical situations.**
 

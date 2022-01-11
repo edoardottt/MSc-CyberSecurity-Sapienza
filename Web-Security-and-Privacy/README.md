@@ -10,7 +10,7 @@
 - Web technologies 
     - HTTP(S), Client server comunication
     - HTTP/2, HTTP/3, Authentication
-    - Same Origin Policy (SOP), DOM/BOM, JSONP, CORS, Client-side Messaging
+    - Same Origin Policy (SOP), DOM/BOM, JSONP, CORS, Cookies
 - Web Security
     - Path Traversal
     - Command and Code injection

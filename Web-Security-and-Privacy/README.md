@@ -6,7 +6,7 @@
 **CTF challenges** at [webhack.it](https://webhack.it/)
 
 **Topics covered**:
-- Email Security (SMTP, MIME, SPF, DKIM, DMARC, PGP)
+- Email Security (SMTP, MIME, SPF, DKIM, DMARC, ARC, PGP)
 - Web technologies 
     - HTTP(S), Client server comunication
     - HTTP/2, HTTP/3, Authentication

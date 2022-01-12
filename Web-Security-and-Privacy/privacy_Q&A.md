@@ -64,7 +64,7 @@ Other types of coins are:
 1. Ethereum (2015) = is a decentralized platform that manages "smart contracts" (they are self-executing app/script, so they work autonomously). In essence, it is a permissionless blockchain and it uses a form of payment to incentivize transactions within the network with Ether coin.
 2. RIPPLE = open source decentralized P2P digital payment platform, with a permissioned public blockchain, which allows for fast currency transfers. Use XRP cryptocurrency. Ripple does not rely on PoW or PoS to validate transactions but uses its own specific consensus protocol.
 
-When we have more branches, for example due from a Hard Fork, then we can have different types of coins that are created in the different branches of the blockchain, they are called "Split Coin":  
+When we have more branches, for example due to a Hard Fork, then we can have different types of coins that are created in the different branches of the blockchain, they are called "Split Coin":  
 1. Bitcoin Cash (BCH) = is based on BitCoin PoW. It is known as a hard fork of the bitcoin blockchain. In a nutshell, Bitcoin Cash was born because some developers wanted to put the block size from 1MB to 8MB in order to be able to pay less commission fees.
 2. Litecoin = is based on Scrypt Pow which uses BitCoin and uses an algorithm called original SHA-256 PoW. This algorithm offers faster transaction speed than BitCoin and also faster to generate a block.
 3. IOTA = it doesn't use commissions. It doesn't even use blocks but transactions are intertwined together, and by flows of individual transactions.

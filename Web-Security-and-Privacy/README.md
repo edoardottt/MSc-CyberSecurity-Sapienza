@@ -19,7 +19,12 @@
     - Cross Site Request Forgery
     - Cross Site Scripting
     - Content Security Policy
-- plus Privacy part (Blockchain and Bitcoin, Anonimity, GDPR, Web tracking, Osint)
+- plus Privacy part:
+    - Blockchain and Bitcoin
+    - Anonimity
+    - GDPR
+    - Web tracking and Social networks
+    - Differential Privacy
 
 **Tools**:
 - Burpsuite (mainly)

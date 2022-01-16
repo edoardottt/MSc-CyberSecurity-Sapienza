@@ -1,16 +1,16 @@
 # Web Security and Privacy
 
-- Prof. Fabrizio D'Amore
 - Prof. Emilio Coppa
+- Prof. Alberto Marchetti Spaccamela
 
 **CTF challenges** at [webhack.it](https://webhack.it/)
 
 **Topics covered**:
-- Email Security (SMTP, MIME, SPF, DKIM, DMARC, PGP)
+- Email Security (SMTP, MIME, SPF, DKIM, DMARC, ARC, PGP)
 - Web technologies 
     - HTTP(S), Client server comunication
     - HTTP/2, HTTP/3, Authentication
-    - Same Origin Policy (SOP), DOM/BOM, JSONP, CORS, Client-side Messaging
+    - Same Origin Policy (SOP), DOM/BOM, JSONP, CORS, Cookies
 - Web Security
     - Path Traversal
     - Command and Code injection
@@ -19,7 +19,12 @@
     - Cross Site Request Forgery
     - Cross Site Scripting
     - Content Security Policy
-- plus Privacy part
+- plus Privacy part:
+    - Blockchain and Bitcoin
+    - Anonimity
+    - GDPR
+    - Web tracking and Social networks
+    - Differential Privacy
 
 **Tools**:
 - Burpsuite (mainly)

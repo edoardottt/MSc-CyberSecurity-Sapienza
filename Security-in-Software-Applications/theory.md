@@ -68,11 +68,11 @@ One goal of this course is understand the role that software plays in providing 
 Software is the weakest link in the security chain, with the possible exception of "the human factor".  
 
 Some examples of problems (threats, vulnerabilities...etc...):
-- Slammer worm (https://it.wikipedia.org/wiki/SQL_Slammer)
-- Buffer overflow in Cisco Router; CVE-2011-0352 (https://nvd.nist.gov/vuln/detail/CVE-2011-0352)
-- Vulnerability in FFmpeg; CVE-2010-4705 (https://nvd.nist.gov/vuln/detail/CVE-2010-4705)
-- Vulnerability in Linux/Windows/macOS; CVE-2011-0638, CVE-2011-0640, CVE-2011-0639 (https://nvd.nist.gov/vuln/detail/CVE-2011-0638, https://nvd.nist.gov/vuln/detail/CVE-2011-0639, https://nvd.nist.gov/vuln/detail/CVE-2011-0640)
-- Vulnerability in Mozilla/Bugzilla; CVE-2010-4568 (https://nvd.nist.gov/vuln/detail/CVE-2010-4568)
+- Slammer worm ([SQL_Slammer](https://it.wikipedia.org/wiki/SQL_Slammer))
+- Buffer overflow in Cisco Router; [CVE-2011-0352](https://nvd.nist.gov/vuln/detail/CVE-2011-0352)
+- Vulnerability in FFmpeg; [CVE-2010-4705](https://nvd.nist.gov/vuln/detail/CVE-2010-4705)
+- Vulnerability in Linux/Windows/macOS; ([CVE-2011-0638](https://nvd.nist.gov/vuln/detail/CVE-2011-0638), [CVE-2011-0639]( https://nvd.nist.gov/vuln/detail/CVE-2011-0639), [CVE-2011-0640](https://nvd.nist.gov/vuln/detail/CVE-2011-0640))
+- Vulnerability in Mozilla/Bugzilla; (CVE-2010-4568](https://nvd.nist.gov/vuln/detail/CVE-2010-4568)
 - And so on... (https://us-cert.cisa.gov/ncas/bulletins)
 
 All these problems are due to (bad) software. Such software bugs are why constant patching of system is needed to keep them secure.  

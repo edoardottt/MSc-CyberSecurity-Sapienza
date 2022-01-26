@@ -2393,3 +2393,7 @@ For this part refer to the appropriate slides.
 ## Lesson 21 - Code obfuscation
 
 For this part refer to the appropriate slides.
+
+## Lesson 22 - Fuzz testing
+
+For this part refer to the appropriate slides.

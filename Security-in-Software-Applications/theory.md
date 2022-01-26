@@ -20,7 +20,7 @@
 - [Lesson 18 - Sandboxing](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-18---sandboxing)
 - [Lesson 19 - Proof Carrying Code & Information Flow](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-19---proof-carrying-code--information-flow)
 - [Lesson 20 - Project SPARTA](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-20---project-sparta)
-- Lesson 21 - Code obfuscation
+- [Lesson 21 - Code obfuscation](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-21---code-obfuscation)
 - Lesson 22 - Fuzz testing
 
 ## Lesson 1 - Introduction

@@ -2389,3 +2389,7 @@ For this part refer to the appropriate slides.
 ## Lesson 20 - project SPARTA
 
 For this part refer to the appropriate slides.
+
+## Lesson 21 - Code obfuscation
+
+For this part refer to the appropriate slides.

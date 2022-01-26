@@ -21,7 +21,7 @@
 - [Lesson 19 - Proof Carrying Code & Information Flow](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-19---proof-carrying-code--information-flow)
 - [Lesson 20 - Project SPARTA](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-20---project-sparta)
 - [Lesson 21 - Code obfuscation](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-21---code-obfuscation)
-- Lesson 22 - Fuzz testing
+- [Lesson 22 - Fuzz testing](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-in-Software-Applications/theory.md#lesson-22---fuzz-testing)
 
 ## Lesson 1 - Introduction
 

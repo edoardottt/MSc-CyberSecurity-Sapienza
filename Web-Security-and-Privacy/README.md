@@ -3,7 +3,7 @@
 - Prof. Emilio Coppa
 - Prof. Alberto Marchetti Spaccamela
 
-**CTF challenges** at [webhack.it](https://webhack.it/)
+**CTF challenges at [webhack.it](https://webhack.it/)**
 
 **Topics covered**:
 - Email Security (SMTP, MIME, SPF, DKIM, DMARC, ARC, PGP)

@@ -1,0 +1,50 @@
+83 coders/pcx.c:550 = ReadPCXImage
+1 coders/pcx.c:555 = ReadPCXImage
+63 coders/pcx.c:565 = ReadPCXImage
+32 coders/pcx.c:583 = ReadPCXImage
+1 coders/rle.c:395 = ReadRLEImage
+44 coders/rle.c:427 = ReadRLEImage
+3 coders/rle.c:447 = ReadRLEImage
+270 coders/rle.c:532 = ReadRLEImage
+9 iofclose.c:48
+1 magick/blob.c:2920 = ReadBlobByte
+1 magick/cache.c:1520 = DestroyPixelCacheNexus
+1 magick/cache.c:3213 = GetVirtualPixelsFromNexus
+4 magick/cache.c:4537 = QueueAuthenticPixels
+3 magick/cache.c:5020 = SetPixelCacheNexusPixels
+1 magick/exception.c:573 = GetLocaleExceptionMessage
+1 magick/exception.c:633 = InheritException
+7 magick/hashmap.c:427 = DestroyLinkedList
+2 magick/hashmap.c:473 = GetLastValueInLinkedList
+1 magick/image.c:1311 = DestroyImageInfo
+6 magick/locale.c:1041 = DestroyLocaleNode
+3 magick/magic.c:1049 = DestroyMagicElement
+1 magick/magick.c:789 = DestroyMagickNode
+3 magick/matrix.c:280 = GaussJordanElimination
+3 magick/mime.c:328 = GetMimeInfo
+1 magick/montage.c:286 = GetMontageGeometry
+1 magick/quantize.c:1561 = FloydSteinbergDither
+1 magick/quantize.c:2464 = PruneChild
+1 magick/quantize.c:609 = AssignImageColors
+1976 magick/quantum.c:133 = AcquireQuantumInfo
+4 magick/semaphore.c:291 = LockSemaphoreInfo
+6 magick/splay-tree.c:1490 = Splay
+7 magick/splay-tree.c:1574 = SplaySplayTree
+14 magick/splay-tree.c:256 = LinkSplayTreeNodes
+2 magick/splay-tree.c:263 = LinkSplayTreeNodes
+8 magick/splay-tree.c:338 = GetFirstSplayTreeNode
+1 magick/splay-tree.c:692 = DestroySplayTree
+15 magick/splay-tree.c:693 = DestroySplayTree
+4 magick/splay-tree.c:707 = DestroySplayTree
+3 magick/splay-tree.c:719 = DestroySplayTree
+4 magick/splay-tree.c:841 = GetNextValueInSplayTree
+43 malloc.c:1629
+34 malloc.c:1635
+286 malloc.c:3083
+97 malloc.c:3255
+37 malloc.c:3277
+5 malloc.c:3824
+16 malloc.c:3895
+4 malloc.c:4269
+1 malloc.c:4640
+1565 pthread_kill.c:44

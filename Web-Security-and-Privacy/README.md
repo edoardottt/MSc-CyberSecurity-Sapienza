@@ -31,5 +31,6 @@
 - ngrok
 - Shell commands
 - Python
+- Frontend technologies knowledge (html, js)
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

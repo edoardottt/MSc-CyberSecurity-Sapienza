@@ -1,1 +1,2 @@
-Refer to the slides of the course
+- Refer to the slides of the course
+- [Portswigger Web Academy](https://portswigger.net/web-security/learning-path)

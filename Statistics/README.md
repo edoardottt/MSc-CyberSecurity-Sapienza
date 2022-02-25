@@ -23,6 +23,6 @@ My statistics blog is hosted at [edoardottt.wordpress.com](https://edoardottt.wo
   - [Lesson 9](https://edoardottt.wordpress.com/2021/11/28/lesson-9/)
 
 
-This instead is my mini thesis about "Normal and derived distributions": [PDF](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Statistics/mini-thesis.pdf)
+This instead is my mini thesis about ["Normal and derived distributions" (PDF)](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Statistics/mini-thesis.pdf)
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

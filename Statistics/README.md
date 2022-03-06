@@ -2,6 +2,8 @@
 
 - Prof. Tommaso Gastaldi
 
+Course Program: Topics in Statistics relevant to Cybersecurity: theory and application, with intensive software development (using Visual Studio, C# and/or VB.NET and/or J#).
+
 My statistics blog is hosted at [edoardottt.wordpress.com](https://edoardottt.wordpress.com/)
 
   - [Lesson 1](https://edoardottt.wordpress.com/2021/09/28/lesson-1/)

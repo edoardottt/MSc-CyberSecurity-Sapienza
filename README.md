@@ -2,17 +2,17 @@
 
 ### My personal notes, examples, tests, homework solutions, code...
 
-- Cryptography
 - Network Infrastructures
-- Distributed Systems
-- Statistics
-- Ethical Hacking
 - Laboratory of Network Design and Configuration
+- Ethical Hacking
 - Practical Network Defense
-- Cyber and Computer Law
-- Malware Analysis and Incident Forensics
 - Web Security and Privacy
 - Security in Software Applications
+- Malware Analysis and Incident Forensics
+- Statistics
+- Cryptography
+- Distributed Systems
+- Cyber and Computer Law
 - Security Governance
 - Risk Management
 - Internet of Things (partially)
@@ -25,7 +25,6 @@
 See also:
 
   - [gitlab.com/myasnik/sapienza-notes-cybersecurity](https://gitlab.com/myasnik/sapienza-notes-cybersecurity)
-
 
 ----
 

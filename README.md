@@ -12,6 +12,7 @@
 - Statistics
 - Cryptography
 - Distributed Systems
+- Cybersecurity Seminars
 - Cyber and Computer Law
 - Security Governance
 - Risk Management

@@ -26,5 +26,6 @@ The main tool used during the course is [Packet Tracer](https://www.netacad.com/
 - LAN Security
 - Virtual Private Networks
 
+---------
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

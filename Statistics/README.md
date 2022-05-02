@@ -27,4 +27,6 @@ My statistics blog is hosted at [edoardottt.wordpress.com](https://edoardottt.wo
 
 This instead is my mini thesis about ["Normal and derived distributions" (PDF)](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Statistics/mini-thesis.pdf)
 
+---------
+
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

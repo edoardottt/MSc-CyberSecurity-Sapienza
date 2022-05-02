@@ -16,6 +16,7 @@ Seminars:
 - Stefano Mancini - HR negotiation
 - Giuseppe Ateniese - Trustworthy AI
 - Massimo Bernaschi - Simplicity, Speed, Security: 3S requirements for Software Sustainability
+- Roberto Baldoni - The role of the Italian National Cybersecurity Agency
 
 ---------
 

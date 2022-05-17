@@ -17,6 +17,7 @@ Seminars:
 - Giuseppe Ateniese - Trustworthy AI
 - Massimo Bernaschi - Simplicity, Speed, Security: 3S requirements for Software Sustainability
 - Roberto Baldoni - The role of the Italian National Cybersecurity Agency
+- Matteo Lucchetti - International cooperation on cybercrime - The criminal justice perspective
 
 ---------
 

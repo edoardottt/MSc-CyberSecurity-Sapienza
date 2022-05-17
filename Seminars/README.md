@@ -18,6 +18,7 @@ Seminars:
 - Massimo Bernaschi - Simplicity, Speed, Security: 3S requirements for Software Sustainability
 - Roberto Baldoni - The role of the Italian National Cybersecurity Agency
 - Matteo Lucchetti - International cooperation on cybercrime - The criminal justice perspective
+- Ransomware and cybercrime: a Dutch perspective on the threat landscape, incident response and diplomatic efforts
 
 ---------
 

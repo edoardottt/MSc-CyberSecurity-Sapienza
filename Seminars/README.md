@@ -6,19 +6,19 @@ The objective of the course is for students to understand the topics discussed i
 
 Seminars:
 
-- Alicia Kbidi - Innovation & New Business Models
-- Stefano Chiccarelli - L'ecosistema della scena hacker
-- Claudio di Ciccio - Blockchain as a process execution infrastructure
-- Antonio Villani - Malware reverse engineering foundation
-- Nino Verde - Cyber Threat Intelligence: from zero to hero
-- American Embassy in Rome
-- Edlira Dushku - Remote attestation on IoT devices
-- Stefano Mancini - HR negotiation
-- Giuseppe Ateniese - Trustworthy AI
-- Massimo Bernaschi - Simplicity, Speed, Security: 3S requirements for Software Sustainability
-- Roberto Baldoni - The role of the Italian National Cybersecurity Agency
-- Matteo Lucchetti - International cooperation on cybercrime - The criminal justice perspective
-- Ransomware and cybercrime: a Dutch perspective on the threat landscape, incident response and diplomatic efforts
+[x] Alicia Kbidi - Innovation & New Business Models
+[x] Stefano Chiccarelli - L'ecosistema della scena hacker
+[x] Claudio di Ciccio - Blockchain as a process execution infrastructure
+[x] Antonio Villani - Malware reverse engineering foundation
+[x] Nino Verde - Cyber Threat Intelligence: from zero to hero
+[x] American Embassy in Rome
+[x] Edlira Dushku - Remote attestation on IoT devices
+[x] Stefano Mancini - HR negotiation
+[x] Giuseppe Ateniese - Trustworthy AI
+[x] Massimo Bernaschi - Simplicity, Speed, Security: 3S requirements for Software Sustainability
+[x] Roberto Baldoni - The role of the Italian National Cybersecurity Agency
+[x] Matteo Lucchetti - International cooperation on cybercrime - The criminal justice perspective
+[x] Ransomware and cybercrime: a Dutch perspective on the threat landscape, incident response and diplomatic efforts
 
 ---------
 

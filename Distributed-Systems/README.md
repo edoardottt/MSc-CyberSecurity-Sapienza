@@ -1,7 +1,7 @@
 # Distributed Systems
 
 - Prof Giuseppe Antonio Di Luna (https://sites.google.com/site/gadiluna/)
-- Website (https://sites.google.com/view/distributedsystems-2020-mscybe/home-page)
+- Website (https://sites.google.com/view/distributed-systems-2021/home-page)
 
 ---------
 

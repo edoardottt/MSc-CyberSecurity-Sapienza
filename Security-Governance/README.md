@@ -1,6 +1,7 @@
 # Security Governance
 
 - Prof. Silvia Bonomi
+- [Google Classroom](https://classroom.google.com/u/0/c/MzkwODQwOTUyMDU2) 
 
 **Resources**  
 - Scientific papers

@@ -1,6 +1,6 @@
 # Security Governance
 
-- Prof. Silvia Bonomi
+- Prof. Silvia Bonomi (https://bonomi.diag.uniroma1.it/)
 - [Google Classroom](https://classroom.google.com/u/0/c/MzkwODQwOTUyMDU2) 
 
 **Resources**  

@@ -14,6 +14,11 @@ The main objective of the course is to provide an introduction to all issues rel
 Aspects related to international and national regulations and standards will be analyzed. Then, it will be discussed how, from the methodological point of view, these aspects are taken in to account and implemented by defining security frameworks.
 Finally, another fundamental aspect of the course will be to present methods and open problems to carry out auditing, verification, compliance and certification activities considering specific techniques and tools that can be used for this purpose.
 
+**Knowledge and Understanding**
+  - Main Cyber-Security Frameworks
+  - Assessment of the enterprise Security level
+  - Security Monitoring techniques and tools
+
 ---------
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

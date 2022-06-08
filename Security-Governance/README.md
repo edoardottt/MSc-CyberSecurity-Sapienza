@@ -19,6 +19,10 @@ Finally, another fundamental aspect of the course will be to present methods and
   - Assessment of the enterprise Security level
   - Security Monitoring techniques and tools
 
+**Applying Knowledge and Understanding**
+  - Ability to perform a security assessment
+  - Ability to analyze Enterprise Organization and to design the best monitoring infrastructure to preserve the current security level
+
 ---------
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

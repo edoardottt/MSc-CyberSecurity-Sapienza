@@ -10,12 +10,12 @@
 - Security in Software Applications
 - Malware Analysis and Incident Forensics
 - Statistics
-- Cryptography
 - Distributed Systems
 - Cybersecurity Seminars
 - Cyber and Computer Law
 - Security Governance
 - Risk Management
+- Cryptography
 - Internet of Things (partially)
 - Computer Systems and Programming (partially)
 

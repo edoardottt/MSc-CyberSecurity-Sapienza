@@ -10,8 +10,8 @@
 - Security in Software Applications
 - Malware Analysis and Incident Forensics
 - Statistics
-- Distributed Systems
 - Cybersecurity Seminars
+- Distributed Systems
 - Cyber and Computer Law
 - Security Governance
 - Risk Management

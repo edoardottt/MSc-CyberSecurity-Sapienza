@@ -1,6 +1,6 @@
 # Distributed Systems
 
-- Prof Giuseppe Antonio Di Luna (https://sites.google.com/site/gadiluna/)
+- Prof. Giuseppe Antonio Di Luna (https://sites.google.com/site/gadiluna/)
 - Website (https://sites.google.com/view/distributed-systems-2021/home-page)
 
 The course is about distributed systems, with a specific focus on fault-tolerance. Students will learn to appreciate the difficulties introduced by the uncertainty given by the unavoidable coexistence of local knowledge, asynchrony, and failures.  
@@ -9,7 +9,7 @@ The term "failure" has to be intended in its more general meaning: it indicates 
 Algorithms will be presented in a formal, abstract, and modular way.  
 At the end of the course, the student is expected to be able to design fault-tolerant distributed algorithms, and to provide formal and convincing arguments on their correctness.
 
-The [theory.pdf](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Distributed-Systems/theory.pdf) is intended to recap the most important theory sections of the course, but it's not complete, sufficient for the exam and it could contain errors.
+The [theory.pdf](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Distributed-Systems/theory.pdf) is intended to recap the most important theory sections of the course, but it's not complete, sufficient for the exam and may contain errors.
 
 ---------
 

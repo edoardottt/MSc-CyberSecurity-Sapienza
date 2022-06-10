@@ -11,6 +11,19 @@ Students will develop the analytical skills necessary to evaluate different alte
 Students will learn how to document their choices, also through the use of automated reporting tools. They will also have acquired the ability to prepare presentations related to specific scientific topics.  
 The concepts acquired during the course will provide students with a solid knowledge base in order to further deepen the more technical aspects, explore the alternatives not dealt with for time reasons and to autonomously keep themselves informed on the continuous developments and updates of network security and protection.
 
+#### Topics covered
+
+- Network subnetting
+- IPv6
+- Firewalls
+- NAT
+- Network attacks
+- VPN
+- Proxies
+- IPSec
+- SIEM
+- IDS
+
 #### Useful Resources
 
 - Slides of the course, they are done very well

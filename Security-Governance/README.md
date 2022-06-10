@@ -23,6 +23,8 @@ Finally, another fundamental aspect of the course will be to present methods and
   - Ability to perform a security assessment
   - Ability to analyze Enterprise Organization and to design the best monitoring infrastructure to preserve the current security level
 
+Regarding the [theory.md](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/theory.md) file I started taking notes, but never continued.
+
 ---------
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

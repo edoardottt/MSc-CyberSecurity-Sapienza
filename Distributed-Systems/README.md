@@ -9,6 +9,8 @@ The term "failure" has to be intended in its more general meaning: it indicates 
 Algorithms will be presented in a formal, abstract, and modular way.  
 At the end of the course, the student is expected to be able to design fault-tolerant distributed algorithms, and to provide formal and convincing arguments on their correctness.
 
+The [theory.pdf](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Distributed-Systems/theory.pdf) is intended to recap the most important theory sections of the course, but it's not complete, sufficient for the exam and it could contain errors.
+
 ---------
 
 For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

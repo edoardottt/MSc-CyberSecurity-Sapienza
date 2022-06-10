@@ -31,6 +31,18 @@ The concepts acquired during the course will provide students with a solid knowl
 - [iptables tutorial](https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html)
 - [Wireshark cheat sheet](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
 
+#### Tools 
+
+- Linux shell
+- OpenVPN
+- OpnSense
+- Wireshark
+- modsecurity
+- Squid
+- fail2ban
+- bettercap
+- rsyslog
+
 ---------
 
 If you're interested in the Assignment solutions or you have any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))

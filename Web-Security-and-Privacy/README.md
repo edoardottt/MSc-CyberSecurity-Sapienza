@@ -1,6 +1,6 @@
 # Web Security and Privacy
 
-- Prof. Emilio Coppa
+- Prof. Emilio Coppa (https://sites.google.com/diag.uniroma1.it/cybersecurity)
 - Prof. Alberto Marchetti Spaccamela
 
 **CTF challenges at [webhack.it](https://webhack.it/)**

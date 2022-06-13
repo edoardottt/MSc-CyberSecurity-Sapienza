@@ -13,7 +13,9 @@ Theory and practice of software security, focusing in particular on some common 
 - [flawfinder](https://dwheeler.com/flawfinder/)
 - [openjml](https://www.openjml.org/)
 
+#### Suggested readings
 
+- [Reflections on Trusting Trust](http://wwwusers.di.uniroma1.it/~parisi/Risorse/p761-thompson.pdf)
 
 ---------
 

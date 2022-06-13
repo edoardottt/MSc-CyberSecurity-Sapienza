@@ -16,6 +16,7 @@ Theory and practice of software security, focusing in particular on some common 
 #### Suggested readings
 
 - [Reflections on Trusting Trust](http://wwwusers.di.uniroma1.it/~parisi/Risorse/p761-thompson.pdf)
+- [Buffer Overflows: Attacks and Defenses for the Vulnerability of the Decade](http://wwwusers.di.uniroma1.it/~parisi/Risorse/cowan-vulnerability.pdf)
 
 ---------
 

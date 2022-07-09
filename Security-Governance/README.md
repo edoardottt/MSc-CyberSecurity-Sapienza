@@ -9,7 +9,7 @@ Aspects related to international and national regulations and standards will be 
 Finally, another fundamental aspect of the course will be to present methods and open problems to carry out auditing, verification, compliance and certification activities considering specific techniques and tools that can be used for this purpose.
 
 #### Knowledge and Understanding
-  - Main Cyber-Security Frameworks
+  - Main Cyber-Security Frameworks (NIST CSF, ISO 27k family, NIST SP 800...)
   - Assessment of the enterprise Security level
   - Security Monitoring techniques and tools
 

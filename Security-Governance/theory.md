@@ -2,7 +2,7 @@
 
 - [Lesson 1 - Introduction](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/theory.md#lesson-1---introduction)
 - [Lesson 2 - A model for Information Sec. Governance (Part 1)](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Security-Governance/theory.md#lesson-2---a-model-for-information-sec-governance-part-1)
-- Incomplete...
+- Incomplete
 
 ## Lesson 1 - Introduction
 

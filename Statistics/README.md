@@ -3,7 +3,8 @@
 - Prof. Tommaso Gastaldi
 - Website (https://www.datatime.eu/public/cybersecurity/Statistics_2021_22/)
 
-Course Program: Topics in Statistics relevant to Cybersecurity: theory and application, with intensive software development (using Visual Studio, C# and/or VB.NET and/or J#).
+#### Course Program
+Topics in Statistics relevant to Cybersecurity: theory and application, with intensive software development (using Visual Studio, C# and/or VB.NET and/or J#).
 
 My statistics blog is hosted at [edoardottt.wordpress.com](https://edoardottt.wordpress.com/)
 

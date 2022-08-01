@@ -1,6 +1,6 @@
 # Network Infrastructures Q&A
 
-(23/26 completed)
+23/26 completed, [take a look](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/blob/main/Network-Infrastructures/NI_theory.md#in-the-computation-of-the-capacity-that-a-channel-can-provide-both-the-effects-of-the-bandwidth-and-of-the-snr-are-present-discuss-how-there-have-an-impact-and-how-they-can-be-managed-to-improve-the-channel-capacity) to the three questions unanswered.
 
 ### DNS and recursive queries
 

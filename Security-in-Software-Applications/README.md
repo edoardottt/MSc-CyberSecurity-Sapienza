@@ -1,6 +1,6 @@
 # Security in Software Applications
 
-- Prof. Francesco Parisi Presicce(http://wwwusers.di.uniroma1.it/~parisi/)
+- Prof. Francesco Parisi Presicce (http://wwwusers.di.uniroma1.it/~parisi/)
 - the course website is on Moodle
 
 I had the pleasure and honor of being a student of Prof. Parisi Presicce. It's sad to say this was the last semester before he passed away.

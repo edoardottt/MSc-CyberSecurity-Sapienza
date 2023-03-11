@@ -26,6 +26,7 @@
 See also:
 
   - [gitlab.com/myasnik/sapienza-notes-cybersecurity](https://gitlab.com/myasnik/sapienza-notes-cybersecurity)
+  - [edoardottt/offensive-onos-apps](https://github.com/edoardottt/offensive-onos-apps/) (Master Thesis partial research stuff)
 
 ----
 

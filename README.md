@@ -21,13 +21,13 @@
 
 #### More info about the course here [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)
 
-**If you want to propose changes, just open an [issue](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/issues)**
-
 See also:
 
   - [gitlab.com/myasnik/sapienza-notes-cybersecurity](https://gitlab.com/myasnik/sapienza-notes-cybersecurity)
   - [edoardottt/offensive-onos](https://github.com/edoardottt/offensive-onos) (Master Thesis partial research stuff)
 
 ----
+
+If you want to propose changes, just open an [issue](https://github.com/edoardottt/MSc-CyberSecurity-Sapienza/issues).
 
 [edoardoottavianelli.it](https://www.edoardoottavianelli.it) to contact me.

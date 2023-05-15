@@ -23,7 +23,6 @@
 
 See also:
 
-  - [gitlab.com/myasnik/sapienza-notes-cybersecurity](https://gitlab.com/myasnik/sapienza-notes-cybersecurity)
   - [edoardottt/master-degree-thesis](https://github.com/edoardottt/master-degree-thesis/) (Master's Degree Thesis)
   - [edoardottt/offensive-onos](https://github.com/edoardottt/offensive-onos) (Master's Degree Thesis partial research stuff)
 

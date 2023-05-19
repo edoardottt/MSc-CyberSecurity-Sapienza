@@ -16,8 +16,8 @@
 - Cyber and Computer Law
 - Risk Management
 - Cryptography
-- Internet of Things (partially)
-- Computer Systems and Programming (partially)
+- Internet of Things (partial material)
+- Computer Systems and Programming (partial material)
 
 #### More info about the course here [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)
 

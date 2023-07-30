@@ -1,6 +1,6 @@
-## Master of Science in Cybersecurity, Sapienza University of Rome.
+## Master of Science in Cybersecurity, Sapienza University of Rome
 
-#### My personal notes, examples, tests, homework solutions, code...
+#### My personal notes, examples, tests, homework solutions, code
 
 - Network Infrastructures
 - Laboratory of Network Design and Configuration
@@ -23,8 +23,8 @@
 
 See also:
 
-  - [edoardottt/master-degree-thesis](https://github.com/edoardottt/master-degree-thesis/) (Master's Degree Thesis)
-  - [edoardottt/offensive-onos](https://github.com/edoardottt/offensive-onos) (Master's Degree Thesis partial research stuff)
+- [edoardottt/master-degree-thesis](https://github.com/edoardottt/master-degree-thesis/) (Master's Degree Thesis)
+- [edoardottt/offensive-onos](https://github.com/edoardottt/offensive-onos) (Master's Degree Thesis partial research stuff)
 
 ----
 

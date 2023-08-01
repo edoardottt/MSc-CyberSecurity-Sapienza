@@ -19,7 +19,7 @@
 - Internet of Things (partial material)
 - Computer Systems and Programming (partial material)
 
-#### More info about the course here [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)
+#### Info about the course here [cybersecurity.uniroma1.it](https://cybersecurity.uniroma1.it/home)
 
 See also:
 

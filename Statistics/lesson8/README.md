@@ -6,4 +6,4 @@
 
 [Statistics Lesson 8B - Random walk (new stochastic process)](https://www.youtube.com/watch?v=0OGUKW_ebiY) (Youtube video)
 
-For any question write me [edoardoottavianelli.it](https://www.edoardoottavianelli.it/)
+For any question write me [edoardottt.com](https://edoardottt.com/)

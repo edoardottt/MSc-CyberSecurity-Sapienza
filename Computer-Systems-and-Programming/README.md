@@ -14,4 +14,4 @@ These are the topics that are planned to be described during the course. Of cour
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

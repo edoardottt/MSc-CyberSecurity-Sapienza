@@ -4,4 +4,4 @@
 
 [Statistics Lesson 4 - Read CSV data, Contingency Table, Scatterplot, Rugplot and Histograms.](https://www.youtube.com/watch?v=z_G83hmuBUU) (Youtube video)
 
-For any question write me [edoardoottavianelli.it](https://www.edoardoottavianelli.it/)
+For any question write me [edoardottt.com](https://edoardottt.com/)

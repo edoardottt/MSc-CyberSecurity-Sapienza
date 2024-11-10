@@ -17,4 +17,4 @@ Ethical hackers are a category of professionals increasingly in demand by compan
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

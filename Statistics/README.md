@@ -31,4 +31,4 @@ This instead is my mini thesis about ["Normal and derived distributions" (PDF)](
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

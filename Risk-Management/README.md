@@ -8,4 +8,4 @@ The subject of the course is technical risk management, with special focus on ri
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

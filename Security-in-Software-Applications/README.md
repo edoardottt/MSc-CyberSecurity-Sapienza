@@ -21,4 +21,4 @@ Theory and practice of software security, focusing in particular on some common 
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

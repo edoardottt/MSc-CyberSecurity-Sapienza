@@ -6,4 +6,4 @@
 
 [Statistics Lesson 9B - Application practice 13_A](https://www.youtube.com/watch?v=1I-8FI5yRhk) (Youtube video)
 
-For any question write me [edoardoottavianelli.it](https://www.edoardoottavianelli.it/)
+For any question write me [edoardottt.com](https://edoardottt.com/)

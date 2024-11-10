@@ -17,4 +17,4 @@ Also secure protocols will be addressed. Moreover, they will be able to configur
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

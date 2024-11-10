@@ -28,4 +28,4 @@ The main tool used during the course is [Packet Tracer](https://www.netacad.com/
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

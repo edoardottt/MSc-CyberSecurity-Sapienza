@@ -6,4 +6,4 @@
 
 [Statistics Lesson 3 - WordCloud](https://youtu.be/b4ljChGJPr4) (Youtube video)
 
-For any question write me [edoardoottavianelli.it](https://www.edoardoottavianelli.it/)
+For any question write me [edoardottt.com](https://edoardottt.com/)

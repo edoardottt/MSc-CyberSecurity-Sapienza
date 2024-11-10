@@ -2249,7 +2249,7 @@ Ingredients for this access control, as for any form of access control:
 Example configuration file that expresses a policy (Java):
 ```Java
 grant
-    codebase "http://www.edoardoottavianelli.it/example", signedBy "FPP",
+    codebase "http://edoardottt.com/example", signedBy "FPP",
         { permission
             java.io.FilePermission "/home/edoardottt","read";
         };

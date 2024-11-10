@@ -11,4 +11,4 @@ The aim of the course is to explore the main issues of legal regulation of IT ac
 
 ---------
 
-For any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+For any question write me ([edoardottt.com](https://edoardottt.com/))

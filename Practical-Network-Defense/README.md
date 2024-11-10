@@ -45,4 +45,4 @@ The concepts acquired during the course will provide students with a solid knowl
 
 ---------
 
-If you're interested in the Assignment solutions or you have any question write me ([edoardoottavianelli.it](https://www.edoardoottavianelli.it/))
+If you're interested in the Assignment solutions or you have any question write me ([edoardottt.com](https://edoardottt.com/))

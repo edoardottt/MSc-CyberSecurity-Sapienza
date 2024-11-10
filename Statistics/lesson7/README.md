@@ -6,4 +6,4 @@
 
 [Statistics Lesson 7B - Rademacher and Standard sample paths of jump processes](https://www.youtube.com/watch?v=aDaRjDqBmm4) (Youtube video)
 
-For any question write me [edoardoottavianelli.it](https://www.edoardoottavianelli.it/)
+For any question write me [edoardottt.com](https://edoardottt.com/)
